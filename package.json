@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node ssr-server.js",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
+    "serve": "cross-env NODE_ENV=production node server.js",
     "lint": "next lint"
   },
   "dependencies": {
+    "cross-env": "^7.0.2",
     "express": "^4.17.1",
     "next": "11.0.0",
     "react": "17.0.2",
