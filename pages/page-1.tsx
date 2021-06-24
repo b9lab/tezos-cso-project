@@ -1,8 +1,14 @@
+import useSWR from 'swr'
+
 export default function Page1() {
+    const { data, error } = useSWR('/api/test');
+
+    if (error) return "An error has occurred.";
+    if (!data) return "Loading...";
+
     return (
       <div>
-        <h1 className="text-center">This is my first page</h1>
+        <h1 className="text-center">{data.title}</h1>
       </div>
     );
 }
-  
