@@ -8,6 +8,11 @@ const handle = app.getRequestHandler()
 app.prepare()
 .then(() => {
   const server = express()
+
+  server.post('/api/auth/*', (req, res) => {
+    return handle(req, res);
+  });
+
     
   server.get('*', (req, res) => {
     return handle(req, res)
