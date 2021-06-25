@@ -82,6 +82,10 @@ export async function up(knex: Knex): Promise<void> {
 
 
 export async function down(knex: Knex): Promise<void> {
-    return knex.schema.dropTable('users');
+    return knex.schema
+        .dropTable('users')
+        .dropTable('accounts')
+        .dropTable('sessions')
+        .dropTable('verification_requests');
 }
 
