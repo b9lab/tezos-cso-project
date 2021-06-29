@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="max-w-screen-lg m-auto">
+    <div>
       <h1 className="text-center mb-4">Tezos CSO App</h1>
       <div className="w-full h-80 bg-yellow-400"></div>
       <div className="flex flex-wrap">

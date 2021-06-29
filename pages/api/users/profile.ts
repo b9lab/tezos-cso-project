@@ -44,6 +44,7 @@ export default async function profileHandler(
             default:
                 res.setHeader('Allow', ['GET', 'PUT']);
                 res.status(405).end(`Method ${method} Not Allowed`);
+                resolve();
         }
     });
 }

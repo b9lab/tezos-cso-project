@@ -12,7 +12,9 @@ function Layout(props: LayoutProps) {
             <Head/>
             <Header/>
             <main>
-                {props.children}
+                <div className="max-w-screen-lg m-auto p-4">
+                    {props.children}
+                </div>
             </main>
         </>
     );

@@ -21,15 +21,15 @@ export default function Profile() {
     const usernameHandler = (event: ChangeEvent<HTMLInputElement>): void => setInputName(event.target.value);
 
     return (
-        <div className="flex flex-coulmn">
-            <label className="">Username</label>
+        <div className="flex flex-col items-center my-20 w-full">
+            <label className="mx-2 w-full">Username</label>
             <input
-                className=""
+                className="rounded p-2 m-2 border w-full"
                 type="text"
                 value={inputName ?? username}
                 onChange={usernameHandler}
             />
-            <button onClick={updateHandler}>Update</button>
+            <button className="max-w-sm rounded bg-gray-400 py-2 px-6 m-2 text-white" onClick={updateHandler}>Update</button>
         </div>
     );
 }
