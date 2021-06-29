@@ -25,5 +25,11 @@ export default NextAuth({
         username: process.env.LOCAL_DATABASE_USER,
         password: process.env.LOCAL_DATABASE_PASSWORD,
         database: process.env.LOCAL_DATABASE_NAME
-    }
+    },
+    callbacks: {
+        session: async (session, user) => {
+          session.userId = user.id;
+          return Promise.resolve(session);
+        }
+      }
 })

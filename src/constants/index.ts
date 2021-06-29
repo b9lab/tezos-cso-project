@@ -13,5 +13,9 @@ export const NAV_ITEMS: Array<NavItem> = [
     {
         name: "Page 1",
         url: "/page-1"
+    },
+    {
+        name: "Profile",
+        url: "/profile"
     }
 ];
