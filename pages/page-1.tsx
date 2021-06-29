@@ -1,4 +1,4 @@
-import useSWR from 'swr'
+import useSWR from 'swr';
 
 export default function Page1() {
     const { data, error } = useSWR('/api/test');
@@ -12,3 +12,5 @@ export default function Page1() {
       </div>
     );
 }
+
+Page1.auth = true;
