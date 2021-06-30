@@ -6,12 +6,15 @@ import Auth from '../src/components/Auth';
 
 const fetcher = (input: RequestInfo, init: RequestInit) => fetch(input, init).then(res => res.json());
 
-function App({ Component, pageProps }: AppProps) {
+function App(props: AppProps) {
+  const Component: any = props.Component;
+  const pageProps = props.pageProps;
+
   return (
     <SWRConfig value={{fetcher: fetcher}}>
       <Layout>
         {Component.auth ? (
-            <Auth><Component {...pageProps} /></Auth>
+            <Auth callbackUrl={Component.auth.callbackUrl}><Component {...pageProps} /></Auth>
         ) : (
           <Component {...pageProps} />
         )}
