@@ -15,11 +15,11 @@ export default async function profileHandler(
 ) {
     const { method } = req;
 
-    const session: Session | null = await authMiddleware(req, res);
+    const session: Session & {userId?: number} | null = await authMiddleware(req, res);
     if (!session) return;
 
-    if (!session.userId || typeof session.userId != "number") {
-        res.status(400).end(`Missing parameter 'userId' of numeric type`);
+    if (!session.userId) {
+        res.status(500).end(`Failed to fetch user id`);
         return;
     }
 

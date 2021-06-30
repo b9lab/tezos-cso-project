@@ -25,7 +25,7 @@ npm run dev
 ```
 
 ## Database
-remember to use `TS_NODE_PROJECT=tsconfig.knex.json` as prefix for each knex command
+remember to use `TS_NODE_PROJECT=tsconfig.knex.json` as prefix for each knex cli command
 
 ### Create migration
 ```

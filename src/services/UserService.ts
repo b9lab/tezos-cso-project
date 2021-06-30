@@ -14,7 +14,7 @@ export default class UserService {
     }
 
     async updateUser(id: number, name: string): Promise<User> {
-        const user = await this.userDao.where('id', id).update({ name: name }).returning(['id','name']);
+        const user = await this.userDao.where('id', id).update({ name }).returning(['id','name']);
         return user[0];
     }
 
