@@ -3,7 +3,8 @@ import React from "react";
 import useSWR from 'swr';
 
 type AuthProps = {
-    children: any
+    children: any,
+    callbackUrl: string | undefined
 };
 
 export default function Auth(props: AuthProps) {
@@ -16,7 +17,7 @@ export default function Auth(props: AuthProps) {
     if (data?.user) {
         return props.children;
     } else {
-        signIn();
+        signIn('', {callbackUrl: props.callbackUrl});
         return null;
     }
 }

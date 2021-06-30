@@ -9,12 +9,12 @@ const fetcher = (input: RequestInfo, init: RequestInit) => fetch(input, init).th
 function App(props: AppProps) {
   const Component: any = props.Component;
   const pageProps = props.pageProps;
-  
+
   return (
     <SWRConfig value={{fetcher: fetcher}}>
       <Layout>
         {Component.auth ? (
-            <Auth><Component {...pageProps} /></Auth>
+            <Auth callbackUrl={Component.auth.callbackUrl}><Component {...pageProps} /></Auth>
         ) : (
           <Component {...pageProps} />
         )}

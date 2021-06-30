@@ -1,3 +1,4 @@
+import { signOut } from 'next-auth/client';
 import { ChangeEvent, useState } from 'react';
 import useSWR from 'swr';
 
@@ -30,6 +31,7 @@ export default function Profile() {
                 onChange={usernameHandler}
             />
             <button className="max-w-sm rounded bg-gray-400 py-2 px-6 m-2 text-white" onClick={updateHandler}>Update</button>
+            <button className="py-2 px-6 m-2" onClick={() => signOut({callbackUrl: '/'})}>Sign out</button>
         </div>
     );
 }
