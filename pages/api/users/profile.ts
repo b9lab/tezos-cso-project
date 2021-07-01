@@ -4,14 +4,23 @@ import authMiddleware from '../../../src/middlewares/auth';
 import User from '../../../src/models/User';
 import UserService from '../../../src/services/UserService';
 
-type Data = {
+interface ProfileDto {
     id: number,
-    name: string
+    email: string,
+    name: string | null,
+    country: string | null,
+    address: string | null
+}
+
+interface UpdateProfileDto {
+    name: string | null,
+    country: string | null,
+    address: string | null
 }
 
 export default async function profileHandler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<ProfileDto>
 ) {
     const { method } = req;
 
@@ -27,19 +36,26 @@ export default async function profileHandler(
     const userId: number = session.userId;
 
     return new Promise<void>(resolve => {
+
+        const handleSuccess = (user: User) => {
+            const data: ProfileDto = { id: user.id, name: user.name, email: user.email, country: user.country, address: user.address };
+            res.status(200).json(data);
+            resolve();
+        };
+
+        const handleError = (error: Error) => {
+            console.error(error);
+            res.status(500).end(`An error has occurred`);
+            resolve();
+        }
+
         switch (method) {
             case 'GET':
-                userService.getUser(userId).then((user: User) => {
-                    res.status(200).json({ id: user.id, name: user.name })
-                    resolve();
-                }).catch(console.error);
+                userService.getUser(userId).then(handleSuccess).catch(handleError);
                 break;
             case 'PUT':
-                const name = JSON.parse(req.body).name;
-                userService.updateUser(userId, name).then((user: User) => {
-                    res.status(200).json({ id: user.id, name: user.name });
-                    resolve();
-                }).catch(console.error);
+                const body: UpdateProfileDto = JSON.parse(req.body);
+                userService.updateUser(userId, body.name, body.country, body.address).then(handleSuccess).catch(handleError);
                 break;
             default:
                 res.setHeader('Allow', ['GET', 'PUT']);
