@@ -172,7 +172,7 @@ export default class DataHandler {
 
     // Transactions
 
-    getUserTransactionData(): Promise<UserTransactionDto> {
+    getUserTransactionData(): Promise<Array<UserTransactionDto>> {
         return new Promise((resolve, reject) => {
             const data: Array<UserTransactionDto> = [
                 {
