@@ -31,5 +31,10 @@ export const NAV_ITEMS: Array<NavItem> = [
         name: "Profile",
         url: "/profile",
         visibility: NAV_ITEM_VISIBILITY.PRIVATE
+    },
+    {
+        name: "Personal Investment Info",
+        url: "/personal-investment-info",
+        visibility: NAV_ITEM_VISIBILITY.PRIVATE
     }
 ];
