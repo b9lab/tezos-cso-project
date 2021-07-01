@@ -1,42 +1,70 @@
 interface InvestmentNumbersDto {
-    totalInvestment: string,
+    organizationInfo: string,
+    tokenBuyPrice: number, // TEZ
+    tokenSellPrice: number,
+    minimumFundingGoal: number, // TEZ
+    unlockingDate: Date,
+    totalInvestment: number, // TEZ
     investorsCount: number,
     tokensCount: number,
-    unlockingDate: Date
+    burnedTokensCount: number,
+    buySlope: number, // percentage/factor
+    sellSlope: number // percentage/factor
+}
+
+interface CafeInfoDto {
+    baseCurrency: string,
+    totalAllocation: number,
+    stakeAllocation: number,
+    terminationEvents: Array<string>,
+    minimumInvestment: number,
+    initialReserve: number,
+    initialValuation: number,
+    governingRights: string
 }
 
 interface CompanyValuationDto {
-    valuation: string
+    valuation: number // TEZ
 }
 
 interface UserInvestmentDto {
     tezInvested: number,
     tokensOwned: number,
-    ownershipAmount: number
+    tokenBuyPrice: number,
+    tokenSellPrice: number,
 }
 
 interface FundTokenInfoDto {
-    value: string,
+    tokenBuyPrice: number,
     lockPeriod: Date
 }
 
 interface WithdrawTokenInfoDto {
-    value: string,
-    tokensOwned: number
+    tokenSellPrice: number,
+    tokensOwned: number,
+    lockPeriod: Date
 }
 
 interface FundDto {
-    amount: number
+    amount: number,
+    accountAddress: string
 }
 
 interface WithdrawDto {
-    amount: number
+    amount: number,
+    accountAddress: string
+}
+
+enum TransactionType {
+    Funding = 0,
+    Withdrawal = 1
 }
 
 interface UserTransactionDto {
     date: Date,
     tezAmount: number,
-    tokenAmount: number
+    tokenAmount: number,
+    transactionType: TransactionType
 }
 
 export default class DataHandler {
@@ -46,10 +74,17 @@ export default class DataHandler {
     getInvestmentNumbers(): Promise<InvestmentNumbersDto> {
         return new Promise((resolve, reject) => {
             const data: InvestmentNumbersDto = {
-                totalInvestment: '$2,000',
-                investorsCount: 238,
-                tokensCount: 37,
-                unlockingDate: new Date("2021-07-30 12:05:33.574+00")
+                organizationInfo: "Company Info",
+                tokenBuyPrice: 1000,
+                tokenSellPrice: 990,
+                minimumFundingGoal: 125000000,
+                unlockingDate: new Date("2021-07-30 12:05:33.574+00"),
+                totalInvestment: 500000,
+                investorsCount: 5,
+                tokensCount: 500,
+                burnedTokensCount: 0,
+                buySlope: 120,
+                sellSlope: 125
             };
 
             resolve(data);
@@ -59,7 +94,7 @@ export default class DataHandler {
     getCompanyValuation(): Promise<CompanyValuationDto> {
         return new Promise((resolve, reject) => {
             const data: CompanyValuationDto = {
-                valuation: "company valuation test"
+                valuation: 500000
             };
 
             resolve(data);
@@ -68,9 +103,18 @@ export default class DataHandler {
 
     // CAFE details
 
-    getCafeParameters(): Promise<Set<number>> {
+    getCafeParameters(): Promise<CafeInfoDto> {
         return new Promise((resolve, reject) => {
-            const data = new Set([1, 2, 3, 4, 5, 6, 7]);
+            const data: CafeInfoDto = {
+                baseCurrency: "USD",
+                totalAllocation: 600000,
+                stakeAllocation: 100000,
+                terminationEvents: ["event 1", "event 2"],
+                minimumInvestment: 1000,
+                initialReserve: 120000,
+                initialValuation: 10000,
+                governingRights: "gov rights"
+            }
 
             resolve(data);
         });
@@ -81,9 +125,10 @@ export default class DataHandler {
     getUserInvestmentData(): Promise<UserInvestmentDto> {
         return new Promise((resolve, reject) => {
             const data: UserInvestmentDto = {
-                tezInvested: 3.27,
+                tezInvested: 2000,
                 tokensOwned: 2,
-                ownershipAmount: 12.3
+                tokenBuyPrice: 1000,
+                tokenSellPrice: 990
             };
 
             resolve(data);
@@ -95,7 +140,7 @@ export default class DataHandler {
     getFundTokenInfo(): Promise<FundTokenInfoDto> {
         return new Promise((resolve, reject) => {
             const data: FundTokenInfoDto = {
-                value: 'TEZ',
+                tokenBuyPrice: 1000,
                 lockPeriod: new Date("2021-07-30 12:05:33.574+00")
             };
 
@@ -112,8 +157,9 @@ export default class DataHandler {
     getWithdrawTokenInfo(): Promise<WithdrawTokenInfoDto> {
         return new Promise((resolve, reject) => {
             const data: WithdrawTokenInfoDto = {
-                value: 'TEZ',
-                tokensOwned: 2
+                tokenSellPrice: 990,
+                tokensOwned: 2,
+                lockPeriod: new Date("2021-07-30 12:05:33.574+00")
             };
 
             resolve(data);
@@ -128,11 +174,14 @@ export default class DataHandler {
 
     getUserTransactionData(): Promise<UserTransactionDto> {
         return new Promise((resolve, reject) => {
-            const data: UserTransactionDto = {
-                date: new Date("2021-07-30 12:05:33.574+00"),
-                tezAmount: 12,
-                tokenAmount: 27
-            };
+            const data: Array<UserTransactionDto> = [
+                {
+                    date: new Date("2021-07-29 12:05:33.574+00"),
+                    tezAmount: 2000,
+                    tokenAmount: 1,
+                    transactionType: TransactionType.Funding
+                }
+            ]
 
             resolve(data);
         });
