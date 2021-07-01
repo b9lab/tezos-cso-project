@@ -6,9 +6,9 @@ export default function Transactions() {
     return (
         <>
             <div className="mb-4 font-bold">Personal Investment Info page</div>
-            { data?.map((item: any) => {
+            { data?.map((item: any, index: number) => {
                 return (
-                    <div>
+                    <div key={index}>
                         date: {item?.date} <br/>
                         tez amount: {item?.tezAmount} <br/>
                         token amount: {item?.tokenAmount} <br/>
