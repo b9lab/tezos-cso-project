@@ -13,9 +13,16 @@ export default class UserService {
         return this.userDao.where('id', id).first();
     }
 
-    async updateUser(id: number, name: string): Promise<User> {
-        const user = await this.userDao.where('id', id).update({ name }).returning(['id','name']);
-        return user[0];
+    async updateUser(id: number, name: string | null, country: string | null, address: string | null): Promise<User> {
+        var user: User;
+
+        if (name != null || country != null || address != null) {
+            user = await this.userDao.where('id', id).update({ name, country, address }).returning(['id', 'email', 'name', 'country', 'address']);
+        } else {
+            user = await this.getUser(id);
+        }
+
+        return user;
     }
 
 }
