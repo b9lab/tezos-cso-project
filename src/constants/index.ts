@@ -18,6 +18,11 @@ export const NAV_ITEMS: Array<NavItem> = [
         visibility: NAV_ITEM_VISIBILITY.PUBLIC
     },
     {
+        name: "General Investment Info",
+        url: "/general-investment-info",
+        visibility: NAV_ITEM_VISIBILITY.PUBLIC
+    },
+    {
         name: "Sign in",
         url: "/sign-in",
         visibility: NAV_ITEM_VISIBILITY.ANONYMOUS
@@ -25,6 +30,11 @@ export const NAV_ITEMS: Array<NavItem> = [
     {
         name: "Profile",
         url: "/profile",
+        visibility: NAV_ITEM_VISIBILITY.PRIVATE
+    },
+    {
+        name: "Personal Investment Info",
+        url: "/personal-investment-info",
         visibility: NAV_ITEM_VISIBILITY.PRIVATE
     }
 ];
