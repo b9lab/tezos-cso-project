@@ -1,5 +1,5 @@
 import { useSession } from 'next-auth/client';
-import Link from 'next/link'
+import Link from 'next/link';
 import { NAV_ITEM_VISIBILITY } from '../constants';
 import NavItem from '../utils/NavItem';
 
@@ -8,7 +8,7 @@ type NavProps = {
 }
 
 function Nav(props: NavProps) {
-    const [ session, loading ] = useSession();
+    const [ session ] = useSession();
     
     return (
         <nav>
