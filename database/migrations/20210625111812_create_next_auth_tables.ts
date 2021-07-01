@@ -38,6 +38,8 @@ export async function up(knex: Knex): Promise<void> {
             email          VARCHAR(255),
             email_verified TIMESTAMPTZ,
             image          TEXT,
+            country        VARCHAR(255),
+            address          VARCHAR(255),
             created_at     TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
             updated_at     TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
             PRIMARY KEY (id)
