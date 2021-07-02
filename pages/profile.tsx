@@ -1,6 +1,8 @@
 import { signOut } from 'next-auth/client';
-import { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import useSWR from 'swr';
+import Button from '../src/components/Button';
+import Input from '../src/components/Input';
 
 const apiEndpoint = '/api/users/profile';
 
@@ -32,35 +34,11 @@ export default function Profile() {
 
     return (
         <div className="flex flex-col items-center my-20 w-full">
-            <label className="mx-2 w-full">Email</label>
-            <input
-                className="p-2 m-2 w-full rounded border text-gray-500 cursor-not-allowed focus:outline-none"
-                type="text"
-                value={emailStored}
-                readOnly
-            />
-            <label className="mx-2 w-full">Username</label>
-            <input
-                className="rounded p-2 m-2 border w-full"
-                type="text"
-                value={inputName ?? nameStored}
-                onChange={handlers.name}
-            />
-            <label className="mx-2 w-full">Country</label>
-            <input
-                className="rounded p-2 m-2 border w-full"
-                type="text"
-                value={inputCountry ?? countryStored}
-                onChange={handlers.country}
-            />
-            <label className="mx-2 w-full">Address</label>
-            <input
-                className="rounded p-2 m-2 border w-full"
-                type="text"
-                value={inputAddress ?? addressStored}
-                onChange={handlers.address}
-            />
-            <button className="max-w-sm rounded bg-gray-400 py-2 px-6 m-2 text-white" onClick={handlers.update}>Update</button>
+            <Input value={emailStored} readOnly={true} label="Email"/>
+            <Input value={inputName ?? nameStored} handler={handlers.name} label="Username"/>
+            <Input value={inputCountry ?? countryStored} handler={handlers.country} label="Country"/>
+            <Input value={inputAddress ?? addressStored} handler={handlers.address} label="Address"/>
+            <Button handler={handlers.update}>Update</Button>
             <button className="py-2 px-6 m-2" onClick={handlers.signOut}>Sign out</button>
         </div>
     );
