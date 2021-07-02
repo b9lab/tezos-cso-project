@@ -12,6 +12,7 @@ export default NextAuth({
                     pass: process.env.EMAIL_SERVER_PASSWORD || ''
                 }
             },
+            from: process.env.EMAIL_FROM || ''
         }),
         Providers.Google({
             clientId: process.env.GOOGLE_CLIENT_ID,
