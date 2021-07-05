@@ -24,8 +24,7 @@ export default function Profile() {
     const emailStored = data.email;
 
     const updateUser = (user: any) => fetch(apiEndpoint, { method: 'PUT', body: JSON.stringify(user)})
-        .then(res => res.json())
-        .then(user => setInputName(user.name));
+        .then(res => res.json());
 
     const handlers = {
         name: (event: ChangeEvent<HTMLInputElement>): void => setInputName(event.target.value),
