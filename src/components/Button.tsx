@@ -1,14 +1,23 @@
 type ButtonProps = {
-    children: string,
+    icon?: string,
+    children?: string,
     handler: any
 };
 
 function Button(props: ButtonProps) {
+    var classes: string = "max-w-sm rounded bg-gray-400 text-white hover:bg-gray-600 my-2 ";
+    if (props.icon) {
+        classes += "p-2 w-10 h-10";
+    } else {
+        classes += "py-2 px-6";
+    }
+
     return (
-        <button 
-            className="max-w-sm rounded bg-gray-400 py-2 px-6 m-2 text-white hover:bg-gray-600" 
+        <button
+            className={classes}
             onClick={props.handler}>
-            {props.children}
+            { props.icon ? <img src={props.icon}/> : null }
+            { props.children }
         </button>
     );
 }

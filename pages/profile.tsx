@@ -3,6 +3,7 @@ import React, { ChangeEvent, useState } from 'react';
 import useSWR from 'swr';
 import Button from '../src/components/Button';
 import Input from '../src/components/Input';
+import WalletHandler from '../src/services/WalletHandler';
 
 const apiEndpoint = '/api/users/profile';
 
@@ -12,6 +13,8 @@ export default function Profile() {
     const [inputCountry, setInputCountry] = useState<string>();
     const [inputAddress, setInputAddress] = useState<string>();
 
+    const walletHandler = new WalletHandler();
+
     if (error) return "An error has occurred.";
     if (!data) return "Loading...";
 
@@ -20,16 +23,19 @@ export default function Profile() {
     const addressStored = data.address ?? '';
     const emailStored = data.email;
 
+    const updateUser = (user: any) => fetch(apiEndpoint, { method: 'PUT', body: JSON.stringify(user)})
+        .then(res => res.json());
+
     const handlers = {
         name: (event: ChangeEvent<HTMLInputElement>): void => setInputName(event.target.value),
         country: (event: ChangeEvent<HTMLInputElement>): void => setInputCountry(event.target.value),
         address: (event: ChangeEvent<HTMLInputElement>): void => setInputAddress(event.target.value),
         signOut: () => signOut({callbackUrl: '/'}),
-        update: () => {
-            fetch(apiEndpoint, { method: 'PUT', body: JSON.stringify({ name: inputName, country: inputCountry, address: inputAddress})}).then(res => res.json()).then(user => {
-                setInputName(user.name);
-            });
-        }
+        update: () => updateUser({ name: inputName, country: inputCountry, address: inputAddress}),
+        fetchAndSaveAddress: () => walletHandler.getAddress().then(address => {
+            setInputAddress(address);
+            updateUser({ address: address });
+        })
     };
 
     return (
@@ -37,7 +43,11 @@ export default function Profile() {
             <Input value={emailStored} readOnly={true} label="Email"/>
             <Input value={inputName ?? nameStored} handler={handlers.name} label="Username"/>
             <Input value={inputCountry ?? countryStored} handler={handlers.country} label="Country"/>
-            <Input value={inputAddress ?? addressStored} handler={handlers.address} label="Address"/>
+            <div className="flex w-full items-end">
+                <Input value={inputAddress ?? addressStored} handler={handlers.address} label="Address"/>
+                <Button handler={handlers.fetchAndSaveAddress} icon="/refresh-icon.svg"/>
+            </div>
+            
             <Button handler={handlers.update}>Update</Button>
             <button className="py-2 px-6 m-2" onClick={handlers.signOut}>Sign out</button>
         </div>
