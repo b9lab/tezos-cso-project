@@ -1,7 +1,12 @@
 import useSWR from "swr";
+import DataHandler from "../src/services/DataHandler";
 
-export default function CafeDetails() {
-    const { data, error } = useSWR("api/cafe-parameters");
+type CafeDetailsProps = {
+    initialData: any
+};
+
+export default function CafeDetails(props: CafeDetailsProps) {
+    const { data, error } = useSWR("api/cafe-parameters", { initialData: props.initialData });
 
     if (!data || error) return <>{error}</>
     
@@ -20,4 +25,10 @@ export default function CafeDetails() {
             </div>
         </>
     );
+}
+
+export async function getStaticProps() {
+    const dataHandler = new DataHandler();
+    const initialData = await dataHandler.getCafeParameters().catch(console.error);
+    return { props: { initialData } };
 }
