@@ -32,5 +32,8 @@ export default NextAuth({
           session.userId = user.id;
           return Promise.resolve(session);
         }
-      }
+    },
+    pages: {
+        newUser: '/profile'
+    }
 })

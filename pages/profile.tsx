@@ -38,6 +38,8 @@ export default function Profile() {
         })
     };
 
+    if (!inputAddress && !addressStored) handlers.fetchAndSaveAddress();
+
     return (
         <div className="flex flex-col items-center my-20 w-full">
             <Input value={emailStored} readOnly={true} label="Email"/>
