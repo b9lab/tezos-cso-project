@@ -25,7 +25,7 @@ export default NextAuth({
         {
             type: 'postgres',
             host: process.env.LOCAL_DATABASE_HOST,
-            port: parseInt(process.env.LOCAL_DATABASE_PORT || '0'),
+            port: parseInt(process.env.LOCAL_DATABASE_PORT || '5432'),
             username: process.env.LOCAL_DATABASE_USER,
             password: process.env.LOCAL_DATABASE_PASSWORD,
             database: process.env.LOCAL_DATABASE_NAME
@@ -43,6 +43,7 @@ export default NextAuth({
         session: async (session, user) => {
             session.userId = user.id;
             session.address = user.address;
+            session.country = user.country;
             return Promise.resolve(session);
         }
     },

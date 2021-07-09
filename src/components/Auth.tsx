@@ -15,8 +15,13 @@ export default function Auth(props: AuthProps) {
     }
 
     if (data?.user) {
+        let contextData: AuthContextData = {
+            username: data.user.name,
+            address: data.address,
+            country: data.country
+        }
         return (
-            <AuthContext.Provider value={data.address}>
+            <AuthContext.Provider value={contextData}>
                 {props.children}
             </AuthContext.Provider>
         );
@@ -26,4 +31,14 @@ export default function Auth(props: AuthProps) {
     }
 }
 
-export const AuthContext = React.createContext<string>("");
+export type AuthContextData = {
+    username: string,
+    address: string,
+    country: string
+}
+
+export const AuthContext = React.createContext<AuthContextData>({
+    username: "",
+    address: "",
+    country: ""
+});
