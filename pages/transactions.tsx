@@ -1,10 +1,13 @@
+import { useContext } from "react";
+import { AuthContext } from "../src/components/Auth";
 import DataHandler from "../src/services/DataHandler";
 import { UserTransactionDto } from "../src/utils/dtos";
 import { useData } from "../src/utils/hooks";
 
 export default function Transactions() {
+    const address = useContext(AuthContext);
     const dataHandler = new DataHandler();
-    const data: UserTransactionDto[] = useData(dataHandler.getUserTransactionData);
+    const data: UserTransactionDto[] = useData(dataHandler.getUserTransactionData, address);
     
     return (
         <>

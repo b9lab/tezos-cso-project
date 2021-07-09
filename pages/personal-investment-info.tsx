@@ -1,12 +1,15 @@
 import Link from "next/link";
+import { useContext } from "react";
+import { AuthContext } from "../src/components/Auth";
 import DataHandler from "../src/services/DataHandler";
 import { UserInvestmentDto } from "../src/utils/dtos";
 import { useData } from "../src/utils/hooks";
 
 export default function PersonalInvestmentInfo() {
+    const address = useContext(AuthContext);
     const dataHandler = new DataHandler();
-    const data: UserInvestmentDto = useData(dataHandler.getUserInvestmentData);
-    
+    const data: UserInvestmentDto = useData(dataHandler.getUserInvestmentData, address);
+
     return (
         <>
             <div className="mb-4 font-bold">Personal Investment Info page</div>

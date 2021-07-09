@@ -15,9 +15,15 @@ export default function Auth(props: AuthProps) {
     }
 
     if (data?.user) {
-        return props.children;
+        return (
+            <AuthContext.Provider value={data.address}>
+                {props.children}
+            </AuthContext.Provider>
+        );
     } else {
         signIn('', {callbackUrl: props.callbackUrl});
         return null;
     }
 }
+
+export const AuthContext = React.createContext<string>("");
