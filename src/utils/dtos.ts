@@ -3,7 +3,7 @@ export interface InvestmentNumbersDto {
     tokenBuyPrice: number, // TEZ
     tokenSellPrice: number,
     minimumFundingGoal: number, // TEZ
-    unlockingDate: Date,
+    unlockingDate: string,
     totalInvestment: number, // TEZ
     investorsCount: number,
     tokensCount: number,
@@ -36,13 +36,13 @@ export interface UserInvestmentDto {
 
 export interface FundTokenInfoDto {
     tokenBuyPrice: number,
-    lockPeriod: Date
+    lockPeriod: string
 }
 
 export interface WithdrawTokenInfoDto {
     tokenSellPrice: number,
     tokensOwned: number,
-    lockPeriod: Date
+    lockPeriod: string
 }
 
 export interface FundDto {
@@ -61,7 +61,7 @@ export enum TransactionType {
 }
 
 export interface UserTransactionDto {
-    date: Date,
+    date: string,
     tezAmount: number,
     tokenAmount: number,
     transactionType: TransactionType

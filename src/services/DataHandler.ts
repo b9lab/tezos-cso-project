@@ -22,7 +22,7 @@ export default class DataHandler {
                 tokenBuyPrice: 1000,
                 tokenSellPrice: 990,
                 minimumFundingGoal: 125000000,
-                unlockingDate: new Date("2021-07-30 12:05:33.574+00"),
+                unlockingDate: "2021-07-30 12:05:33.574+00",
                 totalInvestment: 500000,
                 investorsCount: 5,
                 tokensCount: 500,
@@ -85,7 +85,7 @@ export default class DataHandler {
         return new Promise((resolve, reject) => {
             const data: FundTokenInfoDto = {
                 tokenBuyPrice: 1000,
-                lockPeriod: new Date("2021-07-30 12:05:33.574+00")
+                lockPeriod: "2021-07-30 12:05:33.574+00"
             };
 
             resolve(data);
@@ -103,7 +103,7 @@ export default class DataHandler {
             const data: WithdrawTokenInfoDto = {
                 tokenSellPrice: 990,
                 tokensOwned: 2,
-                lockPeriod: new Date("2021-07-30 12:05:33.574+00")
+                lockPeriod: "2021-07-30 12:05:33.574+00"
             };
 
             resolve(data);
@@ -120,7 +120,7 @@ export default class DataHandler {
         return new Promise((resolve, reject) => {
             const data: Array<UserTransactionDto> = [
                 {
-                    date: new Date("2021-07-29 12:05:33.574+00"),
+                    date: "2021-07-29 12:05:33.574+00",
                     tezAmount: 2000,
                     tokenAmount: 1,
                     transactionType: TransactionType.Funding

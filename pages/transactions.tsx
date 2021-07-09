@@ -1,7 +1,10 @@
-import useSWR from "swr";
+import DataHandler from "../src/services/DataHandler";
+import { UserTransactionDto } from "../src/utils/dtos";
+import { useData } from "../src/utils/hooks";
 
 export default function Transactions() {
-    const { data } = useSWR("api/users/transactions");
+    const dataHandler = new DataHandler();
+    const data: UserTransactionDto[] = useData(dataHandler.getUserTransactionData);
     
     return (
         <>
