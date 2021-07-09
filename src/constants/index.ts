@@ -5,6 +5,8 @@ export const SITE_TITLE: string = 'Tezos CSO';
 export const SITE_DESCRIPTION: string = 'Site description';
 export const SITE_IMAGE: string = '';
 
+export const CONTRACT_ADDRESS: string = process.env.CONTRACT_ADDRESS || 'KT1HAzXAJKv2L1orAET65gYyoZvoJtPCdPnz';
+
 export enum NAV_ITEM_VISIBILITY {
     PUBLIC,
     PRIVATE,
