@@ -7,6 +7,8 @@ export const SITE_IMAGE: string = '';
 
 export const CONTRACT_ADDRESS: string = process.env.CONTRACT_ADDRESS || 'KT1HAzXAJKv2L1orAET65gYyoZvoJtPCdPnz';
 
+export const FUND_MULTIPLIER: number = 100000;
+
 export enum NAV_ITEM_VISIBILITY {
     PUBLIC,
     PRIVATE,

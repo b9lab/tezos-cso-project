@@ -3,7 +3,8 @@ type InputProps = {
     placeholder?: string,
     readOnly?: boolean,
     handler?: any,
-    label?: string
+    label?: string,
+    pattern?: string
 };
 
 function Input(props: InputProps) {
@@ -20,6 +21,7 @@ function Input(props: InputProps) {
                 readOnly={props.readOnly}
                 placeholder={props.placeholder}
                 onChange={props.handler}
+                pattern={props.pattern}
             />
         </div>
     );
