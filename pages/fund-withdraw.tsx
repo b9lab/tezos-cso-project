@@ -1,33 +1,33 @@
-import useSWR from "swr";
+import DataHandler from "../src/services/DataHandler";
+import { FundTokenInfoDto, WithdrawTokenInfoDto } from "../src/utils/dtos";
+import { useData } from "../src/utils/hooks";
 
 function FundTokenInfo() {
-    const { data, error } = useSWR("api/users/fund-token-info");
-
-    if (!data || error) return <>{error}</>
+    const dataHandler = new DataHandler();
+    const data: FundTokenInfoDto = useData(dataHandler.getFundTokenInfo);
 
     return (
         <div className="mb-4">
             <h1 className="font-bold">Fund token info:</h1>
             <div>
-                token buy price: {data.tokenBuyPrice} <br/>
-                lock period: {data.lockPeriod}
+                token buy price: {data?.tokenBuyPrice} <br/>
+                lock period: {data?.lockPeriod}
             </div>
         </div>
     );
 }
 
 function WithdrawTokenInfo() {
-    const { data, error } = useSWR("api/users/withdraw-token-info");
-
-    if (!data || error) return <>{error}</>
+    const dataHandler = new DataHandler();
+    const data: WithdrawTokenInfoDto = useData(dataHandler.getWithdrawTokenInfo);
 
     return (
         <div className="mb-4">
             <h1 className="font-bold">Withdraw token info:</h1>
             <div>
-                token sell price: {data.tokenSellPrice} <br/>
-                tokens owned: {data.tokensOwned} <br/>
-                lock period: {data.lockPeriod}
+                token sell price: {data?.tokenSellPrice} <br/>
+                tokens owned: {data?.tokensOwned} <br/>
+                lock period: {data?.lockPeriod}
             </div>
         </div>
     );

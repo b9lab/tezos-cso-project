@@ -1,8 +1,11 @@
 import Link from "next/link";
-import useSWR from "swr";
+import DataHandler from "../src/services/DataHandler";
+import { UserInvestmentDto } from "../src/utils/dtos";
+import { useData } from "../src/utils/hooks";
 
 export default function PersonalInvestmentInfo() {
-    const { data } = useSWR("api/users/investment-data");
+    const dataHandler = new DataHandler();
+    const data: UserInvestmentDto = useData(dataHandler.getUserInvestmentData);
     
     return (
         <>
