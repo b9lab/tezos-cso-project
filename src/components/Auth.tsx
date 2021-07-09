@@ -15,9 +15,30 @@ export default function Auth(props: AuthProps) {
     }
 
     if (data?.user) {
-        return props.children;
+        let contextData: AuthContextData = {
+            username: data.user.name,
+            address: data.address,
+            country: data.country
+        }
+        return (
+            <AuthContext.Provider value={contextData}>
+                {props.children}
+            </AuthContext.Provider>
+        );
     } else {
         signIn('', {callbackUrl: props.callbackUrl});
         return null;
     }
 }
+
+export type AuthContextData = {
+    username: string,
+    address: string,
+    country: string
+}
+
+export const AuthContext = React.createContext<AuthContextData>({
+    username: "",
+    address: "",
+    country: ""
+});

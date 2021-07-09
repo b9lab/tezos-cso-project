@@ -1,10 +1,13 @@
+import { useContext } from "react";
+import { AuthContext, AuthContextData } from "../src/components/Auth";
 import DataHandler from "../src/services/DataHandler";
 import { FundTokenInfoDto, WithdrawTokenInfoDto } from "../src/utils/dtos";
 import { useData } from "../src/utils/hooks";
 
 function FundTokenInfo() {
+    const context: AuthContextData = useContext(AuthContext);
     const dataHandler = new DataHandler();
-    const data: FundTokenInfoDto = useData(dataHandler.getFundTokenInfo);
+    const data: FundTokenInfoDto = useData(dataHandler.getFundTokenInfo, context.address);
 
     return (
         <div className="mb-4">
@@ -18,8 +21,9 @@ function FundTokenInfo() {
 }
 
 function WithdrawTokenInfo() {
+    const context: AuthContextData = useContext(AuthContext);
     const dataHandler = new DataHandler();
-    const data: WithdrawTokenInfoDto = useData(dataHandler.getWithdrawTokenInfo);
+    const data: WithdrawTokenInfoDto = useData(dataHandler.getWithdrawTokenInfo, context.address);
 
     return (
         <div className="mb-4">
