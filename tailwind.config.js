@@ -1,6 +1,6 @@
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   theme: {
     screens: {
       'sm': '640px',
@@ -9,10 +9,13 @@ module.exports = {
       'xl': '1280px',
       '2xl': '1536px',
     },
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
+    extend: {
+      colors: {
+        'dark-gray': '#484848',
+        'accent-1': '#29CAB4',
+        'accent-2': '#9778FF',
+        'error': '#FFBE2E'
+      }
+    },
+  }
 }
