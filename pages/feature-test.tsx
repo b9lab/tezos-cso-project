@@ -12,8 +12,7 @@ export default function Page() {
                     At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
                 </div>
             </div>
-
-            <Button handler={() => {}}>CTA Button</Button>
+            <Button handler={() => {}} color="accent-1">CTA Button 1</Button>
 
             <div className="my-4">
                 <h2>Subheadline H2</h2>
@@ -32,6 +31,13 @@ export default function Page() {
             <div className="my-4">
                 <h2 className="mb-4">Form Input</h2>
                 <Input value="Text input text" handler={() => {}} label="Fieldname"/>
+            </div>
+
+            <h2 className="mb-4">Buttons</h2>
+            <div className="flex justify-between">
+                <Button handler={() => {}} color="accent-1">CTA Button 1</Button>
+                <Button handler={() => {}}>Cancel Button</Button>
+                <Button handler={() => {}} color="accent-2">CTA Button 2</Button>
             </div>
         </div>
     );
