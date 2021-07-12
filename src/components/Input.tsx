@@ -8,12 +8,12 @@ type InputProps = {
 };
 
 function Input(props: InputProps) {
-    var classes: string = "p-2 my-2 w-full rounded border ";
+    var classes: string = "p-2 my-2 w-full border border-dark-gray";
     if (props.readOnly) classes += "text-gray-500 cursor-not-allowed focus:outline-none";
 
     return (
         <div className="w-full">
-            {props.label ? <label className="mx-2 w-full">{props.label}</label> : null}
+            {props.label ? <label className="w-full">{props.label}</label> : null}
             <input
                 className={classes}
                 type="text"

@@ -8,7 +8,7 @@ type LayoutProps = {
 
 function Layout(props: LayoutProps) {
     return (
-        <>
+        <div className="text-dark-gray">
             <Head/>
             <Header/>
             <main>
@@ -16,7 +16,7 @@ function Layout(props: LayoutProps) {
                     {props.children}
                 </div>
             </main>
-        </>
+        </div>
     );
 }
 

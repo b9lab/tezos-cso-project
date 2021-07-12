@@ -5,7 +5,7 @@ type ButtonProps = {
 };
 
 function Button(props: ButtonProps) {
-    var classes: string = "max-w-sm rounded bg-gray-400 text-white hover:bg-gray-600 my-2 ";
+    var classes: string = "max-w-sm border-2 border-dark-gray hover:bg-dark-gray hover:text-white my-2 ";
     if (props.icon) {
         classes += "p-2 w-10 h-10";
     } else {
@@ -17,7 +17,7 @@ function Button(props: ButtonProps) {
             className={classes}
             onClick={props.handler}>
             { props.icon ? <img src={props.icon}/> : null }
-            { props.children }
+            <h3>{ props.children }</h3>
         </button>
     );
 }
