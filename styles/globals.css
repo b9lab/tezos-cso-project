@@ -47,7 +47,7 @@
 }
 
 .hover-trigger {
-  @apply bg-none text-dark-gray;
+  @apply bg-none;
 }
 
 .hover-trigger:hover {

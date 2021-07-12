@@ -1,4 +1,5 @@
 import { useSession } from 'next-auth/client';
+import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 import { NAV_ITEM_POSITION, NAV_ITEM_VISIBILITY } from '../constants';
 import NavItem from '../utils/NavItem';
@@ -29,6 +30,7 @@ function renderSubMenu(children: Array<NavItem> | undefined) {
 
 function Nav(props: NavProps) {
     const [ session ] = useSession();
+    const router = useRouter();
 
     const navItemFilter = (item: NavItem) => item.visibility == NAV_ITEM_VISIBILITY.PUBLIC ||
         (item.visibility == NAV_ITEM_VISIBILITY.PRIVATE && session) ||
@@ -36,7 +38,8 @@ function Nav(props: NavProps) {
 
     const navItemMap = (item: NavItem, index: number) => {
         let classes = "inline-block px-4 py-4 relative hover-trigger ";
-        if (item.position && item.position == NAV_ITEM_POSITION.RIGHT) classes += "float-right m-auto";
+        if (item.position && item.position == NAV_ITEM_POSITION.RIGHT) classes += "float-right m-auto ";
+        classes += (item.url == router.pathname) ? "text-accent-1 " : "text-dark-gray ";
 
         return (
             <li className={classes} key={"menu_item_" + index}>
