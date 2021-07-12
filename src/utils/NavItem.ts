@@ -4,7 +4,8 @@ type NavItem = {
     name: string,
     url: string,
     visibility: NAV_ITEM_VISIBILITY,
-    position?: NAV_ITEM_POSITION // default left
+    position?: NAV_ITEM_POSITION, // default left
+    children?: Array<NavItem> // a NavItem child inherits the visibility from the parent
 }
 
 export default NavItem;

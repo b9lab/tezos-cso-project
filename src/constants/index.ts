@@ -22,12 +22,34 @@ export enum NAV_ITEM_POSITION {
 
 export const NAV_ITEMS: Array<NavItem> = [
     {
-        name: "Home",
+        name: "CSO Platform",
         url: "/",
         visibility: NAV_ITEM_VISIBILITY.PUBLIC
     },
     {
-        name: "General Investment Info",
+        name: "CAFE",
+        url: "/cafe-info",
+        visibility: NAV_ITEM_VISIBILITY.PUBLIC,
+        children: [
+            {
+                name: "What is a CAFE",
+                url: "/cafe-info",
+                visibility: NAV_ITEM_VISIBILITY.PUBLIC
+            },
+            {
+                name: "CAFE Parameters",
+                url: "/cafe-details",
+                visibility: NAV_ITEM_VISIBILITY.PUBLIC
+            },
+            {
+                name: "Investment Whitepaper",
+                url: "/cafe-info",
+                visibility: NAV_ITEM_VISIBILITY.PUBLIC
+            },
+        ]
+    },
+    {
+        name: "Investment",
         url: "/general-investment-info",
         visibility: NAV_ITEM_VISIBILITY.PUBLIC
     },
