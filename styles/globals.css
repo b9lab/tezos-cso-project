@@ -40,3 +40,8 @@
   font-size: 24px;
   line-height: 29px;
 }
+
+.highlight {
+  @apply w-max px-4 -ml-4;
+  background: linear-gradient(rgba(255,255,255,0) 30%, #29CAB47F 30%);
+}
