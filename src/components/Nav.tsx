@@ -1,6 +1,6 @@
 import { useSession } from 'next-auth/client';
 import Link from 'next/link';
-import { NAV_ITEM_VISIBILITY } from '../constants';
+import { NAV_ITEM_POSITION, NAV_ITEM_VISIBILITY } from '../constants';
 import NavItem from '../utils/NavItem';
 
 type NavProps = {
@@ -17,8 +17,11 @@ function Nav(props: NavProps) {
                         (item.visibility == NAV_ITEM_VISIBILITY.PRIVATE && session) ||
                         (item.visibility == NAV_ITEM_VISIBILITY.ANONYMOUS && !session)
                 ).map((item: NavItem, index: number) => {
+                    let classes = "inline m-2 ";
+                    if (item.position && item.position == NAV_ITEM_POSITION.RIGHT) classes += "float-right m-auto";
+
                     return (
-                        <li className="inline m-2" key={index}>
+                        <li className={classes} key={index}>
                             <Link href={item.url}>
                                 <a>{item.name}</a>
                             </Link>

@@ -15,6 +15,11 @@ export enum NAV_ITEM_VISIBILITY {
     ANONYMOUS // visible only if not logged in
 };
 
+export enum NAV_ITEM_POSITION {
+    LEFT,
+    RIGHT
+};
+
 export const NAV_ITEMS: Array<NavItem> = [
     {
         name: "Home",
@@ -29,7 +34,8 @@ export const NAV_ITEMS: Array<NavItem> = [
     {
         name: "Sign in",
         url: "/sign-in",
-        visibility: NAV_ITEM_VISIBILITY.ANONYMOUS
+        visibility: NAV_ITEM_VISIBILITY.ANONYMOUS,
+        position: NAV_ITEM_POSITION.RIGHT
     },
     {
         name: "Profile",
