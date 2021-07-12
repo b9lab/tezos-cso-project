@@ -10,6 +10,7 @@ import {
     WithdrawDto, 
     WithdrawTokenInfoDto 
 } from "../utils/dtos";
+import { contract } from '../../tezos-app-project';
 
 export default class DataHandler {
 
@@ -93,7 +94,7 @@ export default class DataHandler {
     }
 
     fund(data: FundDto) {
-        console.log(data);
+        contract.buy(data.amount);
     }
 
     // Withdraw
@@ -111,7 +112,7 @@ export default class DataHandler {
     }
 
     withdraw(data: WithdrawDto) {
-        console.log(data);
+        contract.sell(data.amount);
     }
 
     // Transactions
