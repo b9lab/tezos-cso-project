@@ -61,3 +61,7 @@
 .hover-trigger:hover .hover-target {
   @apply flex z-10;
 }
+
+.indent {
+  text-indent: 2em;
+}
