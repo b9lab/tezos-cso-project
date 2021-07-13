@@ -1,9 +1,24 @@
 import React from "react";
 import Button from "../src/components/Button";
+import ChartWrapper from "../src/components/ChartWrapper";
 import Input from "../src/components/Input";
 
-
 export default function Page() {
+    const options = {
+        chart: {
+            id: "basic-bar"
+        },
+        xaxis: {
+            categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
+        }
+    };
+    const series = [
+        {
+            name: "series-1",
+            data: [30, 40, 45, 50, 49, 60, 70, 91]
+        }
+    ];
+    
     return (
         <div>
             <div className="my-4">
@@ -33,12 +48,15 @@ export default function Page() {
                 <Input value="Text input text" handler={() => {}} label="Fieldname"/>
             </div>
 
-            <h2 className="mb-4">Buttons</h2>
+            <h2 className="my-4">Buttons</h2>
             <div className="flex justify-between">
                 <Button handler={() => {}} color="accent-1">CTA Button 1</Button>
                 <Button handler={() => {}}>Cancel Button</Button>
                 <Button handler={() => {}} color="accent-2">CTA Button 2</Button>
             </div>
+
+            <h2 className="my-4">Charts</h2>
+            <ChartWrapper options={options} series={series} type="bar"/>
         </div>
     );
 }
