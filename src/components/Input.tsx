@@ -8,7 +8,7 @@ type InputProps = {
 };
 
 function Input(props: InputProps) {
-    var classes: string = "p-2 my-2 w-full border border-dark-gray";
+    var classes: string = "p-2 my-2 w-full border border-dark-gray rounded ";
     if (props.readOnly) classes += "text-gray-500 cursor-not-allowed focus:outline-none";
 
     return (

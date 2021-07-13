@@ -55,9 +55,9 @@
 }
 
 .hover-trigger .hover-target {
-  @apply hidden
+  @apply hidden;
 }
 
 .hover-trigger:hover .hover-target {
-  @apply flex
+  @apply flex z-10;
 }

@@ -1,3 +1,4 @@
+import Button from "../components/Button";
 import NavItem from "../utils/NavItem";
 
 export const SITE_NAME: string = 'Tezos CSO';
@@ -57,12 +58,14 @@ export const NAV_ITEMS: Array<NavItem> = [
         name: "Sign in",
         url: "/sign-in",
         visibility: NAV_ITEM_VISIBILITY.ANONYMOUS,
-        position: NAV_ITEM_POSITION.RIGHT
+        position: NAV_ITEM_POSITION.RIGHT,
+        custom: () => {return (<Button handler={() => {}} color="accent-1">Sign in</Button>)}
     },
     {
         name: "Profile",
         url: "/profile",
-        visibility: NAV_ITEM_VISIBILITY.PRIVATE
+        visibility: NAV_ITEM_VISIBILITY.PRIVATE,
+        position: NAV_ITEM_POSITION.RIGHT
     },
     {
         name: "Personal Investment Info",

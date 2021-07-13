@@ -2,12 +2,18 @@ type ButtonProps = {
     handler: any,
     icon?: string,
     children?: string,
-    color?: string
+    color?: string,
+    outline?: boolean
 };
 
 function Button(props: ButtonProps) {
     var color: string = props.color ?? 'dark-gray';
-    var classes: string = `max-w-sm border-2 border-${color} text-${color} hover:bg-${color} hover:text-white my-2 `;
+    var classes: string = "max-w-sm my-2 rounded outline-none ";
+    if (props.outline) {
+        classes += `border-2 border-${color} text-${color} hover:bg-${color} hover:text-white `;
+    } else {
+        classes += `bg-${color} text-white hover:bg-white hover:text-${color} shadow-2xl `
+    }
     if (props.icon) {
         classes += "p-2 w-10 h-10";
     } else {
