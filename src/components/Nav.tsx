@@ -37,17 +37,22 @@ function Nav(props: NavProps) {
         (item.visibility == NAV_ITEM_VISIBILITY.ANONYMOUS && !session);
 
     const navItemMap = (item: NavItem, index: number) => {
-        let classes = "inline-block px-4 py-4 relative hover-trigger ";
+        let classes = "inline-block relative cursor-pointer ";
+        if (!item.custom) classes += "hover-trigger p-4 ";
         if (item.position && item.position == NAV_ITEM_POSITION.RIGHT) classes += "float-right m-auto ";
         classes += (item.url == router.pathname) ? "text-accent-1 " : "text-dark-gray ";
 
         return (
-            <li className={classes} key={"menu_item_" + index}>
-                <Link href={item.url}>
-                    <a>{item.name}</a>
-                </Link>
-                { renderSubMenu(item.children) }
-            </li>
+            <Link href={item.url} key={"menu_item_" + index}>
+                <li className={classes}>
+                    {
+                        item.custom ? 
+                        item.custom() : 
+                        <a>{item.name}</a>
+                    }
+                    { renderSubMenu(item.children) }
+                </li>
+            </Link>
         );
     }
     

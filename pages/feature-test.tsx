@@ -27,7 +27,7 @@ export default function Page() {
                     At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
                 </div>
             </div>
-            <Button handler={() => {}} color="accent-1">CTA Button 1</Button>
+            <Button handler={() => {}} color="accent-1" outline>CTA Button 1</Button>
 
             <div className="my-4">
                 <h2>Subheadline H2</h2>
@@ -51,7 +51,7 @@ export default function Page() {
             <h2 className="my-4">Buttons</h2>
             <div className="flex justify-between">
                 <Button handler={() => {}} color="accent-1">CTA Button 1</Button>
-                <Button handler={() => {}}>Cancel Button</Button>
+                <Button handler={() => {}} outline>Cancel Button</Button>
                 <Button handler={() => {}} color="accent-2">CTA Button 2</Button>
             </div>
 
