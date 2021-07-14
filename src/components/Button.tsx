@@ -17,7 +17,7 @@ function Button(props: ButtonProps) {
     if (props.icon) {
         classes += "p-2 w-10 h-10";
     } else {
-        classes += "py-2 px-6";
+        classes += "py-2 px-10";
     }
 
     return (

@@ -23,7 +23,7 @@ export default function Page() {
         <div>
             <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-white to-gray-300">
                 <h1 className="mb-8">Tezos CSO Platform</h1>
-                <div className="body-text-large">
+                <div className="body-text-large italic">
                     At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
                 </div>
             </div>
@@ -52,26 +52,26 @@ export default function Page() {
                 <div className="pt-20 flex justify-between flex-col sm:flex-row">
                     <div>
                         <h3 className="mb-8 text-center">Lefthandside Column</h3>
-                        <div className="indent">
+                        <div className="indent body-text-small">
                             Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
                         </div>
                     </div>
                     <div className="mt-12 sm:ml-8 sm:mt-0">
                         <h3 className="mb-8 text-center">Center Column</h3>
-                        <div className="indent">
+                        <div className="indent body-text-small">
                             Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
                         </div>
                     </div>
                     <div className="mt-12 sm:ml-8 sm:mt-0">
                         <h3 className="mb-8 text-center">Righthandside Column</h3>
-                        <div className="indent">
+                        <div className="indent body-text-small">
                             Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
                         </div>
                     </div>
                 </div>
 
                 <div className="pt-20">
-                    <h2 className="mb-8 text-center">This is a full-width Headline2 section</h2>
+                    <h2 className="mb-8 text-center">This is a full-width Headline 2 section</h2>
                     <div className="indent">
                         Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
                     </div>
