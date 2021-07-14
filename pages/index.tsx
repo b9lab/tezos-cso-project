@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div>
-      <h1 className="text-center mb-4">Tezos CSO App</h1>
+      <h1 className="text-center my-4">Tezos CSO App</h1>
       <Link href="/cafe-info">
         <div className="w-full h-80 bg-yellow-400 cursor-pointer p-4 text-white text-3xl">Cafe info</div>
       </Link>

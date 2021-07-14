@@ -23,7 +23,7 @@ export enum NAV_ITEM_POSITION {
 
 export const NAV_ITEMS: Array<NavItem> = [
     {
-        name: "CSO Platform",
+        name: "CSO PLATFORM",
         url: "/",
         visibility: NAV_ITEM_VISIBILITY.PUBLIC
     },
@@ -50,7 +50,7 @@ export const NAV_ITEMS: Array<NavItem> = [
         ]
     },
     {
-        name: "Investment",
+        name: "INVESTMENT",
         url: "/general-investment-info",
         visibility: NAV_ITEM_VISIBILITY.PUBLIC
     },
