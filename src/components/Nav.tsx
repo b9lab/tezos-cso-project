@@ -76,18 +76,24 @@ function Nav(props: NavProps) {
     }
 
     const mobileNavItemMap = (item: NavItem, index: number) => {
-        let classes = "";
+        let classes = "w-full mb-4 ";
         if (item.position && item.position == NAV_ITEM_POSITION.RIGHT) classes += "order-last ";
-        classes += (item.url == router.pathname) ? "text-accent-1 " : "text-dark-gray ";
 
         return (
             <Link href={item.url} key={"menu_item_" + index}>
                 <div onClick={() => setOpenNav(!openNav)} className={classes}>
-                    {
-                        item.custom ? 
-                        item.custom() : 
-                        <a>{item.name}</a>
-                    }
+                    <div className={item.custom ? "" : "border-b border-dark-gray"}>
+                        { item.custom ? item.custom() : <a>{item.name}</a> }
+                    </div>
+                    { item.children && item.children.map((subItem, i) => {
+                        return (
+                            <Link href={subItem.url} key={"menu_sub_item_" + i}>
+                                <div className={subItem.url == router.pathname ? "text-accent-1 " : "text-dark-gray "}>
+                                    <a>{subItem.name}</a>
+                                </div>
+                            </Link>
+                        );
+                    })}
                 </div>
             </Link>
         );
