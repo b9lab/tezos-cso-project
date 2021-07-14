@@ -106,10 +106,8 @@ function Nav(props: NavProps) {
 
             {
                 openNav &&
-                <div className="w-full">
-                    <div className="flex flex-col items-center justify-around h-full">
-                        { props.items.filter(navItemFilter).map(mobileNavItemMap) }
-                    </div>
+                <div className="w-full flex flex-col items-center justify-around h-full mb-6">
+                    { props.items.filter(navItemFilter).map(mobileNavItemMap) }
                 </div>
             }
 
