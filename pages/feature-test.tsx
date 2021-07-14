@@ -29,9 +29,9 @@ export default function Page() {
             </div>
 
             <div className="bg-gradient-to-b from-white to-gray-100 px-8">
-                <div className="pt-20 flex justify-between">
+                <div className="pt-20 flex justify-between flex-col sm:flex-row">
                     <img src="https://via.placeholder.com/200x100"/>
-                    <div className="ml-8">
+                    <div className="mt-8 sm:ml-8 sm:mt-0">
                         <h2 className="mb-8">This is a second headline</h2>
                         <div>
                             Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
@@ -39,9 +39,9 @@ export default function Page() {
                     </div>
                 </div>
 
-                <div className="pt-20 flex justify-between">
-                    <div className="ml-8">
-                        <h2 className="mb-8  highlight">This is yet a second headline, highlighted</h2>
+                <div className="pt-20 flex justify-between flex-col sm:flex-row">
+                    <div className="my-8 sm:mr-8 sm:my-0">
+                        <h2 className="mb-8 highlight">This is yet a second headline, highlighted</h2>
                         <div>
                             Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
                         </div>
@@ -49,20 +49,20 @@ export default function Page() {
                     <img src="https://via.placeholder.com/200x100"/>
                 </div>
 
-                <div className="pt-20 flex justify-between">
+                <div className="pt-20 flex justify-between flex-col sm:flex-row">
                     <div>
                         <h3 className="mb-8 text-center">Lefthandside Column</h3>
                         <div className="indent">
                             Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
                         </div>
                     </div>
-                    <div className="ml-8">
+                    <div className="mt-12 sm:ml-8 sm:mt-0">
                         <h3 className="mb-8 text-center">Center Column</h3>
                         <div className="indent">
                             Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
                         </div>
                     </div>
-                    <div className="ml-8">
+                    <div className="mt-12 sm:ml-8 sm:mt-0">
                         <h3 className="mb-8 text-center">Righthandside Column</h3>
                         <div className="indent">
                             Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
@@ -81,14 +81,14 @@ export default function Page() {
                     
                 </div>
 
-                <div className="py-20 flex justify-between">
+                <div className="py-20 flex justify-between flex-col sm:flex-row">
                     <div>
                         <h2 className="mb-8 text-center">H2 split left</h2>
                         <div className="indent">
                             Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
                         </div>
                     </div>
-                    <div className="ml-8">
+                    <div className="mt-8 sm:ml-8 sm:mt-0">
                         <h2 className="mb-8 text-center">H2 split right</h2>
                         <div className="indent">
                             Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
@@ -104,7 +104,7 @@ export default function Page() {
 
             <div className="mt-20 px-8">
                 <h2 className="mb-4">Buttons</h2>
-                <div className="flex justify-between">
+                <div className="flex justify-between flex-col sm:flex-row">
                     <Button handler={() => {}} color="accent-1">CTA Button 1</Button>
                     <Button handler={() => {}} outline>Cancel Button</Button>
                     <Button handler={() => {}} color="accent-2">CTA Button 2</Button>
