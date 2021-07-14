@@ -22,26 +22,6 @@ function useClickOutsideListener(ref: MutableRefObject<any>, setOpenNav: SetStat
     }, [ref]);
 }
 
-function renderSubMenu(children: Array<NavItem> | undefined) {
-    if (!children) return <></>;
-
-    return (
-        <ul className="absolute bg-accent-1 text-white flex flex-col hover-target min-w-max mt-4 -mx-4">
-            { children.map((item: NavItem, index: number) => {
-                let classes = "m-4 ";
-
-                return (
-                    <li className={classes} key={"menu_sub_item_" + index}>
-                        <Link href={item.url}>
-                            <a>{item.name}</a>
-                        </Link>
-                    </li>
-                );
-            }) }
-        </ul>
-    );
-}
-
 function Nav(props: NavProps) {
     const [ session ] = useSession();
     const router = useRouter();
@@ -69,7 +49,21 @@ function Nav(props: NavProps) {
                         item.custom() : 
                         <a>{item.name}</a>
                     }
-                    { renderSubMenu(item.children) }
+                    { item.children && 
+                        <ul className="absolute bg-accent-1 text-white flex flex-col hover-target min-w-max mt-4 -mx-4">
+                            { item.children.filter(navItemFilter).map((item: NavItem, index: number) => {
+                                let classes = "m-4 ";
+
+                                return (
+                                    <li className={classes} key={"menu_sub_item_" + index}>
+                                        <Link href={item.url}>
+                                            <a>{item.name}</a>
+                                        </Link>
+                                    </li>
+                                );
+                            }) }
+                        </ul> 
+                    }
                 </li>
             </Link>
         );
@@ -85,7 +79,7 @@ function Nav(props: NavProps) {
                     <div className={item.custom ? "" : "border-b border-dark-gray"}>
                         { item.custom ? item.custom() : <a>{item.name}</a> }
                     </div>
-                    { item.children && item.children.map((subItem, i) => {
+                    { item.children && item.children.filter(navItemFilter).map((subItem, i) => {
                         return (
                             <Link href={subItem.url} key={"menu_sub_item_" + i}>
                                 <div className={subItem.url == router.pathname ? "text-accent-1 " : "text-dark-gray "}>

@@ -25,7 +25,24 @@ export const NAV_ITEMS: Array<NavItem> = [
     {
         name: "CSO PLATFORM",
         url: "/",
-        visibility: NAV_ITEM_VISIBILITY.PUBLIC
+        visibility: NAV_ITEM_VISIBILITY.PUBLIC,
+        children: [
+            {
+                name: "CSO Platform",
+                url: "/",
+                visibility: NAV_ITEM_VISIBILITY.PUBLIC
+            },
+            {
+                name: "About this project",
+                url: "/about",
+                visibility: NAV_ITEM_VISIBILITY.PUBLIC
+            },
+            {
+                name: "Privacy Policy",
+                url: "/privacy",
+                visibility: NAV_ITEM_VISIBILITY.PUBLIC
+            }
+        ]
     },
     {
         name: "CAFE",
@@ -52,7 +69,34 @@ export const NAV_ITEMS: Array<NavItem> = [
     {
         name: "INVESTMENT",
         url: "/general-investment-info",
-        visibility: NAV_ITEM_VISIBILITY.PUBLIC
+        visibility: NAV_ITEM_VISIBILITY.PUBLIC,
+        children: [
+            {
+                name: "Overview",
+                url: "/general-investment-info",
+                visibility: NAV_ITEM_VISIBILITY.PUBLIC
+            },
+            {
+                name: "My investment",
+                url: "/personal-investment-info",
+                visibility: NAV_ITEM_VISIBILITY.PRIVATE
+            },
+            {
+                name: "Fund",
+                url: "/fund",
+                visibility: NAV_ITEM_VISIBILITY.PRIVATE
+            },
+            {
+                name: "Withdraw",
+                url: "/withdraw",
+                visibility: NAV_ITEM_VISIBILITY.PRIVATE
+            },
+            {
+                name: "Transactions",
+                url: "/transactions",
+                visibility: NAV_ITEM_VISIBILITY.PRIVATE
+            }
+        ]
     },
     {
         name: "Sign in",
@@ -65,11 +109,13 @@ export const NAV_ITEMS: Array<NavItem> = [
         name: "Profile",
         url: "/profile",
         visibility: NAV_ITEM_VISIBILITY.PRIVATE,
-        position: NAV_ITEM_POSITION.RIGHT
-    },
-    {
-        name: "Personal Investment Info",
-        url: "/personal-investment-info",
-        visibility: NAV_ITEM_VISIBILITY.PRIVATE
+        position: NAV_ITEM_POSITION.RIGHT,
+        children: [
+            {
+                name: "My profile",
+                url: "/profile",
+                visibility: NAV_ITEM_VISIBILITY.PRIVATE
+            }
+        ]
     }
 ];
