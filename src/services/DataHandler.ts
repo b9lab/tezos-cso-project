@@ -19,7 +19,7 @@ export default class DataHandler {
     getInvestmentNumbers(): Promise<InvestmentNumbersDto> {
         return new Promise((resolve, reject) => {
             const data: InvestmentNumbersDto = {
-                organizationInfo: "Company Info",
+                companyName: "Company Info",
                 tokenBuyPrice: 1000,
                 tokenSellPrice: 990,
                 minimumFundingGoal: 125000000,
@@ -28,6 +28,7 @@ export default class DataHandler {
                 investorsCount: 5,
                 tokensCount: 500,
                 burnedTokensCount: 0,
+                reserveAmount: 500,
                 buySlope: 120,
                 sellSlope: 125
             };

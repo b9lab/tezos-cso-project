@@ -10,7 +10,7 @@ function InvestmentNumbers() {
         <div className="mb-4">
             <h1 className="font-bold">Investment numbers:</h1>
             <div>
-                organization info: {data.organizationInfo} <br/>
+                company name: {data.companyName} <br/>
                 token buy price: {data.tokenBuyPrice}<br/>
                 token sell price: {data.tokenSellPrice}<br/>
                 minimum funding goal: {data.minimumFundingGoal}<br/>
@@ -19,6 +19,7 @@ function InvestmentNumbers() {
                 investors count: {data.investorsCount}<br/>
                 tokens count: {data.tokensCount}<br/>
                 burned tokens count: {data.burnedTokensCount}<br/>
+                reserve amount: {data.reserveAmount}<br/>
                 buy slope: {data.buySlope}<br/>
                 sell slope: {data.sellSlope}<br/>
             </div>
