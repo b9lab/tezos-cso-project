@@ -1,5 +1,5 @@
 export interface InvestmentNumbersDto {
-    organizationInfo: string,
+    companyName: string,
     tokenBuyPrice: number, // TEZ
     tokenSellPrice: number,
     minimumFundingGoal: number, // TEZ
@@ -8,6 +8,7 @@ export interface InvestmentNumbersDto {
     investorsCount: number,
     tokensCount: number,
     burnedTokensCount: number,
+    reserveAmount: number,
     buySlope: number, // percentage/factor
     sellSlope: number // percentage/factor
 }
