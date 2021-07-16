@@ -41,3 +41,8 @@ npm run db:migrate
 ```
 npm run db:rollback
 ```
+
+### Testing
+```
+npm run test
+```
