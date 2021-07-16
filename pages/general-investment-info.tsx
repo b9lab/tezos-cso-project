@@ -1,4 +1,3 @@
-import Link from "next/link";
 import useSWR from "swr";
 
 function InvestmentNumbers() {
@@ -10,7 +9,7 @@ function InvestmentNumbers() {
 
     return (
         <div className="bg-gray-100 p-4">
-            <h1>{data.companyName} Investment Offer</h1>
+            <h1 className="pt-4">{data.companyName} Investment Offer</h1>
             <div className="w-full mt-6 body-text-large italic">
                 Token
             </div>
@@ -41,19 +40,19 @@ function InvestmentNumbers() {
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                         <p>Total investment</p>
-                        <h1>ꜩ {data.totalInvestment}</h1>
+                        <h1>ꜩ {data.totalInvestment.toLocaleString()}</h1>
                     </div>
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                         <p>Minimum funding goal</p>
-                        <h1>ꜩ {data.minimumFundingGoal}</h1>
+                        <h1>ꜩ { data.minimumFundingGoal.toLocaleString() }</h1>
                     </div>
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                         <p>Reserve amount</p>
-                        <h1>ꜩ {data.reserveAmount}</h1>
+                        <h1>ꜩ {data.reserveAmount.toLocaleString()}</h1>
                     </div>
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2">
