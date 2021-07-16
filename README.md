@@ -20,8 +20,16 @@ docker-compose up -d
 - Create the .env file (see .env.example file)
 
 ## Local development
+
+### Starting the server
+
 ```
 npm run dev
+```
+
+### Testing
+```
+npm run test
 ```
 
 ## Database
@@ -40,9 +48,4 @@ npm run db:migrate
 ### Migrate rollback
 ```
 npm run db:rollback
-```
-
-### Testing
-```
-npm run test
 ```
