@@ -26,12 +26,12 @@ export default function Withdraw() {
         },
     };
 
-    let unlockingDate = new Date(data.lockPeriod).toLocaleDateString('en-gb', { day: "2-digit", month: "short", year: "2-digit" });
+    let unlockingDate = new Date(data?.lockPeriod).toLocaleDateString('en-gb', { day: "2-digit", month: "short", year: "2-digit" });
 
     return (
         <div>
             <div className="bg-gray-100 p-4">
-                <h1>Withdraw</h1>
+                <h1 className="pt-4">Withdraw</h1>
                 <div className="w-full mt-6 body-text-large italic">
                     Token Info
                 </div>
