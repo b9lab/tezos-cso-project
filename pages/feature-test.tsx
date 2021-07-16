@@ -23,14 +23,14 @@ export default function Page() {
     
     return (
         <div>
-            <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-white to-gray-300">
+            <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
                 <h1 className="mb-8">Tezos CSO Platform</h1>
                 <div className="body-text-large italic">
                     At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
                 </div>
             </div>
 
-            <div className="bg-gradient-to-b from-white to-gray-100 px-8">
+            <div className="px-8">
                 <div className="pt-20 flex justify-between flex-col sm:flex-row">
                     <Image src={placeholderImage} width={500} objectFit="contain" alt="Placeholder image"/>
                     <div className="mt-8 sm:ml-8 sm:mt-0">
