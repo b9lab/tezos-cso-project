@@ -4,6 +4,9 @@ import Link from 'next/link';
 import { MutableRefObject, SetStateAction, useEffect, useRef, useState } from 'react';
 import { NAV_ITEM_POSITION, NAV_ITEM_VISIBILITY } from '../constants';
 import NavItem from '../utils/NavItem';
+import Image from 'next/image';
+import closeIcon from '../../public/close-icon.svg';
+import menuIcon from '../../public/menu-icon.svg';
 
 type NavProps = {
     items: Array<NavItem>
@@ -19,7 +22,7 @@ function useClickOutsideListener(ref: MutableRefObject<any>, setOpenNav: SetStat
         document.addEventListener("mousedown", handleClickOutside);
 
         return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, [ref]);
+    }, [ref, setOpenNav]);
 }
 
 function Nav(props: NavProps) {
@@ -42,7 +45,7 @@ function Nav(props: NavProps) {
         classes += (item.url == router.pathname) ? "text-accent-1 " : "text-dark-gray ";
 
         return (
-            <Link href={item.url} key={"menu_item_" + index}>
+            <Link href={item.url} key={"menu_item_" + index} passHref>
                 <li className={classes}>
                     {
                         item.custom ? 
@@ -56,7 +59,7 @@ function Nav(props: NavProps) {
 
                                 return (
                                     <li className={classes} key={"menu_sub_item_" + index}>
-                                        <Link href={item.url}>
+                                        <Link href={item.url} passHref>
                                             <a>{item.name}</a>
                                         </Link>
                                     </li>
@@ -74,14 +77,14 @@ function Nav(props: NavProps) {
         if (item.position && item.position == NAV_ITEM_POSITION.RIGHT) classes += "order-last ";
 
         return (
-            <Link href={item.url} key={"menu_item_" + index}>
+            <Link href={item.url} key={"menu_item_" + index} passHref>
                 <div onClick={() => setOpenNav(!openNav)} className={classes}>
                     <div className={item.custom ? "" : "border-b border-dark-gray"}>
                         { item.custom ? item.custom() : <a>{item.name}</a> }
                     </div>
                     { item.children && item.children.filter(navItemFilter).map((subItem, i) => {
                         return (
-                            <Link href={subItem.url} key={"menu_sub_item_" + i}>
+                            <Link href={subItem.url} key={"menu_sub_item_" + i} passHref>
                                 <div className={subItem.url == router.pathname ? "text-accent-1 " : "text-dark-gray "}>
                                     <a>{subItem.name}</a>
                                 </div>
@@ -100,7 +103,7 @@ function Nav(props: NavProps) {
 
             <div className="w-full py-4 flex justify-end sm:hidden">
                 <a onClick={() => setOpenNav(!openNav)}>
-                    <img height="30" width="30" src={openNav ? "close-icon.svg" : "menu-icon.svg"} alt={openNav ? "Close" : "Menu"} />
+                    <Image height="30" width="30" src={openNav ? closeIcon : menuIcon} alt={openNav ? "Close" : "Menu"} />
                 </a>
             </div>
 
