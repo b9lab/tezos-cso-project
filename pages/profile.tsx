@@ -47,7 +47,7 @@ export default function Profile() {
             <Input value={inputCountry ?? countryStored} handler={handlers.country} label="Country"/>
             <div className="flex w-full items-end">
                 <Input value={inputAddress ?? addressStored} handler={handlers.address} label="Address"/>
-                <Button handler={handlers.fetchAndSaveAddress} icon="/refresh-icon.svg"/>
+                <Button handler={handlers.fetchAndSaveAddress}>Fetch</Button>
             </div>
             
             <Button handler={handlers.update}>Update</Button>

@@ -48,7 +48,7 @@ export default function GeneralInvestmentInfo() {
             <div className="mb-4">General Investment Info page</div>
             <InvestmentNumbers/>
             <CompanyValuation/>
-            <Link href="/cafe-details">
+            <Link href="/cafe-details" passHref>
                 <div className="w-full h-80 bg-purple-400 cursor-pointer p-4 text-white text-3xl">Cafe details</div>
             </Link>
         </>

@@ -2,6 +2,8 @@ import React from "react";
 import Button from "../src/components/Button";
 import ChartWrapper from "../src/components/ChartWrapper";
 import Input from "../src/components/Input";
+import Image from 'next/image';
+import placeholderImage from '../public/placeholder-image.png';
 
 export default function Page() {
     const options = {
@@ -30,7 +32,7 @@ export default function Page() {
 
             <div className="bg-gradient-to-b from-white to-gray-100 px-8">
                 <div className="pt-20 flex justify-between flex-col sm:flex-row">
-                    <img src="https://via.placeholder.com/200x100"/>
+                    <Image src={placeholderImage} width={500} objectFit="contain" alt="Placeholder image"/>
                     <div className="mt-8 sm:ml-8 sm:mt-0">
                         <h2 className="mb-8">This is a second headline</h2>
                         <div>
@@ -46,7 +48,7 @@ export default function Page() {
                             Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
                         </div>
                     </div>
-                    <img src="https://via.placeholder.com/200x100"/>
+                    <Image src={placeholderImage} width={500} objectFit="contain" alt="Placeholder image"/>
                 </div>
 
                 <div className="pt-20 flex justify-between flex-col sm:flex-row">
