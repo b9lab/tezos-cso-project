@@ -29,7 +29,7 @@ export default function Fund() {
 
     return (
         <div>
-            <div className="bg-gray-100 p-4">
+            <div className="p-4">
                 <h1 className="pt-4">Fund</h1>
                 <div className="w-full mt-6 body-text-large italic">
                     Token Info

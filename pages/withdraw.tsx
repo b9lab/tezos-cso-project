@@ -30,7 +30,7 @@ export default function Withdraw() {
 
     return (
         <div>
-            <div className="bg-gray-100 p-4">
+            <div className="p-4">
                 <h1 className="pt-4">Withdraw</h1>
                 <div className="w-full mt-6 body-text-large italic">
                     Token Info

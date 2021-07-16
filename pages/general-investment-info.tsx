@@ -8,7 +8,7 @@ function InvestmentNumbers() {
     let unlockingDate = new Date(data.unlockingDate).toLocaleDateString('en-gb', { day: "2-digit", month: "short", year: "2-digit" });
 
     return (
-        <div className="bg-gray-100 p-4">
+        <div className="p-4">
             <h1 className="pt-4">{data.companyName} Investment Offer</h1>
             <div className="w-full mt-6 body-text-large italic">
                 Token
