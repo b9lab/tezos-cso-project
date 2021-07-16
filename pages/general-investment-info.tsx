@@ -15,7 +15,7 @@ function InvestmentNumbers() {
             </div>
             <div className="flex flex-wrap justify-between">
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
-                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4 border border-accent-1">
                         <p>Price info</p>
                         <h1>ꜩ  {data.tokenBuyPrice}</h1>
                     </div>
