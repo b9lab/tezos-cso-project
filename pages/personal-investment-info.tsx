@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useContext } from "react";
 import { AuthContext, AuthContextData } from "../src/components/Auth";
 import DataHandler from "../src/services/DataHandler";
@@ -11,24 +10,32 @@ export default function PersonalInvestmentInfo() {
     const data: UserInvestmentDto = useData(dataHandler.getUserInvestmentData, context.address);
 
     return (
-        <>
-            <div className="mb-4 font-bold">Personal Investment Info page</div>
-            <div className="mb-4">
-                tez invested: {data?.tezInvested} <br/>
-                tokens owned: {data?.tokensOwned} <br/>
-                token buy price: {data?.tokenBuyPrice} <br/>
-                token sell price: {data?.tokenSellPrice}
+        <div className="bg-gray-100 p-4">
+            <h1 className="pt-4">My investment</h1>
+            <div className="w-full mt-6 body-text-large italic">
+                Portfolio
             </div>
-            <Link href="/fund" passHref>
-                <div className="w-full h-80 bg-purple-400 cursor-pointer p-4 text-white text-3xl">Fund</div>
-            </Link>
-            <Link href="/withdraw" passHref>
-                <div className="w-full h-80 bg-indigo-400 cursor-pointer p-4 text-white text-3xl">Withdraw</div>
-            </Link>
-            <Link href="/transactions" passHref>
-                <div className="w-full h-80 bg-blue-400 cursor-pointer p-4 text-white text-3xl">Transactions</div>
-            </Link>
-        </>
+            <div className="flex flex-wrap justify-between">
+                <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
+                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                        <p>Tokens owned</p>
+                        <h1>{data?.tokensOwned}</h1>
+                    </div>
+                </div>
+                <div className="w-full flex-grow sm:max-w-1/2">
+                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                        <p>Tezos invested</p>
+                        <h1>ꜩ {data?.tezInvested.toLocaleString()}</h1>
+                    </div>
+                </div>
+                <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
+                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                        <p>Price info</p>
+                        <h1>ꜩ {data?.tokenBuyPrice}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 }
 
