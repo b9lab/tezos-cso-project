@@ -126,7 +126,19 @@ export default class DataHandler {
                     tezAmount: 2000,
                     tokenAmount: 1,
                     transactionType: TransactionType.Funding
-                }
+                },
+                {
+                    date: "2021-02-13 12:05:33.574+00",
+                    tezAmount: 100,
+                    tokenAmount: 2,
+                    transactionType: TransactionType.Withdrawal
+                },
+                {
+                    date: "2021-05-21 12:05:33.574+00",
+                    tezAmount: 5000,
+                    tokenAmount: 3,
+                    transactionType: TransactionType.Funding
+                },
             ]
 
             resolve(data);
