@@ -6,6 +6,7 @@
     "predev": "npm run db:migrate",
     "dev": "node server.js",
     "build": "next build",
+    "start": "next start -- --port $PORT",
     "serve": "cross-env NODE_ENV=production node server.js",
     "lint": "next lint",
     "_test": "node ./node_modules/puppeteer-cucumber-js/index.js --headless",
