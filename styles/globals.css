@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply font-medium not-italic leading-loose;
+    @apply font-medium not-italic leading-loose bg-light-gray;
     font-size: 18px;
     font-family: 'Cormorant';
   }

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import useSWR from "swr";
 
 function InvestmentNumbers() {
@@ -6,22 +5,62 @@ function InvestmentNumbers() {
 
     if (!data || error) return <>{error}</>
 
+    let unlockingDate = new Date(data.unlockingDate).toLocaleDateString('en-gb', { day: "2-digit", month: "short", year: "2-digit" });
+
     return (
-        <div className="mb-4">
-            <h1 className="font-bold">Investment numbers:</h1>
-            <div>
-                company name: {data.companyName} <br/>
-                token buy price: {data.tokenBuyPrice}<br/>
-                token sell price: {data.tokenSellPrice}<br/>
-                minimum funding goal: {data.minimumFundingGoal}<br/>
-                unlocking date: {data.unlockingDate}<br/>
-                total investment: {data.totalInvestment}<br/>
-                investors count: {data.investorsCount}<br/>
-                tokens count: {data.tokensCount}<br/>
-                burned tokens count: {data.burnedTokensCount}<br/>
-                reserve amount: {data.reserveAmount}<br/>
-                buy slope: {data.buySlope}<br/>
-                sell slope: {data.sellSlope}<br/>
+        <div className="p-4">
+            <h1 className="pt-4">{data.companyName} Investment Offer</h1>
+            <div className="w-full mt-6 body-text-large italic">
+                Token
+            </div>
+            <div className="flex flex-wrap justify-between">
+                <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
+                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4 border border-accent-1">
+                        <p>Price info</p>
+                        <h1>ꜩ  {data.tokenBuyPrice}</h1>
+                    </div>
+                </div>
+                <div className="w-full flex-grow sm:max-w-1/2">
+                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                        <p>Tokens count</p>
+                        <h1>{data.tokensCount}</h1>
+                    </div>
+                </div>
+                <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
+                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                        <p>Burned tokens</p>
+                        <h1>{data.burnedTokensCount}</h1>
+                    </div>
+                </div>
+            </div>
+            <div className="w-full mt-8 body-text-large italic">
+                Investment
+            </div>
+            <div className="flex flex-wrap justify-between">
+                <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
+                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                        <p>Total investment</p>
+                        <h1>ꜩ {data.totalInvestment.toLocaleString()}</h1>
+                    </div>
+                </div>
+                <div className="w-full flex-grow sm:max-w-1/2">
+                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                        <p>Minimum funding goal</p>
+                        <h1>ꜩ { data.minimumFundingGoal.toLocaleString() }</h1>
+                    </div>
+                </div>
+                <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
+                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                        <p>Reserve amount</p>
+                        <h1>ꜩ {data.reserveAmount.toLocaleString()}</h1>
+                    </div>
+                </div>
+                <div className="w-full flex-grow sm:max-w-1/2">
+                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                        <p>Unlocking date</p>
+                        <h1>{unlockingDate}</h1>
+                    </div>
+                </div>
             </div>
         </div>
     );
@@ -33,8 +72,8 @@ function CompanyValuation() {
     if (!data || error) return <>{error}</>
 
     return (
-        <div className="mb-4">
-            <h1 className="font-bold">Company valuation:</h1>
+        <div className="my-4 p-4">
+            <h1>Company valuation:</h1>
             <div>
                 valuation: {data.valuation}
             </div>
@@ -45,12 +84,8 @@ function CompanyValuation() {
 export default function GeneralInvestmentInfo() {
     return (
         <>
-            <div className="mb-4">General Investment Info page</div>
             <InvestmentNumbers/>
             <CompanyValuation/>
-            <Link href="/cafe-details" passHref>
-                <div className="w-full h-80 bg-purple-400 cursor-pointer p-4 text-white text-3xl">Cafe details</div>
-            </Link>
         </>
     );
 }
