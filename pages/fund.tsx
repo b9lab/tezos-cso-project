@@ -44,7 +44,7 @@ export default function Fund() {
                     <div className="w-full flex-grow sm:max-w-1/2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                             <p>Tokens owned</p>
-                            <h1>{data?.tokensOwned.toLocaleString()}</h1>
+                            <h1>{data?.tokensOwned?.toLocaleString()}</h1>
                         </div>
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
