@@ -72,12 +72,20 @@ function CompanyValuation() {
     if (!data || error) return <>{error}</>
 
     return (
-        <div className="my-4 p-4">
-            <h1>Company valuation:</h1>
-            <div>
-                valuation: {data.valuation}
+        <div className="p-4">
+            <div className="w-full mt-6 body-text-large italic">
+                Value
+            </div>
+            <div className="flex flex-wrap justify-between">
+                <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
+                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4 border border-accent-1">
+                        <p>Company valuation</p>
+                        <h1>USD {data.valuation}</h1>
+                    </div>
+                </div>
             </div>
         </div>
+
     );
 }
 
