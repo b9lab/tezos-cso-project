@@ -10,25 +10,35 @@ import {
     WithdrawDto, 
     WithdrawTokenInfoDto 
 } from "../utils/dtos";
-import { contract } from '../../tezos-app-project';
+import { contract, chain } from '../../tezos-app-project';
 
 export default class DataHandler {
 
     // General Investment Info
     
-    getInvestmentNumbers(): Promise<InvestmentNumbersDto> {
+    async getInvestmentNumbers(): Promise<InvestmentNumbersDto> {
+        const companyName = await chain.companyName();
+        const buyPrice = await chain.buyPrice();
+        const sellPrice = await chain.sellPrice();
+        const minimumFundingGoal = await chain.sellPrice();
+        const totalInvestments = await chain.totalInvestments();
+        const totalInvestors = await chain.totalInvestors();
+        const totalTokens = await chain.totalTokens();
+        const reserveAmount = await chain.reserveAmount();
+
+
         return new Promise((resolve, reject) => {
             const data: InvestmentNumbersDto = {
-                companyName: "Company Info",
-                tokenBuyPrice: 1000,
-                tokenSellPrice: 990,
+                companyName: companyName,
+                tokenBuyPrice: buyPrice,
+                tokenSellPrice: sellPrice,
                 minimumFundingGoal: 125000000,
                 unlockingDate: "2021-07-30 12:05:33.574+00",
-                totalInvestment: 500000,
-                investorsCount: 5,
-                tokensCount: 500,
+                totalInvestment: totalInvestments,
+                investorsCount: totalInvestors,
+                tokensCount: totalTokens,
                 burnedTokensCount: 0,
-                reserveAmount: 500,
+                reserveAmount: reserveAmount,
                 buySlope: 120,
                 sellSlope: 125
             };
@@ -37,10 +47,12 @@ export default class DataHandler {
         });
     }
 
-    getCompanyValuation(): Promise<CompanyValuationDto> {
+    async getCompanyValuation(): Promise<CompanyValuationDto> {
+        const companyValuation = await chain.companyValuation();
+        
         return new Promise((resolve, reject) => {
             const data: CompanyValuationDto = {
-                valuation: 500000
+                valuation: companyValuation
             };
 
             resolve(data);
