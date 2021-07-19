@@ -20,11 +20,15 @@ export default class DataHandler {
         const companyName = await chain.companyName();
         const buyPrice = await chain.buyPrice();
         const sellPrice = await chain.sellPrice();
-        const minimumFundingGoal = await chain.sellPrice();
+        const minimumFundingGoal = await chain.mfg();
         const totalAllocation = await chain.totalAllocation();
-        //const totalInvestors = await chain.totalInvestors();
+        const investorsCount = await chain.totalInvestors();
         const totalTokens = await chain.totalTokens();
         const reserveAmount = await chain.reserveAmount();
+        const sellSlope = await chain.sellSlope();
+        const buySlope = await chain.buySlope();
+        const unlockingDate = await chain.unlockingDate();
+        const burnedTokensCount = await chain.burnedTokens();
 
 
         return new Promise((resolve, reject) => {
@@ -32,15 +36,15 @@ export default class DataHandler {
                 companyName: companyName,
                 tokenBuyPrice: buyPrice,
                 tokenSellPrice: sellPrice,
-                minimumFundingGoal: 125000000,
-                unlockingDate: "2021-07-30 12:05:33.574+00",
+                minimumFundingGoal: minimumFundingGoal,
+                unlockingDate: unlockingDate,
                 totalInvestment: totalAllocation,
-                investorsCount: 5,
+                investorsCount: investorsCount,
                 tokensCount: totalTokens,
-                burnedTokensCount: 0,
+                burnedTokensCount: burnedTokensCount,
                 reserveAmount: reserveAmount,
-                buySlope: 120,
-                sellSlope: 125
+                buySlope: buySlope,
+                sellSlope: sellSlope
             };
 
             resolve(data);
@@ -61,17 +65,26 @@ export default class DataHandler {
 
     // CAFE details
 
-    getCafeParameters(): Promise<CafeInfoDto> {
+    async getCafeParameters(): Promise<CafeInfoDto> {
+        const govRights = await chain.govRights();
+        const baseCurrency = await chain.baseCurrency();
+        const totalAllocation = await chain.totalAllocation();
+        const stakeAllocation = await chain.stakeAllocation();
+        const terminationEvents = await chain.terminationEvents();
+        const initialReserve = await chain.initialReserve();
+        const minimumInvestment = 0; // todo
+        const initialValuation = await chain.companyValuation();
+
         return new Promise((resolve, reject) => {
             const data: CafeInfoDto = {
-                baseCurrency: "USD",
-                totalAllocation: 600000,
-                stakeAllocation: 100000,
-                terminationEvents: ["event 1", "event 2"],
-                minimumInvestment: 1000,
-                initialReserve: 120000,
-                initialValuation: 10000,
-                governingRights: "gov rights"
+                baseCurrency: baseCurrency,
+                totalAllocation: totalAllocation,
+                stakeAllocation: stakeAllocation,
+                terminationEvents: terminationEvents,
+                minimumInvestment: minimumInvestment,
+                initialReserve: initialReserve,
+                initialValuation: initialValuation,
+                governingRights: govRights
             }
 
             resolve(data);
@@ -80,13 +93,19 @@ export default class DataHandler {
 
     // Personal Investment Info
 
-    getUserInvestmentData(): Promise<UserInvestmentDto> {
+    async getUserInvestmentData(address: string): Promise<UserInvestmentDto> {
+        const userData = await chain.user(address);
+        const tezInvested = await userData.tezInvested();
+        const tokensOwned = await userData.tokens();
+        const tokenBuyPrice = await chain.buyPrice();
+        const tokenSellPrice = await chain.sellPrice();
+
         return new Promise((resolve, reject) => {
             const data: UserInvestmentDto = {
-                tezInvested: 2000,
-                tokensOwned: 2,
-                tokenBuyPrice: 1000,
-                tokenSellPrice: 990
+                tezInvested: tezInvested,
+                tokensOwned: tokensOwned,
+                tokenBuyPrice: tokenBuyPrice,
+                tokenSellPrice: tokenSellPrice
             };
 
             resolve(data);
@@ -95,11 +114,18 @@ export default class DataHandler {
 
     // Fund
 
-    getFundTokenInfo(): Promise<FundTokenInfoDto> {
+    async getFundTokenInfo(address: string): Promise<FundTokenInfoDto> {
+        const tokenBuyPrice = await chain.buyPrice();
+        const tokensOwned = await chain.user(address).tokens();
+        const lockPeriod = await chain.unlockingDate();
+        const tezCount = await chain.user(address).tez();
+        
         return new Promise((resolve, reject) => {
             const data: FundTokenInfoDto = {
-                tokenBuyPrice: 1000,
-                lockPeriod: "2021-07-30 12:05:33.574+00"
+                tokenBuyPrice: tokenBuyPrice,
+                tokensOwned: tokensOwned,
+                tezCount: tezCount,
+                lockPeriod: lockPeriod
             };
 
             resolve(data);
@@ -112,12 +138,18 @@ export default class DataHandler {
 
     // Withdraw
 
-    getWithdrawTokenInfo(): Promise<WithdrawTokenInfoDto> {
+    async getWithdrawTokenInfo(address: string): Promise<WithdrawTokenInfoDto> {
+        const tokenSellPrice = await chain.sellPrice();
+        const tokensOwned = await chain.user(address).tokens();
+        const reserveAmount = await chain.reserveAmount();
+        const lockPeriod = await chain.unlockingDate();
+        
         return new Promise((resolve, reject) => {
             const data: WithdrawTokenInfoDto = {
-                tokenSellPrice: 990,
-                tokensOwned: 2,
-                lockPeriod: "2021-07-30 12:05:33.574+00"
+                tokenSellPrice: tokenSellPrice,
+                tokensOwned: tokensOwned,
+                reserveAmount: reserveAmount,
+                lockPeriod: lockPeriod
             };
 
             resolve(data);

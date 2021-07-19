@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 import { SWRConfig } from 'swr';
 import Auth from '../src/components/Auth';
 
-const fetcher = (input: RequestInfo, init: RequestInit) => fetch(input, init).then(res => res.json());
+const fetcher = (input: RequestInfo, init: RequestInit) => fetch(input, init).then(res => res.json()).catch(console.error);
 
 function App(props: AppProps) {
   const Component: any = props.Component;

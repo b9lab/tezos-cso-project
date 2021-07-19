@@ -37,12 +37,15 @@ export interface UserInvestmentDto {
 
 export interface FundTokenInfoDto {
     tokenBuyPrice: number,
+    tokensOwned: number,
+    tezCount: number,
     lockPeriod: string
 }
 
 export interface WithdrawTokenInfoDto {
     tokenSellPrice: number,
     tokensOwned: number,
+    reserveAmount: number,
     lockPeriod: string
 }
 

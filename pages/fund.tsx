@@ -38,19 +38,19 @@ export default function Fund() {
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                             <p>Buy price</p>
-                            <h1>ꜩ {data?.tokenBuyPrice}</h1>
+                            <h1>ꜩ {data?.tokenBuyPrice.toLocaleString()}</h1>
                         </div>
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                             <p>Tokens owned</p>
-                            <h1>0</h1>
+                            <h1>{data?.tokensOwned.toLocaleString()}</h1>
                         </div>
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                             <p>Tezos in account</p>
-                            <h1>0</h1>
+                            <h1>{data?.tezCount.toLocaleString()}</h1>
                         </div>
                     </div>
                 </div>
