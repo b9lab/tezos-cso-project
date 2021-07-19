@@ -21,7 +21,7 @@ export default class DataHandler {
         const buyPrice = await chain.buyPrice();
         const sellPrice = await chain.sellPrice();
         const minimumFundingGoal = await chain.mfg();
-        const totalAllocation = await chain.totalAllocation();
+        const totalInvestments = await chain.totalInvestments();
         const investorsCount = await chain.totalInvestors();
         const totalTokens = await chain.totalTokens();
         const reserveAmount = await chain.reserveAmount();
@@ -38,7 +38,7 @@ export default class DataHandler {
                 tokenSellPrice: sellPrice,
                 minimumFundingGoal: minimumFundingGoal,
                 unlockingDate: unlockingDate,
-                totalInvestment: totalAllocation,
+                totalInvestment: totalInvestments,
                 investorsCount: investorsCount,
                 tokensCount: totalTokens,
                 burnedTokensCount: burnedTokensCount,
