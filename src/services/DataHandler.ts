@@ -21,8 +21,8 @@ export default class DataHandler {
         const buyPrice = await chain.buyPrice();
         const sellPrice = await chain.sellPrice();
         const minimumFundingGoal = await chain.sellPrice();
-        const totalInvestments = await chain.totalInvestments();
-        const totalInvestors = await chain.totalInvestors();
+        const totalAllocation = await chain.totalAllocation();
+        //const totalInvestors = await chain.totalInvestors();
         const totalTokens = await chain.totalTokens();
         const reserveAmount = await chain.reserveAmount();
 
@@ -34,8 +34,8 @@ export default class DataHandler {
                 tokenSellPrice: sellPrice,
                 minimumFundingGoal: 125000000,
                 unlockingDate: "2021-07-30 12:05:33.574+00",
-                totalInvestment: totalInvestments,
-                investorsCount: totalInvestors,
+                totalInvestment: totalAllocation,
+                investorsCount: 5,
                 tokensCount: totalTokens,
                 burnedTokensCount: 0,
                 reserveAmount: reserveAmount,
@@ -49,7 +49,7 @@ export default class DataHandler {
 
     async getCompanyValuation(): Promise<CompanyValuationDto> {
         const companyValuation = await chain.companyValuation();
-        
+
         return new Promise((resolve, reject) => {
             const data: CompanyValuationDto = {
                 valuation: companyValuation
