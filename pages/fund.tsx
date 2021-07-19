@@ -50,7 +50,7 @@ export default function Fund() {
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                             <p>Tezos in account</p>
-                            <h1>{data?.tezCount.toLocaleString()}</h1>
+                            <h1>ꜩ {data?.tezCount.toLocaleString()}</h1>
                         </div>
                     </div>
                 </div>
