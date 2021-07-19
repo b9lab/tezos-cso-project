@@ -5,6 +5,7 @@ import Input from "../src/components/Input";
 import DataHandler from "../src/services/DataHandler";
 import { WithdrawDto, WithdrawTokenInfoDto } from "../src/utils/dtos";
 import { useData } from "../src/utils/hooks";
+import TezAmount from "../src/components/TezAmount";
 
 export default function Withdraw() {
     const context: AuthContextData = useContext(AuthContext);
@@ -39,7 +40,7 @@ export default function Withdraw() {
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                             <p>Sell price</p>
-                            <h1>ꜩ {data?.tokenSellPrice.toLocaleString()}</h1>
+                            <h1><TezAmount amount={data?.tokenSellPrice}/></h1>
                         </div>
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2">
@@ -57,7 +58,7 @@ export default function Withdraw() {
                     <div className="w-full flex-grow sm:max-w-1/2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                             <p>Reserve amount</p>
-                            <h1>{data?.reserveAmount.toLocaleString()}</h1>
+                            <h1><TezAmount amount={data?.reserveAmount}/></h1>
                         </div>
                     </div>
                 </div>

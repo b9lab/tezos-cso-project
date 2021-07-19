@@ -1,4 +1,5 @@
 import useSWR from "swr";
+import TezAmount from "../src/components/TezAmount";
 
 function InvestmentNumbers() {
     const { data, error } = useSWR("api/investment-numbers");
@@ -17,7 +18,7 @@ function InvestmentNumbers() {
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4 border border-accent-1">
                         <p>Price info</p>
-                        <h1>ꜩ  {data.tokenBuyPrice}</h1>
+                        <h1><TezAmount amount={data.tokenBuyPrice}/></h1>
                     </div>
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2">
@@ -40,19 +41,19 @@ function InvestmentNumbers() {
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                         <p>Total investment</p>
-                        <h1>ꜩ {data.totalInvestment.toLocaleString()}</h1>
+                        <h1><TezAmount amount={data.totalInvestment}/></h1>
                     </div>
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                         <p>Minimum funding goal</p>
-                        <h1>ꜩ { data.minimumFundingGoal.toLocaleString() }</h1>
+                        <h1><TezAmount amount={data.minimumFundingGoal}/></h1>
                     </div>
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                         <p>Reserve amount</p>
-                        <h1>ꜩ {data.reserveAmount.toLocaleString()}</h1>
+                        <h1><TezAmount amount={data.reserveAmount}/></h1>
                     </div>
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2">
@@ -80,7 +81,7 @@ function CompanyValuation() {
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4 border border-accent-1">
                         <p>Company valuation</p>
-                        <h1>USD {data.valuation}</h1>
+                        <h1><span className="currency-sign pr-4 text-gray-500">$</span>{data.valuation}<span className="currency-suffix pl-2 text-2xl font-light">USD</span></h1>
                     </div>
                 </div>
             </div>

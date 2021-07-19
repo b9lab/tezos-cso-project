@@ -8,7 +8,8 @@ export const SITE_IMAGE: string = '';
 
 export const CONTRACT_ADDRESS: string = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || 'KT1HAzXAJKv2L1orAET65gYyoZvoJtPCdPnz';
 
-export const FUND_MULTIPLIER: number = 100000;
+export const FUND_MULTIPLIER: number = 1;
+export const TEZ_DISPLAY_MULTIPLIER: number = 1000000;
 
 export enum NAV_ITEM_VISIBILITY {
     PUBLIC,

@@ -3,6 +3,7 @@ import { AuthContext, AuthContextData } from "../src/components/Auth";
 import DataHandler from "../src/services/DataHandler";
 import { UserInvestmentDto } from "../src/utils/dtos";
 import { useData } from "../src/utils/hooks";
+import TezAmount from "../src/components/TezAmount";
 
 export default function PersonalInvestmentInfo() {
     const context: AuthContextData = useContext(AuthContext);
@@ -25,13 +26,13 @@ export default function PersonalInvestmentInfo() {
                 <div className="w-full flex-grow sm:max-w-1/2">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                         <p>Tezos invested</p>
-                        <h1>ꜩ {data?.tezInvested.toLocaleString()}</h1>
+                        <h1><TezAmount amount={data?.tezInvested}/></h1>
                     </div>
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                         <p>Price info</p>
-                        <h1>ꜩ {data?.tokenBuyPrice}</h1>
+                        <h1><TezAmount amount={data?.tokenBuyPrice}/></h1>
                     </div>
                 </div>
             </div>

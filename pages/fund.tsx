@@ -6,6 +6,7 @@ import { FUND_MULTIPLIER } from "../src/constants";
 import DataHandler from "../src/services/DataHandler";
 import { FundDto, FundTokenInfoDto } from "../src/utils/dtos";
 import { useData } from "../src/utils/hooks";
+import TezAmount from "../src/components/TezAmount";
 
 export default function Fund() {
     const context: AuthContextData = useContext(AuthContext);
@@ -38,7 +39,7 @@ export default function Fund() {
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                             <p>Buy price</p>
-                            <h1>ꜩ {data?.tokenBuyPrice.toLocaleString()}</h1>
+                            <h1><TezAmount amount={data?.tokenBuyPrice}/></h1>
                         </div>
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2">
@@ -50,7 +51,7 @@ export default function Fund() {
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                             <p>Tezos in account</p>
-                            <h1>ꜩ {data?.tezCount.toLocaleString()}</h1>
+                            <h1><TezAmount amount={data?.tezCount}/></h1>
                         </div>
                     </div>
                 </div>
