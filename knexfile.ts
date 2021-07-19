@@ -44,10 +44,10 @@ export default {
     production: {
         client: 'postgresql',
         connection: {
-            host: process.env.RDS_HOST || process.env.PROD_DATABASE_HOST,
+            host: process.env.RDS_HOSTNAME || process.env.PROD_DATABASE_HOST,
             port: parseInt(process.env.RDS_PORT || process.env.PROD_DATABASE_PORT || '5432'),
-            database: process.env.RDS_DATABASE || process.env.PROD_DATABASE_NAME,
-            user: process.env.RDS_USER || process.env.PROD_DATABASE_USER,
+            database: process.env.RDS_DB_NAME || process.env.PROD_DATABASE_NAME,
+            user: process.env.RDS_USERNAME || process.env.PROD_DATABASE_USER,
             password: process.env.RDS_PASSWORD || process.env.PROD_DATABASE_PASSWORD
         },
         pool: {
