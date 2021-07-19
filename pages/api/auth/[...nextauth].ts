@@ -1,7 +1,12 @@
+import { Knex } from 'knex';
 import NextAuth from 'next-auth';
 import Adapters from 'next-auth/adapters';
 import Providers from 'next-auth/providers';
+import knexfile from '../../../knexfile';
 import Models from '../../../src/models';
+
+const env = process.env.NODE_ENV || 'development';
+const config = knexfile[env];
 
 export default NextAuth({
     providers: [
@@ -24,11 +29,11 @@ export default NextAuth({
     adapter: Adapters.TypeORM.Adapter(
         {
             type: 'postgres',
-            host: process.env.LOCAL_DATABASE_HOST,
-            port: parseInt(process.env.LOCAL_DATABASE_PORT || '5432'),
-            username: process.env.LOCAL_DATABASE_USER,
-            password: process.env.LOCAL_DATABASE_PASSWORD,
-            database: process.env.LOCAL_DATABASE_NAME
+            host: config.connection.host,
+            port: config.connection.port,
+            username: config.connection.user,
+            password: config.connection.password,
+            database: config.connection.database
         },
         {
           models: {
