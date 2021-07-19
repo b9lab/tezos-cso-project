@@ -42,7 +42,7 @@ export default function About() {
                     What is a Continuous Securities Offering?
                 </h2>
                 <div className="indent">
-                    In a CSO, security tokens are issued, which represent a proportional share of a company's future revenue. 
+                    In a CSO, security tokens are issued, which represent a proportional share of a company&apos;s future revenue. 
                     Thus, it is not equity-centered but revenue-focused, and brings the potential of aligning stakeholder 
                     interests with the financial success of a company. <br/><br/>
 
