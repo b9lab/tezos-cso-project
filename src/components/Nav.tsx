@@ -45,30 +45,32 @@ function Nav(props: NavProps) {
         classes += (item.url == router.pathname) ? "text-accent-1 " : "text-dark-gray ";
 
         return (
-            <Link href={item.url} key={"menu_item_" + index} passHref>
-                <li className={classes}>
-                    {
-                        item.custom ? 
-                        item.custom() : 
-                        <a>{item.name}</a>
-                    }
-                    { item.children && 
-                        <ul className="absolute bg-accent-1 text-white flex flex-col hover-target min-w-max mt-4 -mx-4">
-                            { item.children.filter(navItemFilter).map((item: NavItem, index: number) => {
-                                let classes = "m-4 ";
+            <li className={classes} key={"menu_item_" + index}>
+                <Link href={item.url} passHref>
+                    <div>
+                        {
+                            item.custom ? 
+                            item.custom() : 
+                            <a>{item.name}</a>
+                        }
+                    </div>
+                </Link>
+                { item.children && 
+                    <ul className="absolute bg-accent-1 text-white flex flex-col hover-target min-w-max mt-4 -mx-4">
+                        { item.children.filter(navItemFilter).map((item: NavItem, index: number) => {
+                            let classes = "m-4 ";
 
-                                return (
-                                    <li className={classes} key={"menu_sub_item_" + index}>
-                                        <Link href={item.url} passHref>
-                                            <a>{item.name}</a>
-                                        </Link>
-                                    </li>
-                                );
-                            }) }
-                        </ul> 
-                    }
-                </li>
-            </Link>
+                            return (
+                                <li className={classes} key={"menu_sub_item_" + index}>
+                                    <Link href={item.url} passHref>
+                                        <a>{item.name}</a>
+                                    </Link>
+                                </li>
+                            );
+                        }) }
+                    </ul> 
+                }
+            </li>
         );
     }
 
