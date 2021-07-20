@@ -31,7 +31,7 @@ export default function Profile() {
         address: (event: ChangeEvent<HTMLInputElement>): void => setInputAddress(event.target.value),
         signOut: () => signOut({callbackUrl: '/'}),
         update: () => updateUser({ name: inputName, country: inputCountry, address: inputAddress}),
-        fetchAndSaveAddress: () => contract.user().then((address: string) => {
+        fetchAndSaveAddress: () => contract.updatePermission().catch(console.error).then((address: string) => {
             setInputAddress(address);
             updateUser({ address: address });
             mutate('/api/auth/session');
