@@ -180,8 +180,8 @@ export default class DataHandler {
     async getUserTransactionData(address: string): Promise<Array<UserTransactionDto>> {
         const data: Array<UserTransactionDto> = [];
         const user = await chain.user(address);
-        const fundData: Array<Transaction> = await user.buyed();
-        const withdrawData: Array<Transaction> = await user.selled();
+        const fundData: Array<Transaction> = await user.bought();
+        const withdrawData: Array<Transaction> = await user.sold();
 
         const fundsMapped: Array<UserTransactionDto> = fundData.map((transaction: Transaction) => {
             return {
