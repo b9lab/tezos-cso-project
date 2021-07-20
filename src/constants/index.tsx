@@ -1,3 +1,4 @@
+import { signOut } from "next-auth/client";
 import Button from "../components/Button";
 import NavItem from "../utils/NavItem";
 
@@ -116,6 +117,12 @@ export const NAV_ITEMS: Array<NavItem> = [
                 name: "My profile",
                 url: "/profile",
                 visibility: NAV_ITEM_VISIBILITY.PRIVATE
+            },
+            {
+                name: "Sign out",
+                url: "/",
+                visibility: NAV_ITEM_VISIBILITY.PRIVATE,
+                custom: () => { return (<button style={{fontFamily: 'Libre Franklin'}} onClick={() => signOut({callbackUrl: '/'})}>Sign out</button>) }
             }
         ]
     }
