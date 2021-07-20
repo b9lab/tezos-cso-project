@@ -9,7 +9,7 @@ export default class WalletHandler {
 
     constructor() {
         this.walletOptions = {
-            name: 'Student Certifier'
+            name: 'PEQ Example Platform'
         };
         this.networkType = NetworkType.FLORENCENET;
         this.wallet = new BeaconWallet(this.walletOptions);
