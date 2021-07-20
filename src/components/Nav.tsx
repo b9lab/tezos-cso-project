@@ -58,12 +58,12 @@ function Nav(props: NavProps) {
                 { item.children && 
                     <ul className="absolute bg-white text-dark-gray flex flex-col hover-target min-w-max mt-4 -mx-8">
                         { item.children.filter(navItemFilter).map((subItem: NavItem, index: number) => {
-                            let classes = "m-4 mx-8 submenu-item";
+                            let classes = "submenu-item";
 
                             return (
                                 <li className={classes} key={"menu_sub_item_" + index}>
                                     <Link href={subItem.url} passHref>
-                                        <div>
+                                        <div className="px-8 py-4">
                                             {
                                                 subItem.custom ? 
                                                 subItem.custom() : 
