@@ -187,7 +187,7 @@ export default class DataHandler {
             return {
                 date: transaction.timestamp,
                 tezAmount: transaction.amount,
-                tokenAmount: 1,
+                tokenAmount: transaction.tokens,
                 transactionType: TransactionType.Funding
             };
         });
@@ -196,7 +196,7 @@ export default class DataHandler {
             return {
                 date: transaction.timestamp,
                 tezAmount: transaction.amount,
-                tokenAmount: 1,
+                tokenAmount: transaction.tokens,
                 transactionType: TransactionType.Withdrawal
             };
         });
