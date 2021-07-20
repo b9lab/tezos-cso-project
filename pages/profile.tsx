@@ -1,6 +1,6 @@
 import { signOut } from 'next-auth/client';
 import React, { ChangeEvent, useState } from 'react';
-import useSWR from 'swr';
+import useSWR, { mutate } from 'swr';
 import Button from '../src/components/Button';
 import Input from '../src/components/Input';
 import WalletHandler from '../src/services/WalletHandler';
@@ -23,8 +23,9 @@ export default function Profile() {
     const addressStored = data.address ?? '';
     const emailStored = data.email;
 
-    const updateUser = (user: any) => fetch(apiEndpoint, { method: 'PUT', body: JSON.stringify(user)})
-        .then(res => res.json());
+    const updateUser = (user: any) => {
+        fetch(apiEndpoint, { method: 'PUT', body: JSON.stringify(user)}).then(() => mutate('/api/auth/session'));
+    };
 
     const handlers = {
         name: (event: ChangeEvent<HTMLInputElement>): void => setInputName(event.target.value),
@@ -35,6 +36,7 @@ export default function Profile() {
         fetchAndSaveAddress: () => walletHandler.getAddress().then(address => {
             setInputAddress(address);
             updateUser({ address: address });
+            mutate('/api/auth/session');
         })
     };
 
