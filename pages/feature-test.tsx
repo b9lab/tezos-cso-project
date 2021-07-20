@@ -117,6 +117,7 @@ export default function Page() {
                 <h2 className="mb-4">Charts</h2>
                 <ChartWrapper options={options} series={series} type="bar"/>
             </div>
+            <div className="bg-accent-1 bg-accent-2 bg-dark-gray text-accent-1 text-accent-2 text-dark-gray border-accent-1 border-accent-2 border-dark-gray hover:text-accent-1 hover:text-accent-2 hover:text-dark-gray hover:bg-accent-1 hover:bg-accent-2 hover:bg-dark-gray"></div>
         </div>
     );
 }
