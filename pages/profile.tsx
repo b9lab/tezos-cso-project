@@ -3,7 +3,7 @@ import React, { ChangeEvent, useState } from 'react';
 import useSWR, { mutate } from 'swr';
 import Button from '../src/components/Button';
 import Input from '../src/components/Input';
-import WalletHandler from '../src/services/WalletHandler';
+import { contract } from '../tezos-app-project';
 
 const apiEndpoint = '/api/users/profile';
 
@@ -12,8 +12,6 @@ export default function Profile() {
     const [inputName, setInputName] = useState<string>();
     const [inputCountry, setInputCountry] = useState<string>();
     const [inputAddress, setInputAddress] = useState<string>();
-
-    const walletHandler = new WalletHandler();
 
     if (error) return "An error has occurred.";
     if (!data) return "Loading...";
@@ -33,7 +31,7 @@ export default function Profile() {
         address: (event: ChangeEvent<HTMLInputElement>): void => setInputAddress(event.target.value),
         signOut: () => signOut({callbackUrl: '/'}),
         update: () => updateUser({ name: inputName, country: inputCountry, address: inputAddress}),
-        fetchAndSaveAddress: () => walletHandler.getAddress().then(address => {
+        fetchAndSaveAddress: () => contract.user().then((address: string) => {
             setInputAddress(address);
             updateUser({ address: address });
             mutate('/api/auth/session');
