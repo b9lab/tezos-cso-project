@@ -104,7 +104,7 @@ export const NAV_ITEMS: Array<NavItem> = [
         url: "/sign-in",
         visibility: NAV_ITEM_VISIBILITY.ANONYMOUS,
         position: NAV_ITEM_POSITION.RIGHT,
-        custom: () => {return (<Button handler={() => {}} color="accent-1">Sign in</Button>)}
+        custom: () => {return (<Button handler={() => {}} color="accent-1" className="my-6">Sign in</Button>)}
     },
     {
         name: "Profile",

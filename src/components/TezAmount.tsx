@@ -1,6 +1,6 @@
 import { format_tez } from "../helpers";
 
-type ButtonProps = {
+type TezAmountProps = {
     amount: number,
     size?: string
 };

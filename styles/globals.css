@@ -74,4 +74,8 @@
   text-indent: 2em;
 }
 
+nav li.submenu-item {
+  min-width: 130px;
+}
+
 /* bg-accent-2 keep this comment until it is explicitly used in some view (otherwise the tailwind prune will omit it) */
