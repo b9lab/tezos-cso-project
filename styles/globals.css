@@ -55,7 +55,7 @@
 }
 
 .hover-trigger:hover {
-  @apply bg-accent-1 text-white;
+  @apply text-accent-1;
 }
 
 .hover-trigger .hover-target {
@@ -64,6 +64,10 @@
 
 .hover-trigger:hover .hover-target {
   @apply flex z-10;
+}
+
+.hover-target li:hover {
+  @apply text-accent-1;
 }
 
 .indent {

@@ -40,7 +40,7 @@ function Nav(props: NavProps) {
 
     const desktopNavItemMap = (item: NavItem, index: number) => {
         let classes = "inline-block relative cursor-pointer ";
-        if (!item.custom) classes += "hover-trigger p-4 ";
+        if (!item.custom) classes += "hover-trigger p-6 ";
         if (item.position && item.position == NAV_ITEM_POSITION.RIGHT) classes += "float-right m-auto ";
         classes += (item.url == router.pathname) ? "text-accent-1 " : "text-dark-gray ";
 
@@ -56,9 +56,9 @@ function Nav(props: NavProps) {
                     </div>
                 </Link>
                 { item.children && 
-                    <ul className="absolute bg-accent-1 text-white flex flex-col hover-target min-w-max mt-4 -mx-4">
+                    <ul className="absolute bg-white text-dark-gray flex flex-col hover-target min-w-max mt-4 -mx-8">
                         { item.children.filter(navItemFilter).map((item: NavItem, index: number) => {
-                            let classes = "m-4 ";
+                            let classes = "m-4 mx-8";
 
                             return (
                                 <li className={classes} key={"menu_sub_item_" + index}>

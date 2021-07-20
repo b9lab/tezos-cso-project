@@ -37,3 +37,6 @@ yarn-error.log*
 /features/reports/**
 /artifacts/**
 /visual-regression-baseline/**
+
+# crash reports
+report.*
