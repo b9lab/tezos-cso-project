@@ -74,6 +74,11 @@ export default class DataHandler {
         const initialReserve = await chain.initialReserve();
         const minimumInvestment = 0; // todo
         const initialValuation = await chain.companyValuation();
+        const reservePercentage = await chain.i();
+        const retainedRevenuePercentage = await chain.d();
+        const minimumFundingGoal = await chain.mfg();
+        const buySlope = await chain.buySlope();
+        const sellSlope = await chain.sellSlope();
 
         return new Promise((resolve, reject) => {
             const data: CafeInfoDto = {
@@ -84,7 +89,12 @@ export default class DataHandler {
                 minimumInvestment: minimumInvestment,
                 initialReserve: initialReserve,
                 initialValuation: initialValuation,
-                governingRights: govRights
+                governingRights: govRights,
+                reservePercentage: reservePercentage,
+                retainedRevenuePercentage: retainedRevenuePercentage,
+                minimumFundingGoal: minimumFundingGoal,
+                buySlope: buySlope,
+                sellSlope: sellSlope
             }
 
             resolve(data);

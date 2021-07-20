@@ -21,7 +21,12 @@ export interface CafeInfoDto {
     minimumInvestment: number,
     initialReserve: number,
     initialValuation: number,
-    governingRights: string
+    governingRights: string,
+    reservePercentage: number,
+    retainedRevenuePercentage: number,
+    minimumFundingGoal: number, // TEZ
+    buySlope: number, // percentage/factor
+    sellSlope: number // percentage/factor
 }
 
 export interface CompanyValuationDto {
