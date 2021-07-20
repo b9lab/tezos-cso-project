@@ -14,7 +14,8 @@ import { contract, chain } from '../../tezos-app-project';
 
 interface Transaction {
     timestamp: string,
-    amount: number
+    amount: number,
+    tokens: number
 }
 
 export default class DataHandler {
