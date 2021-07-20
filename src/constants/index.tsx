@@ -1,9 +1,9 @@
 import Button from "../components/Button";
 import NavItem from "../utils/NavItem";
 
-export const SITE_NAME: string = 'Tezos CSO';
-export const SITE_TITLE: string = 'Tezos CSO';
-export const SITE_DESCRIPTION: string = 'Site description';
+export const SITE_NAME: string = 'Tezos PEQ Example App';
+export const SITE_TITLE: string = 'Tezos PEQ Example App';
+export const SITE_DESCRIPTION: string = 'This platform is an example project, which is part of the educational course on the Tezos Developer Platform (tezos.b9lab.com). There is no real investment or company involved.';
 export const SITE_IMAGE: string = '';
 
 export const CONTRACT_ADDRESS: string = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || 'KT1HAzXAJKv2L1orAET65gYyoZvoJtPCdPnz';
@@ -24,12 +24,12 @@ export enum NAV_ITEM_POSITION {
 
 export const NAV_ITEMS: Array<NavItem> = [
     {
-        name: "CSO PLATFORM",
+        name: "PEQ App",
         url: "/",
         visibility: NAV_ITEM_VISIBILITY.PUBLIC,
         children: [
             {
-                name: "CSO Platform",
+                name: "Overview",
                 url: "/",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
