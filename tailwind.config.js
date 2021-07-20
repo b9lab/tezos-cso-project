@@ -21,5 +21,11 @@ module.exports = {
         '1/2': '50%',
        }
     },
-  }
+  },
+  variants: {
+    extend: {
+      backgroundColor: ['odd'],
+      borderRadius: ['last']
+    }
+  },
 }
