@@ -56,14 +56,20 @@ function Nav(props: NavProps) {
                     </div>
                 </Link>
                 { item.children && 
-                    <ul className="absolute bg-white text-dark-gray flex flex-col hover-target min-w-max mt-4 -mx-8">
-                        { item.children.filter(navItemFilter).map((item: NavItem, index: number) => {
-                            let classes = "m-4 mx-8 submenu-item";
+                    <ul className={"absolute bg-white text-dark-gray flex flex-col hover-target min-w-max mt-4 " + (item.position == NAV_ITEM_POSITION.RIGHT ? "right-0" : "-mx-8")}>
+                        { item.children.filter(navItemFilter).map((subItem: NavItem, index: number) => {
+                            let classes = "submenu-item " + (subItem.url == router.pathname ? "text-accent-1 " : "text-dark-gray ");
 
                             return (
                                 <li className={classes} key={"menu_sub_item_" + index}>
-                                    <Link href={item.url} passHref>
-                                        <a>{item.name}</a>
+                                    <Link href={subItem.url} passHref>
+                                        <div className="px-8 py-4">
+                                            {
+                                                subItem.custom ? 
+                                                subItem.custom() : 
+                                                <a>{subItem.name}</a>
+                                            }
+                                        </div>
                                     </Link>
                                 </li>
                             );
@@ -88,7 +94,7 @@ function Nav(props: NavProps) {
                         return (
                             <Link href={subItem.url} key={"menu_sub_item_" + i} passHref>
                                 <div className={subItem.url == router.pathname ? "text-accent-1 " : "text-dark-gray "}>
-                                    <a>{subItem.name}</a>
+                                    { subItem.custom ? subItem.custom() : <a>{subItem.name}</a> }
                                 </div>
                             </Link>
                         );
