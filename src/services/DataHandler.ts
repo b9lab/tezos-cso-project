@@ -12,6 +12,11 @@ import {
 } from "../utils/dtos";
 import { contract, chain } from '../../tezos-app-project';
 
+interface Transaction {
+    timestamp: string,
+    amount: number
+}
+
 export default class DataHandler {
 
     // General Investment Info
@@ -162,30 +167,32 @@ export default class DataHandler {
 
     // Transactions
 
-    getUserTransactionData(): Promise<Array<UserTransactionDto>> {
-        return new Promise((resolve, reject) => {
-            const data: Array<UserTransactionDto> = [
-                {
-                    date: "2021-07-29 12:05:33.574+00",
-                    tezAmount: 2000,
-                    tokenAmount: 1,
-                    transactionType: TransactionType.Funding
-                },
-                {
-                    date: "2021-02-13 12:05:33.574+00",
-                    tezAmount: 100,
-                    tokenAmount: 2,
-                    transactionType: TransactionType.Withdrawal
-                },
-                {
-                    date: "2021-05-21 12:05:33.574+00",
-                    tezAmount: 5000,
-                    tokenAmount: 3,
-                    transactionType: TransactionType.Funding
-                },
-            ]
+    async getUserTransactionData(address: string): Promise<Array<UserTransactionDto>> {
+        const data: Array<UserTransactionDto> = [];
+        const user = await chain.user(address);
+        const fundData: Array<Transaction> = await user.buyed();
+        const withdrawData: Array<Transaction> = await user.selled();
 
-            resolve(data);
+        const fundsMapped: Array<UserTransactionDto> = fundData.map((transaction: Transaction) => {
+            return {
+                date: transaction.timestamp,
+                tezAmount: transaction.amount,
+                tokenAmount: 1,
+                transactionType: TransactionType.Funding
+            };
+        });
+
+        const withdrawsMapped: Array<UserTransactionDto> = withdrawData.map((transaction: Transaction) => {
+            return {
+                date: transaction.timestamp,
+                tezAmount: transaction.amount,
+                tokenAmount: 1,
+                transactionType: TransactionType.Withdrawal
+            };
+        });
+
+        return new Promise((resolve, reject) => {
+            resolve(data.concat(fundsMapped, withdrawsMapped));
         });
     }
 }

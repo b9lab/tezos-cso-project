@@ -1,5 +1,6 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext, AuthContextData } from "../src/components/Auth";
+import TezAmount from "../src/components/TezAmount";
 import DataHandler from "../src/services/DataHandler";
 import { UserTransactionDto, TransactionType } from "../src/utils/dtos";
 import { useData } from "../src/utils/hooks";
@@ -7,7 +8,7 @@ import { useData } from "../src/utils/hooks";
 export default function Transactions() {
     const context: AuthContextData = useContext(AuthContext);
     const dataHandler = new DataHandler();
-    const data: UserTransactionDto[] = useData(dataHandler.getUserTransactionData, context.address);
+    const data: UserTransactionDto[] = useData(dataHandler.getUserTransactionData, "tz1L8wgLL3CSJbRMA1FGm8zHzGpSG1qi15HF");
     const [ typeFilter, setTypeFilter ] = useState<TransactionType | null>(null);
 
     const transactionFilter = (item: UserTransactionDto) => typeFilter == null || typeFilter === item.transactionType;
@@ -18,10 +19,14 @@ export default function Transactions() {
             <div className="w-full flex justify-between body-text-small mt-4" key={index}>
                 <p className="w-1/4">{date}</p>
                 <p className="w-1/4">{item?.transactionType == TransactionType.Funding ? 'Funding' : 'Withdrawal'}</p>
-                <p className="w-1/4">ꜩ {item?.tezAmount}</p>
+                <p className="w-1/4"><TezAmount amount={item?.tezAmount}/></p>
                 <p className="w-1/4">{item?.tokenAmount}</p>
             </div>
         );
+    };
+
+    const transactionSort = (item1: UserTransactionDto, item2: UserTransactionDto) => {
+        return new Date(item1.date).getTime() - new Date(item2.date).getTime();
     };
 
     return (
@@ -52,7 +57,7 @@ export default function Transactions() {
                     <h3 className="w-1/4">Tez Amount</h3>
                     <h3 className="w-1/4">Token</h3>
                 </div>
-                { data?.filter(transactionFilter).map(transactionMap) }
+                { data?.filter(transactionFilter).sort(transactionSort).map(transactionMap) }
             </div>
         </div>
     );
