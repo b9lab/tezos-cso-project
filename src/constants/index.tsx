@@ -122,7 +122,7 @@ export const NAV_ITEMS: Array<NavItem> = [
                 name: "Sign out",
                 url: "",
                 visibility: NAV_ITEM_VISIBILITY.PRIVATE,
-                custom: () => { return (<button style={{fontFamily: 'Libre Franklin'}} onClick={() => signOut({callbackUrl: '/'})}>Sign out</button>) }
+                custom: () => { return (<button className="font-family-headline" onClick={() => signOut({callbackUrl: '/'})}>Sign out</button>) }
             }
         ]
     }

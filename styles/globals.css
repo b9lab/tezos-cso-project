@@ -6,32 +6,28 @@
 
 @layer base {
   body {
-    @apply font-medium not-italic leading-loose bg-light-gray;
+    @apply font-medium not-italic leading-loose bg-light-gray font-family-body;
     font-size: 18px;
-    font-family: 'Cormorant';
   }
   h1 {
-    @apply font-semibold;
+    @apply font-semibold font-family-headline;
     font-size: 36px;
     line-height: 44px;
-    font-family: 'Libre Franklin';
   }
   h2 {
-    @apply font-semibold;
+    @apply font-semibold font-family-headline;
     font-size: 24px;
     line-height: 29px;
-    font-family: 'Libre Franklin';
   }
   h3 {
-    @apply font-semibold;
+    @apply font-semibold font-family-headline;
     font-size: 18px;
     line-height: 22px;
-    font-family: 'Libre Franklin';
   }
   a {
+    @apply font-family-headline;
     font-size: 18px;
     line-height: 22px;
-    font-family: 'Libre Franklin';
   }
 }
 
@@ -76,4 +72,12 @@
 
 nav li.submenu-item {
   min-width: 130px;
+}
+
+.font-family-body {
+  font-family: 'Cormorant';
+}
+
+.font-family-headline {
+  font-family: 'Libre Franklin';
 }
