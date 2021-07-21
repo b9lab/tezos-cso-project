@@ -8,6 +8,7 @@ import Button from "./Button";
 import Modal from "./Modal";
 import TezAmount from "./TezAmount";
 import Link from "next/link";
+import { format_date } from "../helpers";
 
 type TransactionProcessorProp = {
     address: string,
@@ -91,7 +92,7 @@ function ConfirmedModal(props: ConfirmedModalProp) {
                                 <h3 className="w-1/4">Token</h3>
                             </div>
                             <div className="w-full flex justify-between body-text-small bg-light-gray odd:bg-white py-2 px-4 last:rounded-b " key={props.transaction.hash}>
-                                <p className="w-1/4">{props.transaction.date}</p>
+                                <p className="w-1/4">{format_date(props.transaction.date)}</p>
                                 <p className="w-1/4">{props.transaction.transactionType == TransactionType.Funding ? 'Funding' : 'Withdrawal'}</p>
                                 <p className="w-1/4"><TezAmount amount={props.transaction.tezAmount} nostyle={true}/></p>
                                 <p className="w-1/4">{props.transaction.tokenAmount}</p>

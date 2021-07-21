@@ -27,7 +27,7 @@ export default function Withdraw() {
                 amount: withdrawAmount,
                 accountAddress: context.address
             };
-            dataHandler.withdraw(withdrawDto).then(setHashToCheck);
+            dataHandler.withdraw(withdrawDto).then(setHashToCheck).catch(console.error);
         },
     };
 

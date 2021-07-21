@@ -22,13 +22,13 @@ export default function Fund() {
         },
         fund: () => {
             if (!amount) return;
-            
+
             const fundAmount = parseFloat(amount) * FUND_MULTIPLIER;
             const fundDto: FundDto = {
                 amount: fundAmount,
                 accountAddress: context.address
             };
-            dataHandler.fund(fundDto).then(setHashToCheck);
+            dataHandler.fund(fundDto).then(setHashToCheck).catch(console.error);
         }
     };
 

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext, AuthContextData } from "../src/components/Auth";
 import TezAmount from "../src/components/TezAmount";
+import { format_date } from "../src/helpers";
 import DataHandler from "../src/services/DataHandler";
 import { UserTransactionDto, TransactionType } from "../src/utils/dtos";
 import { useData } from "../src/utils/hooks";
@@ -14,10 +15,9 @@ export default function Transactions() {
     const transactionFilter = (item: UserTransactionDto) => typeFilter == null || typeFilter === item.transactionType;
 
     const transactionMap = (item: UserTransactionDto) => {
-        let date = new Date(item?.date).toLocaleDateString('en-gb', { day: "2-digit", month: "short", year: "2-digit" });
         return (
             <div className="w-full flex justify-between body-text-small bg-light-gray odd:bg-white py-2 px-4 last:rounded-b " key={item.hash}>
-                <p className="w-1/4">{date}</p>
+                <p className="w-1/4">{format_date(item?.date)}</p>
                 <p className="w-1/4">{item?.transactionType == TransactionType.Funding ? 'Funding' : 'Withdrawal'}</p>
                 <p className="w-1/4"><TezAmount amount={item?.tezAmount} nostyle={true}/></p>
                 <p className="w-1/4">{item?.tokenAmount}</p>

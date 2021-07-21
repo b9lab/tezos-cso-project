@@ -150,8 +150,15 @@ export default class DataHandler {
     }
 
     fund(data: FundDto): Promise<string> {
-        return contract.buy(data.amount).catch(console.error).then((transaction: Transaction) => {
-            return transaction.hash;
+        return new Promise<string>((resolve, reject) => {
+            contract.buy(data.amount).then((result: string) => {
+                console.log(result)
+                if (result.includes("TRANSACTION_INVALID_ERROR")) {
+                    reject(new Error("Transaction failed"));
+                } else {
+                    resolve(result.replace("Operation injected: ", ""));
+                }
+            });
         });
     }
 
@@ -176,8 +183,15 @@ export default class DataHandler {
     }
 
     withdraw(data: WithdrawDto): Promise<string> {
-        return contract.sell(data.amount).catch(console.error).then((transaction: Transaction) => {
-            return transaction.hash;
+        return new Promise<string>((resolve, reject) => {
+            contract.sell(data.amount).then((result: string) => {
+                console.log(result)
+                if (result.includes("TRANSACTION_INVALID_ERROR")) {
+                    reject(new Error("Transaction failed"));
+                } else {
+                    resolve(result.replace("Operation injected: ", ""));
+                }
+            });
         });
     }
 
