@@ -12,6 +12,9 @@ export const CONTRACT_ADDRESS: string = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS
 export const FUND_MULTIPLIER: number = 1;
 export const TEZ_DISPLAY_MULTIPLIER: number = 1000000;
 
+export const FUND_PROCESSING_INITIAL_INTERVAL: number = 5000;
+export const FUND_PROCESSING_MAX_INTERVAL: number = 32000;
+
 export enum NAV_ITEM_VISIBILITY {
     PUBLIC,
     PRIVATE,

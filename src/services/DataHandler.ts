@@ -15,7 +15,8 @@ import { contract, chain } from '../../tezos-app-project';
 interface Transaction {
     timestamp: string,
     amount: number,
-    tokens: number
+    tokens: number,
+    hash: string
 }
 
 export default class DataHandler {
@@ -148,8 +149,10 @@ export default class DataHandler {
         });
     }
 
-    fund(data: FundDto) {
-        contract.buy(data.amount);
+    fund(data: FundDto): Promise<string> {
+        return contract.buy(data.amount).catch(console.error).then((transaction: Transaction) => {
+            return transaction.hash
+        });
     }
 
     // Withdraw
@@ -186,6 +189,7 @@ export default class DataHandler {
 
         const fundsMapped: Array<UserTransactionDto> = fundData.map((transaction: Transaction) => {
             return {
+                hash: transaction.hash,
                 date: transaction.timestamp,
                 tezAmount: transaction.amount,
                 tokenAmount: transaction.tokens,
@@ -195,6 +199,7 @@ export default class DataHandler {
 
         const withdrawsMapped: Array<UserTransactionDto> = withdrawData.map((transaction: Transaction) => {
             return {
+                hash: transaction.hash,
                 date: transaction.timestamp,
                 tezAmount: transaction.amount,
                 tokenAmount: transaction.tokens,

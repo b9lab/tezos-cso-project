@@ -13,10 +13,10 @@ export default function Transactions() {
 
     const transactionFilter = (item: UserTransactionDto) => typeFilter == null || typeFilter === item.transactionType;
 
-    const transactionMap = (item: UserTransactionDto, index: number) => {
+    const transactionMap = (item: UserTransactionDto) => {
         let date = new Date(item?.date).toLocaleDateString('en-gb', { day: "2-digit", month: "short", year: "2-digit" });
         return (
-            <div className="w-full flex justify-between body-text-small bg-light-gray odd:bg-white py-2 px-4 last:rounded-b " key={index}>
+            <div className="w-full flex justify-between body-text-small bg-light-gray odd:bg-white py-2 px-4 last:rounded-b " key={item.hash}>
                 <p className="w-1/4">{date}</p>
                 <p className="w-1/4">{item?.transactionType == TransactionType.Funding ? 'Funding' : 'Withdrawal'}</p>
                 <p className="w-1/4"><TezAmount amount={item?.tezAmount} nostyle={true}/></p>
