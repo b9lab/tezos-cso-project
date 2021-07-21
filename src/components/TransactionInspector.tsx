@@ -1,12 +1,13 @@
 import { useRouter } from "next/dist/client/router";
 import React, { useState } from "react";
-import { FUND_PROCESSING_INITIAL_INTERVAL, FUND_PROCESSING_MAX_INTERVAL } from "../constants";
+import { TRANSACTION_INSPECTOR_INITIAL_INTERVAL, TRANSACTION_INSPECTOR_MAX_INTERVAL, TRANSACTION_INSPECTOR_MAX_RETRY_COUNT } from "../constants";
 import DataHandler from "../services/DataHandler";
 import { TransactionType, UserTransactionDto } from "../utils/dtos";
 import { useInterval } from "../utils/hooks";
 import Button from "./Button";
 import Modal from "./Modal";
 import TezAmount from "./TezAmount";
+import Link from "next/link";
 
 type TransactionProcessorProp = {
     address: string,
@@ -21,11 +22,18 @@ type ConfirmedModalProp = {
 
 type ProcessingModalProp = {
     checkHandler: any
+    errorHandler: any
 }
 
 function ProcessingModal(props: ProcessingModalProp) {
     const [modalOpened, setModalOpened] = useState<boolean>(true);
-    useInterval(props.checkHandler, FUND_PROCESSING_INITIAL_INTERVAL, FUND_PROCESSING_MAX_INTERVAL);
+    useInterval(
+        props.checkHandler,
+        props.errorHandler,
+        TRANSACTION_INSPECTOR_INITIAL_INTERVAL, 
+        TRANSACTION_INSPECTOR_MAX_INTERVAL, 
+        TRANSACTION_INSPECTOR_MAX_RETRY_COUNT
+    );
 
     return (
         <>
@@ -35,6 +43,25 @@ function ProcessingModal(props: ProcessingModalProp) {
                     <div>
                         <h1 className="mb-4">The transaction is being processed</h1>
                         <span>Wait until the new transaction is confirmed and public.</span>
+                    </div>
+                </Modal>
+            }
+        </>
+    );
+}
+
+function ErrorModal() {
+    const [modalOpened, setModalOpened] = useState<boolean>(true);
+
+    return (
+        <>
+            {
+                modalOpened &&
+                <Modal closeHandler={() => setModalOpened(false)}>
+                    <div>
+                        <h1 className="mb-4">The transaction isn't confirmed yet</h1>
+                        <span>We suggest you to wait some time and check for it in the </span>
+                        <Link href="/transactions" passHref><a className="font-family-body font-semibold text-accent-1">Transactions page</a></Link>
                     </div>
                 </Modal>
             }
@@ -82,6 +109,7 @@ function ConfirmedModal(props: ConfirmedModalProp) {
 
 function TransactionInspector(props: TransactionProcessorProp) {
     const [confirmedTransaction, setConfirmedTransaction] = useState<UserTransactionDto | null>(null);
+    const [error, setError] = useState<boolean>(false);
     const router = useRouter();
 
     const handlers = {
@@ -92,11 +120,14 @@ function TransactionInspector(props: TransactionProcessorProp) {
             });
             if (confirmedTransaction) setConfirmedTransaction(confirmedTransaction);
         },
-        onConfirmedModalClose: () => router.reload()
+        onConfirmedModalClose: () => router.reload(),
+        onError: () => setError(true)
     }
 
-    if (confirmedTransaction == null) {
-        return (<ProcessingModal checkHandler={handlers.checkTransaction}/>);
+    if (error) {
+        return (<ErrorModal/>);
+    } else if (confirmedTransaction == null) {
+        return (<ProcessingModal checkHandler={handlers.checkTransaction} errorHandler={handlers.onError}/>);
     } else {
         return (<ConfirmedModal closeHandler={handlers.onConfirmedModalClose} transaction={confirmedTransaction}/>);
     }
