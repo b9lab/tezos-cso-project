@@ -32,7 +32,7 @@ export default function Transactions() {
     return (
         <div className="p-4">
             <h1 className="mt-4">Transactions</h1>
-            <div className="body-text-small flex space-x-2 mb-4 px-4 pt-6" style={{fontFamily: 'Libre Franklin'}}>
+            <div className="body-text-small flex space-x-2 mb-4 px-4 pt-6 font-family-headline">
                 <div>Filter: </div>
                 <div 
                     className={ ( typeFilter == null ? "text-accent-1 " : "" ) + "cursor-pointer" } 
