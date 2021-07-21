@@ -57,8 +57,8 @@ export default function About() {
                 </div>
             </div>
 
-            <div className="pt-12 px-8 flex justify-between flex-col sm:flex-row">
-                <div className="mb-8 sm:mr-8 sm:mb-0 w-full">
+            <div className="pt-12 px-8 flex justify-between flex-col-reverse sm:flex-row">
+                <div className="mt-8 sm:mr-8 sm:mt-0 w-full">
                     <h2 className="mb-8 highlight">How does a programmable equity offering work?</h2>
                     <div>
                         The continous organisation sets a <span className="font-semibold">minimal funding goal (MFG)</span>, a set amount of investment. 
@@ -85,8 +85,8 @@ export default function About() {
                 </div>
             </div>
 
-            <div className="pt-12 px-8 flex justify-between flex-col sm:flex-row">
-                <div className="mb-8 sm:mr-8 sm:mb-0 w-full">
+            <div className="pt-12 px-8 flex justify-between flex-col-reverse sm:flex-row">
+                <div className="mt-8 sm:mr-8 sm:mt-0 w-full">
                     <h2 className="mb-8 highlight">MFG achieved: What happens now?</h2>
                     <div>
                         Once the MFG is met, a so-called bonding curve starts with which a portion of the MFG is moved into a reserve 
