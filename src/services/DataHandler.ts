@@ -151,7 +151,7 @@ export default class DataHandler {
 
     fund(data: FundDto): Promise<string> {
         return contract.buy(data.amount).catch(console.error).then((transaction: Transaction) => {
-            return transaction.hash
+            return transaction.hash;
         });
     }
 
@@ -175,8 +175,10 @@ export default class DataHandler {
         });
     }
 
-    withdraw(data: WithdrawDto) {
-        contract.sell(data.amount);
+    withdraw(data: WithdrawDto): Promise<string> {
+        return contract.sell(data.amount).catch(console.error).then((transaction: Transaction) => {
+            return transaction.hash;
+        });
     }
 
     // Transactions

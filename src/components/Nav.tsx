@@ -1,28 +1,16 @@
 import { useSession } from 'next-auth/client';
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
-import { MutableRefObject, SetStateAction, useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { NAV_ITEM_POSITION, NAV_ITEM_VISIBILITY } from '../constants';
 import NavItem from '../utils/NavItem';
 import Image from 'next/image';
 import closeIcon from '../../public/close-icon.svg';
 import menuIcon from '../../public/menu-icon.svg';
+import { useClickOutside } from "../utils/hooks";
 
 type NavProps = {
     items: Array<NavItem>
-}
-
-function useClickOutsideListener(ref: MutableRefObject<any>, setOpenNav: SetStateAction<any>) {
-    useEffect(() => {
-        const handleClickOutside = (event: any) => {
-            if (ref.current && !ref.current.contains(event.target)) {
-                setOpenNav(false);
-            }
-        }
-        document.addEventListener("mousedown", handleClickOutside);
-
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, [ref, setOpenNav]);
 }
 
 function Nav(props: NavProps) {
@@ -32,7 +20,7 @@ function Nav(props: NavProps) {
     const [openNav, setOpenNav] = useState<boolean>();
 
     const menuRef = useRef(null);
-    useClickOutsideListener(menuRef, setOpenNav);
+    useClickOutside(menuRef, setOpenNav);
 
     const navItemFilter = (item: NavItem) => item.visibility == NAV_ITEM_VISIBILITY.PUBLIC ||
         (item.visibility == NAV_ITEM_VISIBILITY.PRIVATE && session) ||

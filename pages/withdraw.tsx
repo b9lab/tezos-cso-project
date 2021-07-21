@@ -6,24 +6,28 @@ import DataHandler from "../src/services/DataHandler";
 import { WithdrawDto, WithdrawTokenInfoDto } from "../src/utils/dtos";
 import { useData } from "../src/utils/hooks";
 import TezAmount from "../src/components/TezAmount";
+import TransactionInspector from "../src/components/TransactionInspector";
 
 export default function Withdraw() {
     const context: AuthContextData = useContext(AuthContext);
     const dataHandler = new DataHandler();
     const data: WithdrawTokenInfoDto = useData(dataHandler.getWithdrawTokenInfo, context.address);
     const [amount, setAmount] = useState<string>('');
+    const [hashToCheck, setHashToCheck] = useState<string | null>(null);
 
     const handlers = {
-        amount: (event: ChangeEvent<HTMLInputElement>): void => { 
+        amount: (event: ChangeEvent<HTMLInputElement>): void => {
             if (event.target.validity.valid) setAmount(event.target.value);
         },
         withdraw: () => {
+            if (!amount) return;
+
             const withdrawAmount = parseInt(amount);
             const withdrawDto: WithdrawDto = {
                 amount: withdrawAmount,
                 accountAddress: context.address
             };
-            dataHandler.withdraw(withdrawDto);
+            dataHandler.withdraw(withdrawDto).then(setHashToCheck);
         },
     };
 
@@ -70,6 +74,14 @@ export default function Withdraw() {
                     <Button handler={handlers.withdraw}>Withdraw</Button>
                 </div>
             </div>
+            {
+                hashToCheck && 
+                <TransactionInspector 
+                    address={context.address} 
+                    hash={hashToCheck} 
+                    handler={dataHandler}
+                />
+            }
         </div>
     );
 }

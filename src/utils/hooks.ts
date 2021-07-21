@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from "react";
 
 export function useData(action: any, address: string): any {
     const [data, setData] = useState<any | null>();
@@ -34,4 +34,17 @@ export function useInterval(callback: any, initialDelay: number, maxDelay: numbe
             return () => clearInterval(interval);
         }
     }, [callback, initialDelay, maxDelay, retryCount]);
+}
+
+export function useClickOutside(ref: MutableRefObject<any>, onClickOutside: (value: boolean) => void) {
+    useEffect(() => {
+        const handleClickOutside = (event: any) => {
+            if (ref.current && !ref.current.contains(event.target)) {
+                onClickOutside(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [ref, onClickOutside]);
 }

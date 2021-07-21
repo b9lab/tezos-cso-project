@@ -2,36 +2,15 @@ import React, { ChangeEvent, useContext, useState } from "react";
 import { AuthContext, AuthContextData } from "../src/components/Auth";
 import Button from "../src/components/Button";
 import Input from "../src/components/Input";
-import { FUND_MULTIPLIER, FUND_PROCESSING_INITIAL_INTERVAL, FUND_PROCESSING_MAX_INTERVAL } from "../src/constants";
+import { FUND_MULTIPLIER } from "../src/constants";
 import DataHandler from "../src/services/DataHandler";
-import { FundDto, FundTokenInfoDto, UserTransactionDto } from "../src/utils/dtos";
-import { useData, useInterval } from "../src/utils/hooks";
+import { FundDto, FundTokenInfoDto } from "../src/utils/dtos";
+import { useData } from "../src/utils/hooks";
 import TezAmount from "../src/components/TezAmount";
-import { useRouter } from "next/dist/client/router";
-import Modal from "../src/components/Modal";
-
-type FundProcessorProp = {
-    address: string,
-    hash: string,
-    handler: DataHandler,
-    onComplete: (transaction: UserTransactionDto) => void
-}
-
-function FundProcessor(props: FundProcessorProp) {
-    useInterval(async () => {
-        const transactions = await props.handler.getUserTransactionData(props.address);
-        const confirmedTransaction = transactions.find((transaction: UserTransactionDto) => {
-            return transaction.hash == props.hash;
-        });
-        if (confirmedTransaction) props.onComplete(confirmedTransaction);
-    }, FUND_PROCESSING_INITIAL_INTERVAL, FUND_PROCESSING_MAX_INTERVAL);
-
-    return <div> Processing </div>;
-}
+import TransactionInspector from "../src/components/TransactionInspector";
 
 export default function Fund() {
     const context: AuthContextData = useContext(AuthContext);
-    const router = useRouter();
     const dataHandler = new DataHandler();
     const data: FundTokenInfoDto = useData(dataHandler.getFundTokenInfo, context.address);
     const [amount, setAmount] = useState<string>('');
@@ -42,26 +21,21 @@ export default function Fund() {
             if (event.target.validity.valid) setAmount(event.target.value);
         },
         fund: () => {
-            setHashToCheck('test')
-            // todo: check amount != null
-            // const fundAmount = parseFloat(amount) * FUND_MULTIPLIER;
-            // const fundDto: FundDto = {
-            //     amount: fundAmount,
-            //     accountAddress: context.address
-            // };
-            // dataHandler.fund(fundDto).then(setHashToCheck);
-        },
-        onComplete: (transaction: UserTransactionDto) => {
-            setHashToCheck(null);
-            console.log(transaction);
-            // todo: show success modal -> on ok click reload page
+            if (!amount) return;
+            
+            const fundAmount = parseFloat(amount) * FUND_MULTIPLIER;
+            const fundDto: FundDto = {
+                amount: fundAmount,
+                accountAddress: context.address
+            };
+            dataHandler.fund(fundDto).then(setHashToCheck);
         }
     };
 
     return (
         <div>
-            <div className="p-4">
-                <h1 className="pt-4">Fund</h1>
+            <div className="px-4 pt-8">
+                <h1>Fund</h1>
                 <div className="w-full mt-6 body-text-large italic">
                     Token Info
                 </div>
@@ -94,7 +68,12 @@ export default function Fund() {
                 </div>
             </div>
             {
-                hashToCheck && <FundProcessor address={context.address} hash={hashToCheck} handler={dataHandler} onComplete={handlers.onComplete}/>
+                hashToCheck && 
+                <TransactionInspector 
+                    address={context.address} 
+                    hash={hashToCheck} 
+                    handler={dataHandler}
+                />
             }
         </div>
     );
