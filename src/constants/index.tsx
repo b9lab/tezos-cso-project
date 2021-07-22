@@ -39,7 +39,7 @@ export const NAV_ITEMS: Array<NavItem> = [
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             {
-                name: "About this project",
+                name: "About This Project",
                 url: "/about",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
@@ -83,7 +83,7 @@ export const NAV_ITEMS: Array<NavItem> = [
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             {
-                name: "My investment",
+                name: "My Investment",
                 url: "/personal-investment-info",
                 visibility: NAV_ITEM_VISIBILITY.PRIVATE
             },
