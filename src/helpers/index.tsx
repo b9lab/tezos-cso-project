@@ -5,5 +5,6 @@ export function format_tez(amount: number): string {
 }
 
 export function format_date(date: string): string {
+	if (!date) return "";
 	return new Date(date).toLocaleDateString('en-gb', { day: "2-digit", month: "short", year: "2-digit" });
 }

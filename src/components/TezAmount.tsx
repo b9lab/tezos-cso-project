@@ -13,7 +13,7 @@ function TezAmount(props: TezAmountProps) {
     return (
         <span className="tez-amount">
             <span className="currency-sign pr-4 text-gray-500">ꜩ</span>
-            <span className="amount">{ format_tez(props.amount) }</span>
+            <span className="amount">{ format_tez(props.amount ?? 0) }</span>
             <span className={"currency-suffix pl-2 " + (props.nostyle ? "" : "text-2xl font-light")}>tez</span>
         </span>
     );
