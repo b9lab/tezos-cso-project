@@ -180,8 +180,8 @@ export default class DataHandler {
     fund(data: FundDto): Promise<string> {
         return new Promise<string>((resolve, reject) => {
             contract.buy(data.amount).then((result: string) => {
-                if (result.includes("TRANSACTION_INVALID_ERROR")) {
-                    reject(new Error("Transaction failed"));
+                if (result.includes("_ERROR")) {
+                    reject(new Error(result));
                 } else {
                     resolve(result.replace("Operation injected: ", ""));
                 }
@@ -216,9 +216,8 @@ export default class DataHandler {
     withdraw(data: WithdrawDto): Promise<string> {
         return new Promise<string>((resolve, reject) => {
             contract.sell(data.amount).then((result: string) => {
-                console.log(result)
-                if (result.includes("TRANSACTION_INVALID_ERROR")) {
-                    reject(new Error("Transaction failed"));
+                if (result.includes("_ERROR")) {
+                    reject(new Error(result));
                 } else {
                     resolve(result.replace("Operation injected: ", ""));
                 }

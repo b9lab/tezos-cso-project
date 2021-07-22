@@ -14,6 +14,8 @@ export default function Withdraw() {
     const data: WithdrawTokenInfoDto = useData(dataHandler.getWithdrawTokenInfo, context.address);
     const [amount, setAmount] = useState<string>('');
     const [hashToCheck, setHashToCheck] = useState<string | null>(null);
+    const [showTransactionInspector, setShowTransactionInspector] = useState<boolean>(false);
+    const [error, setError] = useState<string | null>(null);
 
     const handlers = {
         amount: (event: ChangeEvent<HTMLInputElement>): void => {
@@ -27,8 +29,15 @@ export default function Withdraw() {
                 amount: withdrawAmount,
                 accountAddress: context.address
             };
-            dataHandler.withdraw(withdrawDto).then(setHashToCheck).catch(console.error);
+            dataHandler.withdraw(withdrawDto).then(setHashToCheck).catch((error: Error) => {
+                setError(error.message);
+            });
+            setShowTransactionInspector(true);
         },
+        closeTransactionInspector: () => { 
+            setShowTransactionInspector(false);
+            setError(null);
+        }
     };
 
     let unlockingDate = new Date(data?.lockPeriod).toLocaleDateString('en-gb', { day: "2-digit", month: "short", year: "2-digit" });
@@ -75,11 +84,13 @@ export default function Withdraw() {
                 </div>
             </div>
             {
-                hashToCheck && 
+                showTransactionInspector && 
                 <TransactionInspector 
                     address={context.address} 
-                    hash={hashToCheck} 
-                    handler={dataHandler}
+                    hash={hashToCheck}
+                    dataHandler={dataHandler}
+                    error={error}
+                    closeHandler={handlers.closeTransactionInspector}
                 />
             }
         </div>

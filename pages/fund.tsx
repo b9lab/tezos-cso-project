@@ -15,6 +15,8 @@ export default function Fund() {
     const data: FundTokenInfoDto = useData(dataHandler.getFundTokenInfo, context.address);
     const [amount, setAmount] = useState<string>('');
     const [hashToCheck, setHashToCheck] = useState<string | null>(null);
+    const [showTransactionInspector, setShowTransactionInspector] = useState<boolean>(false);
+    const [error, setError] = useState<string | null>(null);
 
     const handlers = {
         amount: (event: ChangeEvent<HTMLInputElement>): void => { 
@@ -28,7 +30,14 @@ export default function Fund() {
                 amount: fundAmount,
                 accountAddress: context.address
             };
-            dataHandler.fund(fundDto).then(setHashToCheck).catch(console.error);
+            dataHandler.fund(fundDto).then(setHashToCheck).catch((error: Error) => {
+                setError(error.message);
+            });
+            setShowTransactionInspector(true);
+        },
+        closeTransactionInspector: () => { 
+            setShowTransactionInspector(false);
+            setError(null);
         }
     };
 
@@ -68,11 +77,13 @@ export default function Fund() {
                 </div>
             </div>
             {
-                hashToCheck && 
+                showTransactionInspector && 
                 <TransactionInspector 
                     address={context.address} 
-                    hash={hashToCheck} 
-                    handler={dataHandler}
+                    hash={hashToCheck}
+                    dataHandler={dataHandler}
+                    error={error}
+                    closeHandler={handlers.closeTransactionInspector}
                 />
             }
         </div>
