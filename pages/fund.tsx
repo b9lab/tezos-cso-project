@@ -34,37 +34,39 @@ export default function Fund() {
 
     return (
         <div>
-            <div className="px-4 pt-8">
+            <div className="p-8">
                 <h1>Fund</h1>
-                <div className="w-full mt-6 body-text-large italic">
-                    Token Info
+                <div className="mt-2">
+                    Here you can buy CAFE tokens for tez.
                 </div>
+                <h2 className="mt-8 highlight">Token buy information</h2>
                 <div className="flex flex-wrap justify-between">
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                            <p>Buy price</p>
+                            <p>Current buy price</p>
                             <h1><TezAmount amount={data?.tokenBuyPrice}/></h1>
                         </div>
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                            <p>Tokens owned</p>
-                            <h1>{data?.tokensOwned?.toLocaleString()}</h1>
+                            <p>Amount of tokens owned</p>
+                            <h1>{data?.tokensOwned ?? 0}</h1>
                         </div>
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                            <p>Tezos in account</p>
+                            <p>Amount of tez in your account</p>
                             <h1><TezAmount amount={data?.tezCount}/></h1>
                         </div>
                     </div>
                 </div>
-                <div className="w-full mt-8 body-text-large italic">
-                    Purchase Tokens
+                <h2 className="mt-12 highlight">Purchase tokens</h2>
+                <div className="my-2 italic">
+                    To buy tokens add the amount of tez you want to spend in the field beneath.
                 </div>
                 <div>
-                    <Input value={amount} handler={handlers.amount} label="Amount" pattern="[0-9]+\.?[0-9]*|\.[0-9]+"/>
-                    <Button handler={handlers.fund}>Fund</Button>
+                    <Input value={amount} handler={handlers.amount} label="Tez amount for purchase" pattern="[0-9]+\.?[0-9]*|\.[0-9]+"/>
+                    <Button className="mt-2" handler={handlers.fund}>Buy</Button>
                 </div>
             </div>
             {

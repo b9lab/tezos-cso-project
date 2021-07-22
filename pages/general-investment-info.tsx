@@ -34,7 +34,7 @@ function InvestmentNumbers() {
                     </div>
                 </div>
             </div>
-            <h2 className="mt-10 highlight">Investment overview</h2>
+            <h2 className="mt-12 highlight">Investment overview</h2>
             <div className="flex flex-wrap justify-between">
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
@@ -72,7 +72,7 @@ function CompanyValuation() {
 
     return (
         <div className="p-8">
-            <h2 className="mt-2 highlight">Company value overview</h2>
+            <h2 className="mt-4 highlight">Company value overview</h2>
             <div className="flex flex-wrap justify-between">
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4 border border-accent-1">
