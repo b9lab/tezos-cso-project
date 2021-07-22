@@ -16,7 +16,7 @@ export default function About() {
             <div className="pt-8 px-8">
                 <div>
                     This platform is an example project, which is part of the educational course on the 
-                    <a className="font-family-body font-semibold text-accent-1" href="http://tezos.b9lab.com" target="_blank"> Tezos Developer Platform</a>. 
+                    <a className="font-family-body font-semibold text-accent-1" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer"> Tezos Developer Platform</a>. 
                     There is <span className="font-semibold">no real investment or company</span> involved. Instead, all transactions displayed are performed on a testnet, 
                     <span className="font-semibold"> the Florence testnet</span>. <br/>
                     The purpose of this project is to showcase an implementation of a full platform which interacts with the Tezos blockchain. 
@@ -25,8 +25,8 @@ export default function About() {
                     (e.g. a full KYC process and CDD checks), while some features have been added to specifically demonstrate their implementation.
                 </div>
                 <div className="mt-4">
-                    You can read more about the architecture, implementation, and feature details <a className="font-family-body font-semibold text-accent-1" href="/" target="_blank">here</a>, 
-                    or check out the full source code on <a className="font-family-body font-semibold text-accent-1" href="/" target="_blank">GitHub</a>.
+                    You can read more about the architecture, implementation, and feature details <a className="font-family-body font-semibold text-accent-1" href="#" target="_blank">here</a>, 
+                    or check out the full source code on <a className="font-family-body font-semibold text-accent-1" href="#" target="_blank">GitHub</a>.
                 </div>
             </div>
 
@@ -37,7 +37,7 @@ export default function About() {
                 <div className="indent">
                     To interact with the platform, you first need to <span className="font-semibold">sign in and connect your wallet</span>. 
                     Afterwards, you will be able to buy and sell tokens through the platform using tez on the Florence testnet.<br/>
-                    To have tez, just go to the following <a className="font-family-body font-semibold text-accent-1" href="/" target="_blank">faucet</a>.
+                    To have tez, just go to the following <a className="font-family-body font-semibold text-accent-1" href="#" target="_blank" rel="noreferrer">faucet</a>.
                 </div>
             </div>
 
