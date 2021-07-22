@@ -1,12 +1,11 @@
 import useSWR from "swr";
 import TezAmount from "../src/components/TezAmount";
+import { format_date } from "../src/helpers";
 
 function InvestmentNumbers() {
     const { data, error } = useSWR("api/investment-numbers");
 
     if (!data || error) return <>{error}</>
-
-    let unlockingDate = new Date(data.unlockingDate).toLocaleDateString('en-gb', { day: "2-digit", month: "short", year: "2-digit" });
 
     return (
         <div className="p-4">
@@ -59,7 +58,7 @@ function InvestmentNumbers() {
                 <div className="w-full flex-grow sm:max-w-1/2">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                         <p>Unlocking date</p>
-                        <h1>{unlockingDate}</h1>
+                        <h1>{format_date(data.unlockingDate)}</h1>
                     </div>
                 </div>
             </div>

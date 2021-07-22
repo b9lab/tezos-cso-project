@@ -7,6 +7,7 @@ import { WithdrawDto, WithdrawTokenInfoDto } from "../src/utils/dtos";
 import { useData } from "../src/utils/hooks";
 import TezAmount from "../src/components/TezAmount";
 import TransactionInspector from "../src/components/TransactionInspector";
+import { format_date } from "../src/helpers";
 
 export default function Withdraw() {
     const context: AuthContextData = useContext(AuthContext);
@@ -31,8 +32,6 @@ export default function Withdraw() {
         },
     };
 
-    let unlockingDate = new Date(data?.lockPeriod).toLocaleDateString('en-gb', { day: "2-digit", month: "short", year: "2-digit" });
-
     return (
         <div>
             <div className="p-4">
@@ -56,7 +55,7 @@ export default function Withdraw() {
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                             <p>Unlocking date / sell date</p>
-                            <h1>{unlockingDate}</h1>
+                            <h1>{format_date(data?.lockPeriod)}</h1>
                         </div>
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2">
