@@ -57,7 +57,7 @@ export const NAV_ITEMS: Array<NavItem> = [
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             {
-                name: "CAFE Parameters",
+                name: "CAFE Details",
                 url: "/cafe-details",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
