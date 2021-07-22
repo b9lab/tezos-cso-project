@@ -17,8 +17,8 @@ function InvestmentNumbers() {
             <div className="flex flex-wrap justify-between">
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4 border border-accent-1">
-                        <p>Current token price</p>
-                        <h1><TezAmount amount={data.tokenBuyPrice}/></h1>
+                        <p>Current token price (buy/sell)</p>
+                        <h1><TezAmount amount={data.tokenBuyPrice}/> / <TezAmount amount={data.tokenSellPrice}/></h1>
                     </div>
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2">
