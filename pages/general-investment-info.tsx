@@ -8,34 +8,33 @@ function InvestmentNumbers() {
     if (!data || error) return <>{error}</>
 
     return (
-        <div className="p-4">
-            <h1 className="pt-4">{data.companyName} Investment Offer</h1>
-            <div className="w-full mt-6 body-text-large italic">
-                Token
+        <div className="pt-8 px-8">
+            <h1>{data.companyName} - Investment Offer</h1>
+            <div className="mt-2">
+                You can find an overview of the PEQ offering here.
             </div>
+            <h2 className="mt-8 highlight">General Information</h2>
             <div className="flex flex-wrap justify-between">
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4 border border-accent-1">
-                        <p>Price info</p>
+                        <p>Current token price</p>
                         <h1><TezAmount amount={data.tokenBuyPrice}/></h1>
                     </div>
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                        <p>Tokens count</p>
+                        <p>Amount of tokens issued</p>
                         <h1>{data.tokensCount}</h1>
                     </div>
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                        <p>Burned tokens</p>
+                        <p>Amount of burned tokens</p>
                         <h1>{data.burnedTokensCount}</h1>
                     </div>
                 </div>
             </div>
-            <div className="w-full mt-8 body-text-large italic">
-                Investment
-            </div>
+            <h2 className="mt-10 highlight">Investment overview</h2>
             <div className="flex flex-wrap justify-between">
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
@@ -51,7 +50,7 @@ function InvestmentNumbers() {
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                        <p>Reserve amount</p>
+                        <p>Total reserve</p>
                         <h1><TezAmount amount={data.reserveAmount}/></h1>
                     </div>
                 </div>
@@ -72,10 +71,8 @@ function CompanyValuation() {
     if (!data || error) return <>{error}</>
 
     return (
-        <div className="p-4">
-            <div className="w-full mt-6 body-text-large italic">
-                Value
-            </div>
+        <div className="p-8">
+            <h2 className="mt-2 highlight">Company value overview</h2>
             <div className="flex flex-wrap justify-between">
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4 border border-accent-1">
