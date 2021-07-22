@@ -30,8 +30,11 @@ export default function Transactions() {
     };
 
     return (
-        <div className="p-4">
-            <h1 className="mt-4">Transactions</h1>
+        <div className="p-8">
+            <h1>Transactions</h1>
+            <div className="mt-2">
+                Here you can find an overview of all transactions. You can filter for all transactions, as well as sell (Fund) and buy (Withdraw) transactions.
+            </div>
             <div className="body-text-small flex space-x-2 mb-4 px-4 pt-6 font-family-headline">
                 <div>Filter: </div>
                 <div 
@@ -55,9 +58,9 @@ export default function Transactions() {
             <div className="mt-6 w-full flex flex-col shadow-2xl rounded">
                 <div className="w-full flex justify-between bg-accent-1 text-white px-4 py-2 rounded-t">
                     <h3 className="w-1/4">Date</h3>
-                    <h3 className="w-1/4">Type</h3>
-                    <h3 className="w-1/4">Tez Amount</h3>
-                    <h3 className="w-1/4">Token</h3>
+                    <h3 className="w-1/4">Transaction type</h3>
+                    <h3 className="w-1/4">tez amount</h3>
+                    <h3 className="w-1/4">Amount of tokens</h3>
                 </div>
                 { data?.filter(transactionFilter).sort(transactionSort).map(transactionMap) }
             </div>
