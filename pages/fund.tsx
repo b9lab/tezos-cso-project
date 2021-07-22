@@ -7,31 +7,35 @@ import DataHandler from "../src/services/DataHandler";
 import { FundDto, FundTokenInfoDto } from "../src/utils/dtos";
 import { useData } from "../src/utils/hooks";
 import TezAmount from "../src/components/TezAmount";
+import TransactionInspector from "../src/components/TransactionInspector";
 
 export default function Fund() {
     const context: AuthContextData = useContext(AuthContext);
     const dataHandler = new DataHandler();
     const data: FundTokenInfoDto = useData(dataHandler.getFundTokenInfo, context.address);
     const [amount, setAmount] = useState<string>('');
+    const [hashToCheck, setHashToCheck] = useState<string | null>(null);
 
     const handlers = {
         amount: (event: ChangeEvent<HTMLInputElement>): void => { 
             if (event.target.validity.valid) setAmount(event.target.value);
         },
         fund: () => {
+            if (!amount) return;
+
             const fundAmount = parseFloat(amount) * FUND_MULTIPLIER;
             const fundDto: FundDto = {
                 amount: fundAmount,
                 accountAddress: context.address
             };
-            dataHandler.fund(fundDto);
-        },
+            dataHandler.fund(fundDto).then(setHashToCheck).catch(console.error);
+        }
     };
 
     return (
         <div>
-            <div className="p-4">
-                <h1 className="pt-4">Fund</h1>
+            <div className="px-4 pt-8">
+                <h1>Fund</h1>
                 <div className="w-full mt-6 body-text-large italic">
                     Token Info
                 </div>
@@ -63,6 +67,14 @@ export default function Fund() {
                     <Button handler={handlers.fund}>Fund</Button>
                 </div>
             </div>
+            {
+                hashToCheck && 
+                <TransactionInspector 
+                    address={context.address} 
+                    hash={hashToCheck} 
+                    handler={dataHandler}
+                />
+            }
         </div>
     );
 }

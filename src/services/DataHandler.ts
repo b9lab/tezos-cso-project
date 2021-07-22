@@ -15,7 +15,8 @@ import { contract, chain } from '../../tezos-app-project';
 interface Transaction {
     timestamp: string,
     amount: number,
-    tokens: number
+    tokens: number,
+    hash: string
 }
 
 export default class DataHandler {
@@ -148,8 +149,17 @@ export default class DataHandler {
         });
     }
 
-    fund(data: FundDto) {
-        contract.buy(data.amount);
+    fund(data: FundDto): Promise<string> {
+        return new Promise<string>((resolve, reject) => {
+            contract.buy(data.amount).then((result: string) => {
+                console.log(result)
+                if (result.includes("TRANSACTION_INVALID_ERROR")) {
+                    reject(new Error("Transaction failed"));
+                } else {
+                    resolve(result.replace("Operation injected: ", ""));
+                }
+            });
+        });
     }
 
     // Withdraw
@@ -172,8 +182,17 @@ export default class DataHandler {
         });
     }
 
-    withdraw(data: WithdrawDto) {
-        contract.sell(data.amount);
+    withdraw(data: WithdrawDto): Promise<string> {
+        return new Promise<string>((resolve, reject) => {
+            contract.sell(data.amount).then((result: string) => {
+                console.log(result)
+                if (result.includes("TRANSACTION_INVALID_ERROR")) {
+                    reject(new Error("Transaction failed"));
+                } else {
+                    resolve(result.replace("Operation injected: ", ""));
+                }
+            });
+        });
     }
 
     // Transactions
@@ -186,6 +205,7 @@ export default class DataHandler {
 
         const fundsMapped: Array<UserTransactionDto> = fundData.map((transaction: Transaction) => {
             return {
+                hash: transaction.hash,
                 date: transaction.timestamp,
                 tezAmount: transaction.amount,
                 tokenAmount: transaction.tokens,
@@ -195,6 +215,7 @@ export default class DataHandler {
 
         const withdrawsMapped: Array<UserTransactionDto> = withdrawData.map((transaction: Transaction) => {
             return {
+                hash: transaction.hash,
                 date: transaction.timestamp,
                 tezAmount: transaction.amount,
                 tokenAmount: transaction.tokens,
