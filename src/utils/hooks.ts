@@ -16,7 +16,7 @@ export function useData(action: any, address: string): any {
     return data;
 }
 
-export function useInterval(callback: any, errorCallback: any, initialDelay: number, maxDelay: number, maxRetryCount: number) {
+export function useInterval(callback: any, timeoutCallback: any, initialDelay: number, maxDelay: number, maxRetryCount: number) {
     const savedCallback = useRef<any>();
     const [retryCount, setRetryCount] = useState<number>(0);
 
@@ -28,7 +28,7 @@ export function useInterval(callback: any, errorCallback: any, initialDelay: num
                 savedCallback.current();
                 setRetryCount(retryCount + 1);
             } else {
-                errorCallback();
+                timeoutCallback();
             }
         }
 
