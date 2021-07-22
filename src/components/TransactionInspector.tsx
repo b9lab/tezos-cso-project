@@ -60,7 +60,7 @@ function ErrorModal() {
                 modalOpened &&
                 <Modal closeHandler={() => setModalOpened(false)}>
                     <div>
-                        <h1 className="mb-4">The transaction isn't confirmed yet</h1>
+                        <h1 className="mb-4">The transaction isn&apos;t confirmed yet</h1>
                         <span>We suggest you to wait some time and check for it in the </span>
                         <Link href="/transactions" passHref><a className="font-family-body font-semibold text-accent-1">Transactions page</a></Link>
                     </div>
