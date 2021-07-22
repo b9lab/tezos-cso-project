@@ -70,6 +70,7 @@ export enum TransactionType {
 }
 
 export interface UserTransactionDto {
+    hash: string,
     date: string,
     tezAmount: number,
     tokenAmount: number,

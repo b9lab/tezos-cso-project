@@ -9,7 +9,7 @@ type ButtonProps = {
 
 function Button(props: ButtonProps) {
     var color: string = props.color ?? 'dark-gray';
-    var classes: string = `max-w-sm my-4 rounded outline-none py-2 px-10 ${props.className} `;
+    var classes: string = `max-w-sm rounded outline-none py-2 px-10 ${props.className} `;
     if (props.outline) {
         classes += `border-2 border-${color} text-${color} hover:bg-${color} hover:text-white `;
     } else {

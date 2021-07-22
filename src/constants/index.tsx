@@ -12,6 +12,10 @@ export const CONTRACT_ADDRESS: string = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS
 export const FUND_MULTIPLIER: number = 1;
 export const TEZ_DISPLAY_MULTIPLIER: number = 1000000;
 
+export const TRANSACTION_INSPECTOR_INITIAL_INTERVAL: number = 5000;
+export const TRANSACTION_INSPECTOR_MAX_INTERVAL: number = 32000;
+export const TRANSACTION_INSPECTOR_MAX_RETRY_COUNT: number = 30;
+
 export enum NAV_ITEM_VISIBILITY {
     PUBLIC,
     PRIVATE,
@@ -57,7 +61,7 @@ export const NAV_ITEMS: Array<NavItem> = [
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             {
-                name: "CAFE Parameters",
+                name: "CAFE Details",
                 url: "/cafe-details",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
