@@ -34,22 +34,23 @@ export default function Withdraw() {
 
     return (
         <div>
-            <div className="p-4">
-                <h1 className="pt-4">Withdraw</h1>
-                <div className="w-full mt-6 body-text-large italic">
-                    Token Info
+            <div className="p-8">
+                <h1>Withdraw</h1>
+                <div className="mt-2">
+                    Here you can sell your CAFE tokens for tez.
                 </div>
+                <h2 className="mt-8 highlight">Token sell information</h2>
                 <div className="flex flex-wrap justify-between">
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                            <p>Sell price</p>
+                            <p>Current sell price</p>
                             <h1><TezAmount amount={data?.tokenSellPrice}/></h1>
                         </div>
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                            <p>Tokens owned</p>
-                            <h1>{data?.tokensOwned?.toLocaleString()}</h1>
+                            <p>Amount of tokens owned</p>
+                            <h1>{data?.tokensOwned ?? 0}</h1>
                         </div>
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
@@ -60,17 +61,15 @@ export default function Withdraw() {
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                            <p>Reserve amount</p>
+                            <p>Amount of tez in reserve</p>
                             <h1><TezAmount amount={data?.reserveAmount}/></h1>
                         </div>
                     </div>
                 </div>
-                <div className="w-full mt-8 body-text-large italic">
-                    Sell Tokens
-                </div>
-                <div>
-                    <Input value={amount} handler={handlers.amount} label="Amount" pattern="[0-9]*"/>
-                    <Button handler={handlers.withdraw}>Withdraw</Button>
+                <h2 className="mt-12 highlight">Sell tokens</h2>
+                <div className="mt-2">
+                    <Input value={amount} handler={handlers.amount} label="Amount of tokens to sell" pattern="[0-9]*"/>
+                    <Button className="mt-2" handler={handlers.withdraw}>Sell</Button>
                 </div>
             </div>
             {
