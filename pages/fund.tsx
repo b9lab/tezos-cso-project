@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useContext, useState } from "react";
+import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
 import { AuthContext, AuthContextData } from "../src/components/Auth";
 import Button from "../src/components/Button";
 import Input from "../src/components/Input";
@@ -22,7 +22,9 @@ export default function Fund() {
         amount: (event: ChangeEvent<HTMLInputElement>): void => { 
             if (event.target.validity.valid) setAmount(event.target.value);
         },
-        fund: () => {
+        fund: (event: FormEvent) => {
+            event.preventDefault();
+
             if (!amount) return;
 
             const fundAmount = parseFloat(amount) * FUND_MULTIPLIER;
@@ -73,10 +75,10 @@ export default function Fund() {
                 <div className="my-2 italic">
                     To buy tokens add the amount of tez you want to spend in the field beneath.
                 </div>
-                <div>
+                <form onSubmit={handlers.fund}>
                     <Input value={amount} handler={handlers.amount} label="Tez amount for purchase" pattern="[0-9]+\.?[0-9]*|\.[0-9]+"/>
-                    <Button className="mt-2" handler={handlers.fund}>Buy</Button>
-                </div>
+                    <Button className="mt-2" type="submit">Buy</Button>
+                </form>
             </div>
             {
                 showTransactionInspector && 

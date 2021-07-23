@@ -1,5 +1,5 @@
 import { signOut } from 'next-auth/client';
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 import useSWR, { mutate } from 'swr';
 import Button from '../src/components/Button';
 import Input from '../src/components/Input';
@@ -30,7 +30,10 @@ export default function Profile() {
         country: (event: ChangeEvent<HTMLInputElement>): void => setInputCountry(event.target.value),
         address: (event: ChangeEvent<HTMLInputElement>): void => setInputAddress(event.target.value),
         signOut: () => signOut({callbackUrl: '/'}),
-        update: () => updateUser({ name: inputName, country: inputCountry, address: inputAddress}),
+        update: (event: FormEvent) => {
+            event.preventDefault();
+            updateUser({ name: inputName, country: inputCountry, address: inputAddress});
+        },
         fetchAndSaveAddress: () => contract.updatePermission().catch(console.error).then((address: string) => {
             setInputAddress(address);
             updateUser({ address: address });
@@ -41,18 +44,18 @@ export default function Profile() {
     if (!inputAddress && !addressStored) handlers.fetchAndSaveAddress();
 
     return (
-        <div className="flex flex-col items-center my-20 w-full">
+        <form className="flex flex-col items-center my-20 w-full" onSubmit={handlers.update}>
             <Input value={emailStored} readOnly={true} label="Email"/>
             <Input value={inputName ?? nameStored} handler={handlers.name} label="Username"/>
             <Input value={inputCountry ?? countryStored} handler={handlers.country} label="Country"/>
             <div className="flex w-full items-end">
                 <Input value={inputAddress ?? addressStored} handler={handlers.address} label="Address"/>
-                <Button handler={handlers.fetchAndSaveAddress}>Fetch</Button>
+                <Button type="button" handler={handlers.fetchAndSaveAddress}>Fetch</Button>
             </div>
             
-            <Button handler={handlers.update}>Update</Button>
-            <button className="py-2 px-6 m-2" onClick={handlers.signOut}>Sign out</button>
-        </div>
+            <Button type="submit">Update</Button>
+            <button className="py-2 px-6 m-2" type="button" onClick={handlers.signOut}>Sign out</button>
+        </form>
     );
 }
 
