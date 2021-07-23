@@ -10,7 +10,8 @@ export interface InvestmentNumbersDto {
     burnedTokensCount: number,
     reserveAmount: number,
     buySlope: number, // percentage/factor
-    sellSlope: number // percentage/factor
+    sellSlope: number, // percentage/factor
+    isMFGReached: boolean
 }
 
 export interface CafeInfoDto {
@@ -38,6 +39,7 @@ export interface UserInvestmentDto {
     tokensOwned: number,
     tokenBuyPrice: number,
     tokenSellPrice: number,
+    isMFGReached: boolean
 }
 
 export interface FundTokenInfoDto {
