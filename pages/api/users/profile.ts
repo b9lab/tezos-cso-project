@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { Session } from 'next-auth';
 import authMiddleware from '../../../src/middlewares/auth';
 import User from '../../../src/models/User';
-import UserService from '../../../src/services/UserService';
+import UserHandler from '../../../src/services/UserHandler';
 
 interface ProfileDto {
     id: number,
@@ -32,7 +32,7 @@ export default async function profileHandler(
         return;
     }
 
-    const userService = new UserService();
+    const userHandler = new UserHandler();
     const userId: number = session.userId;
 
     return new Promise<void>(resolve => {
@@ -51,11 +51,11 @@ export default async function profileHandler(
 
         switch (method) {
             case 'GET':
-                userService.getUser(userId).then(handleSuccess).catch(handleError);
+                userHandler.getUser(userId).then(handleSuccess).catch(handleError);
                 break;
             case 'PUT':
                 const body: UpdateProfileDto = JSON.parse(req.body);
-                userService.updateUser(userId, body.name, body.country, body.address).then(handleSuccess).catch(handleError);
+                userHandler.updateUser(userId, body.name, body.country, body.address).then(handleSuccess).catch(handleError);
                 break;
             default:
                 res.setHeader('Allow', ['GET', 'PUT']);
