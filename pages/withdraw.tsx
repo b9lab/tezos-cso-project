@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useContext, useState } from "react";
+import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
 import { AuthContext, AuthContextData } from "../src/components/Auth";
 import Button from "../src/components/Button";
 import Input from "../src/components/Input";
@@ -22,7 +22,9 @@ export default function Withdraw() {
         amount: (event: ChangeEvent<HTMLInputElement>): void => {
             if (event.target.validity.valid) setAmount(event.target.value);
         },
-        withdraw: () => {
+        withdraw: (event: FormEvent) => {
+            event.preventDefault();
+
             if (!amount) return;
 
             const withdrawAmount = parseInt(amount);
@@ -76,10 +78,10 @@ export default function Withdraw() {
                     </div>
                 </div>
                 <h2 className="mt-12 highlight">Sell tokens</h2>
-                <div className="mt-2">
+                <form className="mt-2" onSubmit={handlers.withdraw}>
                     <Input value={amount} handler={handlers.amount} label="Amount of tokens to sell" pattern="[0-9]*"/>
-                    <Button className="mt-2" handler={handlers.withdraw}>Sell</Button>
-                </div>
+                    <Button className="mt-2" type="submit">Sell</Button>
+                </form>
             </div>
             {
                 showTransactionInspector && 

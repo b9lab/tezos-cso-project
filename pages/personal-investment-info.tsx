@@ -32,8 +32,12 @@ export default function PersonalInvestmentInfo() {
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                        <p>Price information (buy/sell)</p>
-                        <h1><TezAmount amount={data?.tokenBuyPrice}/> / <TezAmount amount={data?.tokenSellPrice}/></h1>
+                        <p>Price information {data?.isMFGReached ? "(buy/sell)" : ""}</p>
+                        {
+                            data?.isMFGReached ? 
+                            <h1><TezAmount amount={data?.tokenBuyPrice}/> / <TezAmount amount={data?.tokenSellPrice}/></h1> :
+                            <h1><TezAmount amount={data?.tokenBuyPrice}/></h1>
+                        }
                     </div>
                 </div>
             </div>

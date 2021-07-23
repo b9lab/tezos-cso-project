@@ -14,7 +14,7 @@ export default function About() {
             </div>
 
             <div className="pt-8 px-8">
-                <div>
+                <div className="indent">
                     This platform is an example project, which is part of the educational course on the 
                     <a className="font-family-body font-semibold text-accent-1" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer"> Tezos Developer Platform</a>. 
                     There is <span className="font-semibold">no real investment or company</span> involved. Instead, all transactions displayed are performed on a testnet, 
@@ -60,7 +60,7 @@ export default function About() {
             <div className="pt-12 px-8 flex justify-between flex-col-reverse sm:flex-row">
                 <div className="mt-8 sm:mr-8 sm:mt-0 w-full">
                     <h2 className="mb-8 highlight">How does a programmable equity offering work?</h2>
-                    <div>
+                    <div className="indent">
                         The continous organisation sets a <span className="font-semibold">minimal funding goal (MFG)</span>, a set amount of investment. 
                         With the DAT FAIR Securities, a representation of a claim on the DAT-managed cash reserve that is a function of revenues, are issued to reach the MFG.<br/>
                         Additionally, the continuous organisation determines the terms of the programmable equity offering by setting the percentage of the annual 
@@ -88,7 +88,7 @@ export default function About() {
             <div className="pt-12 px-8 flex justify-between flex-col-reverse sm:flex-row">
                 <div className="mt-8 sm:mr-8 sm:mt-0 w-full">
                     <h2 className="mb-8 highlight">MFG achieved: What happens now?</h2>
-                    <div>
+                    <div className="indent">
                         Once the MFG is met, a so-called bonding curve starts with which a portion of the MFG is moved into a reserve 
                         and another portion is transferred to the continuous organisation, the beneficiary of the programmable equity offering. <br/>
                         The bonding curve consists of two functions, one to determine the buy curve and one for the sell curve.

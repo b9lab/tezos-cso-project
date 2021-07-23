@@ -1,10 +1,11 @@
 type ButtonProps = {
-    handler: any,
+    handler?: any,
     icon?: string,
     children?: string,
     color?: string,
     outline?: boolean,
-    className?: string
+    className?: string,
+    type?: "button" | "submit" | "reset"
 };
 
 function Button(props: ButtonProps) {
@@ -19,7 +20,8 @@ function Button(props: ButtonProps) {
     return (
         <button
             className={classes}
-            onClick={props.handler}>
+            onClick={props.handler}
+            type={props.type}>
             <h3>{ props.children }</h3>
         </button>
     );

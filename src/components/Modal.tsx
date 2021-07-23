@@ -11,7 +11,7 @@ function Modal(props: ModalProps) {
     useClickOutside(modalRef, props.closeHandler);
 
     return (
-        <div className="absolute inset-0 w-full h-full flex justify-center content-center bg-dark-gray-transparent">
+        <div className="fixed inset-0 w-full h-full flex justify-center content-center bg-dark-gray-transparent">
             <div ref={modalRef} className="bg-white rounded shadow-2xl p-8 m-auto">
                 { props.children }
             </div>

@@ -3,15 +3,19 @@ import image from "../public/cafe-info.png";
 
 export default function CafeInfo() {
     return (
-        <div className="mb-8 px-8">
-            <h1 className="mt-8">What is a CAFE?</h1>
+        <div className="p-8">
+            <h1>What is a CAFE?</h1>
 
             <div className="mt-6">
                 <div>
-                    A <span className="font-semibold">Continuous Agreement for Future Equity</span> (CAFE) is a <span className="font-semibold">programmable equity funding mechanism</span> envisioned to bring: <br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;- increased long-term founder control <br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;- higher liquidity for investors and access to new markets <br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;- improved access to stakeholders to benefit from the financial success of a company <br/>
+                    A <span className="font-semibold">Continuous Agreement for Future Equity</span> (CAFE) is a <span className="font-semibold">programmable equity funding mechanism</span> envisioned to bring:
+                </div>
+                <div className="pl-4">
+                    - increased long-term founder control <br/>
+                    - higher liquidity for investors and access to new markets <br/>
+                    - improved access to stakeholders to benefit from the financial success of a company <br/>
+                </div>
+                <div>
                     Through it, a company can financially align stakeholder interests with the success of a company.
                 </div>
                 <div className="mt-4">
@@ -46,7 +50,7 @@ export default function CafeInfo() {
 
             <div className="pt-12">
                 <h2 className="mb-8">Converting tokens to equity – The CAFE’s termination</h2>
-                <div>
+                <div className="indent">
                     Even though investors can buy and sell tokens as long as the CAFE is active, the question remains: When is a CAFE terminated?
                 </div>
                 <div className="mt-4">
@@ -57,10 +61,12 @@ export default function CafeInfo() {
             <div className="pt-12">
                 <h2 className="mb-8">Want to know more about CAFE?</h2>
                 <div>
-                    This is a list of helpful resources to have a peek at.<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;- <a className="font-family-body font-semibold text-accent-1" href="https://fairmint-documents.s3.amazonaws.com/CAFE/CAFE+Template.docx" target="_blank" rel="noreferrer">Fairmint Inc.: Template for a Continuous Agreement for Future Equity</a> <br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;- <a className="font-family-body font-semibold text-accent-1" href="https://fairmint.co/cafe-continuous-agreement-for-future-equity/#what-differences-cafe-safe" target="_blank" rel="noreferrer">Fairmint Inc.: The CAFE FAQ </a> <br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;- <a className="font-family-body font-semibold text-accent-1" href="https://github.com/C-ORG/whitepaper" target="_blank" rel="noreferrer">Thibauld Favre: Continuous Organizations White Paper </a> <br/>
+                    This is a list of helpful resources to have a peek at.
+                </div>
+                <div className="pl-4">
+                    - <a className="font-family-body font-semibold text-accent-1" href="https://fairmint-documents.s3.amazonaws.com/CAFE/CAFE+Template.docx" target="_blank" rel="noreferrer">Fairmint Inc.: Template for a Continuous Agreement for Future Equity</a> <br/>
+                    - <a className="font-family-body font-semibold text-accent-1" href="https://fairmint.co/cafe-continuous-agreement-for-future-equity/#what-differences-cafe-safe" target="_blank" rel="noreferrer">Fairmint Inc.: The CAFE FAQ </a> <br/>
+                    - <a className="font-family-body font-semibold text-accent-1" href="https://github.com/C-ORG/whitepaper" target="_blank" rel="noreferrer">Thibauld Favre: Continuous Organizations White Paper </a> <br/>
                 </div>
             </div>
 

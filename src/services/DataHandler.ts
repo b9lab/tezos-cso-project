@@ -36,7 +36,8 @@ export default class DataHandler {
             sellSlope,
             buySlope, 
             unlockingDate,
-            burnedTokensCount
+            burnedTokensCount,
+            phase
         ] = await Promise.all([
             chain.companyName(), 
             chain.buyPrice(),
@@ -49,7 +50,8 @@ export default class DataHandler {
             chain.sellSlope(),
             chain.buySlope(),
             chain.unlockingDate(),
-            chain.burnedTokens()
+            chain.burnedTokens(),
+            chain.phase()
         ]);
 
         return {
@@ -64,7 +66,8 @@ export default class DataHandler {
             burnedTokensCount: burnedTokensCount,
             reserveAmount: reserveAmount,
             buySlope: buySlope,
-            sellSlope: sellSlope
+            sellSlope: sellSlope,
+            isMFGReached: !!+phase
         };
     }
 
@@ -137,19 +140,22 @@ export default class DataHandler {
             tezInvested, 
             tokensOwned, 
             tokenBuyPrice,
-            tokenSellPrice
+            tokenSellPrice,
+            phase
         ] = await Promise.all([
             userData.tezInvested(),
             userData.tokens(),
             chain.buyPrice(),
-            chain.sellPrice()
+            chain.sellPrice(),
+            chain.phase()
         ]);
 
         return {
             tezInvested: tezInvested,
             tokensOwned: tokensOwned,
             tokenBuyPrice: tokenBuyPrice,
-            tokenSellPrice: tokenSellPrice
+            tokenSellPrice: tokenSellPrice,
+            isMFGReached: !!+phase
         };
     }
 

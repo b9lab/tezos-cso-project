@@ -2,7 +2,7 @@ import { Knex } from "knex";
 import db from "../../database";
 import User from "../models/User";
 
-export default class UserService {
+export default class UserHandler {
     userDao: Knex.QueryBuilder;
 
     constructor() {
