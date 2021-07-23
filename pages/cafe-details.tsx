@@ -11,8 +11,8 @@ export default function CafeDetails(props: CafeDetailsProps) {
     if (!data || error) return <>{error}</>
 
     return (
-        <div className="p-4">
-            <h1 className="my-4">CAFE Details</h1>
+        <div className="p-8">
+            <h1 className="mb-4">CAFE Details</h1>
             <div>
                 Here you can find an overview of the CAFE’s parameters.
             </div>
