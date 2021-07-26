@@ -56,17 +56,17 @@ export default class DataHandler {
 
         return {
             companyName: companyName,
-            tokenBuyPrice: buyPrice,
-            tokenSellPrice: sellPrice,
-            minimumFundingGoal: minimumFundingGoal,
+            tokenBuyPrice: +buyPrice,
+            tokenSellPrice: +sellPrice,
+            minimumFundingGoal: +minimumFundingGoal,
             unlockingDate: unlockingDate,
-            totalInvestment: totalInvestments,
-            investorsCount: investorsCount,
-            tokensCount: totalTokens,
-            burnedTokensCount: burnedTokensCount,
-            reserveAmount: reserveAmount,
-            buySlope: buySlope,
-            sellSlope: sellSlope,
+            totalInvestment: +totalInvestments,
+            investorsCount: +investorsCount,
+            tokensCount: +totalTokens,
+            burnedTokensCount: +burnedTokensCount,
+            reserveAmount: +reserveAmount,
+            buySlope: +buySlope,
+            sellSlope: +sellSlope,
             isMFGReached: !!+phase
         };
     }
@@ -74,13 +74,9 @@ export default class DataHandler {
     async getCompanyValuation(): Promise<CompanyValuationDto> {
         const companyValuation = await chain.companyValuation();
 
-        return new Promise((resolve, reject) => {
-            const data: CompanyValuationDto = {
-                valuation: companyValuation
-            };
-
-            resolve(data);
-        });
+        return {
+            valuation: +companyValuation
+        };
     }
 
     // CAFE details
@@ -117,18 +113,18 @@ export default class DataHandler {
 
         return {
             baseCurrency: baseCurrency,
-            totalAllocation: totalAllocation,
-            stakeAllocation: stakeAllocation,
+            totalAllocation: +totalAllocation,
+            stakeAllocation: +stakeAllocation,
             terminationEvents: terminationEvents,
-            minimumInvestment: minimumInvestment,
-            initialReserve: initialReserve,
-            initialValuation: initialValuation,
+            minimumInvestment: +minimumInvestment,
+            initialReserve: +initialReserve,
+            initialValuation: +initialValuation,
             governingRights: govRights,
-            reservePercentage: reservePercentage,
-            retainedRevenuePercentage: retainedRevenuePercentage,
-            minimumFundingGoal: minimumFundingGoal,
-            buySlope: buySlope,
-            sellSlope: sellSlope
+            reservePercentage: +reservePercentage,
+            retainedRevenuePercentage: +retainedRevenuePercentage,
+            minimumFundingGoal: +minimumFundingGoal,
+            buySlope: +buySlope,
+            sellSlope: +sellSlope
         };
     }
 
@@ -151,10 +147,10 @@ export default class DataHandler {
         ]);
 
         return {
-            tezInvested: tezInvested,
-            tokensOwned: tokensOwned,
-            tokenBuyPrice: tokenBuyPrice,
-            tokenSellPrice: tokenSellPrice,
+            tezInvested: +tezInvested,
+            tokensOwned: +tokensOwned,
+            tokenBuyPrice: +tokenBuyPrice,
+            tokenSellPrice: +tokenSellPrice,
             isMFGReached: !!+phase
         };
     }
@@ -176,9 +172,9 @@ export default class DataHandler {
         ]);
         
         return {
-            tokenBuyPrice: tokenBuyPrice,
-            tokensOwned: tokensOwned,
-            tezCount: tezCount,
+            tokenBuyPrice: +tokenBuyPrice,
+            tokensOwned: +tokensOwned,
+            tezCount: +tezCount,
             lockPeriod: lockPeriod
         };
     }
@@ -212,9 +208,9 @@ export default class DataHandler {
         ]);
         
         return {
-            tokenSellPrice: tokenSellPrice,
-            tokensOwned: tokensOwned,
-            reserveAmount: reserveAmount,
+            tokenSellPrice: +tokenSellPrice,
+            tokensOwned: +tokensOwned,
+            reserveAmount: +reserveAmount,
             lockPeriod: lockPeriod
         };
     }
@@ -249,8 +245,8 @@ export default class DataHandler {
             return {
                 hash: transaction.hash,
                 date: transaction.timestamp,
-                tezAmount: transaction.amount,
-                tokenAmount: transaction.tokens,
+                tezAmount: +transaction.amount,
+                tokenAmount: +transaction.tokens,
                 transactionType: TransactionType.Funding
             };
         });
@@ -259,8 +255,8 @@ export default class DataHandler {
             return {
                 hash: transaction.hash,
                 date: transaction.timestamp,
-                tezAmount: transaction.amount,
-                tokenAmount: transaction.tokens,
+                tezAmount: +transaction.amount,
+                tokenAmount: +transaction.tokens,
                 transactionType: TransactionType.Withdrawal
             };
         });
