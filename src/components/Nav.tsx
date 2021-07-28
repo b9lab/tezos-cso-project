@@ -27,8 +27,8 @@ function Nav(props: NavProps) {
         (item.visibility == NAV_ITEM_VISIBILITY.ANONYMOUS && !session);
 
     const desktopNavItemMap = (item: NavItem, index: number) => {
-        let classes = "inline-block relative cursor-pointer ";
-        if (!item.custom) classes += "hover-trigger p-6 ";
+        let classes = "inline-block relative cursor-pointer p-6 ";
+        if (!item.custom) classes += "hover-trigger ";
         if (item.position && item.position == NAV_ITEM_POSITION.RIGHT) classes += "float-right m-auto ";
         classes += (item.url == router.pathname) ? "text-accent-1 " : "text-dark-gray ";
 
