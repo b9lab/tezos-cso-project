@@ -1,43 +1,15 @@
 import Image from 'next/image';
-import pricesCurveImage from '../public/prices-curve.png';
-import flowImage from '../public/cso-flow.png';
+import pricesCurveImage from '../public/buy-sell-function.png';
+import organigramImage from '../public/organigram.png';
 
 export default function About() {
     return (
         <div className="mb-20">
 
             <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
-                <h1 className="mb-8">About This Project</h1>
+                <h1 className="mb-8">Programmable Equity</h1>
                 <div className="body-text-large italic">
                     Implementing a programmable equity offering on the Tezos blockchain as a Continuous Agreement for Future Equity (CAFE).
-                </div>
-            </div>
-
-            <div className="pt-8 px-8">
-                <div className="indent">
-                    This platform is an example project, which is part of the educational course on the 
-                    <a className="font-family-body font-semibold text-accent-1" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer"> Tezos Developer Platform</a>. 
-                    There is <span className="font-semibold">no real investment or company</span> involved. Instead, all transactions displayed are performed on a testnet, 
-                    <span className="font-semibold"> the Florence testnet</span>. <br/>
-                    The purpose of this project is to showcase an implementation of a full platform which interacts with the Tezos blockchain. 
-                    Additionally, it illustrates how challenges, which arise when moving from a simple local proof-of-concept implementation to a public online platform, can be addressed. <br/>
-                    Due to the educational aim of this platform, some steps that go beyond the scope of a blockchain and would add complexity have been omitted 
-                    (e.g. a full KYC process and CDD checks), while some features have been added to specifically demonstrate their implementation.
-                </div>
-                <div className="mt-4">
-                    You can read more about the architecture, implementation, and feature details <a className="font-family-body font-semibold text-accent-1" href="https://www.google.com/" target="_blank" rel="noreferrer">here</a>, 
-                    or check out the full source code on <a className="font-family-body font-semibold text-accent-1" href="https://www.google.com/" target="_blank" rel="noreferrer">GitHub</a>.
-                </div>
-            </div>
-
-            <div className="pt-12 px-8">
-                <h2 className="mb-8">
-                    Getting started
-                </h2>
-                <div className="indent">
-                    To interact with the platform, you first need to <span className="font-semibold">sign in and connect your wallet</span>. 
-                    Afterwards, you will be able to buy and sell tokens through the platform using tez on the Florence testnet.<br/>
-                    To have tez, just go to the following <a className="font-family-body font-semibold text-accent-1" href="https://www.google.com/" target="_blank" rel="noreferrer">faucet</a>.
                 </div>
             </div>
 
@@ -57,8 +29,11 @@ export default function About() {
                 </div>
             </div>
 
-            <div className="pt-12 px-8 flex justify-between flex-col-reverse sm:flex-row">
-                <div className="mt-8 sm:mr-8 sm:mt-0 w-full">
+            <div className="pt-12 px-8 flex justify-between flex-col sm:flex-row">
+                <div className="sm:w-1/2 flex content-center">
+                    <Image src={organigramImage} objectFit="contain" alt=""/>
+                </div>
+                <div className="mt-8 sm:ml-8 sm:mt-0 sm:w-1/2">
                     <h2 className="mb-8 highlight">How does a programmable equity offering work?</h2>
                     <div className="indent">
                         The continous organisation sets a <span className="font-semibold">minimal funding goal (MFG)</span>, a set amount of investment. 
@@ -68,7 +43,6 @@ export default function About() {
                         Once the terms are set, tokens are issued proportionally to the amount of money invested.
                     </div>
                 </div>
-                <Image src={flowImage} objectFit="contain" alt=""/>
             </div>
 
             <div className="pt-12 px-8">
@@ -86,7 +60,7 @@ export default function About() {
             </div>
 
             <div className="pt-12 px-8 flex justify-between flex-col-reverse sm:flex-row">
-                <div className="mt-8 sm:mr-8 sm:mt-0 w-full">
+                <div className="mt-8 sm:mr-8 sm:mt-0 w-full sm:w-1/2">
                     <h2 className="mb-8 highlight">MFG achieved: What happens now?</h2>
                     <div className="indent">
                         Once the MFG is met, a so-called bonding curve starts with which a portion of the MFG is moved into a reserve 
@@ -98,7 +72,9 @@ export default function About() {
                         When the programmable equity offering ends, all outstanding tokens are bought back by the continuous organisation through an exit fee transfer to the reserve.
                     </div>
                 </div>
-                <Image src={pricesCurveImage} objectFit="contain" alt=""/>
+                <div className="sm:w-1/2 flex content-center">
+                    <Image src={pricesCurveImage} objectFit="contain" alt=""/>
+                </div>
             </div>
 
         </div>

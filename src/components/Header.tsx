@@ -1,5 +1,5 @@
 import Nav from "./Nav";
-import { SITE_TITLE, NAV_ITEMS } from "../constants"
+import { NAV_ITEMS } from "../constants"
 
 function Header() {
     return (

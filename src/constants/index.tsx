@@ -2,8 +2,7 @@ import { signOut } from "next-auth/client";
 import Button from "../components/Button";
 import NavItem from "../utils/NavItem";
 
-export const SITE_NAME: string = 'Tezos PEQ Example App';
-export const SITE_TITLE: string = 'Tezos PEQ Example App';
+export const SITE_NAME: string = 'TZMINT';
 export const SITE_DESCRIPTION: string = 'This platform is an example project, which is part of the educational course on the Tezos Developer Platform (tezos.b9lab.com). There is no real investment or company involved.';
 export const SITE_IMAGE: string = '';
 
@@ -29,32 +28,20 @@ export enum NAV_ITEM_POSITION {
 
 export const NAV_ITEMS: Array<NavItem> = [
     {
-        name: "PEQ App",
+        name: "TZMINT",
         url: "/",
+        visibility: NAV_ITEM_VISIBILITY.PUBLIC
+    },
+    {
+        name: "Discover",
+        url: "/about",
         visibility: NAV_ITEM_VISIBILITY.PUBLIC,
         children: [
             {
-                name: "Overview",
-                url: "/",
-                visibility: NAV_ITEM_VISIBILITY.PUBLIC
-            },
-            {
-                name: "About This Project",
+                name: "Programmable Equity",
                 url: "/about",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
-            {
-                name: "Privacy Policy",
-                url: "/privacy",
-                visibility: NAV_ITEM_VISIBILITY.PUBLIC
-            }
-        ]
-    },
-    {
-        name: "CAFE",
-        url: "/cafe-info",
-        visibility: NAV_ITEM_VISIBILITY.PUBLIC,
-        children: [
             {
                 name: "What is a CAFE",
                 url: "/cafe-info",
@@ -66,35 +53,45 @@ export const NAV_ITEMS: Array<NavItem> = [
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             {
-                name: "Investment Whitepaper",
-                url: "/cafe-info",
+                name: "Investment whitepaper",
+                url: "/",
+                visibility: NAV_ITEM_VISIBILITY.PUBLIC
+            },
+            {
+                name: "Source code (gh)",
+                url: "/",
+                visibility: NAV_ITEM_VISIBILITY.PUBLIC
+            },
+            {
+                name: "(Dev portal)",
+                url: "/",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
         ]
     },
     {
-        name: "INVESTMENT",
-        url: "/general-investment-info",
+        name: "Try it out",
+        url: "/get-started",
         visibility: NAV_ITEM_VISIBILITY.PUBLIC,
         children: [
+            {
+                name: "Get Started",
+                url: "/get-started",
+                visibility: NAV_ITEM_VISIBILITY.PUBLIC
+            },
             {
                 name: "Overview",
                 url: "/general-investment-info",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             {
-                name: "My Investment",
+                name: "My investment",
                 url: "/personal-investment-info",
                 visibility: NAV_ITEM_VISIBILITY.PRIVATE
             },
             {
-                name: "Fund",
-                url: "/fund",
-                visibility: NAV_ITEM_VISIBILITY.PRIVATE
-            },
-            {
-                name: "Withdraw",
-                url: "/withdraw",
+                name: "Buy & Sell",
+                url: "/fund-withdraw",
                 visibility: NAV_ITEM_VISIBILITY.PRIVATE
             },
             {
