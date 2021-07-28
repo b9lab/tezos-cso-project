@@ -9,10 +9,10 @@
     "start": "next start -- --port $PORT",
     "serve": "cross-env NODE_ENV=production node server.js",
     "lint": "next lint",
-    "_test": "node ./node_modules/puppeteer-cucumber-js/index.js --headless",
-    "test": "npm run build && start-server-and-test serve http://localhost:3000 _test",
     "db:migrate": "TS_NODE_PROJECT=tsconfig.knex.json knex migrate:latest",
-    "db:rollback": "TS_NODE_PROJECT=tsconfig.knex.json knex migrate:rollback"
+    "db:rollback": "TS_NODE_PROJECT=tsconfig.knex.json knex migrate:rollback",
+    "_test": "cypress open --config pageLoadTimeout=30000,baseUrl=http://localhost:3000",
+    "test": "npm run build && start-server-and-test serve http://localhost:3000 _test"
   },
   "dependencies": {
     "@fontsource/cormorant": "^4.5.0",
@@ -35,10 +35,10 @@
   "devDependencies": {
     "@types/react": "17.0.11",
     "autoprefixer": "^10.2.6",
+    "cypress": "^8.0.0",
     "eslint": "7.29.0",
     "eslint-config-next": "11.0.0",
     "postcss": "^8.3.5",
-    "puppeteer-cucumber-js": "^1.6.1",
     "start-server-and-test": "^1.12.6",
     "tailwindcss": "^2.2.2",
     "ts-node": "^7.0.1",
