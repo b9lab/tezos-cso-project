@@ -20,7 +20,7 @@ module.exports = function () {
     });
 
     this.Then(/^I should be on the login page/, async function () {
-        return sharedObjects.helper.selectorNotEmpty(pageObjects.csoApp.selectors.loginPage);
+        return sharedObjects.helper.selectorNotEmpty(pageObjects.csoApp.selectors.signinPage);
     });
 
     this.Given(/^I visit the my investment page/, function() {
@@ -37,5 +37,9 @@ module.exports = function () {
 
     this.Given(/^I visit the transactions page/, function() {
         return helpers.loadPage(pageObjects.csoApp.url + pageObjects.csoApp.paths.transactions);
+    });
+
+    this.When(/^I click on "([^"]*)"$/, async function(buttonName) {
+        return pageObjects.csoApp.clickElement(buttonName);
     });
 }

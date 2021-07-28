@@ -15,10 +15,14 @@ module.exports = {
     selectors: {
         title: 'main h1.text-center',
         investmentAmounts: 'h1 > .tez-amount > .amount',
-        loginPage: '.page .signin'
+        signinPage: '.page .signin'
     },
 
     amountsNotEmpty: async function() {
         return sharedObjects.helper.selectorNotEmpty(this.selectors.investmentAmounts)
+    },
+
+    clickElement: function(buttonName) {
+        return sharedObjects.helper.clickElement(buttonName);
     }
 };
