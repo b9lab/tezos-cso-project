@@ -13,6 +13,7 @@
 // the project's config changing)
 
 const makeEmailAccount = require('./email-account');
+const { GoogleSocialLogin } = require('cypress-social-logins').plugins;
 
 /**
  * @type {Cypress.PluginConfig}
@@ -26,6 +27,7 @@ module.exports = async (on, config) => {
     getLastEmail() {
       return emailAccount.getLastEmail();
     },
+    GoogleSocialLogin: GoogleSocialLogin,
   })
 
   return config;

@@ -40,3 +40,5 @@ yarn-error.log*
 
 # crash reports
 report.*
+
+cypress.env.json
