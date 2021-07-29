@@ -12,7 +12,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
 
     return (
         <div className="p-8">
-            <h1 className="mb-4">CAFE Details</h1>
+            <h1 className="mb-4">Parameters of the Continuous Agreement</h1>
             <div>
                 Here you can find an overview of the CAFE’s parameters.
             </div>

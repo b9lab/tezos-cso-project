@@ -44,16 +44,16 @@ export default function Profile() {
     if (!inputAddress && !addressStored) handlers.fetchAndSaveAddress();
 
     return (
-        <form className="flex flex-col items-center my-20 w-full" onSubmit={handlers.update}>
+        <form className="flex flex-col items-center w-full p-8" onSubmit={handlers.update}>
             <Input value={emailStored} readOnly={true} label="Email"/>
             <Input value={inputName ?? nameStored} handler={handlers.name} label="Username"/>
             <Input value={inputCountry ?? countryStored} handler={handlers.country} label="Country"/>
             <div className="flex w-full items-end">
                 <Input value={inputAddress ?? addressStored} handler={handlers.address} label="Address"/>
-                <Button type="button" handler={handlers.fetchAndSaveAddress}>Fetch</Button>
+                <Button className="ml-4 mb-4" type="button" handler={handlers.fetchAndSaveAddress}>Fetch</Button>
             </div>
             
-            <Button type="submit">Update</Button>
+            <Button className="m-4" type="submit">Update</Button>
             <button className="py-2 px-6 m-2" type="button" onClick={handlers.signOut}>Sign out</button>
         </form>
     );

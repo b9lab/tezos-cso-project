@@ -43,27 +43,27 @@ export const NAV_ITEMS: Array<NavItem> = [
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             {
-                name: "What is a CAFE",
+                name: "Continuous Agreement for Future Equity",
                 url: "/cafe-info",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             {
-                name: "CAFE Details",
+                name: "Parameters of Continuous Agreement",
                 url: "/cafe-details",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             {
-                name: "Investment whitepaper",
+                name: "Investment White Paper",
+                url: "/investment-white-paper",
+                visibility: NAV_ITEM_VISIBILITY.PUBLIC
+            },
+            {
+                name: "Source Code (gh)",
                 url: "/",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             {
-                name: "Source code (gh)",
-                url: "/",
-                visibility: NAV_ITEM_VISIBILITY.PUBLIC
-            },
-            {
-                name: "(Dev portal)",
+                name: "(Dev Portal)",
                 url: "/",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
@@ -85,7 +85,7 @@ export const NAV_ITEMS: Array<NavItem> = [
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             {
-                name: "My investment",
+                name: "My Investment",
                 url: "/personal-investment-info",
                 visibility: NAV_ITEM_VISIBILITY.PRIVATE
             },
@@ -103,7 +103,7 @@ export const NAV_ITEMS: Array<NavItem> = [
     },
     {
         name: "Sign in",
-        url: "/sign-in",
+        url: "/api/auth/signin",
         visibility: NAV_ITEM_VISIBILITY.ANONYMOUS,
         position: NAV_ITEM_POSITION.RIGHT,
         custom: () => {return (<Button handler={() => {}} color="accent-1" className="signin-button">Sign in</Button>)}
@@ -115,12 +115,12 @@ export const NAV_ITEMS: Array<NavItem> = [
         position: NAV_ITEM_POSITION.RIGHT,
         children: [
             {
-                name: "My profile",
+                name: "My Profile",
                 url: "/profile",
                 visibility: NAV_ITEM_VISIBILITY.PRIVATE
             },
             {
-                name: "Sign out",
+                name: "Sign Out",
                 url: "",
                 visibility: NAV_ITEM_VISIBILITY.PRIVATE,
                 custom: () => { return (<button className="font-family-headline" onClick={() => signOut({callbackUrl: '/'})}>Sign out</button>) }

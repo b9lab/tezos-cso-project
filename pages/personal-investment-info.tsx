@@ -1,20 +1,22 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { AuthContext, AuthContextData } from "../src/components/Auth";
 import DataHandler from "../src/services/DataHandler";
-import { UserInvestmentDto } from "../src/utils/dtos";
+import { UserInvestmentDto, UserTransactionDto } from "../src/utils/dtos";
 import { useData } from "../src/utils/hooks";
 import TezAmount from "../src/components/TezAmount";
+import TransactionsTable from "../src/components/TransactionsTable";
 
 export default function PersonalInvestmentInfo() {
     const context: AuthContextData = useContext(AuthContext);
     const dataHandler = new DataHandler();
     const data: UserInvestmentDto = useData(dataHandler.getUserInvestmentData, context.address);
+    const transactionList: Array<UserTransactionDto> = useData(dataHandler.getUserTransactionData, context.address);
 
     return (
         <div className="p-8">
             <h1>My Investment</h1>
             <div className="mt-2">
-                Here you can find an overview of your investment in the CAFE.
+                Here you can find an overview of your investment in the continuous agreement for future equity.
             </div>
             <h2 className="mt-8 highlight">Portfolio overview</h2>
             <div className="flex flex-wrap justify-between">
@@ -41,6 +43,14 @@ export default function PersonalInvestmentInfo() {
                     </div>
                 </div>
             </div>
+            {
+                transactionList?.length > 0 &&
+                <>
+                    <h2 className="mt-8 highlight">Transactions</h2>
+                    <TransactionsTable items={transactionList}/>
+                </>
+            }
+            
         </div>
     );
 }

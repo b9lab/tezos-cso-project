@@ -8,9 +8,7 @@ function Footer() {
             <Link href="/privacy" passHref>
                 <a>Privacy Policy</a>
             </Link>
-            <Link href="/" passHref>
-                <a>Contact</a>
-            </Link>
+            <a href="https://b9lab.com/Contact.html" target="_blank" rel="noreferrer">Contact</a>
         </div>
     )
 }
