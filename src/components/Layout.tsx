@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 import Head from "./Head";
 import Header from "./Header";
 
@@ -16,6 +17,7 @@ function Layout(props: LayoutProps) {
                     {props.children}
                 </div>
             </main>
+            <Footer/>
         </div>
     );
 }
