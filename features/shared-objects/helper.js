@@ -25,5 +25,18 @@ module.exports = {
             });
 
         }, { timeout: timeout }, selector);
+    },
+    clickElement: async function(text, waitInSeconds) {
+        var timeout = (waitInSeconds) ? (waitInSeconds * 1000) : DEFAULT_TIMEOUT;
+
+        return page.waitForFunction((textToFind) => {
+            return Array.prototype.slice.call(document.querySelectorAll('a, button')).some(function(link) {
+                if (link.textContent === textToFind) {
+                    link.click();
+                    return true;
+                }
+                return false;
+            });
+        }, { timeout: timeout }, text);
     }
 };
