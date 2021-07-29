@@ -15,6 +15,7 @@ function Input(props: InputProps) {
         <div className="w-full">
             {props.label ? <label className="w-full">{props.label}</label> : null}
             <input
+                name={props.label}
                 className={classes}
                 type="text"
                 value={props.value}
