@@ -1,10 +1,10 @@
 import Image from "next/image";
-import image from "../public/cafe-info.png";
+import priceImage from "../public/price-change.png";
 
 export default function CafeInfo() {
     return (
         <div className="p-8">
-            <h1>What is a CAFE?</h1>
+            <h1>What is a continuous agreement for future equity?</h1>
 
             <div className="mt-6">
                 <div>
@@ -35,7 +35,7 @@ export default function CafeInfo() {
                     The more tokens are issued, the higher the price is. Meaning, the earlier you invest, the more tokens you receive; the price per token rises with increasing token amount. Whereby, the <span className="font-semibold">amount of capital</span> is per se unlimited. The equity allocation of the CAFE can be increased but never decreased.
                 </div>
                 <div className="w-full mt-8">
-                    <Image src={image} objectFit="contain" alt=""/>
+                    <Image src={priceImage} objectFit="contain" alt=""/>
                 </div>
             </div>
 
