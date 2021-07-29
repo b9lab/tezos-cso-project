@@ -1,7 +1,6 @@
 import chai, { expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import DataHandler from '../src/services/DataHandler';
-import { FundDto, WithdrawDto } from '../src/utils/dtos';
 
 process.env.NODE_ENV = 'test';
 
