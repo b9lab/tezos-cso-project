@@ -1,3 +1,8 @@
+import Image from "next/image";
+import tutorial1Image from "../public/tutorial-1.png";
+import tutorial2Image from "../public/tutorial-2.png";
+import tutorial3Image from "../public/tutorial-3.png";
+
 export default function GetStarted() {
     return (
         <div className="mb-20">
@@ -73,7 +78,28 @@ export default function GetStarted() {
                     - The <a className="font-family-body font-semibold text-accent-1" href="https://airgap.it/" target="_blank" rel="noreferrer">AirGap Wallet</a> - if you want to connect through a mobile wallet.
                 </div>
                 <div className="mt-4">
-                    To connect your wallet, follow these steps.
+                    In case you want to use <span className="font-semibold">Spire</span>, this is your road to success:
+                </div>
+                <div className="pl-4">
+                    1. Install the <span className="font-semibold">Spire extension</span> for your browser. If your using Google Chrome, just go to <a className="font-family-body font-semibold text-accent-1" href="https://chrome.google.com/webstore/detail/spire/gpfndedineagiepkpinficbcbbgjoenn?hl=en" target="_blank" rel="noreferrer">Spire</a> and add the extension. You will receive a popup message once it is added. <br/>
+                    2. Now you have to pair your wallet, but first make sure you <span className="font-semibold">select the correct network</span>. Go to your Spire extension to the menu on the left upper corner and select <span className="font-semibold italic">Settings</span>. Under the network select <span className="font-semibold italic">Florencenet</span>. <br/>
+                    3. To <span className="font-semibold">pair your wallet</span>, go to the <span className="font-semibold italic">Overview</span> in your Spire extension and click on <span className="font-semibold italic">Pair wallet</span>. Activate <span className="font-semibold italic">Enable Developer Mode</span> and <span className="font-semibold italic">Setup local secret</span>. <br/>
+                    4. In Spire, a permission request should pop up. It looks like this:
+                </div>
+                <div className="w-full mt-4">
+                    <Image src={tutorial1Image} objectFit="contain" alt=""/>
+                </div>
+                <div className="pl-4">
+                    5. You should now see that the <span className="font-semibold italic">Address</span> field is filled out.
+                </div>
+                <div className="mt-4">
+                    Your Spire extension should now look like this.
+                </div>
+                <div className="w-full mt-4 sm:w-1/2 sm:m-auto">
+                    <Image src={tutorial2Image} objectFit="contain" alt=""/>
+                </div>
+                <div className="mt-4">
+                    As you can see, you do not have any tez (XTZ) to spend, so let’s get some Florence testnet tez!
                 </div>
             </div>
 
@@ -81,9 +107,33 @@ export default function GetStarted() {
                 <h2 className="mb-8">
                     Getting my first Florence testnet tez
                 </h2>
+                <div>
+                    Now that you have signed in and connected your wallet, it’s time to get some Florence testnet tez!
+                </div>
+                <div className="mt-4">
+                    The easiest way to get some tez is to go via the Telegram <span className="font-semibold">Faucet Bot</span>. <br/>
+                    You will need a Telegram account to use it. Also make sure you selected Florencenet and not the Mainnet. <br/>
+                    To use the bot, go to <a className="font-family-body font-semibold text-accent-1" href="https://t.me/tezos_faucet_bot" target="_blank" rel="noreferrer">Faucet Bot</a> the chat should open up. <br/>
+                    Now, click on <span className="font-semibold italic">Get coins</span>. The bot will now ask you for your address. <br/>
+                    Send your address and then the Faucet Bot will let you know how much tez you claimed for which testnet.
+                </div>
+                <div className="pt-4 flex justify-between content-center flex-col sm:flex-row">
+                    <div className="sm:w-1/2 flex content-center">
+                        <Image src={tutorial3Image} objectFit="contain" alt=""/>
+                    </div>
+                    <div className="mt-8 sm:ml-8 sm:mt-0 sm:w-1/2 flex flex-col justify-center">
+                        <div>
+                            Once you claim coins, they should also appear in your wallet - if you used Spire, it appears in your extension.
+                        </div>
+                        <div className="mt-4">
+                            As you can see, we claimed 100 tez (XTZ).
+                        </div>
+                        <div className="mt-4">
+                            You are ready to buy and sell the TZM token for tez on the platform, just navigate to the <span className="font-semibold Italic">Buy & Sale</span> page. Enjoy!
+                        </div>
+                    </div>
+                </div>
             </div>
-
-
         </div>
     );
 }
