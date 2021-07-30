@@ -1,5 +1,7 @@
+import React from "react";
 import useSWR from "swr";
 import TezAmount from "../src/components/TezAmount";
+import TokenAmount from "../src/components/TokenAmount";
 import { format_date } from "../src/helpers";
 
 function InvestmentNumbers() {
@@ -28,13 +30,13 @@ function InvestmentNumbers() {
                 <div className="w-full flex-grow sm:max-w-1/2">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                         <p>Amount of tokens issued</p>
-                        <h1>{data.tokensCount}</h1>
+                        <h1><TokenAmount amount={data.tokensCount}/></h1>
                     </div>
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                         <p>Amount of burned tokens</p>
-                        <h1>{data.burnedTokensCount}</h1>
+                        <h1><TokenAmount amount={data.burnedTokensCount}/></h1>
                     </div>
                 </div>
             </div>

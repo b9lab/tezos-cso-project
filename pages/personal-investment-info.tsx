@@ -5,6 +5,7 @@ import { UserInvestmentDto, UserTransactionDto } from "../src/utils/dtos";
 import { useData } from "../src/utils/hooks";
 import TezAmount from "../src/components/TezAmount";
 import TransactionsTable from "../src/components/TransactionsTable";
+import TokenAmount from "../src/components/TokenAmount";
 
 export default function PersonalInvestmentInfo() {
     const context: AuthContextData = useContext(AuthContext);
@@ -23,7 +24,7 @@ export default function PersonalInvestmentInfo() {
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                         <p>Tokens owned</p>
-                        <h1>{data?.tokensOwned ?? 0}</h1>
+                        <h1><TokenAmount amount={data?.tokensOwned}/></h1>
                     </div>
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2">

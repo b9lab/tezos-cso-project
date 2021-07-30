@@ -33,7 +33,7 @@ export default function CafeInfo() {
                 <div className="indent">
                     Once the offering is launched, qualified investors can engage at any point of time. The <span className="font-semibold">price</span> is automated and non-negotiable. <br/>
                     The initial price is based on the valuation of the company. After an initial period (i.e. when the minimal funding goal is met), it is based on a function of the number of issued tokens and the number of tokens bought (i.e. the invested amount). <br/>
-                    The more tokens are issued, the higher the price is. Meaning, the earlier you invest, the more tokens you receive; the price per token rises with increasing token amount. Whereby, the <span className="font-semibold">amount of capital</span> is per se unlimited. The equity allocation of the can be increased but never decreased.
+                    The more tokens are issued, the higher the price is. Meaning, the earlier you invest, the more tokens you receive; the price per token rises with increasing token amount. Whereby, the <span className="font-semibold">amount of capital</span> is per se unlimited. The equity allocation of the continuous PEQ offering can be increased but never decreased.
                 </div>
                 <div className="w-full mt-8">
                     <Image src={priceImage} objectFit="contain" alt=""/>

@@ -9,6 +9,7 @@ import { useData } from "../src/utils/hooks";
 import TezAmount from "../src/components/TezAmount";
 import TransactionInspector from "../src/components/TransactionInspector";
 import { format_date } from "../src/helpers";
+import TokenAmount from "../src/components/TokenAmount";
 
 function Fund() {
     const context: AuthContextData = useContext(AuthContext);
@@ -62,7 +63,7 @@ function Fund() {
                     <div className="w-full flex-grow sm:max-w-1/2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                             <p>Amount of tokens owned</p>
-                            <h1>{data?.tokensOwned ?? 0}</h1>
+                            <h1><TokenAmount amount={data?.tokensOwned}/></h1>
                         </div>
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
@@ -147,7 +148,7 @@ function Withdraw() {
                     <div className="w-full flex-grow sm:max-w-1/2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                             <p>Amount of tokens owned</p>
-                            <h1>{data?.tokensOwned ?? 0}</h1>
+                            <h1><TokenAmount amount={data?.tokensOwned}/></h1>
                         </div>
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
@@ -165,7 +166,7 @@ function Withdraw() {
                 </div>
                 <h2 className="mt-12 highlight">Sell tokens</h2>
                 <form className="mt-2" onSubmit={handlers.withdraw}>
-                    <Input value={amount} handler={handlers.amount} label="Amount of tokens to sell" pattern="[0-9]*"/>
+                    <Input value={amount} handler={handlers.amount} label="Amount of TZM tokens to sell" pattern="[0-9]*"/>
                     <Button className="mt-2" type="submit">Sell</Button>
                 </form>
             </div>

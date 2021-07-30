@@ -2,6 +2,7 @@ import React from "react";
 import { format_date } from "../helpers";
 import { TransactionType, UserTransactionDto } from "../utils/dtos";
 import TezAmount from "./TezAmount";
+import TokenAmount from "./TokenAmount";
 
 type TransactionsTableProps = {
     items: Array<UserTransactionDto>
@@ -14,7 +15,7 @@ function TransactionsTable(props: TransactionsTableProps) {
                 <p className="w-1/4">{format_date(item?.date)}</p>
                 <p className="w-1/4">{item.transactionType == TransactionType.Funding ? 'Funding' : 'Withdrawal'}</p>
                 <p className="w-1/4"><TezAmount amount={item?.tezAmount} nostyle={true}/></p>
-                <p className="w-1/4">{item?.tokenAmount}</p>
+                <p className="w-1/4"><TokenAmount amount={item?.tokenAmount} nostyle={true}/></p>
             </div>
         );
     };

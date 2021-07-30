@@ -18,8 +18,8 @@ export default function About() {
                     What is a programmable equity offering?
                 </h2>
                 <div className="indent">
-                    In a programmable equity offering, security tokens are issued, which represent a proportional share of a company&apos;s future revenue. 
-                    Thus, it is not equity-centered but revenue-focused, and brings the potential of aligning stakeholder interests with the financial success of a company.
+                    In a programmable equity offering, security tokens are issued, which can for example represent a proportional share of a company&apos;s future revenue. 
+                    Thus, it would not be equity-centered but revenue-focused, and bear the potential of aligning stakeholder interests with the financial success of a company.
                 </div>
                 <div className="mt-4">
                     Whereby, the company setting up the programmable equity is often called a <span className="font-semibold">continuous organisation</span> 
@@ -37,7 +37,7 @@ export default function About() {
                     <h2 className="mb-8 highlight">How does a programmable equity offering work?</h2>
                     <div className="indent">
                         The continous organisation sets a <span className="font-semibold">minimal funding goal (MFG)</span>, a set amount of investment. 
-                        With the DAT FAIR Securities, a representation of a claim on the DAT-managed cash reserve that is a function of revenues, are issued to reach the MFG.<br/>
+                        With the DAT tokens, representing a claim on the DAT-managed cash reserve that is a function of revenues, are issued to reach the MFG.<br/>
                         Additionally, the continuous organisation determines the terms of the programmable equity offering by setting the percentage of the annual 
                         revenue committed to go into the reserve. The higher the allocated percentage, the less riskier it is for investors.<br/>
                         Once the terms are set, tokens are issued proportionally to the amount of money invested.
@@ -50,7 +50,7 @@ export default function About() {
                     What can be done while the MFG is not met?
                 </h2>
                 <div className="indent">
-                    As long as the MFG is not met, investors can receive the tokenised FAIR security at a fixed average price, and can sell them again to receive their investment back. 
+                    As long as the MFG is not met, investors can receive the token at a fixed average price, and can sell them again to receive their investment back. 
                     During this period, the funds of every investment are escrowed by the DAT. <br/>
                     The programmable equity offering can run indefinitely or have a set minimum period running time, which is defined in the DAT. 
                     The minimum period of time can be increased by the continuous organisation. <br/>
