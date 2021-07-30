@@ -63,18 +63,18 @@ describe('Protected pages tests', () => {
 
         it('Visiting the my investment page', () => {
             cy.visit('/personal-investment-info');
-            cy.contains('My Investment').should('be.visible');
+            cy.get('h1').contains('My Investment').should('be.visible');
         })
 
         it('Visiting the fund page', () => {
             cy.visit('/fund-withdraw');
-            cy.contains('Fund').should('be.visible');
-            cy.contains('Withdraw').should('be.visible');
+            cy.get('h1').contains('Fund').should('be.visible');
+            cy.get('h1').contains('Withdraw').should('be.visible');
         })
 
         it('Visiting the transactions page', () => {
             cy.visit('/transactions');
-            cy.contains('Transactions').should('be.visible');
+            cy.get('h1').contains('Transactions').should('be.visible');
         })
 
     })
