@@ -2,7 +2,7 @@ import { SITE_NAME } from '../src/constants';
 
 export default function Home() {
     return (
-        <div className="mb-20">
+        <div className="mb-20 home">
           <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
                 <h1 className="mb-8">{SITE_NAME}</h1>
             </div>
