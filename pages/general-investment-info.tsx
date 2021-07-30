@@ -13,7 +13,7 @@ function InvestmentNumbers() {
             <div className="mt-2">
                 You can find an overview of the PEQ offering here.
             </div>
-            <h2 className="mt-8 highlight">General Information</h2>
+            <h2 className="mt-8 highlight">General information</h2>
             <div className="flex flex-wrap justify-between">
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4 border border-accent-1">
@@ -48,7 +48,7 @@ function InvestmentNumbers() {
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                        <p>Minimum funding goal</p>
+                        <p>Minimal funding goal</p>
                         <h1><TezAmount amount={data.minimumFundingGoal}/></h1>
                     </div>
                 </div>

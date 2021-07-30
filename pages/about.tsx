@@ -9,7 +9,7 @@ export default function About() {
             <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
                 <h1 className="mb-8">Programmable Equity</h1>
                 <div className="body-text-large italic">
-                    Implementing a programmable equity offering on the Tezos blockchain as a Continuous Agreement for Future Equity (CAFE).
+                    Implementing a programmable equity (PEQ) offering on the Tezos blockchain as a continuous agreement for future equity.
                 </div>
             </div>
 
