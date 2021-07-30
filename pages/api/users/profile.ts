@@ -57,8 +57,11 @@ export default async function profileHandler(
                 const body: UpdateProfileDto = JSON.parse(req.body);
                 userHandler.updateUser(userId, body.name, body.country, body.address).then(handleSuccess).catch(handleError);
                 break;
+            case 'DELETE':
+                userHandler.deleteUser(userId).then(() => res.status(200).end()).catch(handleError);
+                break;
             default:
-                res.setHeader('Allow', ['GET', 'PUT']);
+                res.setHeader('Allow', ['GET', 'PUT', 'DELETE']);
                 res.status(405).end(`Method ${method} Not Allowed`);
                 resolve();
         }
