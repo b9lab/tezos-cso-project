@@ -1,4 +1,8 @@
-@import "@fontsource/cormorant";
+@import "@fontsource/cormorant/400.css";
+@import "@fontsource/inter";
+@import "@fontsource/cormorant/400-italic.css";
+@import "@fontsource/cormorant/600.css";
+@import "@fontsource/cormorant/600-italic.css";
 @import "@fontsource/libre-franklin";
 @tailwind base;
 @tailwind components;
@@ -6,8 +10,8 @@
 
 @layer base {
   body {
-    @apply font-medium not-italic leading-loose bg-light-gray font-family-body;
-    font-size: 18px;
+    @apply font-semibold not-italic leading-loose bg-light-gray font-family-body;
+    font-size: 20px;
   }
   h1 {
     @apply font-semibold font-family-headline;
@@ -48,14 +52,19 @@
 
 .hover-trigger {
   @apply bg-none;
+  text-transform: uppercase;
 }
 
 .hover-trigger:hover {
-  @apply text-accent-1;
+  @apply bg-accent-1;
+  color: white;
 }
 
 .hover-trigger .hover-target {
   @apply hidden;
+  @apply bg-accent-1;
+  color: white;
+  text-transform: none;
 }
 
 .hover-trigger:hover .hover-target {
@@ -63,11 +72,16 @@
 }
 
 .hover-target li:hover {
-  @apply text-accent-1;
+  @apply text-white;
 }
 
 .indent {
-  text-indent: 2em;
+  /*text-indent: 1.5em;*/
+}
+
+.indent::first-letter {
+  font-size: 1.5em;
+  line-height: 1em;
 }
 
 nav li.submenu-item {

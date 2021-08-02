@@ -12,7 +12,7 @@ function Layout(props: LayoutProps) {
         <div className="text-dark-gray">
             <Head/>
             <Header/>
-            <main>
+            <main className="bg-white">
                 <div className="max-w-screen-lg m-auto">
                     {props.children}
                 </div>

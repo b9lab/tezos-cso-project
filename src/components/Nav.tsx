@@ -27,7 +27,7 @@ function Nav(props: NavProps) {
         (item.visibility == NAV_ITEM_VISIBILITY.ANONYMOUS && !session);
 
     const desktopNavItemMap = (item: NavItem, index: number) => {
-        let classes = "inline-block relative cursor-pointer p-6 ";
+        let classes = "inline-block relative cursor-pointer p-6 pl-8 ";
         if (!item.custom) classes += "hover-trigger ";
         if (item.position && item.position == NAV_ITEM_POSITION.RIGHT) classes += "float-right m-auto ";
         classes += (item.url == router.pathname) ? "text-accent-1 " : "text-dark-gray ";
@@ -46,7 +46,7 @@ function Nav(props: NavProps) {
                 { item.children && 
                     <ul className={"absolute bg-white text-dark-gray flex flex-col hover-target min-w-max mt-4 " + (item.position == NAV_ITEM_POSITION.RIGHT ? "right-0" : "-mx-8")}>
                         { item.children.filter(navItemFilter).map((subItem: NavItem, index: number) => {
-                            let classes = "submenu-item " + (subItem.url == router.pathname ? "text-accent-1 " : "text-dark-gray ");
+                            let classes = "submenu-item " + (subItem.url == router.pathname ? "text-white " : "text-dark-gray ");
 
                             return (
                                 <li className={classes} key={"menu_sub_item_" + index}>
