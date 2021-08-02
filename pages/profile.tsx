@@ -34,6 +34,7 @@ export default function Profile() {
             event.preventDefault();
             updateUser({ name: inputName, country: inputCountry, address: inputAddress});
         },
+        delete: () => fetch(apiEndpoint, { method: 'DELETE'}).then(() => mutate('/api/auth/session')).catch(console.error),
         fetchAndSaveAddress: () => contract.updatePermission().catch(console.error).then((address: string) => {
             setInputAddress(address);
             updateUser({ address: address });
@@ -55,6 +56,7 @@ export default function Profile() {
             
             <Button className="m-4" type="submit">Update</Button>
             <button className="py-2 px-6 m-2" type="button" onClick={handlers.signOut}>Sign out</button>
+            <button className="py-2 px-6" type="button" onClick={handlers.delete}>Delete account</button>
         </form>
     );
 }
