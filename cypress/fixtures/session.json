@@ -1,0 +1,12 @@
+{
+  "user": {
+    "name": "User Test",
+    "email": "user.test@email.com",
+    "image": ""
+  },
+  "accessToken": "",
+  "expires": "2030-08-28T14:12:45.393Z",
+  "userId": 0,
+  "address": "tz1Nr3fddys26a4VbmQja9JGKfqLpeJnPQJY",
+  "country": null
+}

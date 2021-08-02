@@ -27,9 +27,34 @@ docker-compose up -d
 npm run dev
 ```
 
-### Testing
+## Testing
+will run both unit and e2e tests
 ```
 npm run test
+```
+
+### e2e test
+Create "cypress.env.json" file and insert the google account credentials that you want to use for the google auth test
+```json
+{
+    "GOOGLE_USER": "MY_EMAIL",
+    "GOOGLE_PW": "MY_PASSWORD",
+    "COOKIE_NAME": "next-auth.session-token",
+    "SITE_NAME": "http://127.0.0.1:3000"
+}
+```
+To run all integration tests
+```
+npm run test:e2e
+```
+To run manually the integation tests run a local server and then run
+```
+npm run test:e2e:open
+```
+
+### Unit test
+```
+npm run test:unit
 ```
 
 ## Database

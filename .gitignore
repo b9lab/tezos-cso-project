@@ -40,3 +40,7 @@ yarn-error.log*
 
 # crash reports
 report.*
+
+cypress.env.json
+cypress/videos
+cypress/screenshots

@@ -12,9 +12,11 @@
     "lint": "next lint",
     "db:migrate": "TS_NODE_PROJECT=tsconfig.knex.json knex migrate:latest",
     "db:rollback": "TS_NODE_PROJECT=tsconfig.knex.json knex migrate:rollback",
-    "_test": "cypress open --config pageLoadTimeout=30000,baseUrl=http://127.0.0.1:3000",
-    "test": "npm run build && NODE_ENV=test start-server-and-test serve http://127.0.0.1:3000 _test",
-    "test:unit": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'"
+    "test:e2e:open": "cypress open --config pageLoadTimeout=30000,baseUrl=http://127.0.0.1:3000",
+    "test:e2e:run": "cypress run --config pageLoadTimeout=30000,baseUrl=http://127.0.0.1:3000",
+    "test:e2e": "npm run build && NODE_ENV=test start-server-and-test serve http://127.0.0.1:3000 test:e2e:run",
+    "test:unit": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'",
+    "test": "npm run test:unit && npm run test:e2e"
   },
   "dependencies": {
     "@fontsource/cormorant": "^4.5.0",
@@ -35,16 +37,22 @@
     "swr": "^0.5.6"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^8.0.0",
+    "@types/chai": "^4.2.21",
     "@types/chai-as-promised": "^7.1.4",
+    "@types/mocha": "^9.0.0",
     "@types/react": "17.0.11",
     "autoprefixer": "^10.2.6",
+    "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
     "cypress": "^8.0.0",
     "cypress-recurse": "1.8.1",
+    "cypress-social-logins": "^1.11.3",
     "eslint": "7.29.0",
     "eslint-config-next": "11.0.0",
     "imap-simple": "5.0.0",
     "mailparser": "3.2.0",
+    "mocha": "^9.0.3",
     "nodemailer": "6.6.3",
     "postcss": "^8.3.5",
     "start-server-and-test": "^1.12.6",
