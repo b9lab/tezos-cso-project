@@ -2,13 +2,12 @@ import { useRouter } from "next/dist/client/router";
 import React, { useState } from "react";
 import { TRANSACTION_INSPECTOR_INITIAL_INTERVAL, TRANSACTION_INSPECTOR_MAX_INTERVAL, TRANSACTION_INSPECTOR_MAX_RETRY_COUNT } from "../constants";
 import DataHandler from "../services/DataHandler";
-import { TransactionType, UserTransactionDto } from "../utils/dtos";
+import { UserTransactionDto } from "../utils/dtos";
 import { useInterval } from "../utils/hooks";
 import Button from "./Button";
 import Modal from "./Modal";
-import TezAmount from "./TezAmount";
 import Link from "next/link";
-import { format_date } from "../helpers";
+import TransactionsTable from "./TransactionsTable";
 
 type TransactionInspectorProp = {
     address: string,
@@ -84,20 +83,7 @@ function ConfirmedModal(props: ConfirmedModalProp) {
                 <Modal closeHandler={closeHandler}>
                     <div>
                         <h1 className="mb-4">Transaction completed successfully</h1>
-                        <div className="mt-6 w-full flex flex-col shadow-2xl rounded">
-                            <div className="w-full flex justify-between bg-accent-1 text-white px-4 py-2 rounded-t">
-                                <h3 className="w-1/4">Date</h3>
-                                <h3 className="w-1/4">Type</h3>
-                                <h3 className="w-1/4">Tez Amount</h3>
-                                <h3 className="w-1/4">Token</h3>
-                            </div>
-                            <div className="w-full flex justify-between body-text-small bg-light-gray odd:bg-white py-2 px-4 last:rounded-b " key={props.transaction.hash}>
-                                <p className="w-1/4">{format_date(props.transaction.date)}</p>
-                                <p className="w-1/4">{props.transaction.transactionType == TransactionType.Funding ? 'Funding' : 'Withdrawal'}</p>
-                                <p className="w-1/4"><TezAmount amount={props.transaction.tezAmount} nostyle={true}/></p>
-                                <p className="w-1/4">{props.transaction.tokenAmount}</p>
-                            </div>
-                        </div>
+                        <TransactionsTable items={[props.transaction]}/>
                         <div className="flex justify-center pt-8">
                             <Button handler={closeHandler} color="accent-1">Ok</Button>
                         </div>
