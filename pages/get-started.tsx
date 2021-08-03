@@ -27,7 +27,7 @@ export default function GetStarted() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8">
+                <h2 className="mb-8 highlight">
                     Signing in
                 </h2>
                 <div>
@@ -56,7 +56,7 @@ export default function GetStarted() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8">
+                <h2 className="mb-8 highlight">
                     Connecting my wallet
                 </h2>
                 <div>
@@ -108,7 +108,7 @@ export default function GetStarted() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8">
+                <h2 className="mb-8 highlight">
                     Getting my first Florence testnet tez
                 </h2>
                 <div>

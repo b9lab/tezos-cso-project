@@ -6,7 +6,7 @@ export default function Home() {
           <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
                 <h1 className="mb-8">{SITE_NAME}</h1>
                 <div className="body-text-large italic">
-                    Illustration of a Programmable Equity Implementation on Tezos
+                    Illustration of a programmable equity implementation on Tezos
                 </div>
             </div>
 
@@ -28,7 +28,7 @@ export default function Home() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8">
+                <h2 className="mb-8 highlight">
                     What is TZMINT?
                 </h2>
                 <div className="indent">
@@ -44,7 +44,7 @@ export default function Home() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8">
+                <h2 className="mb-8 highlight">
                     Steps in a continuous agreement for future equity
                 </h2>
                 <div>
@@ -57,7 +57,7 @@ export default function Home() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8">
+                <h2 className="mb-8 highlight">
                     New fundraising method - How is a PEQ offering different from an ICO?
                 </h2>
                 <div className="indent">

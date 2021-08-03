@@ -14,7 +14,7 @@ export default function About() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8">
+                <h2 className="mb-8 highlight">
                     What is a programmable equity offering?
                 </h2>
                 <div className="indent">
@@ -46,7 +46,7 @@ export default function About() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8">
+                <h2 className="mb-8 highlight">
                     What can be done while the MFG is not met?
                 </h2>
                 <div className="indent">

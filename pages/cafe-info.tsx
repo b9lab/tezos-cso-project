@@ -35,7 +35,7 @@ export default function CafeInfo() {
             </div>
 
             <div className="pt-12">
-                <h2 className="mb-8">Determining the price for the CAFE token</h2>
+                <h2 className="mb-8 highlight">Determining the price for the CAFE token</h2>
                 <div className="indent">
                     Once the offering is launched, qualified investors can engage at any point of time. The <span className="font-semibold">price</span> is automated and non-negotiable. <br/>
                     The initial price is based on the valuation of the company. After an initial period (i.e. when the minimal funding goal is met), it is based on a function of the number of issued tokens and the number of tokens bought (i.e. the invested amount). <br/>
@@ -47,7 +47,7 @@ export default function CafeInfo() {
             </div>
 
             <div className="pt-12">
-                <h2 className="mb-8">A fixed target equity percentage allocation and fixed dilution</h2>
+                <h2 className="mb-8 highlight">A fixed target equity percentage allocation and fixed dilution</h2>
                 <div className="indent">
                     Continuous agreements for future equity have a <span className="font-semibold">fixed target equity percentage allocation</span> ensuring fixed dilution. There is no dilution from equity financing.<br/>
                     A fixed equity allocation helps founders maintain long-term control, as the claim bound to the token does not grant any governance rights, i.e. the token represents a non-voting share of future equity.<br/>
@@ -56,7 +56,7 @@ export default function CafeInfo() {
             </div>
 
             <div className="pt-12">
-                <h2 className="mb-8">Converting tokens to equity – Termination</h2>
+                <h2 className="mb-8 highlight">Converting tokens to equity – Termination</h2>
                 <div className="indent">
                     Even though investors can buy and sell tokens as long as the offering is active, the question remains: When is a continuous agreement for future equity terminated?
                 </div>
