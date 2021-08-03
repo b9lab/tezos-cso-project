@@ -89,6 +89,7 @@ export default function GetStarted() {
                     <li>Now you have to pair your wallet, but first make sure you <span className="font-semibold">select the correct network</span>. Go to your Spire extension to the menu on the left upper corner and select <span className="font-semibold italic">Settings</span>. Under the network select <span className="font-semibold italic">Florencenet</span>.</li>
                     <li>To <span className="font-semibold">pair your wallet</span>, go to the <span className="font-semibold italic">Overview</span> in your Spire extension and click on <span className="font-semibold italic">Pair wallet</span>. Activate <span className="font-semibold italic">Enable Developer Mode</span> and <span className="font-semibold italic">Setup local secret</span>.</li>
                     <li>In Spire, a permission request should pop up. It looks like this:<li>
+                </div>
                 <div className="w-full mt-4">
                     <Image src={tutorial1Image} objectFit="contain" alt=""/>
                 </div>
