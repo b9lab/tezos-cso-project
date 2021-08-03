@@ -10,22 +10,10 @@ export default function GetStarted() {
             <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
                 <h1 className="mb-8">Get Started</h1>
                 <div className="body-text-large italic">
-                    Let’s dive right into it! To help you get started, we have a quick step-by-step guide.
-                </div>
-            </div>
-
-            <div className="pt-12 px-8">
-                <div className="indent">
-                    To interact with the platform, you first need to <span className="font-semibold">sign in and connect your wallet</span>. 
-                    Afterwards, you will be able to buy and sell tokens through the platform using tez on the Florence testnet.<br/>
-                    To have tez, just go to the following <a className="font-family-body font-semibold text-accent-1" href="https://www.google.com/" target="_blank" rel="noreferrer">faucet</a>.
-                </div>
-
-                <div className="mt-4 font-semibold">
                     Just follow the step-by-step guide beneath and you should be ready to go in a couple of minutes!
                 </div>
             </div>
-
+            
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">
                     Signing in

@@ -14,12 +14,14 @@ export default function CafeInfo() {
 
             <div className="mt-6">
                 <div>
-                    A <span className="font-semibold">Continuous Agreement for Future Equity</span> (CAFE) is a <span className="font-semibold">programmable equity funding mechanism</span> envisioned to bring:
+                    A <span className="font-semibold">Continuous Agreement for Future Equity</span> is a <span className="font-semibold">programmable equity (PEQ) funding mechanism</span> envisioned to bring:
                 </div>
-                <div className="pl-4">
-                    - increased long-term founder control <br/>
-                    - higher liquidity for investors and access to new markets <br/>
-                    - improved access to stakeholders to benefit from the financial success of a company <br/>
+                <div>
+                    <ul>
+                    <li>increased long-term founder control,</li>
+                    <li>higher liquidity for investors and access to new markets, and</li>
+                    <li>improved access to stakeholders to benefit from the financial success of a company.</li>
+                    </ul>
                 </div>
                 <div>
                     Through it, a company can financially align stakeholder interests with the success of a company.
@@ -37,9 +39,14 @@ export default function CafeInfo() {
             <div className="pt-12">
                 <h2 className="mb-8 highlight">Determining the price for the CAFE token</h2>
                 <div className="indent">
-                    Once the offering is launched, qualified investors can engage at any point of time. The <span className="font-semibold">price</span> is automated and non-negotiable. <br/>
-                    The initial price is based on the valuation of the company. After an initial period (i.e. when the minimal funding goal is met), it is based on a function of the number of issued tokens and the number of tokens bought (i.e. the invested amount). <br/>
-                    The more tokens are issued, the higher the price is. Meaning, the earlier you invest, the more tokens you receive; the price per token rises with increasing token amount. Whereby, the <span className="font-semibold">amount of capital</span> is per se unlimited. The equity allocation of the continuous PEQ offering can be increased but never decreased.
+                    Once the offering is launched, qualified investors can engage at any point of time. The <span className="font-semibold">price</span> is automated and non-negotiable.
+                </div>
+                <div className="mt-4">                
+                    The initial price is based on the valuation of the company. After an initial period (i.e. when the minimal funding goal is met), it is based on a function of the number of issued tokens and the number of tokens bought (i.e. the invested amount). <br/>                   
+                    The more tokens are issued, the higher the price is. Meaning, the earlier you invest, the more tokens you receive; the price per token rises with increasing token amount.
+                </div>
+                <div className="mt-4">                
+                    Whereby, the <span className="font-semibold">amount of capital</span> is per se unlimited. The equity allocation of the continuous PEQ offering can be increased but never decreased.
                 </div>
                 <div className="w-full mt-8">
                     <Image src={priceImage} objectFit="contain" alt=""/>
@@ -49,8 +56,12 @@ export default function CafeInfo() {
             <div className="pt-12">
                 <h2 className="mb-8 highlight">A fixed target equity percentage allocation and fixed dilution</h2>
                 <div className="indent">
-                    Continuous agreements for future equity have a <span className="font-semibold">fixed target equity percentage allocation</span> ensuring fixed dilution. There is no dilution from equity financing.<br/>
-                    A fixed equity allocation helps founders maintain long-term control, as the claim bound to the token does not grant any governance rights, i.e. the token represents a non-voting share of future equity.<br/>
+                    Continuous agreements for future equity have a <span className="font-semibold">fixed target equity percentage allocation</span> ensuring fixed dilution. There is no dilution from equity financing.
+                </div>
+                <div className="mt-4">
+                    A fixed equity allocation helps founders maintain long-term control, as the claim bound to the token does not grant any governance rights, i.e. the token represents a non-voting share of future equity.
+                </div>
+                <div className="mt-4"> 
                     Independently how much equity a company raises in its financing rounds all investor claims remain the same collectively. For individual investors there is a certain degree of dilution as each token issued contributes to dilution, but it is predictable. This protects stakeholders from unknown and uncalculated equity dilutions.
                 </div>
             </div>
