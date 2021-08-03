@@ -47,10 +47,12 @@ export default function Home() {
                 <h2 className="mb-8">
                     Steps in a continuous agreement for future equity
                 </h2>
-                <div className="pl-4">
-                    1. During initialisation a company deploys a smart contract, sets a minimal funding goal, values the company, and creates the reserve with a set percentage of revenue being allocated to it. <br/>
-                    2. While the offering runs, tokens are issued/minted proportionally to the amount held in the reserve. Token holders (the investors) can buy and sell their tokens for market prices, as well as sell them directly to the reserve, i.e. redeem them.<br/>
-                    3. When the offering ends, all tokens in circulation are bought back by the company, similar to a traditional buyback.<br/>
+                <div>
+                    <ol>
+                        <li>During initialisation a company deploys a smart contract, sets a minimal funding goal, values the company, and creates the reserve with a set percentage of revenue being allocated to it.</li>
+                        <li>While the offering runs, tokens are issued/minted proportionally to the amount held in the reserve. Token holders (the investors) can buy and sell their tokens for market prices, as well as sell them directly to the reserve, i.e. redeem them.</li>
+                        <li>When the offering ends, all tokens in circulation are bought back by the company, similar to a traditional buyback.</li>
+                    </ol>
                 </div>
             </div>
 
@@ -74,11 +76,13 @@ export default function Home() {
                 <div className="mt-4">
                     Programmable equity offering tokens have similarities to ICOs: <br/>
                 </div>
-                <div className="pl-4">
-                    - <span className="font-semibold">Accessibility:</span> Similar to ICOs, the offering is accessible to everyone. <br/>
-                    - <span className="font-semibold">Automation and self-management:</span> Token issuance and management relies on a smart contract, making it a mostly-automated process. <br/>
-                    - <span className="font-semibold">New markets:</span>: Token offerings open up new markets and with it new funding opportunities. <br/>
-                    - <span className="font-semibold">Low cost:</span>: Compared to traditional financing mechanisms, the cost of running a blockchain-based offering and issuing tokens is estimated to be much lower than for example the cost of conducting an IPO. <br/>
+                <div>
+                    <ul>
+                    <li><span className="font-semibold">Accessibility:</span> Similar to ICOs, the offering is accessible to everyone.</li>
+                    <li><span className="font-semibold">Automation and self-management:</span> Token issuance and management relies on a smart contract, making it a mostly-automated process.</li>
+                    <li><span className="font-semibold">New markets:</span>: Token offerings open up new markets and with it new funding opportunities.</li>
+                    <li><span className="font-semibold">Low cost:</span>: Compared to traditional financing mechanisms, the cost of running a blockchain-based offering and issuing tokens is estimated to be much lower than for example the cost of conducting an IPO.</li>
+                    </ul>
                 </div>
                 <div className="mt-4">
                     A revenue-focused approach based on a company’s future shares aligns stakeholder interests, allows for greater investor accessibility and protects investors more due to the algorithmically tie between the token and company’s 

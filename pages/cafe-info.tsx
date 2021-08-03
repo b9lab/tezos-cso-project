@@ -64,10 +64,12 @@ export default function CafeInfo() {
                 <div>
                     This is a list of helpful resources to have a peek at.
                 </div>
-                <div className="pl-4">
-                    - <a className="font-family-body font-semibold text-accent-1" href="https://fairmint-documents.s3.amazonaws.com/CAFE/CAFE+Template.docx" target="_blank" rel="noreferrer">Fairmint Inc.: Template for a Continuous Agreement for Future Equity</a> <br/>
-                    - <a className="font-family-body font-semibold text-accent-1" href="https://fairmint.co/cafe-continuous-agreement-for-future-equity/#what-differences-cafe-safe" target="_blank" rel="noreferrer">Fairmint Inc.: The CAFE FAQ </a> <br/>
-                    - <a className="font-family-body font-semibold text-accent-1" href="https://github.com/C-ORG/whitepaper" target="_blank" rel="noreferrer">Thibauld Favre: Continuous Organizations White Paper </a> <br/>
+                <div>
+                    <ul>
+                    <li><a className="font-family-body font-semibold text-accent-1" href="https://fairmint-documents.s3.amazonaws.com/CAFE/CAFE+Template.docx" target="_blank" rel="noreferrer">Fairmint Inc.: Template for a Continuous Agreement for Future Equity</a></li>
+                    <li><a className="font-family-body font-semibold text-accent-1" href="https://fairmint.co/cafe-continuous-agreement-for-future-equity/#what-differences-cafe-safe" target="_blank" rel="noreferrer">Fairmint Inc.: The CAFE FAQ </a></li>
+                    <li><a className="font-family-body font-semibold text-accent-1" href="https://github.com/C-ORG/whitepaper" target="_blank" rel="noreferrer">Thibauld Favre: Continuous Organizations White Paper </a></li>
+                    </ul>
                 </div>
             </div>
 
