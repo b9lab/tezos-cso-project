@@ -24,10 +24,10 @@ export default function GetStarted() {
                 <div className="mt-4">
                     You can now choose between <span className="font-semibold italic">two ways to sign</span>:
                 </div>
-                <div>
-                    <ul>
-                    <li>with your email, or</li>
-                    <li>with Google.</li>
+                <div className="ml-8">
+                    <ul className="list-disc">
+                        <li>with your email, or</li>
+                        <li>with Google.</li>
                     </ul>
                 </div>
                 <div className="mt-4">
@@ -62,27 +62,28 @@ export default function GetStarted() {
                 <div className="mt-4">
                     You can choose between:
                 </div>
-                <div>
-                    <ul>
-                    <li><a className="font-family-body font-semibold text-accent-1" href="https://chrome.google.com/webstore/detail/spire/gpfndedineagiepkpinficbcbbgjoenn?hl=en" target="_blank" rel="noreferrer">Spire</a> and <a className="font-family-body font-semibold text-accent-1" href="https://templewallet.com/" target="_blank" rel="noreferrer">Temple Wallet</a> - if you want to connect through a browser extension,</li>
-                    <li><a className="font-family-body font-semibold text-accent-1" href="https://cryptonomic.tech/galleon.html" target="_blank" rel="noreferrer">Galleon</a>, <a className="font-family-body font-semibold text-accent-1" href="https://wallet.kukai.app/" target="_blank" rel="noreferrer">Kukai Wallet</a>, or <a className="font-family-body font-semibold text-accent-1" href="https://umamiwallet.com/" target="_blank" rel="noreferrer">Umami</a> - if you want to connect a desktop of web wallet, and</li>
-                    <li>The <a className="font-family-body font-semibold text-accent-1" href="https://airgap.it/" target="_blank" rel="noreferrer">AirGap Wallet</a> - if you want to connect through a mobile wallet.</li>
+                <div className="ml-8">
+                    <ul className="list-disc">
+                        <li><a className="font-family-body font-semibold text-accent-1" href="https://chrome.google.com/webstore/detail/spire/gpfndedineagiepkpinficbcbbgjoenn?hl=en" target="_blank" rel="noreferrer">Spire</a> and <a className="font-family-body font-semibold text-accent-1" href="https://templewallet.com/" target="_blank" rel="noreferrer">Temple Wallet</a> - if you want to connect through a browser extension,</li>
+                        <li><a className="font-family-body font-semibold text-accent-1" href="https://cryptonomic.tech/galleon.html" target="_blank" rel="noreferrer">Galleon</a>, <a className="font-family-body font-semibold text-accent-1" href="https://wallet.kukai.app/" target="_blank" rel="noreferrer">Kukai Wallet</a>, or <a className="font-family-body font-semibold text-accent-1" href="https://umamiwallet.com/" target="_blank" rel="noreferrer">Umami</a> - if you want to connect a desktop of web wallet, and</li>
+                        <li>The <a className="font-family-body font-semibold text-accent-1" href="https://airgap.it/" target="_blank" rel="noreferrer">AirGap Wallet</a> - if you want to connect through a mobile wallet.</li>
+                    </ul>
                 </div>
                 <div className="mt-4">
                     In case you want to use <span className="font-semibold">Spire</span>, this is your road to success:
                 </div>
-                <div>
-                    <ol>
-                    <li>Install the <span className="font-semibold">Spire extension</span> for your browser. If your using Google Chrome, just go to <a className="font-family-body font-semibold text-accent-1" href="https://chrome.google.com/webstore/detail/spire/gpfndedineagiepkpinficbcbbgjoenn?hl=en" target="_blank" rel="noreferrer">Spire</a> and add the extension. You will receive a popup message once it is added.</li>
-                    <li>Now you have to pair your wallet, but first make sure you <span className="font-semibold">select the correct network</span>. Go to your Spire extension to the menu on the left upper corner and select <span className="font-semibold italic">Settings</span>. Under the network select <span className="font-semibold italic">Florencenet</span>.</li>
-                    <li>To <span className="font-semibold">pair your wallet</span>, go to the <span className="font-semibold italic">Overview</span> in your Spire extension and click on <span className="font-semibold italic">Pair wallet</span>. Activate <span className="font-semibold italic">Enable Developer Mode</span> and <span className="font-semibold italic">Setup local secret</span>.</li>
-                    <li>In Spire, a permission request should pop up. It looks like this:<li>
-                </div>
-                <div className="w-full mt-4">
-                    <Image src={tutorial1Image} objectFit="contain" alt=""/>
-                </div>
-                <div>
-                    <li>You should now see that the <span className="font-semibold italic">Address</span> field is filled out.</li>
+                <div className="ml-8">
+                    <ol className="list-decimal">
+                        <li>Install the <span className="font-semibold">Spire extension</span> for your browser. If your using Google Chrome, just go to <a className="font-family-body font-semibold text-accent-1" href="https://chrome.google.com/webstore/detail/spire/gpfndedineagiepkpinficbcbbgjoenn?hl=en" target="_blank" rel="noreferrer">Spire</a> and add the extension. You will receive a popup message once it is added.</li>
+                        <li>Now you have to pair your wallet, but first make sure you <span className="font-semibold">select the correct network</span>. Go to your Spire extension to the menu on the left upper corner and select <span className="font-semibold italic">Settings</span>. Under the network select <span className="font-semibold italic">Florencenet</span>.</li>
+                        <li>To <span className="font-semibold">pair your wallet</span>, go to the <span className="font-semibold italic">Overview</span> in your Spire extension and click on <span className="font-semibold italic">Pair wallet</span>. Activate <span className="font-semibold italic">Enable Developer Mode</span> and <span className="font-semibold italic">Setup local secret</span>.</li>
+                        <li>
+                            In Spire, a permission request should pop up. It looks like this:
+                            <div className="w-full mt-4">
+                                <Image src={tutorial1Image} objectFit="contain" alt=""/>
+                            </div>
+                        </li>
+                        <li>You should now see that the <span className="font-semibold italic">Address</span> field is filled out.</li>
                     </ol>
                 </div>
                 <div className="mt-4">
