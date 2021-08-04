@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ImageWrapper from "../src/components/ImageWrapper";
 import priceImage from "../public/price-change.png";
 
 export default function CafeInfo() {
@@ -36,7 +36,7 @@ export default function CafeInfo() {
                     The more tokens are issued, the higher the price is. Meaning, the earlier you invest, the more tokens you receive; the price per token rises with increasing token amount. Whereby, the <span className="font-semibold">amount of capital</span> is per se unlimited. The equity allocation of the continuous PEQ offering can be increased but never decreased.
                 </div>
                 <div className="w-full mt-8">
-                    <Image src={priceImage} objectFit="contain" alt=""/>
+                    <ImageWrapper src={priceImage} alt=""/>
                 </div>
             </div>
 

@@ -1,7 +1,8 @@
-import Image from "next/image";
+import React from "react";
 import tutorial1Image from "../public/tutorial-1.png";
 import tutorial2Image from "../public/tutorial-2.png";
 import tutorial3Image from "../public/tutorial-3.png";
+import ImageWrapper from "../src/components/ImageWrapper";
 
 export default function GetStarted() {
     return (
@@ -87,7 +88,7 @@ export default function GetStarted() {
                     4. In Spire, a permission request should pop up. It looks like this:
                 </div>
                 <div className="w-full mt-4">
-                    <Image src={tutorial1Image} objectFit="contain" alt=""/>
+                    <ImageWrapper src={tutorial1Image} alt=""/>
                 </div>
                 <div className="pl-4">
                     5. You should now see that the <span className="font-semibold italic">Address</span> field is filled out.
@@ -96,7 +97,7 @@ export default function GetStarted() {
                     Your Spire extension should now look like this.
                 </div>
                 <div className="w-full mt-4 sm:w-1/2 sm:m-auto">
-                    <Image src={tutorial2Image} objectFit="contain" alt=""/>
+                    <ImageWrapper src={tutorial2Image} alt=""/>
                 </div>
                 <div className="mt-4">
                     As you can see, you do not have any tez (XTZ) to spend, so let’s get some Florence testnet tez!
@@ -119,7 +120,7 @@ export default function GetStarted() {
                 </div>
                 <div className="pt-4 flex justify-between content-center flex-col sm:flex-row">
                     <div className="sm:w-1/2 flex content-center">
-                        <Image src={tutorial3Image} objectFit="contain" alt=""/>
+                        <ImageWrapper src={tutorial3Image} alt=""/>
                     </div>
                     <div className="mt-8 sm:ml-8 sm:mt-0 sm:w-1/2 flex flex-col justify-center">
                         <div>
