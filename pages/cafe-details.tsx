@@ -11,11 +11,15 @@ export default function CafeDetails(props: CafeDetailsProps) {
     if (!data || error) return <>{error}</>
 
     return (
-        <div className="p-8">
-            <h1 className="mb-4">Parameters of the Continuous Agreement</h1>
-            <div>
-                Here you can find an overview of the CAFE’s parameters.
+        <div className="mb-20">
+
+            <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
+                <h1 className="mb-8">Parameters of the Continuous Agreement</h1>
+                <div className="body-text-large italic">
+                    Here you can find an overview of the CAFE’s parameters
+                </div>
             </div>
+
             <div className="mt-6 w-full sm:w-2/3 flex flex-col bg-white shadow-2xl rounded px-4 py-6">
                 <table className="table-auto">
                     <tbody>
