@@ -81,7 +81,7 @@ export default function GetStarted() {
                         <li>
                             In Spire, a permission request should pop up. It looks like this:
                             <div className="w-full mt-4">
-                                <Image src={tutorial1Image} objectFit="contain" alt=""/>
+                                <ImageWrapper src={tutorial1Image} alt=""/>
                             </div>
                         </li>
                         <li>You should now see that the <span className="font-semibold italic">Address</span> field is filled out.</li>

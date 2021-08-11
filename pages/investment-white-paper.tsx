@@ -1,4 +1,4 @@
-function InvestmentWhitePaper() {
+export default function PersonalInvestmentInfo() {
     return (
         <div className="mb-20">
 
@@ -7,7 +7,6 @@ function InvestmentWhitePaper() {
                 <div className="body-text-large italic">
                 </div>
             </div>
+        </div>
     );
 }
-
-export default InvestmentWhitePaper;
