@@ -1,19 +1,27 @@
-import Image from "next/image";
+import ImageWrapper from "../src/components/ImageWrapper";
 import priceImage from "../public/price-change.png";
 
 export default function CafeInfo() {
     return (
-        <div className="p-8">
-            <h1>Continuous Agreement for Future Equity</h1>
+        <div className="mb-20">
+
+            <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
+                <h1 className="mb-8">Continuous Agreement for Future Equity</h1>
+                <div className="body-text-large italic">
+                    A programmable equity (PEQ) mechanism as a continuous offering
+                </div>
+            </div>
 
             <div className="mt-6">
                 <div>
-                    A <span className="font-semibold">Continuous Agreement for Future Equity</span> (CAFE) is a <span className="font-semibold">programmable equity funding mechanism</span> envisioned to bring:
+                    A <span className="font-semibold">Continuous Agreement for Future Equity</span> is a <span className="font-semibold">programmable equity (PEQ) funding mechanism</span> envisioned to bring:
                 </div>
-                <div className="pl-4">
-                    - increased long-term founder control <br/>
-                    - higher liquidity for investors and access to new markets <br/>
-                    - improved access to stakeholders to benefit from the financial success of a company <br/>
+                <div>
+                    <ul>
+                    <li>increased long-term founder control,</li>
+                    <li>higher liquidity for investors and access to new markets, and</li>
+                    <li>improved access to stakeholders to benefit from the financial success of a company.</li>
+                    </ul>
                 </div>
                 <div>
                     Through it, a company can financially align stakeholder interests with the success of a company.
@@ -29,28 +37,37 @@ export default function CafeInfo() {
             </div>
 
             <div className="pt-12">
-                <h2 className="mb-8">Determining the price for the CAFE token</h2>
+                <h2 className="mb-8 highlight">Determining the price for the CAFE token</h2>
                 <div className="indent">
-                    Once the offering is launched, qualified investors can engage at any point of time. The <span className="font-semibold">price</span> is automated and non-negotiable. <br/>
-                    The initial price is based on the valuation of the company. After an initial period (i.e. when the minimal funding goal is met), it is based on a function of the number of issued tokens and the number of tokens bought (i.e. the invested amount). <br/>
-                    The more tokens are issued, the higher the price is. Meaning, the earlier you invest, the more tokens you receive; the price per token rises with increasing token amount. Whereby, the <span className="font-semibold">amount of capital</span> is per se unlimited. The equity allocation of the continuous PEQ offering can be increased but never decreased.
+                    Once the offering is launched, qualified investors can engage at any point of time. The <span className="font-semibold">price</span> is automated and non-negotiable.
+                </div>
+                <div className="mt-4">                
+                    The initial price is based on the valuation of the company. After an initial period (i.e. when the minimal funding goal is met), it is based on a function of the number of issued tokens and the number of tokens bought (i.e. the invested amount). <br/>                   
+                    The more tokens are issued, the higher the price is. Meaning, the earlier you invest, the more tokens you receive; the price per token rises with increasing token amount.
+                </div>
+                <div className="mt-4">                
+                    Whereby, the <span className="font-semibold">amount of capital</span> is per se unlimited. The equity allocation of the continuous PEQ offering can be increased but never decreased.
                 </div>
                 <div className="w-full mt-8">
-                    <Image src={priceImage} objectFit="contain" alt=""/>
+                    <ImageWrapper src={priceImage} alt=""/>
                 </div>
             </div>
 
             <div className="pt-12">
-                <h2 className="mb-8">A fixed target equity percentage allocation and fixed dilution</h2>
+                <h2 className="mb-8 highlight">A fixed target equity percentage allocation and fixed dilution</h2>
                 <div className="indent">
-                    Continuous agreements for future equity have a <span className="font-semibold">fixed target equity percentage allocation</span> ensuring fixed dilution. There is no dilution from equity financing.<br/>
-                    A fixed equity allocation helps founders maintain long-term control, as the claim bound to the token does not grant any governance rights, i.e. the token represents a non-voting share of future equity.<br/>
+                    Continuous agreements for future equity have a <span className="font-semibold">fixed target equity percentage allocation</span> ensuring fixed dilution. There is no dilution from equity financing.
+                </div>
+                <div className="mt-4">
+                    A fixed equity allocation helps founders maintain long-term control, as the claim bound to the token does not grant any governance rights, i.e. the token represents a non-voting share of future equity.
+                </div>
+                <div className="mt-4"> 
                     Independently how much equity a company raises in its financing rounds all investor claims remain the same collectively. For individual investors there is a certain degree of dilution as each token issued contributes to dilution, but it is predictable. This protects stakeholders from unknown and uncalculated equity dilutions.
                 </div>
             </div>
 
             <div className="pt-12">
-                <h2 className="mb-8">Converting tokens to equity – Termination</h2>
+                <h2 className="mb-8 highlight">Converting tokens to equity – Termination</h2>
                 <div className="indent">
                     Even though investors can buy and sell tokens as long as the offering is active, the question remains: When is a continuous agreement for future equity terminated?
                 </div>
@@ -64,10 +81,12 @@ export default function CafeInfo() {
                 <div>
                     This is a list of helpful resources to have a peek at.
                 </div>
-                <div className="pl-4">
-                    - <a className="font-family-body font-semibold text-accent-1" href="https://fairmint-documents.s3.amazonaws.com/CAFE/CAFE+Template.docx" target="_blank" rel="noreferrer">Fairmint Inc.: Template for a Continuous Agreement for Future Equity</a> <br/>
-                    - <a className="font-family-body font-semibold text-accent-1" href="https://fairmint.co/cafe-continuous-agreement-for-future-equity/#what-differences-cafe-safe" target="_blank" rel="noreferrer">Fairmint Inc.: The CAFE FAQ </a> <br/>
-                    - <a className="font-family-body font-semibold text-accent-1" href="https://github.com/C-ORG/whitepaper" target="_blank" rel="noreferrer">Thibauld Favre: Continuous Organizations White Paper </a> <br/>
+                <div>
+                    <ul>
+                    <li><a className="font-family-body font-semibold text-accent-1" href="https://fairmint-documents.s3.amazonaws.com/CAFE/CAFE+Template.docx" target="_blank" rel="noreferrer">Fairmint Inc.: Template for a Continuous Agreement for Future Equity</a></li>
+                    <li><a className="font-family-body font-semibold text-accent-1" href="https://fairmint.co/cafe-continuous-agreement-for-future-equity/#what-differences-cafe-safe" target="_blank" rel="noreferrer">Fairmint Inc.: The CAFE FAQ </a></li>
+                    <li><a className="font-family-body font-semibold text-accent-1" href="https://github.com/C-ORG/whitepaper" target="_blank" rel="noreferrer">Thibauld Favre: Continuous Organizations White Paper </a></li>
+                    </ul>
                 </div>
             </div>
 

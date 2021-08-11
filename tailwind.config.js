@@ -20,7 +20,11 @@ module.exports = {
       },
       maxWidth: {
         '1/2': '50%',
-       }
+      },
+      cursor: {
+        'zoom-in': 'zoom-in',
+        'zoom-out': 'zoom-out'
+      }
     },
   },
   variants: {
