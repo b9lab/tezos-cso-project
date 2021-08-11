@@ -47,7 +47,7 @@ function Fund() {
 
     return (
         <div>
-            <div className="p-8">
+            <div>
                 <h1>Fund</h1>
                 <div className="mt-2">
                     Here you can buy CAFE tokens for tez.
@@ -132,7 +132,7 @@ function Withdraw() {
 
     return (
         <div>
-            <div className="p-8">
+            <div>
                 <h1>Withdraw</h1>
                 <div className="mt-2">
                     Here you can sell your CAFE tokens for tez.
@@ -185,11 +185,29 @@ function Withdraw() {
 }
 
 export default function FundWithdraw() {
+    const [fundVisible, setFundVisible] = useState<boolean>(true);
+
     return (
-        <>
-            <Fund/>
-            <Withdraw/>
-        </>
+        <div className="p-8">
+            <div className="body-text-small flex space-x-2 justify-end font-family-headline">
+                <div 
+                    className={ ( fundVisible ? "text-accent-1 " : "" ) + "cursor-pointer" } 
+                    onClick={ () => setFundVisible(true) }>
+                    Buy
+                </div>
+                <p> | </p>
+                <div 
+                    className={ ( !fundVisible ? "text-accent-1 " : "" ) + "cursor-pointer" } 
+                    onClick={ () => setFundVisible(false) }>
+                    Sell
+                </div>
+            </div>
+            {
+                fundVisible ? 
+                <Fund/> :
+                <Withdraw/>
+            }
+        </div>
     );
 }
 
