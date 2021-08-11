@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ImageWrapper from "../src/components/ImageWrapper";
 import pricesCurveImage from '../public/buy-sell-function.png';
 import organigramImage from '../public/organigram.png';
 
@@ -31,7 +31,7 @@ export default function About() {
 
             <div className="pt-12 px-8 flex justify-between flex-col sm:flex-row">
                 <div className="sm:w-1/2 flex content-center">
-                    <Image src={organigramImage} objectFit="contain" alt=""/>
+                    <ImageWrapper src={organigramImage} alt=""/>
                 </div>
                 <div className="mt-8 sm:ml-8 sm:mt-0 sm:w-1/2">
                     <h2 className="mb-8 highlight">How does a programmable equity offering work?</h2>
@@ -83,7 +83,7 @@ export default function About() {
                     </div>
                 </div>
                 <div className="sm:w-1/2 flex content-center">
-                    <Image src={pricesCurveImage} objectFit="contain" alt=""/>
+                    <ImageWrapper src={pricesCurveImage} alt=""/>
                 </div>
             </div>
 
