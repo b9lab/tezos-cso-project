@@ -56,16 +56,19 @@
 }
 
 .hover-trigger:hover {
-  @apply bg-accent-1;
+  background-color: #54D5C3;
   color: white;
 }
 
 .hover-trigger .hover-target {
   @apply hidden;
-  @apply bg-accent-1;
-  color: white;
+  background-color: #54D5C3;
+  /*border:  1px solid rgba(41, 202, 180, var(--tw-bg-opacity));;*/
+  color: #f0f0f0;
   text-transform: none;
 }
+
+
 
 .hover-trigger:hover .hover-target {
   @apply flex z-10;
