@@ -13,22 +13,24 @@
 // the project's config changing)
 
 const makeEmailAccount = require('./email-account');
-const { GoogleSocialLogin } = require('cypress-social-logins').plugins;
+require('dotenv').config();
 
 /**
  * @type {Cypress.PluginConfig}
  */
 module.exports = async (on, config) => {
   const emailAccount = await makeEmailAccount();
+
   on('task', {
     getUserEmail() {
       return emailAccount.email
     },
     getLastEmail() {
       return emailAccount.getLastEmail();
-    },
-    GoogleSocialLogin: GoogleSocialLogin,
-  })
+    }
+  });
+  
+  config.env.NEXTAUTH_URL = process.env.NEXTAUTH_URL;
 
   return config;
 }
