@@ -6,6 +6,7 @@ export default function PersonalInvestmentInfo() {
                 <h1 className="mb-8">Investment White Paper</h1>
                 <div className="body-text-large italic">
                 </div>
+                TODO: Add link to pdf file
             </div>
         </div>
     );

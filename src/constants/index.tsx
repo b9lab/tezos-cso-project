@@ -57,6 +57,7 @@ export const NAV_ITEMS: Array<NavItem> = [
                 url: "/investment-white-paper",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
+            /*
             {
                 name: "Source Code (gh)",
                 url: "/",
@@ -67,6 +68,7 @@ export const NAV_ITEMS: Array<NavItem> = [
                 url: "/",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
+            */
         ]
     },
     {
