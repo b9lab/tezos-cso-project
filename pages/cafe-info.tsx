@@ -8,13 +8,13 @@ export default function CafeInfo() {
             <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
                 <h1 className="mb-8">Continuous Agreement for Future Equity</h1>
                 <div className="body-text-large italic">
-                    A programmable equity (PEQ) mechanism as a continuous offering
+                    A Programmable Equity (PEQ) mechanism as a continuous offering
                 </div>
             </div>
 
             <div className="mt-6">
                 <div>
-                    A <span className="font-semibold">Continuous Agreement for Future Equity</span> is a <span className="font-semibold">programmable equity (PEQ) funding mechanism</span> envisioned to bring:
+                    A <span className="font-semibold">Continuous agreement for future equity</span> is a <span className="font-semibold">Programmable Equity (PEQ) funding mechanism</span> envisioned to bring:
                 </div>
                 <div>
                     <ul>
