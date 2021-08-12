@@ -36,7 +36,7 @@ export default function Home() {
                     What is TZMINT?
                 </h2>
                 <div className="indent">
-                    TZMINT is a sample application demonstrating a continuous agreement for future equity for programmable equity (PEQ) funding on Tezos. The token investors can buy and sell on this sample application is called <span className="font-semibold">TZM</span>.
+                    TZMINT is a sample application demonstrating a continuous agreement for future equity for Programmable Equity (PEQ) funding on Tezos. The token investors can buy and sell on this sample application is called <span className="font-semibold">TZM</span>.
                 </div>
                 <div className="mt-4">
                     The programmable equity offering is issued as a <span className="font-semibold">continuous agreement for future equity</span>, i.e. a continuous token offering of a programmable equity. <br/>
@@ -65,7 +65,7 @@ export default function Home() {
                 </h2>
                 <div className="indent">
                     With blockchain technology many <span className="font-semibold">new funding mechanisms</span> were explored. A colorful parade of acronyms followed - ICOs, IEOs, STOs, SAFTs, ... <br/>
-                    <span className="font-semibold">Initial coin offerings</span> (ICOs) became a very popular method for blockchain projects to raise high amounts of capital. This led to a boom of such offerings. With the boom came disillusionment and disenchantment: With an increased number of ICOs came the realisation that many ICO tokens did not represent much worth. Thus, leading to no value in open markets, i.e. secondary markets.
+                    <span className="font-semibold">Initial Coin Offerings</span> (ICOs) became a very popular method for blockchain projects to raise high amounts of capital. This led to a boom of such offerings. With the boom came disillusionment and disenchantment: With an increased number of ICOs came the realisation that many ICO tokens did not represent much worth. Thus, leading to no value in open markets, i.e. secondary markets.
                 </div>
                 <div className="mt-4">
                     ICOs were not without <span className="font-semibold">benefits</span>: This egalitarian and accessible offering frees companies from courting venture capitalists and the constraining process with strong regulatory requirements and high costs of an IPO. <br/>

@@ -9,7 +9,7 @@ export default function About() {
             <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
                 <h1 className="mb-8">Programmable Equity</h1>
                 <div className="body-text-large italic">
-                    Implementing a programmable equity (PEQ) offering on the Tezos blockchain as a continuous agreement for future equity.
+                    Implementing a Programmable Equity (PEQ) offering on the Tezos blockchain as a continuous agreement for future equity.
                 </div>
             </div>
 
@@ -24,7 +24,7 @@ export default function About() {
                 <div className="mt-4">
                     Whereby, the company setting up the programmable equity is often called a <span className="font-semibold">continuous organisation</span> 
                     as the security tokens are offered continuously and not just during one instance. It funnels a part of its revenue, a fixed percentage, 
-                    into a <span className="font-semibold">decentralized autonomous trust (DAT)</span> during a pre-defined time period. 
+                    into a <span className="font-semibold">Decentralized Autonomous Trust (DAT)</span> during a pre-defined time period. 
                     A DAT is a <span className="font-semibold">smart contract</span> that automatically issues the tokenised security, and handles sales and buy backs.
                 </div>
             </div>
@@ -36,7 +36,7 @@ export default function About() {
                 <div className="mt-8 sm:ml-8 sm:mt-0 sm:w-1/2">
                     <h2 className="mb-8 highlight">How does a programmable equity offering work?</h2>
                     <div className="indent">
-                        The continous organisation sets a <span className="font-semibold">minimal funding goal (MFG)</span>, a set amount of investment. 
+                        The continous organisation sets a <span className="font-semibold">Minimal Funding Goal (MFG)</span>, a set amount of investment. 
                         With the DAT tokens, representing a claim on the DAT-managed cash reserve that is a function of revenues, are issued to reach the MFG.
                     </div>
                     <div className="mt-4">                         
