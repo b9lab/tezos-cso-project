@@ -25,10 +25,12 @@ export default function Home() {
                     Due to the educational aim of this platform, some steps that go beyond the scope of a blockchain and would add complexity have been omitted 
                     (e.g. a full KYC process and CDD checks), while some features have been added to specifically demonstrate their implementation.
                 </div>
+                {/*
                 <div className="mt-4">
                     You can read more about the architecture, implementation, and feature details <a className="font-family-body font-semibold text-accent-1" href="https://www.google.com/" target="_blank" rel="noreferrer">here</a>, 
                     or check out the full source code on <a className="font-family-body font-semibold text-accent-1" href="https://www.google.com/" target="_blank" rel="noreferrer">GitHub</a>.
                 </div>
+                */} 
             </div>
 
             <div className="pt-12 px-8">
