@@ -23,8 +23,6 @@ class SpireHelper {
     }
 
     async changeNetwork(customRpcUrl) {
-        console.log('url',process.env.NEXT_PUBLIC_CONTRACT_ADDRESS)
-        console.log('url',process.env.GOOGLE_USER)
         // click settings
         await this.puppeteerHelper.waitAndClick('body > app-root > ion-app > ion-split-pane > ion-menu > ion-content > ion-list > ion-menu-toggle:nth-child(3) > ion-item > ion-label');
         // click network select
