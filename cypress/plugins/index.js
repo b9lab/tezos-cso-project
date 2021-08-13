@@ -14,12 +14,17 @@
 
 const makeEmailAccount = require('./email-account');
 const { GoogleSocialLogin } = require('cypress-social-logins').plugins;
+const PuppeteerHelper = require('../helpers/puppeteer');
+const SpireHelper = require('../helpers/spire');
 
 /**
  * @type {Cypress.PluginConfig}
  */
 module.exports = async (on, config) => {
   const emailAccount = await makeEmailAccount();
+  const puppeteerHelper = new PuppeteerHelper();
+  const spireHelper = new SpireHelper(puppeteerHelper);
+
   on('task', {
     getUserEmail() {
       return emailAccount.email
@@ -28,6 +33,29 @@ module.exports = async (on, config) => {
       return emailAccount.getLastEmail();
     },
     GoogleSocialLogin: GoogleSocialLogin,
+    setupSpire: async () => {
+      const config = {
+        // customRpcUrl: 'http://127.0.0.1:20000'
+      }
+      return await spireHelper.initialSetup(config);
+    }
+  })
+
+  on('before:browser:launch', (browser, launchOptions) => {
+    launchOptions.extensions.push(__dirname + '/extensions/gpfndedineagiepkpinficbcbbgjoenn')
+    if (browser.name === 'chrome') {
+      launchOptions.args.push('--disable-background-timer-throttling');
+      launchOptions.args.push('--disable-backgrounding-occluded-windows');
+      launchOptions.args.push('--disable-renderer-backgrounding');
+
+      const hostArg = launchOptions.args.find(arg => arg.startsWith('--remote-debugging-address'));
+      const host = hostArg.split('=')[1];
+      const rdpArgument = launchOptions.args.find(arg => arg.startsWith('--remote-debugging-port'));
+      const port = parseInt(rdpArgument.split('=')[1]);
+      process.env.REMOTE_DEBUGGING_URL = `http://${host}:${port}`;
+    }
+
+    return launchOptions
   })
 
   return config;
