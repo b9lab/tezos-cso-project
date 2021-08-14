@@ -38,6 +38,9 @@ module.exports = async (on, config) => {
         // customRpcUrl: 'http://127.0.0.1:20000'
       }
       return await spireHelper.initialSetup(config);
+    },
+    confirmAddress: async () => {
+      return await spireHelper.confirmAddress();
     }
   })
 
