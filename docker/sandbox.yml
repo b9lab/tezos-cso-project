@@ -35,9 +35,7 @@ services:
     image: bakingbad/tzkt-sync:latest
     depends_on:
       - db
-    command:
-      - 'sed -i 7c "Endpoint": "http://tzkt-sandbox:20000/", appsettings.json'
-      - dotnet Tzkt.Sync.dll
+    entrypoint: /bin/bash -c 'sed -i "s/https:\/\/mainnet-tezos.giganode.io/http:\/\/tzkt-sandbox:20000/g" /app/appsettings.json && dotnet Tzkt.Sync.dll'
 
   sandbox:
     container_name: tzkt-sandbox
