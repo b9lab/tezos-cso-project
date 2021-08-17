@@ -1,6 +1,19 @@
 version: '3'
 
 services:
+
+  sandbox:
+    container_name: tzkt-sandbox
+    image: tqtezos/flextesa:20210602
+    volumes:
+      - ../tezos-app-project/src/contract/deployment.sh:/opt/contract/deployment.sh
+      - ../tezos-app-project/src/contract/TZMINT.py:/opt/contract/TZMINT.py
+      - ../tezos-app-project/src/contract/TZMINT.tz:/opt/contract/TZMINT.tz
+      - ./scripts/deploy.sh:/opt/contract/deploy.sh
+    command: flobox start
+    ports:
+      - 0.0.0.0:20000:20000
+
   db:
     container_name: tzkt-db
     restart: always
@@ -36,13 +49,6 @@ services:
     depends_on:
       - db
     entrypoint: /bin/bash -c 'sed -i "s/https:\/\/mainnet-tezos.giganode.io/http:\/\/tzkt-sandbox:20000/g" /app/appsettings.json && dotnet Tzkt.Sync.dll'
-
-  sandbox:
-    container_name: tzkt-sandbox
-    image: tqtezos/flextesa:20210602
-    command: sh -c "flobox start"
-    ports:
-      - 0.0.0.0:20000:20000
 
 volumes:
   postgres:
