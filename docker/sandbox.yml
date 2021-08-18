@@ -48,6 +48,20 @@ services:
       - db
     entrypoint: /bin/bash -c 'sed -i "s/https:\/\/mainnet-tezos.giganode.io/http:\/\/tzkt-sandbox:20000/g" /app/appsettings.json && dotnet Tzkt.Sync.dll'
 
+  #cypress:
+  #  image: cypress/browsers:node12.14.1-chrome85-ff81
+  #  stage: test
+  #  tags:
+  #    - main-runner
+  #  script:
+  #    - npm ci
+  #    - npm run test
+  #  artifacts:
+  #    when: always
+  #    paths:
+  #      - cypress/videos/**/*.mp4
+  #      - cypress/screenshots/**/*.png
+  #    expire_in: 1 day
   #bootstrap:
   #  container_name: 
 
