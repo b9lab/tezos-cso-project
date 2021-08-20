@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import DataHandler from "../src/services/DataHandler";
+import TezAmount from "../src/components/TezAmount";
 import { format_percentage } from "../src/helpers";
 
 type CafeDetailsProps = {
@@ -59,14 +60,14 @@ export default function CafeDetails(props: CafeDetailsProps) {
                                 <p className="font-bold">Minimum investment</p>
                                 <p className="body-text-small">Minimum amount required for a new investment</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{data.minimumInvestment} {data.baseCurrency}</td>
+                            <td className="border border-dark-gray px-4 py-2"><TezAmount amount={data.minimumInvestment} nostyle="true" hideSign="true"/> </td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Initial reserve</p>
                                 <p className="body-text-small">Initially reserved amount</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{data.initialReserve} {data.baseCurrency}</td>
+                            <td className="border border-dark-gray px-4 py-2"><TezAmount amount={data.initialReserve} nostyle="true" hideSign="true"/></td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
@@ -100,7 +101,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Minimum funding goal</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{data.minimumFundingGoal}</td>
+                            <td className="border border-dark-gray px-4 py-2"><TezAmount amount={data.minimumFundingGoal} nostyle="true" hideSign="true"/></td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
