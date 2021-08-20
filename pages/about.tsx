@@ -4,7 +4,7 @@ import organigramImage from '../public/organigram.png';
 
 export default function About() {
     return (
-        <div className="mb-20">
+        <div className="pb-8">
 
             <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
                 <h1 className="mb-8">Programmable Equity</h1>

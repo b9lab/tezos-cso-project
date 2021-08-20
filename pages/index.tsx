@@ -2,7 +2,7 @@ import { SITE_NAME } from '../src/constants';
 
 export default function Home() {
     return (
-        <div className="mb-20 home">
+        <div className="pb-8 home">
           <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
                 <h1 className="mb-8">{SITE_NAME}</h1>
                 <div className="body-text-large italic">
@@ -13,7 +13,7 @@ export default function Home() {
             <div className="pt-8 px-8">
                 <div className="indent">
                     This platform is an example project, which is part of the educational course on the 
-                    <a className="font-family-body font-semibold text-accent-1" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer"> Tezos Developer Platform</a>. 
+                    <a className="font-family-body font-semibold" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer"> Tezos Developer Platform</a>. 
                     There is <span className="font-semibold">no real investment or company</span> involved. Instead, all transactions displayed are performed on a testnet, 
                     <span className="font-semibold"> the Florence testnet</span>.
                 </div>
@@ -27,8 +27,8 @@ export default function Home() {
                 </div>
                 {/*
                 <div className="mt-4">
-                    You can read more about the architecture, implementation, and feature details <a className="font-family-body font-semibold text-accent-1" href="https://www.google.com/" target="_blank" rel="noreferrer">here</a>, 
-                    or check out the full source code on <a className="font-family-body font-semibold text-accent-1" href="https://www.google.com/" target="_blank" rel="noreferrer">GitHub</a>.
+                    You can read more about the architecture, implementation, and feature details <a className="font-family-body font-semibold" href="https://www.google.com/" target="_blank" rel="noreferrer">here</a>, 
+                    or check out the full source code on <a className="font-family-body font-semibold" href="https://www.google.com/" target="_blank" rel="noreferrer">GitHub</a>.
                 </div>
                 */} 
             </div>
@@ -84,8 +84,8 @@ export default function Home() {
                     <ul>
                     <li><span className="font-semibold">Accessibility:</span> Similar to ICOs, the offering is accessible to everyone.</li>
                     <li><span className="font-semibold">Automation and self-management:</span> Token issuance and management relies on a smart contract, making it a mostly-automated process.</li>
-                    <li><span className="font-semibold">New markets:</span>: Token offerings open up new markets and with it new funding opportunities.</li>
-                    <li><span className="font-semibold">Low cost:</span>: Compared to traditional financing mechanisms, the cost of running a blockchain-based offering and issuing tokens is estimated to be much lower than for example the cost of conducting an IPO.</li>
+                    <li><span className="font-semibold">New markets:</span> Token offerings open up new markets and with it new funding opportunities.</li>
+                    <li><span className="font-semibold">Low cost:</span> Compared to traditional financing mechanisms, the cost of running a blockchain-based offering and issuing tokens is estimated to be much lower than for example the cost of conducting an IPO.</li>
                     </ul>
                 </div>
                 <div className="mt-4">

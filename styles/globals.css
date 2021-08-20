@@ -30,8 +30,21 @@
   }
   a {
     @apply font-family-headline;
-    font-size: 18px;
+    @apply text-accent-2;
+    /*font-size: 18px;*/
     line-height: 22px;
+  }
+
+  nav li a {
+    color: inherit;
+  }
+
+  main {
+    min-height: 70vh;
+  }
+
+  main a {
+    letter-spacing: 1px;
   }
 }
 
@@ -43,6 +56,15 @@
 .body-text-small {
   @apply leading-normal;
   font-size: 16px;
+}
+
+.footer {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.footer a {
+  @apply text-dark-gray;
 }
 
 .highlight {
