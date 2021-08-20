@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import DataHandler from "../src/services/DataHandler";
+import { format_percentage } from "../src/helpers";
 
 type CafeDetailsProps = {
     initialData: any
@@ -20,7 +21,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
                 </div>
             </div>
 
-            <div className="mt-6 w-full sm:w-2/3 flex flex-col bg-white shadow-2xl rounded px-4 py-6">
+            <div className="mt-6 w-full m-auto sm:w-2/3 flex flex-col bg-white shadow-2xl rounded px-4 py-6">
                 <table className="table-auto">
                     <tbody>
                         <tr>
@@ -32,20 +33,19 @@ export default function CafeDetails(props: CafeDetailsProps) {
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
-                                <p className="font-bold">Total allocation</p>
-                                <p className="body-text-small">Amount of tokens held in the contract</p>
+                                <p className="font-bold">Total equity allocation</p>
+                                <p className="body-text-small">Total Amount of equity allocated for the Continuous Agreement offering</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{data.totalAllocation}</td>
+                            <td className="border border-dark-gray px-4 py-2">{format_percentage(data.totalAllocation)}</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
-                                <p className="font-bold">Stake allocation</p>
+                                <p className="font-bold">Stakeholder equity allocation</p>
                                 <p className="body-text-small">
-                                    What is meant by the initial amount paid? If you mean the initial price, 
-                                    then I would recommend using “Initial price per token in tez”
+                                    Maximum amount of equity which can be used to compensate stakeholders (part of the total equity allocation).
                                 </p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{data.stakeAllocation}</td>
+                            <td className="border border-dark-gray px-4 py-2">{format_percentage(data.stakeAllocation)}</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
@@ -57,16 +57,16 @@ export default function CafeDetails(props: CafeDetailsProps) {
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Minimum investment</p>
-                                <p className="body-text-small">Minimum amount required for investment in tez</p>
+                                <p className="body-text-small">Minimum amount required for a new investment</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{data.minimumInvestment}</td>
+                            <td className="border border-dark-gray px-4 py-2">{data.minimumInvestment} {data.baseCurrency}</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Initial reserve</p>
-                                <p className="body-text-small">Initial amount in the reserve in tez</p>
+                                <p className="body-text-small">Initially reserved amount</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{data.initialReserve}</td>
+                            <td className="border border-dark-gray px-4 py-2">{data.initialReserve} {data.baseCurrency}</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
@@ -87,14 +87,14 @@ export default function CafeDetails(props: CafeDetailsProps) {
                                 <p className="font-bold">Reserve percentage</p>
                                 <p className="body-text-small">Percentage of the funds being held in the contract&apos;s reserve</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{data.reservePercentage}</td>
+                            <td className="border border-dark-gray px-4 py-2">{data.reservePercentage} %</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Retained revenue percentage</p>
                                 <p className="body-text-small">Percentage of the revenues funneled to the reserve</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{data.retainedRevenuePercentage}</td>
+                            <td className="border border-dark-gray px-4 py-2">{data.retainedRevenuePercentage} %</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
