@@ -94,7 +94,8 @@ export default class DataHandler {
             retainedRevenuePercentage, 
             minimumFundingGoal, 
             buySlope, 
-            sellSlope 
+            sellSlope,
+            minimumInvestment
         ] = await Promise.all([
             chain.govRights(), 
             chain.baseCurrency(),
@@ -107,9 +108,9 @@ export default class DataHandler {
             chain.d(),
             chain.mfg(),
             chain.buySlope(),
-            chain.sellSlope()
+            chain.sellSlope(),
+            chain.minimumInvestment()
         ]);
-        const minimumInvestment = 0; // todo
 
         return {
             baseCurrency: baseCurrency,
