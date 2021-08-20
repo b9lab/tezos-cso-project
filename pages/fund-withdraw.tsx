@@ -48,7 +48,7 @@ function Fund() {
     return (
         <div>
             <div>
-                <h1>Fund</h1>
+                <h1>Buy TZM</h1>
                 <div className="mt-2">
                     Here you can buy CAFE tokens for tez.
                 </div>
@@ -133,7 +133,7 @@ function Withdraw() {
     return (
         <div>
             <div>
-                <h1>Withdraw</h1>
+                <h1>Sell TZM</h1>
                 <div className="mt-2">
                     Here you can sell your CAFE tokens for tez.
                 </div>

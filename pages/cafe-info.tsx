@@ -12,7 +12,7 @@ export default function CafeInfo() {
                 </div>
             </div>
 
-            <div className="mt-6">
+            <div className="mt-6 px-8">
                 <div>
                     A <span className="font-semibold">Continuous agreement for future equity</span> is a <span className="font-semibold">Programmable Equity (PEQ) funding mechanism</span> envisioned to bring:
                 </div>
@@ -36,7 +36,7 @@ export default function CafeInfo() {
                 </div>
             </div>
 
-            <div className="pt-12">
+            <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">Determining the price for the CAFE token</h2>
                 <div className="indent">
                     Once the offering is launched, qualified investors can engage at any point of time. The <span className="font-semibold">price</span> is automated and non-negotiable.
@@ -53,7 +53,7 @@ export default function CafeInfo() {
                 </div>
             </div>
 
-            <div className="pt-12">
+            <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">A fixed target equity percentage allocation and fixed dilution</h2>
                 <div className="indent">
                     Continuous agreements for future equity have a <span className="font-semibold">fixed target equity percentage allocation</span> ensuring fixed dilution. There is no dilution from equity financing.
@@ -66,7 +66,7 @@ export default function CafeInfo() {
                 </div>
             </div>
 
-            <div className="pt-12">
+            <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">Converting tokens to equity – Termination</h2>
                 <div className="indent">
                     Even though investors can buy and sell tokens as long as the offering is active, the question remains: When is a continuous agreement for future equity terminated?
@@ -76,7 +76,7 @@ export default function CafeInfo() {
                 </div>
             </div>
 
-            <div className="pt-12">
+            <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">Want to know more about continuous agreements for future equity?</h2>
                 <div>
                     This is a list of helpful resources to have a peek at.
