@@ -9,7 +9,7 @@ export default function PersonalInvestmentInfo() {
             </div>
             <div className="pt-8 px-8">
                 <div className="indent">
-                    You can find the Continuous Organizations White Paper in the <a className="font-family-body font-semibold" href="https://github.com/C-ORG/whitepaper" target="_blank">C-ORG Github Repository</a>
+                    You can find the Continuous Organizations White Paper in the <a className="font-family-body font-semibold" href="https://github.com/C-ORG/whitepaper" target="_blank" rel="noreferrer">C-ORG Github Repository</a>
                 </div>
             </div>
 
@@ -17,8 +17,8 @@ export default function PersonalInvestmentInfo() {
                 <h2 className="mb-8 highlight">Further Resources</h2>
                 <div className="mt-4">
                     <ul>
-                        <li>Continuous Organizations <a className="font-family-body font-semibold" href="https://github.com/C-ORG/whitepaper#annex" target="_blank">calculation details (annex)</a></li>
-                        <li>Fairmint's <a className="font-family-body font-semibold" href="https://fairmint.co/cafe-continuous-agreement-for-future-equity" target="_blank">Continous Agreement for Future Equity</a> implementation</li>
+                        <li>Continuous Organizations <a className="font-family-body font-semibold" href="https://github.com/C-ORG/whitepaper#annex" target="_blank" rel="noreferrer">calculation details (annex)</a></li>
+                        <li>Fairmint&apos;s <a className="font-family-body font-semibold" href="https://fairmint.co/cafe-continuous-agreement-for-future-equity" target="_blank" rel="noreferrer">Continous Agreement for Future Equity</a> implementation</li>
                     </ul>
                 </div>
             </div>
