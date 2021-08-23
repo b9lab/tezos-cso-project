@@ -35,6 +35,7 @@ module.exports = async (on, config) => {
     GoogleSocialLogin: GoogleSocialLogin,
     setupSpire: async () => {
       const config = {
+        accountMnemonic: "cargo despair tell spare victory divorce average draw source brush fancy round"
         // customRpcUrl: 'http://127.0.0.1:20000'
       }
       return await spireHelper.initialSetup(config);
