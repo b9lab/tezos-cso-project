@@ -13,12 +13,16 @@ else
 	exit 1
 fi
 
-echo "Bootstrap: Sandbox bootstrap (1/2) - setup accounts"
+echo "Bootstrap: Sandbox bootstrap (1/3) - setup accounts"
 tezos-client --endpoint http://localhost:20000 bootstrapped
 tezos-client --endpoint http://localhost:20000 config update
 tezos-client import secret key alice unencrypted:edsk3QoqBuvdamxouPhin7swCvkQNgq4jP5KZPbwWNnwdZpSpJiEbq --force
 tezos-client import secret key bob unencrypted:edsk3RFfvaFaxbHx8BMtEW1rKQcPtDML3LXjNqMNLCzC3wLC1bWbAt --force
 
-echo "Bootstrap: Sandbox bootstrap (2/2) - deploy contract"
+echo "Bootstrap: Sandbox bootstrap (2/3) - deploy contract"
 sh /opt/contract/deployment.sh
+
+echo "Bootstrap: Sandbox bootstrap (3/3) - Fill test account with 100 tez"
+tezos-client transfer 100 from bob to tz1hJBaRcjy5g9RD4hSVrZ4HdMEvVdjmgYeQ --burn-cap 0.06425
+
 echo "Bootstrap: Completed"
