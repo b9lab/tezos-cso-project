@@ -24,6 +24,6 @@ sleep 5
 echo "Bootstrap: Sandbox bootstrap (2/2) - deploy contract"
 cd opt/contract && sh ./deployment.sh
 
-tezos-client transfer 100 from bob to tz1P8Sm5cLivzLYxbrad1FEZuKBEazQhriUg --burn-cap 0.06425
+tezos-client transfer 100 from bob to ${TEST_ACCOUNT_ADDRESS} --burn-cap 0.06425
 
 echo "Bootstrap: Completed"
