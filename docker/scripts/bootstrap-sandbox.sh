@@ -19,10 +19,11 @@ tezos-client --endpoint http://localhost:20000 bootstrapped
 tezos-client --endpoint http://localhost:20000 config update
 tezos-client import secret key alice unencrypted:edsk3QoqBuvdamxouPhin7swCvkQNgq4jP5KZPbwWNnwdZpSpJiEbq --force
 tezos-client import secret key bob unencrypted:edsk3RFfvaFaxbHx8BMtEW1rKQcPtDML3LXjNqMNLCzC3wLC1bWbAt --force
-tezos-client transfer 100 from bob to tz1hJBaRcjy5g9RD4hSVrZ4HdMEvVdjmgYeQ --burn-cap 0.06425
+sleep 5
 
 echo "Bootstrap: Sandbox bootstrap (2/2) - deploy contract"
-sh /opt/contract/deployment.sh
+cd opt/contract && sh ./deployment.sh
 
+tezos-client transfer 100 from bob to tz1P8Sm5cLivzLYxbrad1FEZuKBEazQhriUg --burn-cap 0.06425
 
 echo "Bootstrap: Completed"
