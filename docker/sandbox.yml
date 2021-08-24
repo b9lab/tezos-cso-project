@@ -9,6 +9,12 @@ services:
       - ../tezos-app-project/src/contract:/opt/contract:ro
       - ./scripts:/opt/scripts:ro
     command: sh /opt/scripts/start-sandbox.sh
+    healthcheck:
+      test: ["CMD", "test", "-e", "/opt/sandbox-ready"]
+      interval: 15s
+      timeout: 30s
+      retries: 5
+      start_period: 20s
     ports:
       - 0.0.0.0:20000:20000
 
@@ -50,6 +56,9 @@ services:
 
   cypress:
     image: cypress/browsers:node12.14.1-chrome85-ff81
+    depends_on:
+      sandbox:
+        condition: service_healthy
     volumes:
       - ../:/opt/app
     command: sh /opt/app/docker/scripts/run-tests.sh
