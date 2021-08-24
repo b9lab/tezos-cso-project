@@ -2,6 +2,8 @@
 
 set -x
 
+source /opt/scripts/prepare-env.sh
+
 echo "Bootstrap: Waiting for port 20000 to become reachable"
 timeout 30 sh -c 'while ! curl -s localhost:20000; do sleep 1; done'
 
@@ -24,6 +26,6 @@ sleep 5
 echo "Bootstrap: Sandbox bootstrap (2/2) - deploy contract"
 cd opt/contract && sh ./deployment.sh
 
-tezos-client transfer 100 from bob to ${TEST_ACCOUNT_ADDRESS} --burn-cap 0.06425
+tezos-client transfer 100 from bob to $TEST_ACCOUNT_ADDRESS --burn-cap 0.06425
 
 echo "Bootstrap: Completed"

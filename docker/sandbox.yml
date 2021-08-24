@@ -8,8 +8,6 @@ services:
     volumes:
       - ../tezos-app-project/src/contract:/opt/contract:ro
       - ./scripts:/opt/scripts:ro
-    environment:
-      TEST_ACCOUNT_ADDRESS: ${TEST_ACCOUNT_ADDRESS}
     command: sh /opt/scripts/start-sandbox.sh
     ports:
       - 0.0.0.0:20000:20000
@@ -66,6 +64,8 @@ services:
   #    expire_in: 1 day
   #bootstrap:
   #  container_name: 
+
+
 
 volumes:
   postgres:
