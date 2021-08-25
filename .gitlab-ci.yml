@@ -16,4 +16,4 @@ build:
   script:
     - apk add docker-compose
     - mkdir -p "$MOUNT_POINT"
-    - sh ./docker/run-stack.sh
+    - cd docker && sh ./run-stack.sh
