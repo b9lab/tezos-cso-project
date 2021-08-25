@@ -6,8 +6,8 @@ services:
     container_name: tzkt-sandbox
     image: tqtezos/flextesa:20210602
     volumes:
-      - ../tezos-app-project/src/contract:/opt/contract:ro
-      - ./scripts:/opt/scripts:ro
+      - $MOUNT_POINT/tezos-app-project/src/contract:/opt/contract:ro
+      - $MOUNT_POINT/docker/scripts:/opt/scripts:ro
     command: sh /opt/scripts/start-sandbox.sh
     healthcheck:
       test: ["CMD", "test", "-e", "/opt/sandbox-ready"]
@@ -55,12 +55,15 @@ services:
     entrypoint: /bin/bash -c 'sed -i "s/https:\/\/mainnet-tezos.giganode.io/http:\/\/tzkt-sandbox:20000/g" /app/appsettings.json && dotnet Tzkt.Sync.dll'
 
   cypress:
+    container_name: tzkt-cypress
     image: cypress/browsers:node12.14.1-chrome85-ff81
     depends_on:
       sandbox:
         condition: service_healthy
     volumes:
-      - ../:/opt/app
+      - $MOUNT_POINT:/opt/app
+    environment:
+      GIT_SUBMODULE_STRATEGY: recursive
     command: sh /opt/app/docker/scripts/run-tests.sh
 
 volumes:
