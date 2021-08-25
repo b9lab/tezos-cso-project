@@ -57,7 +57,7 @@ services:
     container_name: tzkt-cypress
     image: cypress/browsers:node12.14.1-chrome85-ff81
     depends_on:
-      sandbox:
+      - sandbox:
         condition: service_healthy
     volumes:
       - $MOUNT_POINT:/opt/app
