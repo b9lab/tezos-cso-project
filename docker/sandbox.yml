@@ -62,7 +62,6 @@ services:
     volumes:
       - $MOUNT_POINT:/opt/app
     environment:
-      GIT_SUBMODULE_STRATEGY: recursive
       PROD_DATABASE_HOST: db
       PROD_DATABASE_USER: tzkt
       PROD_DATABASE_PASSWORD: qwerty
