@@ -10,7 +10,7 @@ services:
 before_script:
   - chmod -R 777 $MOUNT_POINT/tezos-app-project
   - ls -al $MOUNT_POINT/tezos-app-project
-  - echo "Mount Point: $MOUNT_POINT"
+  - echo "Mount Point $MOUNT_POINT"
 
 build:
   stage: build
