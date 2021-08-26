@@ -8,7 +8,7 @@ services:
     volumes:
       - $MOUNT_POINT/tezos-app-project/src/contract:/opt/contract:ro
       - $MOUNT_POINT/docker/scripts/sandbox:/opt/scripts:ro
-    command: sh /opt/scripts/sandbox/start-sandbox.sh
+    command: sh /opt/scripts/start-sandbox.sh
     healthcheck:
       test: ["CMD", "test", "-e", "/opt/sandbox-ready"]
       interval: 15s
