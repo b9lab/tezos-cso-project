@@ -8,7 +8,7 @@ services:
   - docker:19.03.12-dind
 
 before_script:
-  - docker info
+  - chmod -R 777 $MOUNT_POINT/tezos-app-project
 
 build:
   stage: build
