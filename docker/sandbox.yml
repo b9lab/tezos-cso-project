@@ -62,6 +62,10 @@ services:
       - $MOUNT_POINT:/opt/app
     environment:
       GIT_SUBMODULE_STRATEGY: recursive
+      PROD_DATABASE_HOST: db
+      PROD_DATABASE_USER: tzkt
+      PROD_DATABASE_PASSWORD: qwerty
+      PROD_DATABASE_NAME: tezos_cso
     command: sh /opt/app/docker/scripts/run-tests.sh
 
 volumes:
