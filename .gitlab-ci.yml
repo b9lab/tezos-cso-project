@@ -2,6 +2,7 @@ image: docker:19.03.12
 
 variables:
   MOUNT_POINT: /builds/$CI_PROJECT_PATH
+  GIT_SUBMODULE_STRATEGY: recursive
 
 services:
   - docker:19.03.12-dind
@@ -13,8 +14,6 @@ build:
   stage: build
   tags:
     - did-runner
-  environment:
-    GIT_SUBMODULE_STRATEGY: recursive
   script:
     - apk add docker-compose
     - echo "$MOUNT_POINT"
