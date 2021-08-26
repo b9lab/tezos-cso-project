@@ -69,6 +69,12 @@ services:
       PROD_DATABASE_USER: tzkt
       PROD_DATABASE_PASSWORD: qwerty
       PROD_DATABASE_NAME: tezos_cso
+      EMAIL_FROM: ${EMAIL_FROM}
+      EMAIL_SERVER_HOST: ${EMAIL_SERVER_HOST}
+      EMAIL_SERVER_PASSWORD: ${EMAIL_SERVER_PASSWORD}
+      EMAIL_SERVER_PORT: ${EMAIL_SERVER_PORT}
+      EMAIL_SERVER_USER: ${EMAIL_SERVER_USER}
+      NEXTAUTH_URL: ${NEXTAUTH_URL}
     command: sh /opt/app/docker/scripts/cypress/run-tests.sh
 
 volumes:
