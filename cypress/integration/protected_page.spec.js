@@ -69,7 +69,9 @@ describe('Protected pages tests', () => {
         it('Visiting the fund page', () => {
             cy.visit('/fund-withdraw');
             cy.get('h1').contains('Fund').should('be.visible');
-            cy.get('h1').contains('Purchase tokens').should('be.visible');
+
+            // cy.get('div').contains('Sell').click();
+            // cy.get('h1').contains('Withdraw').should('be.visible');
         })
 
         it('Visiting the transactions page', () => {
