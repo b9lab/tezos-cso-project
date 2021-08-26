@@ -8,6 +8,7 @@ services:
     volumes:
       - $MOUNT_POINT/tezos-app-project/src/contract:/opt/contract:ro
       - $MOUNT_POINT/docker/scripts/sandbox:/opt/scripts:ro
+      - shared:/opt/shared
     command: sh /opt/scripts/start-sandbox.sh
     healthcheck:
       test: ["CMD", "test", "-e", "/opt/sandbox-ready"]
@@ -61,6 +62,7 @@ services:
       - sandbox
     volumes:
       - $MOUNT_POINT:/opt/app
+      - shared:/opt/shared
     environment:
       PROD_DATABASE_HOST: db
       PROD_DATABASE_USER: tzkt
@@ -70,3 +72,4 @@ services:
 
 volumes:
   postgres:
+  shared:

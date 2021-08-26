@@ -24,7 +24,12 @@ tezos-client import secret key bob unencrypted:edsk3RFfvaFaxbHx8BMtEW1rKQcPtDML3
 sleep 5
 
 echo "Bootstrap: Sandbox bootstrap (2/2) - deploy contract"
-cd opt/contract && sh ./deployment.sh
+cd opt/contract
+CONTRACT_ADDRESS=`sh ./deployment.sh | egrep -m1 -o 'KT.{34}\b'`
+
+cat > /opt/shared/contract-address.txt <<EOF 
+$CONTRACT_ADDRESS
+EOF
 
 tezos-client transfer 100 from bob to $TEST_ACCOUNT_ADDRESS --burn-cap 0.06425
 
