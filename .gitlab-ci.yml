@@ -1,7 +1,7 @@
 image: docker:19.03.12
 
 variables:
-  MOUNT_POINT: /builds/$CI_PROJECT_PATH/mnt
+  MOUNT_POINT: /builds/$CI_PROJECT_PATH
 
 services:
   - docker:19.03.12-dind
@@ -15,5 +15,5 @@ build:
     - did-runner
   script:
     - apk add docker-compose
-    - mkdir -p "$MOUNT_POINT"
+    - echo "$MOUNT_POINT"
     - cd docker && sh ./run-stack.sh
