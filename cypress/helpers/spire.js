@@ -19,9 +19,9 @@ class SpireHelper {
     }
 
     async confirmAddress() {
-        await this.puppeteerHelper.assignWindows();
+        // await this.puppeteerHelper.assignWindows();
         await this.puppeteerHelper.switchToWalletWindow();
-        await this.puppeteerHelper.waitAndClick('#ion-overlay-3 > div.modal-wrapper.ion-overlay-wrapper.sc-ion-modal-md > beacon-request > ion-content > ion-fab > ion-button.ion-color.ion-color-primary.md.button.button-solid.ion-activatable.ion-focusable.hydrated');
+        await this.puppeteerHelper.waitAndClick('beacon-request > ion-content > ion-fab > ion-button.ion-color.ion-color-primary.md.button.button-solid.ion-activatable.ion-focusable.hydrated');
         await this.puppeteerHelper.switchToCypressWindow();
         return true;
     }
