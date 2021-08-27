@@ -13,13 +13,16 @@
 // the project's config changing)
 
 const makeEmailAccount = require('./email-account');
-require('dotenv').config();
+const PuppeteerHelper = require('../helpers/puppeteer');
+const SpireHelper = require('../helpers/spire');
 
 /**
  * @type {Cypress.PluginConfig}
  */
 module.exports = async (on, config) => {
   const emailAccount = await makeEmailAccount();
+  const puppeteerHelper = new PuppeteerHelper();
+  const spireHelper = new SpireHelper(puppeteerHelper);
 
   on('task', {
     getUserEmail() {
@@ -27,10 +30,35 @@ module.exports = async (on, config) => {
     },
     getLastEmail() {
       return emailAccount.getLastEmail();
+    },
+    setupSpire: async () => {
+      const config = {
+        accountMnemonic: "cargo despair tell spare victory divorce average draw source brush fancy round"
+        // customRpcUrl: 'http://127.0.0.1:20000'
+      }
+      return await spireHelper.initialSetup(config);
+    },
+    confirmAddress: async () => {
+      return await spireHelper.confirmAddress();
     }
-  });
-  
-  config.env.NEXTAUTH_URL = process.env.NEXTAUTH_URL;
+  })
+
+  on('before:browser:launch', (browser, launchOptions) => {
+    launchOptions.extensions.push(__dirname + '/extensions/gpfndedineagiepkpinficbcbbgjoenn')
+    if (browser.name === 'chrome') {
+      launchOptions.args.push('--disable-background-timer-throttling');
+      launchOptions.args.push('--disable-backgrounding-occluded-windows');
+      launchOptions.args.push('--disable-renderer-backgrounding');
+
+      const hostArg = launchOptions.args.find(arg => arg.startsWith('--remote-debugging-address'));
+      const host = hostArg.split('=')[1];
+      const rdpArgument = launchOptions.args.find(arg => arg.startsWith('--remote-debugging-port'));
+      const port = parseInt(rdpArgument.split('=')[1]);
+      process.env.REMOTE_DEBUGGING_URL = `http://${host}:${port}`;
+    }
+
+    return launchOptions
+  })
 
   return config;
 }
