@@ -33,8 +33,8 @@ module.exports = async (on, config) => {
     },
     setupSpire: async () => {
       const config = {
-        accountMnemonic: "cargo despair tell spare victory divorce average draw source brush fancy round"
-        // customRpcUrl: 'http://127.0.0.1:20000'
+        accountMnemonic: process.env.TEST_ACCOUNT_MNEMONIC,
+        customRpcUrl: process.env.NODE_PROVIDER,
       }
       return await spireHelper.initialSetup(config);
     },
