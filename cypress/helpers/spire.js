@@ -7,7 +7,7 @@ class SpireHelper {
         await this.puppeteerHelper.init();
         await this.puppeteerHelper.assignWindows();
 
-        // await this._confirmWelcomePage();
+        await this._enableDeveloperMode();
 
         await this._changeNetwork(config.customRpcUrl);
 
@@ -26,9 +26,9 @@ class SpireHelper {
         return true;
     }
 
-    async _confirmWelcomePage() {
+    async _enableDeveloperMode() {
         await this.puppeteerHelper.waitAndClick('ion-toggle');
-        await this.puppeteerHelper.waitAndClick('ion-backdrop');
+        await this.puppeteerHelper.waitAndClick('#ion-overlay-2 > ion-backdrop');
         return true;
     }
 
@@ -62,8 +62,7 @@ class SpireHelper {
         // save
         await this.puppeteerHelper.waitAndClick('#main-content > beacon-local-mnemonic > ion-content > ion-list:nth-child(1) > ion-button:nth-child(3)');
         // confirm
-        await this.puppeteerHelper.waitAndClick('#ion-overlay-3 > div.alert-wrapper.ion-overlay-wrapper.sc-ion-alert-md > div.alert-button-group.sc-ion-alert-md > button:nth-child(2) > span');
-
+        await this.puppeteerHelper.waitAndClick('div.alert-button-group.sc-ion-alert-md > button:nth-child(2)');
         return true;
     }
 }

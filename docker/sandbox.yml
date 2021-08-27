@@ -27,7 +27,6 @@ services:
       POSTGRES_PASSWORD: qwerty
       POSTGRES_MULTIPLE_DATABASES: tzkt_db,tezos_cso
     volumes:
-      - postgres:/var/lib/postgresql/data
       - $MOUNT_POINT/docker/scripts/db:/docker-entrypoint-initdb.d
     expose:
       - 5432
@@ -65,7 +64,7 @@ services:
       - $MOUNT_POINT:/opt/app
       - shared:/opt/shared
     environment:
-      PROD_DATABASE_HOST: db
+      PROD_DATABASE_HOST: tzkt-db
       PROD_DATABASE_USER: tzkt
       PROD_DATABASE_PASSWORD: qwerty
       PROD_DATABASE_NAME: tezos_cso
@@ -78,5 +77,4 @@ services:
     command: sh /opt/app/docker/scripts/cypress/run-tests.sh
 
 volumes:
-  postgres:
   shared:

@@ -14,7 +14,7 @@
     "pretest": "cross-env NODE_ENV=production npm run db:migrate",
     "test": "npm run test:unit && npm run test:e2e",
     "test:e2e:open": "cypress open --config pageLoadTimeout=30000,baseUrl=http://127.0.0.1:3000",
-    "test:e2e:run": "cypress run --config pageLoadTimeout=30000,baseUrl=http://127.0.0.1:3000 --browser chrome",
+    "test:e2e:run": "cypress run --config pageLoadTimeout=30000,baseUrl=http://127.0.0.1:3000 --browser chrome --headed",
     "test:e2e": "npm run build && start-server-and-test serve http://127.0.0.1:3000 test:e2e:run",
     "test:unit": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'"
   },

@@ -33,7 +33,6 @@ module.exports = async (on, config) => {
       return emailAccount.getLastEmail();
     },
     setupSpire: async () => {
-      console.log(process.env.TEST_ACCOUNT_MNEMONIC, process.env.NODE_PROVIDER);
       const config = {
         accountMnemonic: process.env.TEST_ACCOUNT_MNEMONIC,
         customRpcUrl: process.env.NODE_PROVIDER,

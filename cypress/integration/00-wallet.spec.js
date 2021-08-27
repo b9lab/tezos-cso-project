@@ -3,6 +3,7 @@ describe('Wallet tests', () => {
     describe('Select account', () => {
 
         before(() => {
+            cy.wait(2000);
             cy.setupSpire();
         })
 
