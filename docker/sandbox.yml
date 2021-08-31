@@ -10,11 +10,8 @@ services:
       - $MOUNT_POINT/docker/scripts/sandbox:/opt/scripts:ro
       - shared:/opt/shared
     command: sh /opt/scripts/start-sandbox.sh
-    healthcheck:
-      test: ["CMD", "test", "-e", "/opt/sandbox-ready"]
-      interval: 15s
-      timeout: 30s
-      retries: 5
+    environment:
+      flextesa_node_cors_origin: '*'
     ports:
       - 0.0.0.0:20000:20000
 
@@ -57,9 +54,6 @@ services:
   cypress:
     container_name: app
     image: cypress/browsers:node12.14.1-chrome85-ff81
-    depends_on:
-      sandbox:
-        condition: service_healthy
     volumes:
       - $MOUNT_POINT:/opt/app
       - shared:/opt/shared
