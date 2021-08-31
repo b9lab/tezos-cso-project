@@ -12,6 +12,11 @@ const switchToWithdrawPage = () => {
 
 describe('Transaction tests', () => {
 
+    before(() => {
+        cy.wait(2000);
+        cy.setupSpire();
+    })
+
     beforeEach(() => {
         cy.intercept(
             {
@@ -31,12 +36,10 @@ describe('Transaction tests', () => {
 
     describe('Fund tests', () => {
 
-        beforeEach(() => {
+        it('should fund some tokens', () => {
             cy.visit('/fund-withdraw');
             confirmWallet();
-        })
 
-        it('should fund some tokens', () => {
             cy.get('input').type(10);
             cy.get('button[type=submit]').contains('Buy').click();
 
@@ -49,6 +52,9 @@ describe('Transaction tests', () => {
         })
 
         it('should throw an invalid amount error', () => {
+            cy.visit('/fund-withdraw');
+            confirmWallet();
+
             cy.get('input').type(0);
             cy.get('button[type=submit]').contains('Buy').click();
 
@@ -57,6 +63,9 @@ describe('Transaction tests', () => {
         })
 
         it('should throw a operation canceled error', () => {
+            cy.visit('/fund-withdraw');
+            confirmWallet();
+
             cy.get('input').type(10);
             cy.get('button[type=submit]').contains('Buy').click();
 
@@ -73,14 +82,12 @@ describe('Transaction tests', () => {
 
     describe('Withdraw tests', () => {
 
-        beforeEach(() => {
+        it('should withdraw some tokens', () => {
             cy.visit('/fund-withdraw');
             confirmWallet();
             cy.wait(5000); // wait for notification to disappear
             switchToWithdrawPage();
-        })
 
-        it('should fund some tokens', () => {
             cy.get('input').type(10);
             cy.get('button[type=submit]').contains('Sell').click();
 
@@ -93,6 +100,11 @@ describe('Transaction tests', () => {
         })
 
         it('should throw an invalid amount error', () => {
+            cy.visit('/fund-withdraw');
+            confirmWallet();
+            cy.wait(5000); // wait for notification to disappear
+            switchToWithdrawPage();
+
             cy.get('input').type(0);
             cy.get('button[type=submit]').contains('Sell').click();
 
@@ -101,6 +113,11 @@ describe('Transaction tests', () => {
         })
 
         it('should throw a operation canceled error', () => {
+            cy.visit('/fund-withdraw');
+            confirmWallet();
+            cy.wait(5000); // wait for notification to disappear
+            switchToWithdrawPage();
+
             cy.get('input').type(10);
             cy.get('button[type=submit]').contains('Sell').click();
 

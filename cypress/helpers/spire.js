@@ -35,8 +35,12 @@ class SpireHelper {
     }
 
     async _enableDeveloperMode() {
-        await this.puppeteerHelper.waitAndClick('ion-toggle');
-        await this.puppeteerHelper.waitAndClick('#ion-overlay-2 > ion-backdrop');
+        try {
+            await this.puppeteerHelper.waitAndClick('ion-toggle');
+            await this.puppeteerHelper.waitAndClick('#ion-overlay-2 > ion-backdrop');
+        } catch (error) {
+            console.log(error);
+        }
         return true;
     }
 
