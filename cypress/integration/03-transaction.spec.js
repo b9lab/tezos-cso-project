@@ -77,6 +77,17 @@ describe('Transaction tests', () => {
 
             cy.get('.transaction-error-modal', { timeout: 12000 }).should('be.visible');
         })
+
+        it('should throw a not enough tez in account error', () => {
+            cy.visit('/fund-withdraw');
+            confirmWallet();
+
+            cy.get('input').type(110);
+            cy.get('button[type=submit]').contains('Buy').click();
+
+            cy.get('.transaction-creating-modal').should('be.visible');
+            cy.get('.transaction-error-modal', { timeout: 12000 }).should('be.visible');
+        })
         
     })
 
@@ -129,11 +140,19 @@ describe('Transaction tests', () => {
 
             cy.get('.transaction-error-modal', { timeout: 12000 }).should('be.visible');
         })
-
     })
 
     describe('Transaction list tests', () => {
-        
+
+        it('should list the previously performed transactions', () => {
+            cy.visit('/transactions');
+            confirmWallet();
+
+            cy.get('.transaction-item').should('have.length', 2);
+            cy.get('.transaction-item').contains('Funding').should('be.visible');
+            cy.get('.transaction-item').contains('Withdrawal').should('be.visible');
+        })
+
     })
     
 })
