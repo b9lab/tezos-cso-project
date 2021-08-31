@@ -3,13 +3,13 @@ const { recurse } = require('cypress-recurse');
 describe('Signin tests', () => {
 
     describe('Signin with email', () => {
-        let userEmail
+        let userEmail;
     
         before(() => {
             // get and check the test email only once before the tests
             cy.task('getUserEmail').then((email) => {
-                expect(email).to.be.a('string')
-                userEmail = email
+                expect(email).to.be.a('string');
+                userEmail = email;
             })
         })
     
@@ -25,16 +25,16 @@ describe('Signin tests', () => {
                 () => cy.task('getLastEmail'), // Cypress commands to retry
                 Cypress._.isObject, // keep retrying until the task returns an object
                 {
-                timeout: 60000, // retry up to 1 minute
-                delay: 5000, // wait 5 seconds between attempts
+                    timeout: 60000, // retry up to 1 minute
+                    delay: 5000, // wait 5 seconds between attempts
                 },
             ).its('html').then((html) => {
-                cy.document({ log: false }).invoke({ log: false }, 'write', html)
+                cy.document({ log: false }).invoke({ log: false }, 'write', html);
             });
 
             cy.get('a').invoke('removeAttr', 'target').contains('Sign in').click();
 
-            cy.wait(1000);
+            cy.wait(5000);
 
             cy.getCookie('next-auth.session-token').should('exist');
         })
