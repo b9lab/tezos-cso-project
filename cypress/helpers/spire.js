@@ -14,12 +14,11 @@ class SpireHelper {
         await this._importAccount(config.accountMnemonic);
 
         await this.puppeteerHelper.switchToCypressWindow();
-        await this.puppeteerHelper.closeWalletWindow();
 
         return true;
     }
 
-    async confirmAddress() {
+    async confirm() {
         await this.puppeteerHelper.assignWindows();
         await this.puppeteerHelper.switchToWalletWindow();
         await this.puppeteerHelper.waitAndClick('beacon-request > ion-content > ion-fab > ion-button.ion-color.ion-color-primary.md.button.button-solid.ion-activatable.ion-focusable.hydrated');
@@ -27,10 +26,10 @@ class SpireHelper {
         return true;
     }
 
-    async confirmTransaction() {
+    async cancel() {
         await this.puppeteerHelper.assignWindows();
         await this.puppeteerHelper.switchToWalletWindow();
-        await this.puppeteerHelper.waitAndClick('beacon-request > ion-content > ion-fab > ion-button.ion-color.ion-color-primary.md.button.button-solid.ion-activatable.ion-focusable.hydrated');
+        await this.puppeteerHelper.waitAndClick('beacon-request > ion-content > ion-fab > ion-button.ion-color.ion-color-primary.md.button.button-outline.ion-activatable.ion-focusable.hydrated');
         await this.puppeteerHelper.switchToCypressWindow();
         return true;
     }

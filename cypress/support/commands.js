@@ -9,3 +9,7 @@ Cypress.Commands.add('confirmAddress', () => {
 Cypress.Commands.add('confirmTransaction', () => {
     return cy.task('confirmTransaction');
 });
+
+Cypress.Commands.add('cancelTransaction', () => {
+    return cy.task('cancelTransaction');
+});

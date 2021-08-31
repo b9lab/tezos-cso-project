@@ -40,10 +40,13 @@ module.exports = async (on, config) => {
       return await spireHelper.initialSetup(config);
     },
     confirmAddress: async () => {
-      return await spireHelper.confirmAddress();
+      return await spireHelper.confirm();
     },
     confirmTransaction: async () => {
-      return await spireHelper.confirmTransaction();
+      return await spireHelper.confirm();
+    },
+    cancelTransaction: async () => {
+      return await spireHelper.cancel();
     }
   })
 
