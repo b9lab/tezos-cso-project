@@ -35,12 +35,15 @@ module.exports = async (on, config) => {
     setupSpire: async () => {
       const config = {
         accountMnemonic: process.env.TEST_ACCOUNT_MNEMONIC,
-        customRpcUrl: process.env.NODE_PROVIDER,
+        customRpcUrl: process.env.NEXT_PUBLIC_NODE_PROVIDER,
       }
       return await spireHelper.initialSetup(config);
     },
     confirmAddress: async () => {
       return await spireHelper.confirmAddress();
+    },
+    confirmTransaction: async () => {
+      return await spireHelper.confirmTransaction();
     }
   })
 

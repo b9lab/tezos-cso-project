@@ -47,7 +47,7 @@ function ProcessingModal(props: ProcessingModalProp) {
         <>
             {
                 modalOpened &&
-                <Modal closeHandler={() => setModalOpened(false)}>
+                <Modal classes="transaction-processing-modal" closeHandler={() => setModalOpened(false)}>
                     <div>
                         <h1 className="mb-4">Confirming transaction</h1>
                         <span>Wait until the new transaction is confirmed and public.</span>
@@ -60,7 +60,7 @@ function ProcessingModal(props: ProcessingModalProp) {
 
 function ErrorModal(props: ErrorModalProp) {
     return (
-        <Modal closeHandler={props.closeHandler}>
+        <Modal classes="transaction-error-modal" closeHandler={props.closeHandler}>
             <div>
                 <h1 className="mb-4">{props.title}</h1>
                 { props.children }
@@ -80,7 +80,7 @@ function ConfirmedModal(props: ConfirmedModalProp) {
         <>
             {
                 modalOpened &&
-                <Modal closeHandler={closeHandler}>
+                <Modal classes="transaction-confirmed-modal" closeHandler={closeHandler}>
                     <div>
                         <h1 className="mb-4">Transaction completed successfully</h1>
                         <TransactionsTable items={[props.transaction]}/>
@@ -101,7 +101,7 @@ function CreatingModal() {
         <>
             {
                 modalOpened &&
-                <Modal closeHandler={() => setModalOpened(false)}>
+                <Modal classes="transaction-creating-modal" closeHandler={() => setModalOpened(false)}>
                     <div>
                         <h1 className="mb-4">Creating transaction</h1>
                         <span>The request is being sent, waiting to be accepted</span>

@@ -3,7 +3,8 @@ import { useClickOutside } from "../utils/hooks";
 
 type ModalProps = {
     children: any,
-    closeHandler: () => void
+    closeHandler: () => void,
+    classes: string
 }
 
 function Modal(props: ModalProps) {
@@ -11,7 +12,7 @@ function Modal(props: ModalProps) {
     useClickOutside(modalRef, props.closeHandler);
 
     return (
-        <div className="fixed inset-0 w-full h-full flex justify-center content-center bg-dark-gray-transparent">
+        <div className={"fixed inset-0 w-full h-full flex justify-center content-center bg-dark-gray-transparent " + (props.classes || "")}>
             <div ref={modalRef} className="bg-white rounded shadow-2xl p-8 m-auto">
                 { props.children }
             </div>

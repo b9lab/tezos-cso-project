@@ -53,6 +53,12 @@ class PuppeteerHelper {
 		}
 	}
 
+	async closeWalletWindow() {
+		await this.walletWindow.close();
+		this.walletWindow = null;
+		return true;
+	}
+
 	async waitFor(selector, page = this.walletWindow) {
 		await page.waitForFunction(
 			`document.querySelector('${selector}') && document.querySelector('${selector}').clientHeight != 0`,

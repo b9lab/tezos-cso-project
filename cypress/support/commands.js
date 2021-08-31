@@ -5,3 +5,7 @@ Cypress.Commands.add('setupSpire', () => {
 Cypress.Commands.add('confirmAddress', () => {
     return cy.task('confirmAddress');
 });
+
+Cypress.Commands.add('confirmTransaction', () => {
+    return cy.task('confirmTransaction');
+});

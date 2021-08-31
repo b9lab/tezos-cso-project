@@ -13,13 +13,22 @@ class SpireHelper {
 
         await this._importAccount(config.accountMnemonic);
 
-        // walletAddress = await module.exports.getWalletAddress();
         await this.puppeteerHelper.switchToCypressWindow();
+        await this.puppeteerHelper.closeWalletWindow();
+
         return true;
     }
 
     async confirmAddress() {
-        // await this.puppeteerHelper.assignWindows();
+        await this.puppeteerHelper.assignWindows();
+        await this.puppeteerHelper.switchToWalletWindow();
+        await this.puppeteerHelper.waitAndClick('beacon-request > ion-content > ion-fab > ion-button.ion-color.ion-color-primary.md.button.button-solid.ion-activatable.ion-focusable.hydrated');
+        await this.puppeteerHelper.switchToCypressWindow();
+        return true;
+    }
+
+    async confirmTransaction() {
+        await this.puppeteerHelper.assignWindows();
         await this.puppeteerHelper.switchToWalletWindow();
         await this.puppeteerHelper.waitAndClick('beacon-request > ion-content > ion-fab > ion-button.ion-color.ion-color-primary.md.button.button-solid.ion-activatable.ion-focusable.hydrated');
         await this.puppeteerHelper.switchToCypressWindow();
