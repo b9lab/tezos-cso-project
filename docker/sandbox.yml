@@ -12,6 +12,11 @@ services:
     command: sh /opt/scripts/start-sandbox.sh
     environment:
       flextesa_node_cors_origin: '*'
+    healthcheck:
+      test: ["CMD", "test", "-e", "/opt/sandbox-ready"]
+      interval: 15s
+      timeout: 30s
+      retries: 5
     ports:
       - 0.0.0.0:20000:20000
 
@@ -57,6 +62,9 @@ services:
     volumes:
       - $MOUNT_POINT:/opt/app
       - shared:/opt/shared
+    depends_on:
+      sandbox:
+        condition: service_healthy
     environment:
       PROD_DATABASE_HOST: db
       PROD_DATABASE_USER: tzkt

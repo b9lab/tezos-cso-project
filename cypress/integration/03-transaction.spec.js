@@ -75,7 +75,7 @@ describe('Transaction tests', () => {
 
             cy.cancelTransaction();
 
-            cy.get('.transaction-error-modal', { timeout: 12000 }).should('be.visible');
+            cy.get('.transaction-error-modal', { timeout: 15000 }).should('be.visible');
         })
 
         it('should throw a not enough tez in account error', () => {

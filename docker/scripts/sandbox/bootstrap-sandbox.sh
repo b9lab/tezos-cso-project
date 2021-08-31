@@ -33,4 +33,7 @@ EOF
 
 tezos-client transfer 100 from bob to $TEST_ACCOUNT_ADDRESS --burn-cap 0.06425
 
+cat <<EOF >/opt/sandbox-ready
+EOF
+
 echo "Bootstrap: Completed"
