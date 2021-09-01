@@ -5,6 +5,10 @@ const confirmWallet = () => {
     cy.confirmAddress();
 }
 
+const closeToastMessage = () => {
+    cy.get('body > div').shadow().find('#beacon-toast-button-close').click();
+}
+
 const switchToWithdrawPage = () => {
     cy.get('.sell-page-link').click();
     cy.get('h1').contains('Withdraw').should('be.visible');
@@ -49,6 +53,7 @@ describe('Transaction tests', () => {
 
             cy.get('.transaction-processing-modal', { timeout: 12000 }).should('be.visible');
             cy.get('.transaction-confirmed-modal', { timeout: 10000 }).should('be.visible');
+            closeToastMessage();
         })
 
         it('should throw an invalid amount error', () => {
@@ -60,6 +65,7 @@ describe('Transaction tests', () => {
 
             cy.get('.transaction-creating-modal').should('be.visible');
             cy.get('.transaction-error-modal', { timeout: 12000 }).should('be.visible');
+            closeToastMessage();
         })
 
         it('should throw a operation canceled error', () => {
@@ -76,6 +82,7 @@ describe('Transaction tests', () => {
             cy.cancelTransaction();
 
             cy.get('.transaction-error-modal', { timeout: 15000 }).should('be.visible');
+            closeToastMessage();
         })
 
         it('should throw a not enough tez in account error', () => {
@@ -87,6 +94,7 @@ describe('Transaction tests', () => {
 
             cy.get('.transaction-creating-modal').should('be.visible');
             cy.get('.transaction-error-modal', { timeout: 12000 }).should('be.visible');
+            closeToastMessage();
         })
         
     })
@@ -108,6 +116,7 @@ describe('Transaction tests', () => {
 
             cy.get('.transaction-processing-modal', { timeout: 12000 }).should('be.visible');
             cy.get('.transaction-confirmed-modal', { timeout: 10000 }).should('be.visible');
+            closeToastMessage();
         })
 
         it('should throw an invalid amount error', () => {
@@ -121,6 +130,7 @@ describe('Transaction tests', () => {
 
             cy.get('.transaction-creating-modal').should('be.visible');
             cy.get('.transaction-error-modal', { timeout: 12000 }).should('be.visible');
+            closeToastMessage();
         })
 
         it('should throw a operation canceled error', () => {
@@ -139,6 +149,7 @@ describe('Transaction tests', () => {
             cy.cancelTransaction();
 
             cy.get('.transaction-error-modal', { timeout: 12000 }).should('be.visible');
+            closeToastMessage();
         })
     })
 
@@ -151,6 +162,7 @@ describe('Transaction tests', () => {
             cy.get('.transaction-item').should('have.length', 2);
             cy.get('.transaction-item').contains('Funding').should('be.visible');
             cy.get('.transaction-item').contains('Withdrawal').should('be.visible');
+            closeToastMessage();
         })
 
     })
