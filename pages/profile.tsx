@@ -35,11 +35,11 @@ export default function Profile() {
             updateUser({ name: inputName, country: inputCountry, address: inputAddress});
         },
         delete: () => fetch(apiEndpoint, { method: 'DELETE'}).then(() => mutate('/api/auth/session')).catch(console.error),
-        fetchAndSaveAddress: () => contract.updatePermission().catch(console.error).then((address: string) => {
+        fetchAndSaveAddress: () => contract.updatePermission().then((address: string) => {
             setInputAddress(address);
             updateUser({ address: address });
             mutate('/api/auth/session');
-        })
+        }).catch(console.error)
     };
 
     if (!inputAddress && !addressStored) handlers.fetchAndSaveAddress();

@@ -3,6 +3,9 @@ Cypress.Commands.add('setupSpire', () => {
 });
 
 Cypress.Commands.add('confirmAddress', () => {
+    cy.wait(5000);
+    cy.get('body > div').shadow().find('a').contains('Spire').click();
+    cy.wait(2000);
     return cy.task('confirmAddress');
 });
 

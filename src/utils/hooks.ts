@@ -8,7 +8,7 @@ export function useData(action: any, address: string): any {
         if (!data) {
             action(address).then((result: any) => {
                 if (isMounted) setData(result);
-            });
+            }).catch(console.error);
         }
         return () => { isMounted = false };
     }, []);

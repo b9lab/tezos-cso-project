@@ -26,11 +26,6 @@ describe('Wallet tests', () => {
 
         it('Should select and confirm spire account', () => {
             cy.visit('/profile');
-
-            cy.wait(2000);
-
-            cy.get('body > div').shadow().find('a').contains('Spire').click();
-
             cy.confirmAddress();
         })
 
