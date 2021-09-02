@@ -1,17 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext, AuthContextData } from "../src/components/Auth";
 import DataHandler from "../src/services/DataHandler";
-import { UserInvestmentDto, UserTransactionDto } from "../src/utils/dtos";
+import { TransactionType, UserInvestmentDto, UserTransactionDto } from "../src/utils/dtos";
 import { useData } from "../src/utils/hooks";
 import TezAmount from "../src/components/TezAmount";
 import TransactionsTable from "../src/components/TransactionsTable";
 import TokenAmount from "../src/components/TokenAmount";
+import CtaCard from "../src/components/CtaCard";
 
 export default function PersonalInvestmentInfo() {
     const context: AuthContextData = useContext(AuthContext);
     const dataHandler = new DataHandler();
     const data: UserInvestmentDto = useData(dataHandler.getUserInvestmentData, context.address);
     const transactionList: Array<UserTransactionDto> = useData(dataHandler.getUserTransactionData, context.address);
+    const [ typeFilter, setTypeFilter ] = useState<TransactionType | null>(null);
+    const transactionFilter = (item: UserTransactionDto) => typeFilter == null || typeFilter === item.transactionType;
 
     return (
         <div className="p-8">
@@ -29,26 +32,43 @@ export default function PersonalInvestmentInfo() {
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                        <p>Tezos invested</p>
-                        <h1><TezAmount amount={data?.tezInvested}/></h1>
+                        <p>Current Token Valuation</p>
+                        <h1><TezAmount amount={data?.tokensOwned * data?.tokenSellPrice}/></h1>
                     </div>
                 </div>
                 <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                        <p>Price information {data?.isMFGReached ? "(buy/sell)" : ""}</p>
-                        {
-                            data?.isMFGReached ? 
-                            <h1><TezAmount amount={data?.tokenBuyPrice}/> / <TezAmount amount={data?.tokenSellPrice}/></h1> :
-                            <h1><TezAmount amount={data?.tokenBuyPrice}/></h1>
-                        }
+                        <p>Tezos invested</p>
+                        <h1><TezAmount amount={data?.tezInvested}/></h1>
                     </div>
                 </div>
+                <CtaCard/>
             </div>
             {
                 transactionList?.length > 0 &&
                 <>
                     <h2 className="mt-8 highlight">Transactions</h2>
-                    <TransactionsTable items={transactionList}/>
+                    <div className="body-text-small flex space-x-2 mb-4 pt-6 font-family-headline">
+                        <div>Filter: </div>
+                        <div 
+                            className={ ( typeFilter == null ? "text-accent-1 " : "" ) + "cursor-pointer" } 
+                            onClick={ () => setTypeFilter(null) }>
+                            All
+                        </div>
+                        <p> | </p>
+                        <div 
+                            className={ ( typeFilter == TransactionType.Funding ? "text-accent-1 " : "" ) + "cursor-pointer" } 
+                            onClick={ () => setTypeFilter(TransactionType.Funding) }>
+                            Fund
+                        </div>
+                        <p> | </p>
+                        <div 
+                            className={ ( typeFilter == TransactionType.Withdrawal ? "text-accent-1 " : "" ) + "cursor-pointer" } 
+                            onClick={ () => setTypeFilter(TransactionType.Withdrawal) }>
+                            Withdraw
+                        </div>
+                    </div>
+                    <TransactionsTable items={transactionList.filter(transactionFilter)}/>
                 </>
             }
             
