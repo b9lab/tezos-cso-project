@@ -66,6 +66,11 @@ export interface WithdrawDto {
     accountAddress: string
 }
 
+export interface UserTokenInfoDto {
+    tokenBuyPrice: number,
+    tokensOwned: number
+}
+
 export enum TransactionType {
     Funding = 0,
     Withdrawal = 1

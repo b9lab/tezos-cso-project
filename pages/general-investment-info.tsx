@@ -53,7 +53,7 @@ export default function GeneralInvestmentInfo() {
                         <h1>{data.investorsCount}</h1>
                     </div>
                 </div>
-                <CtaCard href="/fund-withdraw" text="Buy now &#8594;" label="Invest in TZMINT"/>
+                <CtaCard href="/fund-withdraw" text="Buy now &#8594;" title="Invest in TZMINT"/>
             </div>
             <h2 className="mt-12 highlight">Investment overview</h2>
             <div className="flex flex-wrap justify-between">
@@ -70,7 +70,7 @@ export default function GeneralInvestmentInfo() {
                         <h1>{format_date(data.unlockingDate)}</h1>
                     </div>
                 </div>
-                <CtaCard href="/cafe-details" text="See all parameters &#8594;" label="Invest in TZMINT"/>
+                <CtaCard href="/cafe-details" text="See all parameters &#8594;" title="Invest in TZMINT"/>
             </div>
             <h2 className="mt-12 highlight">Token balance</h2>
             <div className="flex flex-wrap justify-between pb-12">
