@@ -37,6 +37,8 @@ const makeEmailAccount = async () => {
         // and close the connection to avoid it hanging
         connection.end();
 
+        console.log(messages);
+
         if (!messages.length) {
           return null;
         } else {

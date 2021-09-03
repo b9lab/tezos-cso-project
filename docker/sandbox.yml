@@ -1,0 +1,82 @@
+version: '2.1'
+
+services:
+
+  sandbox:
+    container_name: sandbox
+    image: tqtezos/flextesa:20210602
+    volumes:
+      - $MOUNT_POINT/tezos-app-project/src/contract:/opt/contract:ro
+      - $MOUNT_POINT/docker/scripts/sandbox:/opt/scripts:ro
+      - shared:/opt/shared
+    command: sh /opt/scripts/start-sandbox.sh
+    environment:
+      flextesa_node_cors_origin: '*'
+    healthcheck:
+      test: ["CMD", "test", "-e", "/opt/sandbox-ready"]
+      interval: 15s
+      timeout: 30s
+      retries: 5
+    ports:
+      - 0.0.0.0:20000:20000
+
+  db:
+    container_name: db
+    restart: always
+    image: postgres:13
+    environment:
+      POSTGRES_USER: tzkt
+      POSTGRES_PASSWORD: qwerty
+      POSTGRES_MULTIPLE_DATABASES: tzkt_db,tezos_cso
+    volumes:
+      - $MOUNT_POINT/docker/scripts/db:/docker-entrypoint-initdb.d
+    expose:
+      - 5432
+    ports:
+      - 0.0.0.0:5432:5432
+
+  api:
+    container_name: tzkt-api
+    restart: always
+    image: bakingbad/tzkt-api:latest
+    depends_on:
+      - db
+    environment:
+      - TZKT_API_KESTREL__ENDPOINTS__HTTP__URL=http://0.0.0.0:5000
+    expose:
+      - 5000
+    ports:
+      - 0.0.0.0:5000:5000
+
+  sync:
+    container_name: tzkt-sync
+    restart: always
+    image: bakingbad/tzkt-sync:latest
+    depends_on:
+      - db
+    entrypoint: /bin/bash -c 'sed -i "s/https:\/\/mainnet-tezos.giganode.io/http:\/\/sandbox:20000/g" /app/appsettings.json && dotnet Tzkt.Sync.dll'
+
+  cypress:
+    container_name: app
+    image: cypress/browsers:node12.14.1-chrome85-ff81
+    volumes:
+      - $MOUNT_POINT:/opt/app
+      - shared:/opt/shared
+    depends_on:
+      sandbox:
+        condition: service_healthy
+    environment:
+      PROD_DATABASE_HOST: db
+      PROD_DATABASE_USER: tzkt
+      PROD_DATABASE_PASSWORD: qwerty
+      PROD_DATABASE_NAME: tezos_cso
+      EMAIL_FROM: ${EMAIL_FROM}
+      EMAIL_SERVER_HOST: ${EMAIL_SERVER_HOST}
+      EMAIL_SERVER_PASSWORD: ${EMAIL_SERVER_PASSWORD}
+      EMAIL_SERVER_PORT: ${EMAIL_SERVER_PORT}
+      EMAIL_SERVER_USER: ${EMAIL_SERVER_USER}
+      NEXTAUTH_URL: ${NEXTAUTH_URL}
+    command: sh /opt/app/docker/scripts/cypress/run-tests.sh
+
+volumes:
+  shared:

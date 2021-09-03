@@ -192,6 +192,8 @@ export default class DataHandler {
                 } else {
                     resolve(result.replace("Operation injected: ", ""));
                 }
+            }).catch((error: any) => {
+                reject(new Error(error));
             });
         });
     }
@@ -229,6 +231,8 @@ export default class DataHandler {
                 } else {
                     resolve(result.replace("Operation injected: ", ""));
                 }
+            }).catch((error: any) => {
+                reject(new Error(error));
             });
         });
     }

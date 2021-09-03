@@ -6,8 +6,6 @@ export const SITE_NAME: string = 'TZMINT';
 export const SITE_DESCRIPTION: string = 'This platform is an example project, which is part of the educational course on the Tezos Developer Platform (tezos.b9lab.com). There is no real investment or company involved.';
 export const SITE_IMAGE: string = '';
 
-export const CONTRACT_ADDRESS: string = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || 'KT1HAzXAJKv2L1orAET65gYyoZvoJtPCdPnz';
-
 export const FUND_MULTIPLIER: number = 1;
 export const TEZ_DISPLAY_MULTIPLIER: number = 1000000;
 

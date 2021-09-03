@@ -1,0 +1,34 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "name": "Spire",
+  "version": "2.2.5",
+  "description": "Spire allows you to interact with Tezos dApps that support the Beacon SDK.",
+  "icons": {
+    "16": "assets/icon/spire-logo-16px.png",
+    "48": "assets/icon/spire-logo-48px.png",
+    "128": "assets/icon/spire-logo-128px.png"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "background": {
+    "scripts": ["background.js", "runtime.js"],
+    "persistent": true
+  },
+  "permissions": ["tabs", "storage", "activeTab", "notifications", "http://*/", "https://*/"],
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "all_frames": true,
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["inject.js", "runtime.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "19": "assets/icon/spire-logo-19px.png",
+      "38": "assets/icon/spire-logo-38px.png"
+    }
+  },
+  "manifest_version": 2
+}

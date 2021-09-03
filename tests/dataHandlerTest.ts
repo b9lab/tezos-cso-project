@@ -7,7 +7,7 @@ process.env.NODE_ENV = 'test';
 chai.use(chaiAsPromised);
 
 const dataHandler = new DataHandler();
-const userAddress = "tz1Nr3fddys26a4VbmQja9JGKfqLpeJnPQJY";
+const userAddress = process.env.TEST_ACCOUNT_ADDRESS || "tz1Nr3fddys26a4VbmQja9JGKfqLpeJnPQJY";
 
 describe('Data handler tests', () => {
 

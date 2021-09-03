@@ -1,26 +1,17 @@
-stages:
-  - test
-
-test:
-  image: cypress/browsers:node12.14.1-chrome85-ff81
-  stage: test
-  tags:
-    - main-runner
-  script:
-    - npm ci
-    - npm run test
-  artifacts:
-    when: always
-    paths:
-      - cypress/videos/**/*.mp4
-      - cypress/screenshots/**/*.png
-    expire_in: 1 day
-
-services:
-  - postgres
+image: docker:19.03.12
 
 variables:
-  POSTGRES_DB: $PROD_DATABASE_NAME
-  POSTGRES_USER: $PROD_DATABASE_USER
-  POSTGRES_PASSWORD: $PROD_DATABASE_PASSWORD
+  MOUNT_POINT: /builds/$CI_PROJECT_PATH
   GIT_SUBMODULE_STRATEGY: recursive
+
+services:
+  - docker:19.03.12-dind
+
+build:
+  stage: build
+  tags:
+    - did-runner
+  script:
+    - apk add docker-compose
+    - echo "$MOUNT_POINT"
+    - cd docker && sh ./run-stack.sh

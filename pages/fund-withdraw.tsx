@@ -191,13 +191,13 @@ export default function FundWithdraw() {
         <div className="p-8">
             <div className="body-text-small flex space-x-2 justify-end font-family-headline">
                 <div 
-                    className={ ( fundVisible ? "text-accent-1 " : "" ) + "cursor-pointer" } 
+                    className={ ( fundVisible ? "text-accent-1 " : "" ) + "cursor-pointer buy-page-link" } 
                     onClick={ () => setFundVisible(true) }>
                     Buy
                 </div>
                 <p> | </p>
                 <div 
-                    className={ ( !fundVisible ? "text-accent-1 " : "" ) + "cursor-pointer" } 
+                    className={ ( !fundVisible ? "text-accent-1 " : "" ) + "cursor-pointer sell-page-link" } 
                     onClick={ () => setFundVisible(false) }>
                     Sell
                 </div>
