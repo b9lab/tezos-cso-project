@@ -24,6 +24,7 @@ export default class DataHandler {
     // General Investment Info
     
     async getInvestmentNumbers(): Promise<InvestmentNumbersDto> {
+        const storage = await chain.storage();
         const [
             companyName, 
             buyPrice, 
@@ -39,19 +40,19 @@ export default class DataHandler {
             burnedTokensCount,
             phase
         ] = await Promise.all([
-            chain.companyName(), 
-            chain.buyPrice(),
-            chain.sellPrice(),
-            chain.mfg(),
-            chain.totalInvestments(),
-            chain.totalInvestors(),
-            chain.totalTokens(),
+            chain.companyName(storage), 
+            chain.buyPrice(storage),
+            chain.sellPrice(storage),
+            chain.mfg(storage),
+            chain.totalInvestments(storage),
+            chain.totalInvestors(storage),
+            chain.totalTokens(storage),
             chain.reserveAmount(),
-            chain.sellSlope(),
-            chain.buySlope(),
-            chain.unlockingDate(),
-            chain.burnedTokens(),
-            chain.phase()
+            chain.sellSlope(storage),
+            chain.buySlope(storage),
+            chain.unlockingDate(storage),
+            chain.burnedTokens(storage),
+            chain.phase(storage)
         ]);
 
         return {
@@ -82,6 +83,7 @@ export default class DataHandler {
     // CAFE details
 
     async getCafeParameters(): Promise<CafeInfoDto> {
+        const storage = await chain.storage();
         const [
             govRights, 
             baseCurrency, 
@@ -97,19 +99,19 @@ export default class DataHandler {
             sellSlope,
             minimumInvestment
         ] = await Promise.all([
-            chain.govRights(), 
-            chain.baseCurrency(),
-            chain.totalAllocation(),
-            chain.stakeAllocation(),
-            chain.terminationEvents(),
+            chain.govRights(storage), 
+            chain.baseCurrency(storage),
+            chain.totalAllocation(storage),
+            chain.stakeAllocation(storage),
+            chain.terminationEvents(storage),
             chain.initialReserve(),
-            chain.companyValuation(),
-            chain.i(),
-            chain.d(),
-            chain.mfg(),
-            chain.buySlope(),
-            chain.sellSlope(),
-            chain.minimumInvestment()
+            chain.companyValuation(storage),
+            chain.i(storage),
+            chain.d(storage),
+            chain.mfg(storage),
+            chain.buySlope(storage),
+            chain.sellSlope(storage),
+            chain.minimumInvestment(storage)
         ]);
 
         return {
@@ -133,6 +135,7 @@ export default class DataHandler {
 
     async getUserInvestmentData(address: string): Promise<UserInvestmentDto> {
         const userData = chain.user(address);
+        const storage = await chain.storage();
         const [
             tezInvested, 
             tokensOwned, 
@@ -142,9 +145,9 @@ export default class DataHandler {
         ] = await Promise.all([
             userData.tezInvested(),
             userData.tokens(),
-            chain.buyPrice(),
-            chain.sellPrice(),
-            chain.phase()
+            chain.buyPrice(storage),
+            chain.sellPrice(storage),
+            chain.phase(storage)
         ]);
 
         return {
@@ -160,6 +163,7 @@ export default class DataHandler {
 
     async getFundTokenInfo(address: string): Promise<FundTokenInfoDto> {
         const userData = chain.user(address);
+        const storage = await chain.storage();
         const [
             tezCount, 
             tokensOwned, 
@@ -168,8 +172,8 @@ export default class DataHandler {
         ] = await Promise.all([
             userData.tez(),
             userData.tokens(),
-            chain.buyPrice(),
-            chain.unlockingDate()
+            chain.buyPrice(storage),
+            chain.unlockingDate(storage)
         ]);
         
         return {
@@ -196,16 +200,17 @@ export default class DataHandler {
 
     async getWithdrawTokenInfo(address: string): Promise<WithdrawTokenInfoDto> {
         const userData = chain.user(address);
+        const storage = await chain.storage();
         const [
             tokenSellPrice,
             tokensOwned, 
             reserveAmount, 
             lockPeriod
         ] = await Promise.all([
-            chain.sellPrice(),
+            chain.sellPrice(storage),
             userData.tokens(),
             chain.reserveAmount(),
-            chain.unlockingDate()
+            chain.unlockingDate(storage)
         ]);
         
         return {
