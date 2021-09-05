@@ -16,9 +16,17 @@ import Link from "next/link";
 import TransactionsTable from "../src/components/TransactionsTable";
 
 enum ModalState {
-    FUND_PAGE,
-    WITHDRAW_PAGE,
+    FUND,
+    WITHDRAW,
     CLOSED
+}
+
+enum TransactionState {
+    DRAFT,
+    SUCCESS,
+    ERROR,
+    TIMEOUT,
+    PENDING
 }
 
 function ProcessingButton() {
@@ -95,20 +103,17 @@ function TransactionSuccess(props: TransactionSuccessProp) {
     );
 }
 
-type FundModalProp = {
-    closeHandler: any,
+type FundPageProp = {
     dataHandler: DataHandler,
-    address: string
+    address: string,
+    onError: (error: string) => void,
+    onPending: (hash: string) => void
 }
 
-function FundModal(props: FundModalProp) {
+function FundPage(props: FundPageProp) {
     const data: FundTokenInfoDto = useData(props.dataHandler.getFundTokenInfo, props.address);
     const [amount, setAmount] = useState<string>('');
-    const [error, setError] = useState<string | null>(null);
-    const [hashToCheck, setHashToCheck] = useState<string | null>(null);
     const [waiting, setWaiting] = useState<boolean>(false);
-    const [timeout, setTimeout] = useState<boolean>(false);
-    const [transactionConfirmed, setTransactionConfirmed] = useState<UserTransactionDto | null>(null);
 
     const handlers = {
         amount: (event: ChangeEvent<HTMLInputElement>): void => { 
@@ -124,23 +129,15 @@ function FundModal(props: FundModalProp) {
                 amount: fundAmount,
                 accountAddress: props.address
             };
-            props.dataHandler.fund(fundDto).then(setHashToCheck).catch((error: Error) => {
-                setError(error.message);
+            props.dataHandler.fund(fundDto).then(props.onPending).catch((error: Error) => {
+                props.onError(error.message);
             });
+
             setWaiting(true);
-        },
-        checkTransaction: async () => {
-            console.log('check')
-            const transactions = await props.dataHandler.getUserTransactionData(props.address);
-            const confirmedTransaction = transactions.find((transaction: UserTransactionDto) => {
-                return transaction.hash == hashToCheck;
-            });
-            if (confirmedTransaction) setTransactionConfirmed(confirmedTransaction);
-        },
-        onTimeout: () => setTimeout(true),
+        }
     };
 
-    let content = (
+    return (
         <div>
             <h1>Buy TZM</h1>
             <div className="flex flex-wrap justify-between">
@@ -165,42 +162,21 @@ function FundModal(props: FundModalProp) {
                     <Button className="mt-2" type="submit">Buy</Button>
                 }
             </form>
-            {
-                hashToCheck && 
-                <CheckTransaction checkHandler={handlers.checkTransaction} timeoutHandler={handlers.onTimeout} />
-            }
         </div>
     );
-
-    if (error) {
-        content = (<TransactionError message={error}/>);
-    } else if (timeout) {
-        content = (<TransactionTimeout/>);
-    } else if (transactionConfirmed) {
-        content = (<TransactionSuccess transaction={transactionConfirmed}/>);
-    }
-
-    return (
-        <Modal closeHandler={props.closeHandler}>
-            {content}
-        </Modal>
-    );
 }
 
-type WithdrawModalProp = {
-    closeHandler: any,
+type WithdrawPageProp = {
     dataHandler: DataHandler,
-    address: string
+    address: string,
+    onError: (error: string) => void,
+    onPending: (hash: string) => void
 }
 
-function WithdrawModal(props: WithdrawModalProp) {
+function WithdrawPage(props: WithdrawPageProp) {
     const data: WithdrawTokenInfoDto = useData(props.dataHandler.getWithdrawTokenInfo, props.address);
     const [amount, setAmount] = useState<string>('');
-    const [error, setError] = useState<string | null>(null);
-    const [hashToCheck, setHashToCheck] = useState<string | null>(null);
     const [waiting, setWaiting] = useState<boolean>(false);
-    const [timeout, setTimeout] = useState<boolean>(false);
-    const [transactionConfirmed, setTransactionConfirmed] = useState<UserTransactionDto | null>(null);
 
     const handlers = {
         amount: (event: ChangeEvent<HTMLInputElement>): void => { 
@@ -216,22 +192,15 @@ function WithdrawModal(props: WithdrawModalProp) {
                 amount: withdrawAmount,
                 accountAddress: props.address
             };
-            props.dataHandler.withdraw(withdrawDto).then(setHashToCheck).catch((error: Error) => {
-                setError(error.message);
+            props.dataHandler.withdraw(withdrawDto).then(props.onPending).catch((error: Error) => {
+                props.onError(error.message);
             });
+
             setWaiting(true);
-        },
-        checkTransaction: async () => {
-            const transactions = await props.dataHandler.getUserTransactionData(props.address);
-            const confirmedTransaction = transactions.find((transaction: UserTransactionDto) => {
-                return transaction.hash == hashToCheck;
-            });
-            if (confirmedTransaction) setTransactionConfirmed(confirmedTransaction);
-        },
-        onTimeout: () => setTimeout(true),
+        }
     };
 
-    let content = (
+    return (
         <div>
             <h1>Sell TZM</h1>
             <div className="flex flex-wrap justify-between">
@@ -250,9 +219,9 @@ function WithdrawModal(props: WithdrawModalProp) {
                     You can not sell the tokens before the unlocking date, {format_date(data?.lockPeriod)}
                 </div>) :
                 (<>
-                    <h2 className="mt-12 highlight">Purchase tokens</h2>
+                    <h2 className="mt-12 highlight">Sell tokens</h2>
                     <div className="my-2 italic">
-                        To buy tokens add the amount of tez you want to spend in the field beneath.
+                        Add the amount of tokens you want to sell in the field beneath.
                     </div>
                     <form onSubmit={handlers.withdraw}>
                         <Input value={amount} handler={handlers.amount} label="Amount of TZM tokens to sell" pattern="[0-9]*"/>
@@ -264,20 +233,72 @@ function WithdrawModal(props: WithdrawModalProp) {
                     </form>
                 </>)
             }
-            
-            {
-                hashToCheck && 
-                <CheckTransaction checkHandler={handlers.checkTransaction} timeoutHandler={handlers.onTimeout} />
-            }
         </div>
     );
+}
 
-    if (error) {
-        content = (<TransactionError message={error}/>);
-    } else if (timeout) {
-        content = (<TransactionTimeout/>);
-    } else if (transactionConfirmed) {
-        content = (<TransactionSuccess transaction={transactionConfirmed}/>);
+type TransactionModalProp = {
+    closeHandler: any,
+    dataHandler: DataHandler,
+    address: string,
+    type: ModalState
+}
+
+function TransactionModal(props: TransactionModalProp) {
+    const [error, setError] = useState<string | null>(null);
+    const [hashToCheck, setHashToCheck] = useState<string | null>(null);
+    const [transactionConfirmed, setTransactionConfirmed] = useState<UserTransactionDto | null>(null);
+
+    const [transactionState, setTransactionState] = useState<TransactionState>(TransactionState.DRAFT);
+
+    const handlers = {
+        checkTransaction: async () => {
+            const transactions = await props.dataHandler.getUserTransactionData(props.address);
+            const confirmedTransaction = transactions.find((transaction: UserTransactionDto) => {
+                return transaction.hash == hashToCheck;
+            });
+            if (confirmedTransaction) {
+                setTransactionConfirmed(confirmedTransaction);
+                setTransactionState(TransactionState.SUCCESS);
+            }
+        },
+        onTimeout: () => setTransactionState(TransactionState.TIMEOUT),
+        onError: (error: string) => {
+            setError(error);
+            setTransactionState(TransactionState.ERROR);
+        },
+        onPending: (hash: string) => {
+            setHashToCheck(hash);
+            setTransactionState(TransactionState.PENDING);
+        }
+    };
+
+    let content = null;
+
+    switch (transactionState) {
+        case(TransactionState.ERROR):
+            content = (<TransactionError message={error!}/>);
+            break;
+        case(TransactionState.TIMEOUT):
+            content = (<TransactionTimeout/>);
+            break;
+        case(TransactionState.SUCCESS):
+            content = (<TransactionSuccess transaction={transactionConfirmed!}/>);
+            break;
+        default:
+            content = (
+                <div>
+                    {
+                        props.type == ModalState.FUND ? 
+                        <FundPage dataHandler={props.dataHandler} address={props.address} onError={handlers.onError} onPending={handlers.onPending}/> :
+                        <WithdrawPage dataHandler={props.dataHandler} address={props.address} onError={handlers.onError} onPending={handlers.onPending}/>
+                    }
+                    {
+                        transactionState == TransactionState.PENDING && 
+                        <CheckTransaction checkHandler={handlers.checkTransaction} timeoutHandler={handlers.onTimeout} />
+                    }
+                </div>
+            );
     }
 
     return (
@@ -292,13 +313,6 @@ export default function FundWithdraw() {
     const dataHandler = new DataHandler();
     const context: AuthContextData = useContext(AuthContext);
     const data: UserTokenInfoDto = useData(dataHandler.getUserTokenInfo, context.address);
-
-    let modal = null;
-    if (modalState == ModalState.FUND_PAGE) {
-        modal = (<FundModal closeHandler={() => setModalState(ModalState.CLOSED)} dataHandler={dataHandler} address={context.address}/>);
-    } else if (modalState == ModalState.WITHDRAW_PAGE) {
-        modal = (<WithdrawModal closeHandler={() => setModalState(ModalState.CLOSED)} dataHandler={dataHandler} address={context.address}/>);
-    }
 
     return (
         <div className="p-8">
@@ -320,10 +334,13 @@ export default function FundWithdraw() {
                         <h1><TokenAmount amount={data?.tokensOwned}/></h1>
                     </div>
                 </div>
-                <CtaCard action={() => setModalState(ModalState.FUND_PAGE)} text="Buy TZM now &#8594;" title="Invest" classes="sm:pr-4"/>
-                <CtaCard action={() => setModalState(ModalState.WITHDRAW_PAGE)} text="Sell TZM now &#8594;" title="Withdraw"/>
+                <CtaCard action={() => setModalState(ModalState.FUND)} text="Buy TZM now &#8594;" title="Invest" classes="sm:pr-4"/>
+                <CtaCard action={() => setModalState(ModalState.WITHDRAW)} text="Sell TZM now &#8594;" title="Withdraw"/>
             </div>
-            { modal }
+            {
+                modalState != ModalState.CLOSED &&
+                <TransactionModal closeHandler={() => setModalState(ModalState.CLOSED)} dataHandler={dataHandler} address={context.address} type={modalState} />
+            }
         </div>
     );
 }
