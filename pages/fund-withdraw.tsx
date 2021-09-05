@@ -210,7 +210,7 @@ function WithdrawPage(props: WithdrawPageProp) {
                 </div>
                 <div className="flex flex-col mt-4">
                     <p>Amount of tez in your account</p>
-                    <h1><TezAmount amount={data?.reserveAmount}/></h1>
+                    <h1><TezAmount amount={data?.tezCount}/></h1>
                 </div>
             </div>
             {

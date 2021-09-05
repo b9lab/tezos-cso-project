@@ -1,6 +1,7 @@
 import React from "react";
 import useSWR from "swr";
 import CtaCard from "../src/components/CtaCard";
+import PriceBadge from "../src/components/PriceBadge";
 import TezAmount from "../src/components/TezAmount";
 import TokenAmount from "../src/components/TokenAmount";
 import { format_date } from "../src/helpers";
@@ -25,6 +26,7 @@ export default function GeneralInvestmentInfo() {
 
     return (
         <div className="pt-8 px-8">
+            <PriceBadge value={data?.tokenBuyPrice}/>
             <h1>{data.companyName} - Investment Offer</h1>
             <div className="mt-2">
                 You can find an overview of the PEQ offering here.

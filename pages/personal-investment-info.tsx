@@ -7,6 +7,7 @@ import TezAmount from "../src/components/TezAmount";
 import TransactionsTable from "../src/components/TransactionsTable";
 import TokenAmount from "../src/components/TokenAmount";
 import CtaCard from "../src/components/CtaCard";
+import PriceBadge from "../src/components/PriceBadge";
 
 export default function PersonalInvestmentInfo() {
     const context: AuthContextData = useContext(AuthContext);
@@ -16,8 +17,11 @@ export default function PersonalInvestmentInfo() {
     const [ typeFilter, setTypeFilter ] = useState<TransactionType | null>(null);
     const transactionFilter = (item: UserTransactionDto) => typeFilter == null || typeFilter === item.transactionType;
 
+    
+
     return (
         <div className="p-8">
+            <PriceBadge value={data?.tokenBuyPrice}/>
             <h1>My Investment</h1>
             <div className="mt-2">
                 Here you can find an overview of your investment in the continuous agreement for future equity.

@@ -82,7 +82,7 @@ describe('Data handler tests', () => {
         it('should get the withdraw token info', async () => {
             await expect(dataHandler.getWithdrawTokenInfo(userAddress)).to.be.fulfilled.then(data => {
                 expect(data).to.be.an("object");
-                expect(data).to.have.property("reserveAmount").that.is.a('number');
+                expect(data).to.have.property("tezCount").that.is.a('number');
                 expect(data).to.have.property("tokensOwned").that.is.a('number');
                 expect(data).to.have.property("tokenSellPrice").that.is.a('number');
                 expect(data).to.have.property("lockPeriod").that.is.a('string');

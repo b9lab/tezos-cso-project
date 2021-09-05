@@ -204,19 +204,19 @@ export default class DataHandler {
         const [
             tokenSellPrice,
             tokensOwned, 
-            reserveAmount, 
+            tezCount, 
             lockPeriod
         ] = await Promise.all([
             chain.sellPrice(storage),
             userData.tokens(),
-            chain.reserveAmount(),
+            userData.tez(),
             chain.unlockingDate(storage)
         ]);
         
         return {
             tokenSellPrice: +tokenSellPrice,
             tokensOwned: +tokensOwned,
-            reserveAmount: +reserveAmount,
+            tezCount: +tezCount,
             lockPeriod: lockPeriod
         };
     }
