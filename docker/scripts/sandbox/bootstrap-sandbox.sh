@@ -31,7 +31,7 @@ cat > /opt/shared/contract-address.txt <<EOF
 $CONTRACT_ADDRESS
 EOF
 
-tezos-client transfer 100 from bob to $TEST_ACCOUNT_ADDRESS --burn-cap 0.06425
+tezos-client transfer 10000 from bob to $TEST_ACCOUNT_ADDRESS --burn-cap 0.06425
 
 cat <<EOF >/opt/sandbox-ready
 EOF

@@ -1,4 +1,4 @@
-import { NAV_ITEM_POSITION, NAV_ITEM_VISIBILITY } from "../constants";
+import { NAV_ITEM_POSITION, NAV_ITEM_VISIBILITY } from "../constants/nav";
 
 type NavItem = {
     name: string,

@@ -20,13 +20,29 @@ Cypress.Commands.add('cancelTransaction', () => {
 let LOCAL_STORAGE_MEMORY = {};
 
 Cypress.Commands.add("saveLocalStorageCache", () => {
-  Object.keys(localStorage).forEach(key => {
-    LOCAL_STORAGE_MEMORY[key] = localStorage[key];
-  });
+    Object.keys(localStorage).forEach(key => {
+        LOCAL_STORAGE_MEMORY[key] = localStorage[key];
+    });
 });
 
 Cypress.Commands.add("restoreLocalStorageCache", () => {
-  Object.keys(LOCAL_STORAGE_MEMORY).forEach(key => {
-    localStorage.setItem(key, LOCAL_STORAGE_MEMORY[key]);
-  });
+    Object.keys(LOCAL_STORAGE_MEMORY).forEach(key => {
+        localStorage.setItem(key, LOCAL_STORAGE_MEMORY[key]);
+    });
+});
+
+Cypress.Commands.add('openModalAndBuy', (amount) => {
+    cy.get('h2').contains('Buy TZM now').click();
+    cy.get('h1').contains('Buy TZM').should('be.visible');
+    cy.get('input').type(amount);
+    cy.get('button[type=submit]').contains('Buy').click();
+    cy.get('button').contains('Processing').should('be.visible');
+});
+
+Cypress.Commands.add('openModalAndSell', (amount) => {
+    cy.get('h2').contains('Sell TZM now').click();
+    cy.get('h1').contains('Sell TZM').should('be.visible');
+    cy.get('input').type(amount);
+    cy.get('button[type=submit]').contains('Sell').click();
+    cy.get('button').contains('Processing').should('be.visible');
 });

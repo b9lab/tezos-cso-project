@@ -1,5 +1,5 @@
 import Nav from "./Nav";
-import { NAV_ITEMS } from "../constants"
+import { NAV_ITEMS } from "../constants/nav"
 
 function Header() {
     return (
