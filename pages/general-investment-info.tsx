@@ -11,7 +11,7 @@ function CompanyValuation() {
 
     return (
         <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
-            <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4 border border-accent-1">
+            <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4 border">
                 <p>Company valuation</p>
                 <h1><span className="currency-sign pr-4 text-gray-500">$</span>{data?.valuation}<span className="currency-suffix pl-2 text-2xl font-light">USD</span></h1>
             </div>
@@ -29,7 +29,7 @@ export default function GeneralInvestmentInfo() {
             <PriceBadge value={data?.tokenBuyPrice}/>
             <h1>{data.companyName} - Investment Offer</h1>
             <div className="mt-2">
-                You can find an overview of the PEQ offering here.
+                Shows the current investment and offering overview of TZMINT.
             </div>
             <h2 className="mt-8 highlight">General information</h2>
             <div className="flex flex-wrap justify-between">
@@ -72,7 +72,7 @@ export default function GeneralInvestmentInfo() {
                         <h1>{format_date(data.unlockingDate)}</h1>
                     </div>
                 </div>
-                <CtaCard href="/cafe-details" text="See all parameters &#8594;" title="Invest in TZMINT"/>
+                <CtaCard href="/cafe-details" text="See all parameters &#8594;" title="TZMINT offering configuration"/>
             </div>
             <h2 className="mt-12 highlight">Token balance</h2>
             <div className="flex flex-wrap justify-between pb-12">

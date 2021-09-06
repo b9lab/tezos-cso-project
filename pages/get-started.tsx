@@ -15,6 +15,17 @@ export default function GetStarted() {
                 </div>
             </div>
             
+            <div className="pt-8 px-8">
+                <div className="indent">
+                    Invest in TZMINT now! Three quick steps to get your Tokens:
+                    <ul className="list-disc ml-8">
+                        <li>Sign in with your e-mail.</li>
+                        <li>Setup and connect your wallet with tez.</li>
+                        <li>Invest in TZMINT.</li>
+                    </ul>
+                </div>
+            </div>
+
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">
                     Signing in
