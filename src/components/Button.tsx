@@ -1,7 +1,7 @@
 type ButtonProps = {
     handler?: any,
     icon?: string,
-    children?: string,
+    children?: any,
     color?: string,
     outline?: boolean,
     className?: string,

@@ -1,6 +1,17 @@
-const switchToWithdrawPage = () => {
-    cy.get('.sell-page-link').click();
-    cy.get('h1').contains('Withdraw').should('be.visible');
+const sell = (amount) => {
+    cy.get('h2').contains('Sell TZM now').click();
+    cy.get('h1').contains('Sell TZM').should('be.visible');
+    cy.get('input').type(amount);
+    cy.get('button[type=submit]').contains('Sell').click();
+    cy.get('button').contains('Processing').should('be.visible');
+}
+
+const buy = (amount) => {
+    cy.get('h2').contains('Buy TZM now').click();
+    cy.get('h1').contains('Buy TZM').should('be.visible');
+    cy.get('input').type(amount);
+    cy.get('button[type=submit]').contains('Buy').click();
+    cy.get('button').contains('Processing').should('be.visible');
 }
 
 describe('Transaction tests', () => {
@@ -36,52 +47,41 @@ describe('Transaction tests', () => {
 
         it('should fund some tokens', () => {
             cy.visit('/fund-withdraw');
-            cy.confirmAddress(); // the first test need to confirm the address
+            cy.confirmAddress(); // the first test needs to confirm the address
 
-            cy.get('input').type(10);
-            cy.get('button[type=submit]').contains('Buy').click();
-
-            cy.get('.transaction-creating-modal', { timeout: 20000 }).should('be.visible');
+            buy(10);
 
             cy.wait(5000);
             cy.confirmTransaction();
 
-            cy.get('.transaction-processing-modal', { timeout: 20000 }).should('be.visible');
-            cy.get('.transaction-confirmed-modal', { timeout: 20000 }).should('be.visible');
+            cy.get('.transaction-success', { timeout: 30000 }).should('be.visible');
         })
 
         it('should throw an invalid amount error', () => {
             cy.visit('/fund-withdraw');
 
-            cy.get('input').type(0);
-            cy.get('button[type=submit]').contains('Buy').click();
+            buy(0);
 
-            cy.get('.transaction-creating-modal', { timeout: 20000 }).should('be.visible');
-            cy.get('.transaction-error-modal', { timeout: 20000 }).should('be.visible');
+            cy.get('.transaction-error', { timeout: 30000 }).should('be.visible');
         })
 
         it('should throw a operation canceled error', () => {
             cy.visit('/fund-withdraw');
 
-            cy.get('input').type(10);
-            cy.get('button[type=submit]').contains('Buy').click();
-
-            cy.get('.transaction-creating-modal', { timeout: 20000 }).should('be.visible');
+            buy(10);
 
             cy.wait(5000);
             cy.cancelTransaction();
 
-            cy.get('.transaction-error-modal', { timeout: 20000 }).should('be.visible');
+            cy.get('.transaction-error', { timeout: 30000 }).should('be.visible');
         })
 
         it('should throw a not enough tez in account error', () => {
             cy.visit('/fund-withdraw');
 
-            cy.get('input').type(110);
-            cy.get('button[type=submit]').contains('Buy').click();
+            buy(10000);
 
-            cy.get('.transaction-creating-modal', { timeout: 20000 }).should('be.visible');
-            cy.get('.transaction-error-modal', { timeout: 20000 }).should('be.visible');
+            cy.get('.transaction-error', { timeout: 30000 }).should('be.visible');
         })
         
     })
@@ -90,51 +90,39 @@ describe('Transaction tests', () => {
 
         it('should withdraw some tokens', () => {
             cy.visit('/fund-withdraw');
-            switchToWithdrawPage();
-
-            cy.get('input').type(10);
-            cy.get('button[type=submit]').contains('Sell').click();
-
-            cy.get('.transaction-creating-modal', { timeout: 20000 }).should('be.visible');
+            
+            sell(2);
 
             cy.wait(5000);
             cy.confirmTransaction();
 
-            cy.get('.transaction-processing-modal', { timeout: 20000 }).should('be.visible');
-            cy.get('.transaction-confirmed-modal', { timeout: 20000 }).should('be.visible');
+            cy.get('.transaction-success', { timeout: 30000 }).should('be.visible');
         })
 
         it('should throw an invalid amount error', () => {
             cy.visit('/fund-withdraw');
-            switchToWithdrawPage();
 
-            cy.get('input').type(0);
-            cy.get('button[type=submit]').contains('Sell').click();
+            sell(0);
 
-            cy.get('.transaction-creating-modal', { timeout: 20000 }).should('be.visible');
-            cy.get('.transaction-error-modal', { timeout: 20000 }).should('be.visible');
+            cy.get('.transaction-error', { timeout: 30000 }).should('be.visible');
         })
 
         it('should throw a operation canceled error', () => {
             cy.visit('/fund-withdraw');
-            switchToWithdrawPage();
 
-            cy.get('input').type(10);
-            cy.get('button[type=submit]').contains('Sell').click();
-            
-            cy.get('.transaction-creating-modal', { timeout: 20000 }).should('be.visible');
+            sell(2);
             
             cy.wait(5000);
             cy.cancelTransaction();
 
-            cy.get('.transaction-error-modal', { timeout: 20000 }).should('be.visible');
+            cy.get('.transaction-error', { timeout: 30000 }).should('be.visible');
         })
     })
 
     describe('Transaction list tests', () => {
 
         it('should list the previously performed transactions', () => {
-            cy.visit('/transactions');
+            cy.visit('/personal-investment-info');
 
             cy.get('.transaction-item').should('have.length', 2);
             cy.get('.transaction-item').contains('Funding').should('be.visible');

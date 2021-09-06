@@ -159,7 +159,7 @@ export default class DataHandler {
         };
     }
 
-    // Fund
+    // Fund / Withdraw
 
     async getFundTokenInfo(address: string): Promise<FundTokenInfoDto> {
         const userData = chain.user(address);
@@ -198,27 +198,25 @@ export default class DataHandler {
         });
     }
 
-    // Withdraw
-
     async getWithdrawTokenInfo(address: string): Promise<WithdrawTokenInfoDto> {
         const userData = chain.user(address);
         const storage = await chain.storage();
         const [
             tokenSellPrice,
             tokensOwned, 
-            reserveAmount, 
+            tezCount, 
             lockPeriod
         ] = await Promise.all([
             chain.sellPrice(storage),
             userData.tokens(),
-            chain.reserveAmount(),
+            userData.tez(),
             chain.unlockingDate(storage)
         ]);
         
         return {
             tokenSellPrice: +tokenSellPrice,
             tokensOwned: +tokensOwned,
-            reserveAmount: +reserveAmount,
+            tezCount: +tezCount,
             lockPeriod: lockPeriod
         };
     }
@@ -235,6 +233,22 @@ export default class DataHandler {
                 reject(new Error(error));
             });
         });
+    }
+
+    async getUserTokenInfo(address: string) {
+        const userData = chain.user(address);
+        const [
+            tokenBuyPrice,
+            tokensOwned
+        ] = await Promise.all([
+            chain.buyPrice(),
+            userData.tokens()
+        ]);
+
+        return {
+            tokenBuyPrice: +tokenBuyPrice,
+            tokensOwned: +tokensOwned
+        }
     }
 
     // Transactions

@@ -52,7 +52,7 @@ export interface FundTokenInfoDto {
 export interface WithdrawTokenInfoDto {
     tokenSellPrice: number,
     tokensOwned: number,
-    reserveAmount: number,
+    tezCount: number,
     lockPeriod: string
 }
 
@@ -64,6 +64,11 @@ export interface FundDto {
 export interface WithdrawDto {
     amount: number,
     accountAddress: string
+}
+
+export interface UserTokenInfoDto {
+    tokenBuyPrice: number,
+    tokensOwned: number
 }
 
 export enum TransactionType {

@@ -93,11 +93,6 @@ export const NAV_ITEMS: Array<NavItem> = [
                 name: "Buy & Sell",
                 url: "/fund-withdraw",
                 visibility: NAV_ITEM_VISIBILITY.PRIVATE
-            },
-            {
-                name: "Transactions",
-                url: "/transactions",
-                visibility: NAV_ITEM_VISIBILITY.PRIVATE
             }
         ]
     },

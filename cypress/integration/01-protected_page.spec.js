@@ -21,11 +21,6 @@ describe('Protected pages tests', () => {
             isLoginPage();
         })
 
-        it('Visiting the transactions page I should be redirected to login page', () => {
-            cy.visit('/transactions');
-            isLoginPage();
-        })
-
     })
 
     describe('Accessing protected pages as logged user', () => {
@@ -68,12 +63,7 @@ describe('Protected pages tests', () => {
 
         it('Visiting the fund page', () => {
             cy.visit('/fund-withdraw');
-            cy.get('h1').contains('Fund').should('be.visible');
-        })
-
-        it('Visiting the transactions page', () => {
-            cy.visit('/transactions');
-            cy.get('h1').contains('Transactions').should('be.visible');
+            cy.get('h1').contains('Buy and Sell TZM').should('be.visible');
         })
 
     })

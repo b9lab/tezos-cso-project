@@ -4,7 +4,7 @@ import { useClickOutside } from "../utils/hooks";
 type ModalProps = {
     children: any,
     closeHandler: () => void,
-    classes: string
+    classes?: string
 }
 
 function Modal(props: ModalProps) {
