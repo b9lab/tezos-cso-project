@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
+import React, { ChangeEvent, FormEvent, useContext, useEffect, useRef, useState } from "react";
 import { AuthContext, AuthContextData } from "../src/components/Auth";
 import Button from "../src/components/Button";
 import Input from "../src/components/Input";
@@ -251,8 +251,16 @@ function TransactionModal(props: TransactionModalProp) {
 
     const [transactionState, setTransactionState] = useState<TransactionState>(TransactionState.DRAFT);
 
+    const mounted = useRef(false);
+
+    useEffect(() => {
+        mounted.current = true;
+        return () => { mounted.current = false };
+    });
+
     const handlers = {
         checkTransaction: async () => {
+            if (!mounted.current) return;
             const transactions = await props.dataHandler.getUserTransactionData(props.address);
             const confirmedTransaction = transactions.find((transaction: UserTransactionDto) => {
                 return transaction.hash == hashToCheck;
@@ -262,12 +270,17 @@ function TransactionModal(props: TransactionModalProp) {
                 setTransactionState(TransactionState.SUCCESS);
             }
         },
-        onTimeout: () => setTransactionState(TransactionState.TIMEOUT),
+        onTimeout: () => {
+            if (!mounted.current) return;
+            setTransactionState(TransactionState.TIMEOUT);
+        },
         onError: (error: string) => {
+            if (!mounted.current) return;
             setError(error);
             setTransactionState(TransactionState.ERROR);
         },
         onPending: (hash: string) => {
+            if (!mounted.current) return;
             setHashToCheck(hash);
             setTransactionState(TransactionState.PENDING);
         }
