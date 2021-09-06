@@ -39,6 +39,7 @@
 
   nav li a {
     color: inherit;
+    font-weight:400;
   }
 
   main {
