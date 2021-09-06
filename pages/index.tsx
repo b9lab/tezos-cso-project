@@ -33,12 +33,8 @@ export default function Home() {
                 </div>
                 */}
                 <div className="w-full flex flex-wrap justify-between">
-                    <div className="flex-grow sm:pr-2">
-                        <CtaCard href="/cafe-info" text="How it works &#8594;" title="Concepts, formulas and code"/>
-                    </div>
-                    <div className="flex-grow sm:pl-2">
-                        <CtaCard href="/get-started" text="Try it Out TZMINT &#8594;" title="Invest now - 3 minutes quickstart"/>
-                    </div>
+                    <CtaCard href="/cafe-info" text="How it works &#8594;" title="Concepts, formulas and code" classes="sm:pr-2"/>
+                    <CtaCard href="/get-started" text="Try it Out TZMINT &#8594;" title="Invest now - 3 minutes quickstart" classes="sm:pl-2"/>
                 </div>
             </div>
 

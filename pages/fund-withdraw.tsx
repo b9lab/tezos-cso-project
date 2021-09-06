@@ -335,20 +335,20 @@ export default function FundWithdraw() {
             </div>
             <h2 className="mt-8 highlight">Token information</h2>
             <div className="flex flex-wrap justify-between">
-                <div className="w-full flex-grow sm:max-w-1/2 sm:pr-4">
+                <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                         <p>Current price</p>
                         <h1><TezAmount amount={data?.tokenBuyPrice}/></h1>
                     </div>
                 </div>
-                <div className="w-full flex-grow sm:max-w-1/2">
+                <div className="w-full flex-grow sm:max-w-1/2 sm:pl-2">
                     <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                         <p>Amount of tokens owned</p>
                         <h1><TokenAmount amount={data?.tokensOwned}/></h1>
                     </div>
                 </div>
-                <CtaCard action={() => setModalState(ModalState.FUND)} text="Buy TZM now &#8594;" title="Invest" classes="sm:pr-4"/>
-                <CtaCard action={() => setModalState(ModalState.WITHDRAW)} text="Sell TZM now &#8594;" title="Withdraw"/>
+                <CtaCard action={() => setModalState(ModalState.FUND)} text="Buy TZM now &#8594;" title="Invest" classes="sm:pr-2"/>
+                <CtaCard action={() => setModalState(ModalState.WITHDRAW)} text="Sell TZM now &#8594;" title="Withdraw" classes="sm:pl-2"/>
             </div>
             {
                 modalState != ModalState.CLOSED &&
