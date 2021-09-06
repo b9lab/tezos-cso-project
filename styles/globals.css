@@ -3,6 +3,7 @@
 @import "@fontsource/cormorant/400-italic.css";
 @import "@fontsource/cormorant/600.css";
 @import "@fontsource/cormorant/600-italic.css";
+@import "@fontsource/cormorant/700.css";
 @import "@fontsource/libre-franklin";
 @tailwind base;
 @tailwind components;
@@ -31,6 +32,7 @@
   a {
     @apply font-family-headline;
     @apply text-accent-2;
+    font-weight:700;
     /*font-size: 18px;*/
     line-height: 22px;
   }
@@ -120,4 +122,9 @@ nav li.submenu-item {
 
 .font-family-headline {
   font-family: 'Libre Franklin';
+}
+
+.text-highlight {
+  @apply font-bold;
+  @apply text-black;
 }

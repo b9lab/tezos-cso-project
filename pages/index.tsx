@@ -1,4 +1,5 @@
 import { SITE_NAME } from '../src/constants';
+import CtaCard from "../src/components/CtaCard";
 
 export default function Home() {
     return (
@@ -13,9 +14,9 @@ export default function Home() {
             <div className="pt-8 px-8">
                 <div className="indent">
                     This platform is an example project, which is part of the educational course on the 
-                    <a className="font-family-body font-semibold" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer"> Tezos Developer Platform</a>. 
-                    There is <span className="font-semibold">no real investment or company</span> involved. Instead, all transactions displayed are performed on a testnet, 
-                    <span className="font-semibold"> the Florence testnet</span>.
+                    <a className="font-family-body" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer"> Tezos Developer Platform</a>. 
+                    There is <span className="text-highlight">no real investment or company</span> involved. Instead, all transactions displayed are performed on a testnet, 
+                    <span className="font-bold"> the Florence testnet</span>.
                 </div>
                 <div className="mt-4">
                     The purpose of this project is to showcase an implementation of a full platform which interacts with the Tezos blockchain. 
@@ -30,7 +31,15 @@ export default function Home() {
                     You can read more about the architecture, implementation, and feature details <a className="font-family-body font-semibold" href="https://www.google.com/" target="_blank" rel="noreferrer">here</a>, 
                     or check out the full source code on <a className="font-family-body font-semibold" href="https://www.google.com/" target="_blank" rel="noreferrer">GitHub</a>.
                 </div>
-                */} 
+                */}
+                <div className="w-full flex flex-wrap justify-between">
+                    <div className="flex-grow sm:pr-2">
+                        <CtaCard href="/cafe-info" text="How it works &#8594;" title="Concepts, formulas and code"/>
+                    </div>
+                    <div className="flex-grow sm:pl-2">
+                        <CtaCard href="/get-started" text="Try it Out TZMINT &#8594;" title="Invest now - 3 minutes quickstart"/>
+                    </div>
+                </div>
             </div>
 
             <div className="pt-12 px-8">
