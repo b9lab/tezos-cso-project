@@ -97,7 +97,7 @@ function TransactionSuccess(props: TransactionSuccessProp) {
             <h1 className="mb-4">Transaction completed successfully</h1>
             <TransactionsTable items={[props.transaction]}/>
             <div className="flex justify-center pt-8">
-                <Button handler={() => router.reload()} color="accent-1">Ok</Button>
+                <Button handler={() => router.push("/personal-investment-info")} color="accent-1">Ok</Button>
             </div>
         </div>
     );
