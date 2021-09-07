@@ -36,24 +36,6 @@ const options = {
             show: false
         }
     },
-    annotations: {
-        yaxis: [
-            {
-                y: 1,
-                borderColor: '#9778FF',
-                label: {
-                    position: 'left',
-                    textAnchor: 'start',
-                    borderColor: '#9778FF',
-                    style: {
-                        color: '#fff',
-                        background: '#9778FF',
-                    },
-                    text: 'Stable (before MFG)',
-                }
-            }
-        ]
-    },
     colors: ['#29CAB4'],
 };
 const series = [
@@ -70,9 +52,10 @@ type PricesChartProp = {
 function PricesChart(props: PricesChartProp) {
     options.labels = [];
     series[0].data = [];
-    for (const price of props.values) {
-        options.labels.push(format_date(price.time));
-        series[0].data.push(format_tez(price.price));
+    for (const item of props.values) {
+        if (item.price == 0) continue;
+        options.labels.push(format_date(item.time));
+        series[0].data.push(format_tez(item.price));
     }
 
     return (

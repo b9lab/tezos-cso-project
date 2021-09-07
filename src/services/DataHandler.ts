@@ -24,7 +24,7 @@ export default class DataHandler {
     // General Investment Info
     
     async getInvestmentNumbers(): Promise<InvestmentNumbersDto> {
-        const start = new Date(process.env.NEXT_PUBLIC_DEPLOYMENT_DATE || "2021-07-21T14:02:43Z");
+        const start = new Date(process.env.DEPLOYMENT_DATE || "2021-07-21T14:02:43Z");
         const end = new Date();
         const steps = 30;
 
