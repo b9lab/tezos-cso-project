@@ -6,8 +6,6 @@ import PriceBadge from "../src/components/PriceBadge";
 import TezAmount from "../src/components/TezAmount";
 import TokenAmount from "../src/components/TokenAmount";
 import { format_date, format_tez } from "../src/helpers";
-import DataHandler from "../src/services/DataHandler";
-import { useData } from "../src/utils/hooks";
 
 function CompanyValuation() {
     const { data } = useSWR("api/company-valuation");
