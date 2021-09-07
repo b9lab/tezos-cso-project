@@ -35,7 +35,26 @@ const options = {
         labels: {
             show: false
         }
-    }
+    },
+    annotations: {
+        yaxis: [
+            {
+                y: 1,
+                borderColor: '#9778FF',
+                label: {
+                    position: 'left',
+                    textAnchor: 'start',
+                    borderColor: '#9778FF',
+                    style: {
+                        color: '#fff',
+                        background: '#9778FF',
+                    },
+                    text: 'Stable (before MFG)',
+                }
+            }
+        ]
+    },
+    colors: ['#29CAB4'],
 };
 const series = [
     {
