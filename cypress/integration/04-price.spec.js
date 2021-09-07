@@ -18,7 +18,6 @@ const verifyMfgNotReached = (response) => {
 }
 
 const checkPrices = (oldBuyPrice, oldSellPrice, newBuyPrice, newSellPrice, isBuying, expectedBuyPrice, expectedSellPrice) => {
-    expect(oldBuyPrice).to.be.greaterThan(oldSellPrice);
     expect(newBuyPrice).to.be.greaterThan(newSellPrice);
     if (isBuying) {
         expect(newSellPrice).to.be.greaterThan(oldSellPrice);
@@ -101,7 +100,7 @@ describe('Price tests', () => {
 
             cy.request('api/investment-numbers').then((resp) => {
                 verifyMfgReached(resp);
-                checkPrices(oldBuyPrice, oldSellPrice, resp.body.tokenBuyPrice, resp.body.tokenSellPrice, true, 1730300, 2253383);
+                checkPrices(oldBuyPrice, oldSellPrice, resp.body.tokenBuyPrice, resp.body.tokenSellPrice, true, 3468000, 2594064);
                 oldBuyPrice = resp.body.tokenBuyPrice;
                 oldSellPrice = resp.body.tokenSellPrice;
             });
@@ -118,7 +117,7 @@ describe('Price tests', () => {
 
         cy.request('api/investment-numbers').then((response) => {
             verifyMfgReached(response);
-            checkPrices(oldBuyPrice, oldSellPrice, response.body.tokenBuyPrice, response.body.tokenSellPrice, false, 1730300, 1964556);
+            checkPrices(oldBuyPrice, oldSellPrice, response.body.tokenBuyPrice, response.body.tokenSellPrice, false, 3468000, 1960576);
             oldBuyPrice = response.body.tokenBuyPrice;
             oldSellPrice = response.body.tokenSellPrice;
         });
@@ -134,7 +133,7 @@ describe('Price tests', () => {
 
         cy.request('api/investment-numbers').then((response) => {
             verifyMfgReached(response);
-            checkPrices(oldBuyPrice, oldSellPrice, response.body.tokenBuyPrice, response.body.tokenSellPrice, false, 2070900, 1119879);
+            checkPrices(oldBuyPrice, oldSellPrice, response.body.tokenBuyPrice, response.body.tokenSellPrice, false, 3876000, 954788);
             oldBuyPrice = response.body.tokenBuyPrice;
             oldSellPrice = response.body.tokenSellPrice;
         });

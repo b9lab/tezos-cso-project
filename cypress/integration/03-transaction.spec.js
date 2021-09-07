@@ -63,7 +63,7 @@ describe('Transaction tests', () => {
         it('should throw a not enough tez in account error', () => {
             cy.visit('/fund-withdraw');
 
-            cy.openModalAndBuy(10000);
+            cy.openModalAndBuy(100000);
 
             cy.get('.transaction-error', { timeout: 30000 }).should('be.visible');
         })
