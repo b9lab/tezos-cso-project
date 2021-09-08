@@ -195,7 +195,7 @@ export default class DataHandler {
         return new Promise<string>((resolve, reject) => {
             contract.buy(data.amount).then((result: string) => {
                 if (result.includes("_ERROR")) {
-                    reject(new Error(result));
+                    reject(this._parseError(result));
                 } else {
                     resolve(result.replace("Operation injected: ", ""));
                 }
@@ -232,7 +232,7 @@ export default class DataHandler {
         return new Promise<string>((resolve, reject) => {
             contract.sell(data.amount).then((result: string) => {
                 if (result.includes("_ERROR")) {
-                    reject(new Error(result));
+                    reject(this._parseError(result));
                 } else {
                     resolve(result.replace("Operation injected: ", ""));
                 }
@@ -293,5 +293,19 @@ export default class DataHandler {
         });
 
         return data.concat(fundsMapped, withdrawsMapped);
+    }
+
+    _parseError(message: string) {
+        let error = null;
+
+        if (message.includes("ABORTED_ERROR")) {
+            error = new Error(message.replace("[ABORTED_ERROR]:", ""));
+        } else if (message.includes("TRANSACTION_INVALID_ERROR")) {
+            error = new Error(message.replace("[TRANSACTION_INVALID_ERROR]:", ""));
+        } else {
+            error = new Error(message);
+        }
+
+        return error;
     }
 }
