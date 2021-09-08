@@ -11,7 +11,8 @@ export interface InvestmentNumbersDto {
     reserveAmount: number,
     buySlope: number, // percentage/factor
     sellSlope: number, // percentage/factor
-    isMFGReached: boolean
+    isMFGReached: boolean,
+    prices: Array<any>
 }
 
 export interface CafeInfoDto {

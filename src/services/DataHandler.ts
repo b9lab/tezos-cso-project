@@ -24,6 +24,10 @@ export default class DataHandler {
     // General Investment Info
     
     async getInvestmentNumbers(): Promise<InvestmentNumbersDto> {
+        const start = new Date(process.env.DEPLOYMENT_DATE || "2021-07-21T14:02:43Z");
+        const end = new Date();
+        const steps = 30;
+
         const storage = await chain.storage();
         const [
             companyName, 
@@ -38,7 +42,8 @@ export default class DataHandler {
             buySlope, 
             unlockingDate,
             burnedTokensCount,
-            phase
+            phase,
+            priceHistory
         ] = await Promise.all([
             chain.companyName(storage), 
             chain.buyPrice(storage),
@@ -52,7 +57,8 @@ export default class DataHandler {
             chain.buySlope(storage),
             chain.unlockingDate(storage),
             chain.burnedTokens(storage),
-            chain.phase(storage)
+            chain.phase(storage),
+            chain.priceHistory(start, end, steps)
         ]);
 
         return {
@@ -68,7 +74,8 @@ export default class DataHandler {
             reserveAmount: +reserveAmount,
             buySlope: +buySlope,
             sellSlope: +sellSlope,
-            isMFGReached: !!+phase
+            isMFGReached: !!+phase,
+            prices: priceHistory
         };
     }
 
