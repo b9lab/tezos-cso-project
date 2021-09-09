@@ -97,7 +97,7 @@ function Nav(props: NavProps) {
 
             {/* Mobile */}
 
-            <div className="w-full py-4 flex justify-end sm:hidden">
+            <div className="w-full py-8 flex justify-end sm:hidden">
                 <a onClick={() => setOpenNav(!openNav)}>
                     <Image height="30" width="30" src={openNav ? closeIcon : menuIcon} alt={openNav ? "Close" : "Menu"} />
                 </a>
