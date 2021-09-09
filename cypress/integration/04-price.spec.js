@@ -24,7 +24,6 @@ const checkPrices = (oldBuyPrice, oldSellPrice, newBuyPrice, newSellPrice, isBuy
         expect(newBuyPrice).to.be.greaterThan(oldBuyPrice);
     } else {
         expect(newSellPrice).to.be.lessThan(oldSellPrice);
-        expect(newBuyPrice).to.be.lessThan(oldBuyPrice);
     }
     expect(newBuyPrice).to.be.equal(expectedBuyPrice);
     expect(newSellPrice).to.be.equal(expectedSellPrice);
@@ -68,7 +67,7 @@ describe('Price tests', () => {
         cy.openModalAndBuy(500);
         cy.wait(5000);
         cy.confirmTransaction();
-        cy.get('.transaction-success', { timeout: 30000 }).should('be.visible');
+        cy.get('.transaction-success', { timeout: 50000 }).should('be.visible');
 
         cy.request('api/investment-numbers').then((response) => {
             verifyMfgNotReached(response);
@@ -89,35 +88,35 @@ describe('Price tests', () => {
             cy.openModalAndBuy(amount);
             cy.wait(5000);
             cy.confirmTransaction();
-            cy.get('.transaction-success', { timeout: 30000 }).should('be.visible');
+            cy.get('.transaction-success', { timeout: 50000 }).should('be.visible');
 
             // purchase another 500 tez to pass mfg
             cy.get('.modal-overlay').click('topRight');
             cy.openModalAndBuy(500); 
             cy.wait(5000);
             cy.confirmTransaction();
-            cy.get('.transaction-success', { timeout: 30000 }).should('be.visible');
+            cy.get('.transaction-success', { timeout: 50000 }).should('be.visible');
 
             cy.request('api/investment-numbers').then((resp) => {
                 verifyMfgReached(resp);
-                checkPrices(oldBuyPrice, oldSellPrice, resp.body.tokenBuyPrice, resp.body.tokenSellPrice, true, 3468000, 2594064);
+                checkPrices(oldBuyPrice, oldSellPrice, resp.body.tokenBuyPrice, resp.body.tokenSellPrice, true, 2448000, 2286617);
                 oldBuyPrice = resp.body.tokenBuyPrice;
                 oldSellPrice = resp.body.tokenSellPrice;
             });
         });
     })
 
-    it('should decrease both buy and sell price', () => {
+    it('should decrease sell price', () => {
         cy.visit('/fund-withdraw');
         
         cy.openModalAndSell(500);
         cy.wait(5000);
         cy.confirmTransaction();
-        cy.get('.transaction-success', { timeout: 30000 }).should('be.visible');
+        cy.get('.transaction-success', { timeout: 50000 }).should('be.visible');
 
         cy.request('api/investment-numbers').then((response) => {
             verifyMfgReached(response);
-            checkPrices(oldBuyPrice, oldSellPrice, response.body.tokenBuyPrice, response.body.tokenSellPrice, false, 3468000, 1960576);
+            checkPrices(oldBuyPrice, oldSellPrice, response.body.tokenBuyPrice, response.body.tokenSellPrice, false, 2448000, 800758);
             oldBuyPrice = response.body.tokenBuyPrice;
             oldSellPrice = response.body.tokenSellPrice;
         });
@@ -129,11 +128,11 @@ describe('Price tests', () => {
         cy.openModalAndBuy(500);
         cy.wait(5000);
         cy.confirmTransaction();
-        cy.get('.transaction-success', { timeout: 30000 }).should('be.visible');
+        cy.get('.transaction-success', { timeout: 50000 }).should('be.visible');
 
         cy.request('api/investment-numbers').then((response) => {
             verifyMfgReached(response);
-            checkPrices(oldBuyPrice, oldSellPrice, response.body.tokenBuyPrice, response.body.tokenSellPrice, false, 3876000, 954788);
+            checkPrices(oldBuyPrice, oldSellPrice, response.body.tokenBuyPrice, response.body.tokenSellPrice, true, 2826000, 1259659);
             oldBuyPrice = response.body.tokenBuyPrice;
             oldSellPrice = response.body.tokenSellPrice;
         });

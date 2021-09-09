@@ -38,7 +38,7 @@ describe('Transaction tests', () => {
             cy.wait(5000);
             cy.confirmTransaction();
 
-            cy.get('.transaction-success', { timeout: 30000 }).should('be.visible');
+            cy.get('.transaction-success', { timeout: 50000 }).should('be.visible');
         })
 
         it('should throw an invalid amount error', () => {
@@ -80,7 +80,7 @@ describe('Transaction tests', () => {
             cy.wait(5000);
             cy.confirmTransaction();
 
-            cy.get('.transaction-success', { timeout: 30000 }).should('be.visible');
+            cy.get('.transaction-success', { timeout: 50000 }).should('be.visible');
         })
 
         it('should throw an invalid amount error', () => {
