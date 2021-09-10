@@ -1,5 +1,7 @@
 describe('Transaction tests', () => {
 
+    let transactionIds = []; 
+
     before(() => {
         cy.wait(2000);
         cy.setupSpire();
@@ -39,6 +41,9 @@ describe('Transaction tests', () => {
             cy.confirmTransaction();
 
             cy.get('.transaction-success', { timeout: 50000 }).should('be.visible');
+            cy.get('.transaction-item').invoke('attr', 'id').then(id => {
+                transactionIds.push(id);
+            })
         })
 
         it('should throw an invalid amount error', () => {
@@ -81,6 +86,9 @@ describe('Transaction tests', () => {
             cy.confirmTransaction();
 
             cy.get('.transaction-success', { timeout: 50000 }).should('be.visible');
+            cy.get('.transaction-item').invoke('attr', 'id').then(id => {
+                transactionIds.push(id);
+            });
         })
 
         it('should throw an invalid amount error', () => {
@@ -108,9 +116,8 @@ describe('Transaction tests', () => {
         it('should list the previously performed transactions', () => {
             cy.visit('/personal-investment-info');
 
-            cy.get('.transaction-item', { timeout: 10000 }).should('have.length', 2);
-            cy.get('.transaction-item').contains('Funding').should('be.visible');
-            cy.get('.transaction-item').contains('Withdrawal').should('be.visible');
+            cy.get(`#${transactionIds[0]}`, { timeout: 10000 }).contains('Funding').should('be.visible');
+            cy.get(`#${transactionIds[1]}`).contains('Withdrawal').should('be.visible');
         })
 
     })

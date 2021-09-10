@@ -11,7 +11,7 @@ type TransactionsTableProps = {
 function TransactionsTable(props: TransactionsTableProps) {
     const transactionMap = (item: UserTransactionDto) => {
         return (
-            <div className="w-full flex justify-between body-text-small bg-light-gray odd:bg-white py-2 px-4 last:rounded-b transaction-item " key={item.hash}>
+            <div id={item.hash} className="w-full flex justify-between body-text-small bg-light-gray odd:bg-white py-2 px-4 last:rounded-b transaction-item " key={item.hash}>
                 <p className="w-1/4">{format_date(item?.date)}</p>
                 <p className="w-1/4">{item.transactionType == TransactionType.Funding ? 'Funding' : 'Withdrawal'}</p>
                 <p className="w-1/4"><TezAmount amount={item?.tezAmount} nostyle={true} negative={item.transactionType == TransactionType.Funding}/></p>
