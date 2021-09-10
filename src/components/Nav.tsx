@@ -2,7 +2,7 @@ import { useSession } from 'next-auth/client';
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
-import { NAV_ITEM_POSITION, NAV_ITEM_VISIBILITY } from '../constants';
+import { NAV_ITEM_POSITION, NAV_ITEM_VISIBILITY } from '../constants/nav';
 import NavItem from '../utils/NavItem';
 import Image from 'next/image';
 import closeIcon from '../../public/close-icon.svg';

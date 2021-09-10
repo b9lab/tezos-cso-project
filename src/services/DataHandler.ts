@@ -47,7 +47,7 @@ export default class DataHandler {
         ] = await Promise.all([
             chain.companyName(storage), 
             chain.buyPrice(storage),
-            chain.sellPrice(storage),
+            chain.sellPrice(),
             chain.mfg(storage),
             chain.totalInvestments(storage),
             chain.totalInvestors(storage),
@@ -153,7 +153,7 @@ export default class DataHandler {
             userData.tezInvested(),
             userData.tokens(),
             chain.buyPrice(storage),
-            chain.sellPrice(storage),
+            chain.sellPrice(),
             chain.phase(storage)
         ]);
 
@@ -214,7 +214,7 @@ export default class DataHandler {
             tezCount, 
             lockPeriod
         ] = await Promise.all([
-            chain.sellPrice(storage),
+            chain.sellPrice(),
             userData.tokens(),
             userData.tez(),
             chain.unlockingDate(storage)
