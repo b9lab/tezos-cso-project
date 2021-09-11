@@ -36,6 +36,10 @@ const options = {
             show: false
         }
     },
+    yaxis: {
+        min: 0,
+        forceNiceScale: true
+    },
     colors: ['#29CAB4'],
 };
 const series = [
