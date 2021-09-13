@@ -14,7 +14,7 @@ function CompanyValuation() {
         <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
             <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4 border">
                 <p>Company valuation</p>
-                <h1><span className="currency-sign pr-4 text-gray-500">$</span>{data?.valuation}<span className="currency-suffix pl-2 text-2xl font-light">USD</span></h1>
+                <h1><span className="currency-sign pr-4 text-gray-500">$</span>{data?.valuation.toLocaleString()}<span className="currency-suffix pl-2 text-2xl font-light">USD</span></h1>
             </div>
         </div>
     );
@@ -35,6 +35,10 @@ const options = {
         labels: {
             show: false
         }
+    },
+    yaxis: {
+        min: 0,
+        forceNiceScale: true
     },
     colors: ['#29CAB4'],
 };
@@ -59,7 +63,7 @@ function PricesChart(props: PricesChartProp) {
     }
 
     return (
-        <ChartWrapper options={options} series={series} type="line"/>
+        <ChartWrapper options={options} series={series} type="line" height="400px"/>
     );
 }
 
