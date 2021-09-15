@@ -43,7 +43,7 @@ export function useInterval(callback: any, timeoutCallback: any, initialDelay: n
 export function useClickOutside(ref: MutableRefObject<any>, onClickOutside: (value: boolean) => void) {
     useEffect(() => {
         const handleClickOutside = (event: any) => {
-            if (ref.current && !ref.current.contains(event.target)) {
+            if (ref.current && !ref.current.contains(event.target) && !event.target.id.includes('beacon-alert-wrapper-')) {
                 onClickOutside(false);
             }
         }

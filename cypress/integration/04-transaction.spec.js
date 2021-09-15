@@ -33,9 +33,8 @@ describe('Transaction tests', () => {
 
         it('should fund some tokens', () => {
             cy.visit('/fund-withdraw');
-            cy.confirmAddress(); // the first test needs to confirm the address
 
-            cy.openModalAndBuy(10);
+            cy.openModalAndBuy(10, true);
 
             cy.wait(5000);
             cy.confirmTransaction();

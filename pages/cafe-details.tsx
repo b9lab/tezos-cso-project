@@ -2,13 +2,14 @@ import useSWR from "swr";
 import DataHandler from "../src/services/DataHandler";
 import TezAmount from "../src/components/TezAmount";
 import { format_percentage } from "../src/helpers";
+import { CAFE_PARAMETERS_API_ENDPOINT } from "../src/constants";
 
 type CafeDetailsProps = {
     initialData: any
 };
 
 export default function CafeDetails(props: CafeDetailsProps) {
-    const { data, error } = useSWR("api/cafe-parameters", { initialData: props.initialData });
+    const { data, error } = useSWR(CAFE_PARAMETERS_API_ENDPOINT, { initialData: props.initialData });
 
     if (!data || error) return <>{error}</>
 

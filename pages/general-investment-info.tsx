@@ -5,10 +5,11 @@ import CtaCard from "../src/components/CtaCard";
 import PriceBadge from "../src/components/PriceBadge";
 import TezAmount from "../src/components/TezAmount";
 import TokenAmount from "../src/components/TokenAmount";
+import { COMPANY_VALUATION_API_ENDPOINT, INVESTMENT_NUMBERS_API_ENDPOINT } from "../src/constants";
 import { format_date, format_tez } from "../src/helpers";
 
 function CompanyValuation() {
-    const { data } = useSWR("api/company-valuation");
+    const { data } = useSWR(COMPANY_VALUATION_API_ENDPOINT);
 
     return (
         <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
@@ -68,7 +69,7 @@ function PricesChart(props: PricesChartProp) {
 }
 
 export default function GeneralInvestmentInfo() {
-    const { data } = useSWR("api/investment-numbers");
+    const { data } = useSWR(INVESTMENT_NUMBERS_API_ENDPOINT);
 
     return (
         <>

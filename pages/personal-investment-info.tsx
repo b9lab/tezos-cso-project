@@ -8,6 +8,7 @@ import TransactionsTable from "../src/components/TransactionsTable";
 import TokenAmount from "../src/components/TokenAmount";
 import CtaCard from "../src/components/CtaCard";
 import PriceBadge from "../src/components/PriceBadge";
+import ConfirmAddressModal from "../src/components/ConfirmAddressModal";
 
 export default function PersonalInvestmentInfo() {
     const context: AuthContextData = useContext(AuthContext);
@@ -17,66 +18,67 @@ export default function PersonalInvestmentInfo() {
     const [ typeFilter, setTypeFilter ] = useState<TransactionType | null>(null);
     const transactionFilter = (item: UserTransactionDto) => typeFilter == null || typeFilter === item.transactionType;
 
-    
-
     return (
-        <div className="p-8">
-            <PriceBadge value={data?.tokenBuyPrice}/>
-            <h1>My Investment</h1>
-            <div className="mt-2">
-                Here you can find an overview of your investment in the continuous agreement for future equity.
+        <>
+            <div className="p-8">
+                <PriceBadge value={data?.tokenBuyPrice}/>
+                <h1>My Investment</h1>
+                <div className="mt-2">
+                    Here you can find an overview of your investment in the continuous agreement for future equity.
+                </div>
+                <h2 className="mt-8 highlight">Portfolio overview</h2>
+                <div className="flex flex-wrap justify-between">
+                    <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
+                        <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                            <p>Tokens owned</p>
+                            <h1><TokenAmount amount={data?.tokensOwned}/></h1>
+                        </div>
+                    </div>
+                    <div className="w-full flex-grow sm:max-w-1/2 sm:pl-2">
+                        <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                            <p>Current Token Valuation</p>
+                            <h1><TezAmount amount={data?.tokensOwned * data?.tokenSellPrice}/></h1>
+                        </div>
+                    </div>
+                    <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
+                        <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                            <p>Tezos invested</p>
+                            <h1><TezAmount amount={data?.tezInvested}/></h1>
+                        </div>
+                    </div>
+                    <CtaCard href="/fund-withdraw" text="Buy TZM &#8594;" title="Invest in TZMINT" classes="sm:pl-2"/>
+                </div>
+                {
+                    (transactionList?.length > 0 && context.address)  &&
+                    <>
+                        <h2 className="mt-8 highlight">Transactions</h2>
+                        <div className="body-text-small flex space-x-2 mb-4 pt-6 font-family-headline">
+                            <div>Filter: </div>
+                            <div 
+                                className={ ( typeFilter == null ? "text-accent-1 " : "" ) + "cursor-pointer" } 
+                                onClick={ () => setTypeFilter(null) }>
+                                All
+                            </div>
+                            <p> | </p>
+                            <div 
+                                className={ ( typeFilter == TransactionType.Funding ? "text-accent-1 " : "" ) + "cursor-pointer" } 
+                                onClick={ () => setTypeFilter(TransactionType.Funding) }>
+                                Fund
+                            </div>
+                            <p> | </p>
+                            <div 
+                                className={ ( typeFilter == TransactionType.Withdrawal ? "text-accent-1 " : "" ) + "cursor-pointer" } 
+                                onClick={ () => setTypeFilter(TransactionType.Withdrawal) }>
+                                Withdraw
+                            </div>
+                        </div>
+                        <TransactionsTable items={transactionList.filter(transactionFilter)}/>
+                    </>
+                }
+                
             </div>
-            <h2 className="mt-8 highlight">Portfolio overview</h2>
-            <div className="flex flex-wrap justify-between">
-                <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
-                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                        <p>Tokens owned</p>
-                        <h1><TokenAmount amount={data?.tokensOwned}/></h1>
-                    </div>
-                </div>
-                <div className="w-full flex-grow sm:max-w-1/2 sm:pl-2">
-                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                        <p>Current Token Valuation</p>
-                        <h1><TezAmount amount={data?.tokensOwned * data?.tokenSellPrice}/></h1>
-                    </div>
-                </div>
-                <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
-                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                        <p>Tezos invested</p>
-                        <h1><TezAmount amount={data?.tezInvested}/></h1>
-                    </div>
-                </div>
-                <CtaCard href="/fund-withdraw" text="Buy TZM &#8594;" title="Invest in TZMINT" classes="sm:pl-2"/>
-            </div>
-            {
-                transactionList?.length > 0 &&
-                <>
-                    <h2 className="mt-8 highlight">Transactions</h2>
-                    <div className="body-text-small flex space-x-2 mb-4 pt-6 font-family-headline">
-                        <div>Filter: </div>
-                        <div 
-                            className={ ( typeFilter == null ? "text-accent-1 " : "" ) + "cursor-pointer" } 
-                            onClick={ () => setTypeFilter(null) }>
-                            All
-                        </div>
-                        <p> | </p>
-                        <div 
-                            className={ ( typeFilter == TransactionType.Funding ? "text-accent-1 " : "" ) + "cursor-pointer" } 
-                            onClick={ () => setTypeFilter(TransactionType.Funding) }>
-                            Fund
-                        </div>
-                        <p> | </p>
-                        <div 
-                            className={ ( typeFilter == TransactionType.Withdrawal ? "text-accent-1 " : "" ) + "cursor-pointer" } 
-                            onClick={ () => setTypeFilter(TransactionType.Withdrawal) }>
-                            Withdraw
-                        </div>
-                    </div>
-                    <TransactionsTable items={transactionList.filter(transactionFilter)}/>
-                </>
-            }
-            
-        </div>
+            <ConfirmAddressModal address={context.address}/>
+        </>
     );
 }
 
