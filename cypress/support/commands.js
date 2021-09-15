@@ -31,18 +31,24 @@ Cypress.Commands.add("restoreLocalStorageCache", () => {
     });
 });
 
-Cypress.Commands.add('openModalAndBuy', (amount) => {
+Cypress.Commands.add('openModalAndBuy', (amount, firstTime) => {
     cy.get('h2').contains('Buy TZM now').click();
     cy.get('h1').contains('Buy TZM').should('be.visible');
     cy.get('input').type(amount);
     cy.get('button[type=submit]').contains('Buy').click();
+    if (firstTime) {
+        cy.confirmAddress();
+    }
     cy.get('button').contains('Processing').should('be.visible');
 });
 
-Cypress.Commands.add('openModalAndSell', (amount) => {
+Cypress.Commands.add('openModalAndSell', (amount, firstTime) => {
     cy.get('h2').contains('Sell TZM now').click();
     cy.get('h1').contains('Sell TZM').should('be.visible');
     cy.get('input').type(amount);
     cy.get('button[type=submit]').contains('Sell').click();
+    if (firstTime) {
+        cy.confirmAddress();
+    }
     cy.get('button').contains('Processing').should('be.visible');
 });

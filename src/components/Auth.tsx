@@ -1,6 +1,7 @@
 import { signIn } from 'next-auth/client';
 import React from "react";
 import useSWR from 'swr';
+import { SESSION_API_ENDPOINT } from '../constants';
 
 type AuthProps = {
     children: any,
@@ -8,7 +9,7 @@ type AuthProps = {
 };
 
 export default function Auth(props: AuthProps) {
-    const { data, error } = useSWR('/api/auth/session');
+    const { data, error } = useSWR(SESSION_API_ENDPOINT);
       
     if (!error && !data) {
         return <div>Loading...</div>;

@@ -29,8 +29,8 @@ const checkPrices = (oldBuyPrice, oldSellPrice, newBuyPrice, newSellPrice, isBuy
     expect(newSellPrice).to.be.equal(expectedSellPrice);
 }
 
-const buy = (amount) => {
-    cy.openModalAndBuy(amount);
+const buy = (amount, firstTime) => {
+    cy.openModalAndBuy(amount, firstTime);
     cy.wait(5000);
     cy.confirmTransaction();
     cy.get('.transaction-success', { timeout: 50000 }).should('be.visible');
@@ -76,9 +76,8 @@ describe('Price tests', () => {
 
     it('buy and sell price should be equal if MFG is not reached', () => {
         cy.visit('/fund-withdraw');
-        cy.confirmAddress();
 
-        buy(500);
+        buy(500, true);
 
         cy.request('api/investment-numbers').then((response) => {
             verifyMfgNotReached(response);

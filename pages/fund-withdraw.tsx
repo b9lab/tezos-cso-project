@@ -14,6 +14,7 @@ import Modal from "../src/components/Modal";
 import { useRouter } from "next/dist/client/router";
 import Link from "next/link";
 import TransactionsTable from "../src/components/TransactionsTable";
+import ConfirmAddressModal from "../src/components/ConfirmAddressModal";
 
 enum ModalState {
     FUND,
@@ -328,33 +329,36 @@ export default function FundWithdraw() {
     const data: UserTokenInfoDto = useData(dataHandler.getUserTokenInfo, context.address);
 
     return (
-        <div className="p-8">
-            <h1>Buy and Sell TZM</h1>
-            <div className="mt-2">
-                Here you can buy or sell CAFE tokens for tez.
-            </div>
-            <h2 className="mt-8 highlight">Token information</h2>
-            <div className="flex flex-wrap justify-between">
-                <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
-                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                        <p>Current price</p>
-                        <h1><TezAmount amount={data?.tokenBuyPrice}/></h1>
-                    </div>
+        <>
+            <div className="p-8">
+                <h1>Buy and Sell TZM</h1>
+                <div className="mt-2">
+                    Here you can buy or sell CAFE tokens for tez.
                 </div>
-                <div className="w-full flex-grow sm:max-w-1/2 sm:pl-2">
-                    <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                        <p>Amount of tokens owned</p>
-                        <h1><TokenAmount amount={data?.tokensOwned}/></h1>
+                <h2 className="mt-8 highlight">Token information</h2>
+                <div className="flex flex-wrap justify-between">
+                    <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
+                        <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                            <p>Current price</p>
+                            <h1><TezAmount amount={data?.tokenBuyPrice}/></h1>
+                        </div>
                     </div>
+                    <div className="w-full flex-grow sm:max-w-1/2 sm:pl-2">
+                        <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                            <p>Amount of tokens owned</p>
+                            <h1><TokenAmount amount={data?.tokensOwned}/></h1>
+                        </div>
+                    </div>
+                    <CtaCard action={() => setModalState(ModalState.FUND)} text="Buy TZM now &#8594;" title="Invest" classes="sm:pr-2"/>
+                    <CtaCard action={() => setModalState(ModalState.WITHDRAW)} text="Sell TZM now &#8594;" title="Withdraw" classes="sm:pl-2"/>
                 </div>
-                <CtaCard action={() => setModalState(ModalState.FUND)} text="Buy TZM now &#8594;" title="Invest" classes="sm:pr-2"/>
-                <CtaCard action={() => setModalState(ModalState.WITHDRAW)} text="Sell TZM now &#8594;" title="Withdraw" classes="sm:pl-2"/>
+                {
+                    modalState != ModalState.CLOSED &&
+                    <TransactionModal closeHandler={() => setModalState(ModalState.CLOSED)} dataHandler={dataHandler} address={context.address} type={modalState} />
+                }
             </div>
-            {
-                modalState != ModalState.CLOSED &&
-                <TransactionModal closeHandler={() => setModalState(ModalState.CLOSED)} dataHandler={dataHandler} address={context.address} type={modalState} />
-            }
-        </div>
+            <ConfirmAddressModal address={context.address}/>
+        </>
     );
 }
 
