@@ -142,11 +142,11 @@ function FundPage(props: FundPageProp) {
         <div>
             <h1>Buy TZM</h1>
             <div className="flex flex-wrap justify-between">
-                <div className="flex flex-col mt-4">
+                <div className="flex flex-col mt-4 mr-2">
                     <p>Current price</p>
                     <h1><TezAmount amount={data?.tokenBuyPrice}/></h1>
                 </div>
-                <div className="flex flex-col mt-4">
+                <div className="flex flex-col mt-4 ml-2">
                     <p>Amount of tez in your account</p>
                     <h1><TezAmount amount={data?.tezCount}/></h1>
                 </div>
@@ -205,13 +205,13 @@ function WithdrawPage(props: WithdrawPageProp) {
         <div>
             <h1>Sell TZM</h1>
             <div className="flex flex-wrap justify-between">
-                <div className="flex flex-col mt-4">
+                <div className="flex flex-col mt-4 mr-2">
                     <p>Current price</p>
                     <h1><TezAmount amount={data?.tokenSellPrice}/></h1>
                 </div>
-                <div className="flex flex-col mt-4">
-                    <p>Amount of tez in your account</p>
-                    <h1><TezAmount amount={data?.tezCount}/></h1>
+                <div className="flex flex-col mt-4 ml-2">
+                    <p>Amount of TZM in your account</p>
+                    <h1><TokenAmount amount={data?.tokensOwned}/></h1>
                 </div>
             </div>
             {
@@ -326,7 +326,8 @@ export default function FundWithdraw() {
     const [modalState, setModalState] = useState<ModalState>(ModalState.CLOSED);
     const dataHandler = new DataHandler();
     const context: AuthContextData = useContext(AuthContext);
-    const data: UserTokenInfoDto = useData(dataHandler.getUserTokenInfo, context.address);
+    const [address, setAddress] = useState<string>(context.address);
+    const data: UserTokenInfoDto = useData(dataHandler.getUserTokenInfo, address);
 
     return (
         <>
@@ -357,7 +358,7 @@ export default function FundWithdraw() {
                     <TransactionModal closeHandler={() => setModalState(ModalState.CLOSED)} dataHandler={dataHandler} address={context.address} type={modalState} />
                 }
             </div>
-            <ConfirmAddressModal address={context.address}/>
+            <ConfirmAddressModal address={context.address} successHandler={(address) => setAddress(address)}/>
         </>
     );
 }
