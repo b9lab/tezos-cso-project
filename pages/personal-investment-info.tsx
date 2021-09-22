@@ -12,8 +12,9 @@ import ConfirmAddressModal from "../src/components/ConfirmAddressModal";
 
 export default function PersonalInvestmentInfo() {
     const context: AuthContextData = useContext(AuthContext);
+    const [address, setAddress] = useState<string>(context.address);
     const dataHandler = new DataHandler();
-    const data: UserInvestmentDto = useData(dataHandler.getUserInvestmentData, context.address);
+    const data: UserInvestmentDto = useData(dataHandler.getUserInvestmentData, address);
     const transactionList: Array<UserTransactionDto> = useData(dataHandler.getUserTransactionData, context.address);
     const [ typeFilter, setTypeFilter ] = useState<TransactionType | null>(null);
     const transactionFilter = (item: UserTransactionDto) => typeFilter == null || typeFilter === item.transactionType;
@@ -77,7 +78,7 @@ export default function PersonalInvestmentInfo() {
                 }
                 
             </div>
-            <ConfirmAddressModal address={context.address}/>
+            <ConfirmAddressModal address={context.address} successHandler={(address) => setAddress(address)}/>
         </>
     );
 }

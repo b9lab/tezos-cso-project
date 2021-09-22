@@ -2,16 +2,20 @@ import { MutableRefObject, useEffect, useRef, useState } from "react";
 
 export function useData(action: any, address: string): any {
     const [data, setData] = useState<any | null>();
+    const [oldAddress, setOldAddress] = useState<string>(address);
     
     useEffect(() => {
         let isMounted = true;
-        if (!data) {
+        if (!data || address != oldAddress) {
             action(address).then((result: any) => {
-                if (isMounted) setData(result);
+                if (isMounted) {
+                    setData(result);
+                    setOldAddress(address);
+                }
             }).catch(console.error);
         }
         return () => { isMounted = false };
-    }, []);
+    }, [address]);
 
     return data;
 }
