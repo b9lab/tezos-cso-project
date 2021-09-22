@@ -51,8 +51,8 @@ class DataHandler {
             priceHistory
         ] = await Promise.all([
             chain.companyName(storage), 
-            chain.buyPrice(storage),
-            chain.sellPrice(),
+            chain.buyPrice(storage, 1),
+            chain.sellPrice(1),
             chain.mfg(storage),
             chain.totalInvestments(storage),
             chain.totalInvestors(storage),
@@ -163,8 +163,8 @@ class DataHandler {
         ] = await Promise.all([
             userData.tezInvested(),
             userData.tokens(),
-            chain.buyPrice(storage),
-            chain.sellPrice(),
+            chain.buyPrice(storage, 1),
+            chain.sellPrice(1),
             chain.phase(storage)
         ]);
 
@@ -192,7 +192,7 @@ class DataHandler {
         ] = await Promise.all([
             userData.tez(),
             userData.tokens(),
-            chain.buyPrice(storage),
+            chain.buyPrice(storage, 1),
             chain.unlockingDate(storage)
         ]);
         
@@ -236,7 +236,7 @@ class DataHandler {
             tezCount, 
             lockPeriod
         ] = await Promise.all([
-            chain.sellPrice(),
+            chain.sellPrice(1),
             userData.tokens(),
             userData.tez(),
             chain.unlockingDate(storage)
@@ -279,7 +279,7 @@ class DataHandler {
             tokenBuyPrice,
             tokensOwned
         ] = await Promise.all([
-            chain.buyPrice(),
+            chain.buyPrice(null, 1),
             userData.tokens()
         ]);
 
@@ -287,6 +287,13 @@ class DataHandler {
             tokenBuyPrice: +tokenBuyPrice,
             tokensOwned: +tokensOwned
         }
+    }
+
+    /**
+     * Gets the price for a given amount of tokens
+     */
+    getPrice(amount: number): Promise<number> {
+        return chain.buyPrice(null, amount);
     }
 
     /**

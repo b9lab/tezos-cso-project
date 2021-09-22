@@ -15,6 +15,7 @@ import { useRouter } from "next/dist/client/router";
 import Link from "next/link";
 import TransactionsTable from "../src/components/TransactionsTable";
 import ConfirmAddressModal from "../src/components/ConfirmAddressModal";
+import PriceCalculator from "../src/components/PriceCalculator";
 
 enum ModalState {
     FUND,
@@ -153,15 +154,18 @@ function FundPage(props: FundPageProp) {
             </div>
             <h2 className="mt-12 highlight">Purchase tokens</h2>
             <div className="my-2 italic">
-                To buy tokens add the amount of tez you want to spend in the field beneath.
+                Add the amount of tokens you want to buy in the field beneath.
             </div>
             <form onSubmit={handlers.fund}>
-                <Input value={amount} handler={handlers.amount} label="Tez amount for purchase" pattern="[0-9]+\.?[0-9]*|\.[0-9]+"/>
-                {
-                    waiting ? 
-                    <ProcessingButton/> :
-                    <Button className="mt-2" type="submit">Buy</Button>
-                }
+                <Input value={amount} handler={handlers.amount} label="Amount of TZM tokens to purchase" pattern="[0-9]+\.?[0-9]*|\.[0-9]+"/>
+                <div className="flex justify-between mt-2">
+                    {
+                        waiting ? 
+                        <ProcessingButton/> :
+                        <Button type="submit">Buy</Button>
+                    }
+                    <PriceCalculator dataHandler={props.dataHandler} amount={amount}/>
+                </div>
             </form>
         </div>
     );
