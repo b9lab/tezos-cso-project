@@ -76,7 +76,21 @@ export default function PersonalInvestmentInfo() {
                         <TransactionsTable items={transactionList.filter(transactionFilter)}/>
                     </>
                 }
-                
+                <h2 className="mt-8 highlight">Counters</h2>
+                <div className="flex flex-wrap justify-between">
+                    <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
+                        <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                            <p>Total amount of tez paid</p>
+                            <h1><TezAmount amount={data?.totalFund}/></h1>
+                        </div>
+                    </div>
+                    <div className="w-full flex-grow sm:max-w-1/2 sm:pl-2">
+                        <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
+                            <p>Total amount of tez withdrawn</p>
+                            <h1><TezAmount amount={data?.totalWithdraw}/></h1>
+                        </div>
+                    </div>
+                </div>
             </div>
             <ConfirmAddressModal address={context.address} successHandler={(address) => setAddress(address)}/>
         </>

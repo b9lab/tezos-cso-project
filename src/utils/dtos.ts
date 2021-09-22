@@ -40,7 +40,9 @@ export interface UserInvestmentDto {
     tokensOwned: number,
     tokenBuyPrice: number,
     tokenSellPrice: number,
-    isMFGReached: boolean
+    isMFGReached: boolean,
+    totalFund: number,
+    totalWithdraw: number
 }
 
 export interface FundTokenInfoDto {

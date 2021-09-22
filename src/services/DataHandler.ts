@@ -159,13 +159,17 @@ class DataHandler {
             tokensOwned, 
             tokenBuyPrice,
             tokenSellPrice,
-            phase
+            phase,
+            totalFund,
+            totalWithdraw
         ] = await Promise.all([
             userData.tezInvested(),
             userData.tokens(),
             chain.buyPrice(storage, 1),
             chain.sellPrice(1),
-            chain.phase(storage)
+            chain.phase(storage),
+            userData.fund(),
+            userData.withdrawal()
         ]);
 
         return {
@@ -173,7 +177,9 @@ class DataHandler {
             tokensOwned: +tokensOwned,
             tokenBuyPrice: +tokenBuyPrice,
             tokenSellPrice: +tokenSellPrice,
-            isMFGReached: !!+phase
+            isMFGReached: !!+phase,
+            totalFund: +totalFund,
+            totalWithdraw: +totalWithdraw
         };
     }
 

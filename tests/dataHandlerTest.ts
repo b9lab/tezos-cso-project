@@ -91,6 +91,10 @@ describe('Data handler tests', () => {
                 expect(data).to.have.property("tokenSellPrice").that.is.a('number');
                 expect(data.tokenSellPrice).not.to.be.NaN;
                 expect(data).to.have.property("isMFGReached").that.is.a('boolean');
+                expect(data).to.have.property("totalFund").that.is.a('number');
+                expect(data.totalFund).not.to.be.NaN;
+                expect(data).to.have.property("totalWithdraw").that.is.a('number');
+                expect(data.totalWithdraw).not.to.be.NaN;
             });
         });
 
