@@ -2,7 +2,7 @@ import React, { ChangeEvent, FormEvent, useContext, useEffect, useRef, useState 
 import { AuthContext, AuthContextData } from "../src/components/Auth";
 import Button from "../src/components/Button";
 import Input from "../src/components/Input";
-import { FUND_MULTIPLIER, TRANSACTION_INSPECTOR_INITIAL_INTERVAL, TRANSACTION_INSPECTOR_MAX_INTERVAL, TRANSACTION_INSPECTOR_MAX_RETRY_COUNT } from "../src/constants";
+import { FUND_MULTIPLIER, TEZ_DISPLAY_MULTIPLIER, TRANSACTION_INSPECTOR_INITIAL_INTERVAL, TRANSACTION_INSPECTOR_MAX_INTERVAL, TRANSACTION_INSPECTOR_MAX_RETRY_COUNT } from "../src/constants";
 import DataHandler from "../src/services/DataHandler";
 import { FundDto, FundTokenInfoDto, UserTokenInfoDto, UserTransactionDto, WithdrawDto, WithdrawTokenInfoDto } from "../src/utils/dtos";
 import { useData, useInterval } from "../src/utils/hooks";
@@ -121,12 +121,15 @@ function FundPage(props: FundPageProp) {
         amount: (event: ChangeEvent<HTMLInputElement>): void => { 
             if (event.target.validity.valid) setAmount(event.target.value);
         },
-        fund: (event: FormEvent) => {
+        fund: async (event: FormEvent) => {
             event.preventDefault();
 
             if (!amount) return;
 
-            const fundAmount = parseFloat(amount) * FUND_MULTIPLIER;
+            const tezAmount = await props.dataHandler.getPrice(parseFloat(amount));
+
+            const fundAmount = tezAmount / TEZ_DISPLAY_MULTIPLIER;
+            
             const fundDto: FundDto = {
                 amount: fundAmount,
                 accountAddress: props.address
