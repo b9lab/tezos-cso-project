@@ -169,7 +169,7 @@ class DataHandler {
             chain.sellPrice(1),
             chain.phase(storage),
             userData.fund(),
-            userData.withdrawal()
+            userData.withdraw()
         ]);
 
         return {
@@ -297,9 +297,20 @@ class DataHandler {
 
     /**
      * Gets the price for a given amount of tokens
+     * @param amount amount of token requested
+     * @param type if funding or withdrawal
      */
-    getPrice(amount: number): Promise<number> {
-        return chain.buyPrice(null, amount);
+    getPrice(amount: number, type: TransactionType): Promise<number> {
+        return (type == TransactionType.Funding) ? chain.buyPrice(null, amount) : chain.sellPrice(amount);
+    }
+
+    /**
+     * Gets the amount of tez paid back by the contract
+     * @param address User's wallet address.
+     * @param hash hash of the transaction to check
+     */
+    getTezPaidBack(address: string, hash: string) {
+        return chain.sentBack(address, hash);
     }
 
     /**

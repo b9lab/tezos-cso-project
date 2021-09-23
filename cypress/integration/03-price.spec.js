@@ -104,7 +104,7 @@ describe('Price tests', () => {
 
             cy.request('api/investment-numbers').then((resp) => {
                 verifyMfgReached(resp);
-                checkPrices(oldBuyPrice, oldSellPrice, resp.body.tokenBuyPrice, resp.body.tokenSellPrice, true, 2448000, 2286647);
+                checkPrices(oldBuyPrice, oldSellPrice, resp.body.tokenBuyPrice, resp.body.tokenSellPrice, true, 2449000, 2286647);
                 oldBuyPrice = resp.body.tokenBuyPrice;
                 oldSellPrice = resp.body.tokenSellPrice;
             });
@@ -118,7 +118,7 @@ describe('Price tests', () => {
 
         cy.request('api/investment-numbers').then((response) => {
             verifyMfgReached(response);
-            checkPrices(oldBuyPrice, oldSellPrice, response.body.tokenBuyPrice, response.body.tokenSellPrice, false, 2448000, 800790);
+            checkPrices(oldBuyPrice, oldSellPrice, response.body.tokenBuyPrice, response.body.tokenSellPrice, false, 2449000, 800790);
             oldBuyPrice = response.body.tokenBuyPrice;
             oldSellPrice = response.body.tokenSellPrice;
         });
@@ -131,7 +131,7 @@ describe('Price tests', () => {
 
         cy.request('api/investment-numbers').then((response) => {
             verifyMfgReached(response);
-            checkPrices(oldBuyPrice, oldSellPrice, response.body.tokenBuyPrice, response.body.tokenSellPrice, true, 2826000, 1259687);
+            checkPrices(oldBuyPrice, oldSellPrice, response.body.tokenBuyPrice, response.body.tokenSellPrice, true, 3449000, 1936194);
             oldBuyPrice = response.body.tokenBuyPrice;
             oldSellPrice = response.body.tokenSellPrice;
         });

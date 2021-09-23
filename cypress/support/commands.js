@@ -39,7 +39,7 @@ Cypress.Commands.add('openModalAndBuy', (amount, firstTime) => {
     if (firstTime) {
         cy.confirmAddress();
     }
-    cy.get('button').contains('Processing').should('be.visible');
+    cy.get('button').contains('Processing', { timeout: 7000 }).should('be.visible');
 });
 
 Cypress.Commands.add('openModalAndSell', (amount, firstTime) => {
@@ -50,5 +50,5 @@ Cypress.Commands.add('openModalAndSell', (amount, firstTime) => {
     if (firstTime) {
         cy.confirmAddress();
     }
-    cy.get('button').contains('Processing').should('be.visible');
+    cy.get('button').contains('Processing', { timeout: 7000 }).should('be.visible');
 });

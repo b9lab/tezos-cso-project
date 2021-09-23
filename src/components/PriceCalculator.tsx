@@ -7,6 +7,7 @@ import TezAmount from "./TezAmount";
 type PriceCalculatorProp = {
     dataHandler: DataHandler,
     amount: string,
+    type: TransactionType
 }
 
 function PriceCalculator(props: PriceCalculatorProp) {
@@ -21,7 +22,7 @@ function PriceCalculator(props: PriceCalculatorProp) {
             if (parseFloat(debouncedAmount) == 0) {
                 setPrice(0);
             } else {
-                props.dataHandler.getPrice(parseFloat(debouncedAmount)).then((value: any) => {
+                props.dataHandler.getPrice(parseFloat(debouncedAmount), props.type).then((value: any) => {
                     if (isMounted) {
                         setPrice(value);
                     }
@@ -36,7 +37,7 @@ function PriceCalculator(props: PriceCalculatorProp) {
         <div className="flex">
             {
                 price != 0 ?
-                <label className="m-auto">Calculated price:  <TezAmount amount={price} nostyle={true}/></label> :
+                <label className="m-auto">{props.type == TransactionType.Funding ? "Cost" : "Income"}: <TezAmount amount={price} nostyle={true}/></label> :
                 null
             }
         </div>
