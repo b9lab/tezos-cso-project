@@ -6,6 +6,7 @@ import {
     InvestmentNumbersDto, 
     TransactionType, 
     UserInvestmentDto, 
+    UserTokenInfoDto, 
     UserTransactionDto, 
     WithdrawDto, 
     WithdrawTokenInfoDto 
@@ -19,10 +20,14 @@ interface Transaction {
     hash: string
 }
 
-export default class DataHandler {
+/**
+ * Handles the tezos data exposed by the chain wrapper and the interaction with the contract wrapper
+ */
+class DataHandler {
 
-    // General Investment Info
-    
+    /**
+     * Gets the general investment numbers
+     */
     async getInvestmentNumbers(): Promise<InvestmentNumbersDto> {
         const start = new Date(process.env.DEPLOYMENT_DATE || "2021-07-21T14:02:43Z");
         const end = new Date();
@@ -79,6 +84,9 @@ export default class DataHandler {
         };
     }
 
+    /**
+     * Gets the company valuation
+     */
     async getCompanyValuation(): Promise<CompanyValuationDto> {
         const companyValuation = await chain.companyValuation();
 
@@ -87,8 +95,9 @@ export default class DataHandler {
         };
     }
 
-    // CAFE details
-
+    /**
+     * Gets the CAFE parameters
+     */
     async getCafeParameters(): Promise<CafeInfoDto> {
         const storage = await chain.storage();
         const [
@@ -138,8 +147,10 @@ export default class DataHandler {
         };
     }
 
-    // Personal Investment Info
-
+    /**
+     * Gets the investment data relative to a specific user
+     * @param address User's wallet address.
+     */
     async getUserInvestmentData(address: string): Promise<UserInvestmentDto> {
         const userData = chain.user(address);
         const storage = await chain.storage();
@@ -166,8 +177,10 @@ export default class DataHandler {
         };
     }
 
-    // Fund / Withdraw
-
+    /**
+     * Gets the token informations relative to the funding
+     * @param address User's wallet address.
+     */
     async getFundTokenInfo(address: string): Promise<FundTokenInfoDto> {
         const userData = chain.user(address);
         const storage = await chain.storage();
@@ -191,6 +204,11 @@ export default class DataHandler {
         };
     }
 
+    /**
+     * Performs a transaction interacting with the contract wrapper to buy some tokens
+     * @param data contains the amount of tez to use and the account address
+     * @returns a promise that resolves with an error if something goes wrong or the hash of the executed transaction if successful
+     */
     fund(data: FundDto): Promise<string> {
         return new Promise<string>((resolve, reject) => {
             contract.buy(data.amount).then((result: string) => {
@@ -205,6 +223,10 @@ export default class DataHandler {
         });
     }
 
+    /**
+     * Gets the token informations relative to the withdrawal
+     * @param address User's wallet address.
+     */
     async getWithdrawTokenInfo(address: string): Promise<WithdrawTokenInfoDto> {
         const userData = chain.user(address);
         const storage = await chain.storage();
@@ -228,6 +250,11 @@ export default class DataHandler {
         };
     }
 
+    /**
+     * Performs a transaction interacting with the contract wrapper to sell some tokens
+     * @param data contains the amount of tokens to sell and the account address
+     * @returns a promise that resolves with an error if something goes wrong or the hash of the executed transaction if successful
+     */
     withdraw(data: WithdrawDto): Promise<string> {
         return new Promise<string>((resolve, reject) => {
             contract.sell(data.amount).then((result: string) => {
@@ -242,7 +269,11 @@ export default class DataHandler {
         });
     }
 
-    async getUserTokenInfo(address: string) {
+    /**
+     * Gets the token information relative to the user
+     * @param address User's wallet address.
+     */
+    async getUserTokenInfo(address: string): Promise<UserTokenInfoDto> {
         const userData = chain.user(address);
         const [
             tokenBuyPrice,
@@ -258,8 +289,10 @@ export default class DataHandler {
         }
     }
 
-    // Transactions
-
+    /**
+     * Gets the list of transactions (fund and withdraws) performed by the user
+     * @param address User's wallet address.
+     */
     async getUserTransactionData(address: string): Promise<Array<UserTransactionDto>> {
         const data: Array<UserTransactionDto> = [];
         const userData = chain.user(address);
@@ -295,6 +328,9 @@ export default class DataHandler {
         return data.concat(fundsMapped, withdrawsMapped);
     }
 
+    /**
+     * @hidden
+     */
     _parseError(message: string) {
         let error = null;
 
@@ -309,3 +345,5 @@ export default class DataHandler {
         return error;
     }
 }
+
+export default DataHandler;
