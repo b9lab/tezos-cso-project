@@ -141,7 +141,11 @@ describe('Data handler tests', () => {
         });
 
         it('should get the price given a tokens amount', async () => {
-            await expect(dataHandler.getPrice(10)).to.be.fulfilled.then(data => {
+            await expect(dataHandler.getPrice(10, 0)).to.be.fulfilled.then(data => {
+                expect(data).to.be.a("number");
+                expect(data).not.to.be.NaN;
+            });
+            await expect(dataHandler.getPrice(10, 1)).to.be.fulfilled.then(data => {
                 expect(data).to.be.a("number");
                 expect(data).not.to.be.NaN;
             });
