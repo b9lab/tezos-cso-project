@@ -16,7 +16,8 @@
     "test:e2e:open": "cypress open --config pageLoadTimeout=30000,baseUrl=http://127.0.0.1:3000",
     "test:e2e:run": "cypress run --config pageLoadTimeout=30000,baseUrl=http://127.0.0.1:3000,video=false --browser chrome --headed",
     "test:e2e": "npm run build && start-server-and-test serve http://127.0.0.1:3000 test:e2e:run",
-    "test:unit": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'"
+    "test:unit": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'",
+    "docs": "typedoc --out generated-docs --exclude node_module --tsconfig ./tsconfig.json --entryPointStrategy expand --exclude 'src/components/*.tsx' ./src"
   },
   "dependencies": {
     "@fontsource/cormorant": "^4.5.0",
@@ -60,6 +61,7 @@
     "start-server-and-test": "^1.12.6",
     "tailwindcss": "^2.2.2",
     "ts-node": "^7.0.1",
+    "typedoc": "^0.22.4",
     "typescript": "4.3.4"
   }
 }

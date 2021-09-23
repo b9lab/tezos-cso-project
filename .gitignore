@@ -42,6 +42,10 @@ yarn-error.log*
 # crash reports
 report.*
 
+# cypress
 cypress.env.json
 cypress/videos
 cypress/screenshots
+
+# typedocs
+generated-docs
