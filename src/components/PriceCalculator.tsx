@@ -31,7 +31,7 @@ function PriceCalculator(props: PriceCalculatorProp) {
         }
 
         return () => { isMounted = false };
-    }, [debouncedAmount]);
+    }, [debouncedAmount, props.dataHandler, props.type]);
 
     return (
         <div className="flex">

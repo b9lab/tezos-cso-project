@@ -33,7 +33,7 @@ enum TransactionState {
 
 function ProcessingButton() {
     return (
-        <button className="max-w-sm rounded outline-none py-2 mt-2 px-5 cursor-not-allowed bg-dark-gray text-white" disabled>
+        <button className="max-w-sm rounded outline-none py-2 mt-2 px-5 cursor-not-allowed bg-dark-gray text-white processing-button" disabled>
             <h3 className="flex">
                 <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
