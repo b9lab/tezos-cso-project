@@ -283,7 +283,7 @@ function TransactionModal(props: TransactionModalProp) {
                 return transaction.hash == hashToCheck;
             });
             if (confirmedTransaction) {
-                if (hashToCheck) {
+                if (hashToCheck && props.type == ModalState.FUND) {
                     props.dataHandler.getTezPaidBack(props.address, hashToCheck).then((amount: number) => {
                         if (amount > 0) setTezPaidBack(amount);
                     });
