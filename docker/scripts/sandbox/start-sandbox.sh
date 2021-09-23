@@ -3,4 +3,4 @@
 set -x
 
 sh /opt/scripts/bootstrap-sandbox.sh &
-flobox start
+granabox start
