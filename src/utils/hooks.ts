@@ -2,16 +2,20 @@ import { MutableRefObject, useEffect, useRef, useState } from "react";
 
 export function useData(action: any, address: string): any {
     const [data, setData] = useState<any | null>();
+    const [oldAddress, setOldAddress] = useState<string>(address);
     
     useEffect(() => {
         let isMounted = true;
-        if (!data) {
+        if (!data || address != oldAddress) {
             action(address).then((result: any) => {
-                if (isMounted) setData(result);
+                if (isMounted) {
+                    setData(result);
+                    setOldAddress(address);
+                }
             }).catch(console.error);
         }
         return () => { isMounted = false };
-    }, []);
+    }, [address]);
 
     return data;
 }
@@ -51,4 +55,20 @@ export function useClickOutside(ref: MutableRefObject<any>, onClickOutside: (val
 
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, [ref, onClickOutside]);
+}
+
+export function useDebounce<T>(value: T, delay: number): T {
+    const [debouncedValue, setDebouncedValue] = useState<T>(value);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+          setDebouncedValue(value);
+        }, delay);
+
+        return () => {
+          clearTimeout(timeout);
+        };
+    }, [value, delay]);
+
+    return debouncedValue;
 }

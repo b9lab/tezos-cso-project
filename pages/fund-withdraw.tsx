@@ -2,12 +2,12 @@ import React, { ChangeEvent, FormEvent, useContext, useEffect, useRef, useState 
 import { AuthContext, AuthContextData } from "../src/components/Auth";
 import Button from "../src/components/Button";
 import Input from "../src/components/Input";
-import { FUND_MULTIPLIER, TRANSACTION_INSPECTOR_INITIAL_INTERVAL, TRANSACTION_INSPECTOR_MAX_INTERVAL, TRANSACTION_INSPECTOR_MAX_RETRY_COUNT } from "../src/constants";
+import { FUND_MULTIPLIER, TEZ_DISPLAY_MULTIPLIER, TRANSACTION_INSPECTOR_INITIAL_INTERVAL, TRANSACTION_INSPECTOR_MAX_INTERVAL, TRANSACTION_INSPECTOR_MAX_RETRY_COUNT } from "../src/constants";
 import DataHandler from "../src/services/DataHandler";
-import { FundDto, FundTokenInfoDto, UserTokenInfoDto, UserTransactionDto, WithdrawDto, WithdrawTokenInfoDto } from "../src/utils/dtos";
+import { FundDto, FundTokenInfoDto, TransactionType, UserTokenInfoDto, UserTransactionDto, WithdrawDto, WithdrawTokenInfoDto } from "../src/utils/dtos";
 import { useData, useInterval } from "../src/utils/hooks";
 import TezAmount from "../src/components/TezAmount";
-import { format_date } from "../src/helpers";
+import { format_date, format_tez } from "../src/helpers";
 import TokenAmount from "../src/components/TokenAmount";
 import CtaCard from "../src/components/CtaCard";
 import Modal from "../src/components/Modal";
@@ -15,6 +15,7 @@ import { useRouter } from "next/dist/client/router";
 import Link from "next/link";
 import TransactionsTable from "../src/components/TransactionsTable";
 import ConfirmAddressModal from "../src/components/ConfirmAddressModal";
+import PriceCalculator from "../src/components/PriceCalculator";
 
 enum ModalState {
     FUND,
@@ -32,7 +33,7 @@ enum TransactionState {
 
 function ProcessingButton() {
     return (
-        <button className="max-w-sm rounded outline-none py-2 mt-2 px-5 cursor-not-allowed bg-dark-gray text-white" disabled>
+        <button className="max-w-sm rounded outline-none py-2 mt-2 px-5 cursor-not-allowed bg-dark-gray text-white processing-button" disabled>
             <h3 className="flex">
                 <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
@@ -87,7 +88,8 @@ function TransactionTimeout() {
 }
 
 type TransactionSuccessProp = {
-    transaction: UserTransactionDto
+    transaction: UserTransactionDto,
+    tezPaidBack: number | null
 }
 
 function TransactionSuccess(props: TransactionSuccessProp) {
@@ -97,6 +99,10 @@ function TransactionSuccess(props: TransactionSuccessProp) {
         <div className="transaction-success">
             <h1 className="mb-4">Transaction completed successfully</h1>
             <TransactionsTable items={[props.transaction]}/>
+            {
+                props.tezPaidBack &&
+                <div className="tez-paid-back mt-8 text-center">{format_tez(props.tezPaidBack)} excess tez have been returned</div>
+            }
             <div className="flex justify-center pt-8">
                 <Button handler={() => router.push("/personal-investment-info")} color="accent-1">Ok</Button>
             </div>
@@ -120,12 +126,15 @@ function FundPage(props: FundPageProp) {
         amount: (event: ChangeEvent<HTMLInputElement>): void => { 
             if (event.target.validity.valid) setAmount(event.target.value);
         },
-        fund: (event: FormEvent) => {
+        fund: async (event: FormEvent) => {
             event.preventDefault();
 
             if (!amount) return;
 
-            const fundAmount = parseFloat(amount) * FUND_MULTIPLIER;
+            const tezAmount = await props.dataHandler.getPrice(parseFloat(amount), TransactionType.Funding);
+
+            const fundAmount = tezAmount / TEZ_DISPLAY_MULTIPLIER;
+            
             const fundDto: FundDto = {
                 amount: fundAmount,
                 accountAddress: props.address
@@ -142,26 +151,29 @@ function FundPage(props: FundPageProp) {
         <div>
             <h1>Buy TZM</h1>
             <div className="flex flex-wrap justify-between">
-                <div className="flex flex-col mt-4">
+                <div className="flex flex-col mt-4 mr-2">
                     <p>Current price</p>
                     <h1><TezAmount amount={data?.tokenBuyPrice}/></h1>
                 </div>
-                <div className="flex flex-col mt-4">
+                <div className="flex flex-col mt-4 ml-2">
                     <p>Amount of tez in your account</p>
                     <h1><TezAmount amount={data?.tezCount}/></h1>
                 </div>
             </div>
             <h2 className="mt-12 highlight">Purchase tokens</h2>
             <div className="my-2 italic">
-                To buy tokens add the amount of tez you want to spend in the field beneath.
+                Add the amount of tokens you want to buy in the field beneath.
             </div>
             <form onSubmit={handlers.fund}>
-                <Input value={amount} handler={handlers.amount} label="Tez amount for purchase" pattern="[0-9]+\.?[0-9]*|\.[0-9]+"/>
-                {
-                    waiting ? 
-                    <ProcessingButton/> :
-                    <Button className="mt-2" type="submit">Buy</Button>
-                }
+                <Input value={amount} handler={handlers.amount} label="Amount of TZM tokens to purchase" pattern="[0-9]+\.?[0-9]*|\.[0-9]+"/>
+                <div className="flex flex-col sm:flex-row justify-between mt-2">
+                    {
+                        waiting ? 
+                        <ProcessingButton/> :
+                        <Button type="submit">Buy</Button>
+                    }
+                    <PriceCalculator dataHandler={props.dataHandler} amount={amount} type={TransactionType.Funding}/>
+                </div>
             </form>
         </div>
     );
@@ -205,13 +217,13 @@ function WithdrawPage(props: WithdrawPageProp) {
         <div>
             <h1>Sell TZM</h1>
             <div className="flex flex-wrap justify-between">
-                <div className="flex flex-col mt-4">
+                <div className="flex flex-col mt-4 mr-2">
                     <p>Current price</p>
                     <h1><TezAmount amount={data?.tokenSellPrice}/></h1>
                 </div>
-                <div className="flex flex-col mt-4">
-                    <p>Amount of tez in your account</p>
-                    <h1><TezAmount amount={data?.tezCount}/></h1>
+                <div className="flex flex-col mt-4 ml-2">
+                    <p>Amount of TZM in your account</p>
+                    <h1><TokenAmount amount={data?.tokensOwned}/></h1>
                 </div>
             </div>
             {
@@ -226,11 +238,14 @@ function WithdrawPage(props: WithdrawPageProp) {
                     </div>
                     <form onSubmit={handlers.withdraw}>
                         <Input value={amount} handler={handlers.amount} label="Amount of TZM tokens to sell" pattern="[0-9]*"/>
-                        {
-                            waiting ? 
-                            <ProcessingButton/> :
-                            <Button className="mt-2" type="submit">Sell</Button>
-                        }
+                        <div className="flex flex-col sm:flex-row justify-between mt-2 ">
+                            {
+                                waiting ? 
+                                <ProcessingButton/> :
+                                <Button className="mt-2" type="submit">Sell</Button>
+                            }
+                            <PriceCalculator dataHandler={props.dataHandler} amount={amount} type={TransactionType.Withdrawal}/>
+                        </div>
                     </form>
                 </>)
             }
@@ -249,6 +264,7 @@ function TransactionModal(props: TransactionModalProp) {
     const [error, setError] = useState<string | null>(null);
     const [hashToCheck, setHashToCheck] = useState<string | null>(null);
     const [transactionConfirmed, setTransactionConfirmed] = useState<UserTransactionDto | null>(null);
+    const [tezPaidBack, setTezPaidBack] = useState<number | null>(null);
 
     const [transactionState, setTransactionState] = useState<TransactionState>(TransactionState.DRAFT);
 
@@ -267,6 +283,11 @@ function TransactionModal(props: TransactionModalProp) {
                 return transaction.hash == hashToCheck;
             });
             if (confirmedTransaction) {
+                if (hashToCheck && props.type == ModalState.FUND) {
+                    props.dataHandler.getTezPaidBack(props.address, hashToCheck).then((amount: number) => {
+                        if (amount > 0) setTezPaidBack(amount);
+                    });
+                }
                 setTransactionConfirmed(confirmedTransaction);
                 setTransactionState(TransactionState.SUCCESS);
             }
@@ -297,7 +318,7 @@ function TransactionModal(props: TransactionModalProp) {
             content = (<TransactionTimeout/>);
             break;
         case(TransactionState.SUCCESS):
-            content = (<TransactionSuccess transaction={transactionConfirmed!}/>);
+            content = (<TransactionSuccess transaction={transactionConfirmed!} tezPaidBack={tezPaidBack}/>);
             break;
         default:
             content = (
@@ -326,7 +347,8 @@ export default function FundWithdraw() {
     const [modalState, setModalState] = useState<ModalState>(ModalState.CLOSED);
     const dataHandler = new DataHandler();
     const context: AuthContextData = useContext(AuthContext);
-    const data: UserTokenInfoDto = useData(dataHandler.getUserTokenInfo, context.address);
+    const [address, setAddress] = useState<string>(context.address);
+    const data: UserTokenInfoDto = useData(dataHandler.getUserTokenInfo, address);
 
     return (
         <>
@@ -357,7 +379,7 @@ export default function FundWithdraw() {
                     <TransactionModal closeHandler={() => setModalState(ModalState.CLOSED)} dataHandler={dataHandler} address={context.address} type={modalState} />
                 }
             </div>
-            <ConfirmAddressModal address={context.address}/>
+            <ConfirmAddressModal address={context.address} successHandler={(address) => setAddress(address)}/>
         </>
     );
 }

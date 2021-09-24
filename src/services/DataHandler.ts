@@ -51,8 +51,8 @@ class DataHandler {
             priceHistory
         ] = await Promise.all([
             chain.companyName(storage), 
-            chain.buyPrice(storage),
-            chain.sellPrice(),
+            chain.buyPrice(storage, 1),
+            chain.sellPrice(1),
             chain.mfg(storage),
             chain.totalInvestments(storage),
             chain.totalInvestors(storage),
@@ -159,13 +159,17 @@ class DataHandler {
             tokensOwned, 
             tokenBuyPrice,
             tokenSellPrice,
-            phase
+            phase,
+            totalFund,
+            totalWithdraw
         ] = await Promise.all([
             userData.tezInvested(),
             userData.tokens(),
-            chain.buyPrice(storage),
-            chain.sellPrice(),
-            chain.phase(storage)
+            chain.buyPrice(storage, 1),
+            chain.sellPrice(1),
+            chain.phase(storage),
+            userData.fund(),
+            userData.withdraw()
         ]);
 
         return {
@@ -173,7 +177,9 @@ class DataHandler {
             tokensOwned: +tokensOwned,
             tokenBuyPrice: +tokenBuyPrice,
             tokenSellPrice: +tokenSellPrice,
-            isMFGReached: !!+phase
+            isMFGReached: !!+phase,
+            totalFund: +totalFund,
+            totalWithdraw: +totalWithdraw
         };
     }
 
@@ -192,7 +198,7 @@ class DataHandler {
         ] = await Promise.all([
             userData.tez(),
             userData.tokens(),
-            chain.buyPrice(storage),
+            chain.buyPrice(storage, 1),
             chain.unlockingDate(storage)
         ]);
         
@@ -236,7 +242,7 @@ class DataHandler {
             tezCount, 
             lockPeriod
         ] = await Promise.all([
-            chain.sellPrice(),
+            chain.sellPrice(1),
             userData.tokens(),
             userData.tez(),
             chain.unlockingDate(storage)
@@ -279,7 +285,7 @@ class DataHandler {
             tokenBuyPrice,
             tokensOwned
         ] = await Promise.all([
-            chain.buyPrice(),
+            chain.buyPrice(null, 1),
             userData.tokens()
         ]);
 
@@ -287,6 +293,24 @@ class DataHandler {
             tokenBuyPrice: +tokenBuyPrice,
             tokensOwned: +tokensOwned
         }
+    }
+
+    /**
+     * Gets the price for a given amount of tokens
+     * @param amount amount of token requested
+     * @param type if funding or withdrawal
+     */
+    getPrice(amount: number, type: TransactionType): Promise<number> {
+        return (type == TransactionType.Funding) ? chain.buyPrice(null, amount) : chain.sellPrice(amount);
+    }
+
+    /**
+     * Gets the amount of tez paid back by the contract
+     * @param address User's wallet address.
+     * @param hash hash of the transaction to check
+     */
+    getTezPaidBack(address: string, hash: string) {
+        return chain.sentBack(address, hash);
     }
 
     /**
