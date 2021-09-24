@@ -137,6 +137,7 @@ describe('Data handler tests', () => {
                 expect(data.tokenBuyPrice).not.to.be.NaN;
                 expect(data).to.have.property("tokensOwned").that.is.a('number');
                 expect(data.tokensOwned).not.to.be.NaN;
+                expect(data).to.have.property("isMFGReached").that.is.a('boolean');
             });
         });
 

@@ -281,17 +281,21 @@ class DataHandler {
      */
     async getUserTokenInfo(address: string): Promise<UserTokenInfoDto> {
         const userData = chain.user(address);
+        const storage = await chain.storage();
         const [
             tokenBuyPrice,
-            tokensOwned
+            tokensOwned,
+            phase
         ] = await Promise.all([
-            chain.buyPrice(null, 1),
-            userData.tokens()
+            chain.buyPrice(storage, 1),
+            userData.tokens(),
+            chain.phase(storage),
         ]);
 
         return {
             tokenBuyPrice: +tokenBuyPrice,
-            tokensOwned: +tokensOwned
+            tokensOwned: +tokensOwned,
+            isMFGReached: !!+phase,
         }
     }
 

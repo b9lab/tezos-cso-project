@@ -32,7 +32,7 @@ Cypress.Commands.add("restoreLocalStorageCache", () => {
 });
 
 Cypress.Commands.add('openModalAndBuy', (amount, firstTime) => {
-    cy.get('h2').contains('Buy TZM now').click();
+    cy.get('.buy-cta').click();
     cy.get('h1').contains('Buy TZM').should('be.visible');
     cy.get('input').type(amount);
     cy.get('button[type=submit]').contains('Buy').click();
@@ -43,7 +43,7 @@ Cypress.Commands.add('openModalAndBuy', (amount, firstTime) => {
 });
 
 Cypress.Commands.add('openModalAndSell', (amount, firstTime) => {
-    cy.get('h2').contains('Sell TZM now').click();
+    cy.get('.sell-cta').click();
     cy.get('h1').contains('Sell TZM').should('be.visible');
     cy.get('input').type(amount);
     cy.get('button[type=submit]').contains('Sell').click();

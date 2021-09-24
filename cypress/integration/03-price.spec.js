@@ -84,6 +84,12 @@ describe('Price tests', () => {
         });
     })
 
+    it('shouldn\'t be able to sell when MFG is not reached', () => {
+        cy.visit('/fund-withdraw');
+
+        cy.get('.sell-cta').should('not.exist');
+    })
+
     it('buy and sell price should diverge if MFG is reached', () => {
         cy.visit('/fund-withdraw');
 
