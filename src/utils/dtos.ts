@@ -71,7 +71,8 @@ export interface WithdrawDto {
 
 export interface UserTokenInfoDto {
     tokenBuyPrice: number,
-    tokensOwned: number
+    tokensOwned: number,
+    isMFGReached: boolean
 }
 
 export enum TransactionType {

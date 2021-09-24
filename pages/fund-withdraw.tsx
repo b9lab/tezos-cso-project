@@ -372,7 +372,10 @@ export default function FundWithdraw() {
                         </div>
                     </div>
                     <CtaCard action={() => setModalState(ModalState.FUND)} text="Buy TZM now &#8594;" title="Invest" classes="sm:pr-2"/>
-                    <CtaCard action={() => setModalState(ModalState.WITHDRAW)} text="Sell TZM now &#8594;" title="Withdraw" classes="sm:pl-2"/>
+                    {
+                        data?.isMFGReached &&
+                        <CtaCard action={() => setModalState(ModalState.WITHDRAW)} text="Sell TZM now &#8594;" title="Withdraw" classes="sm:pl-2"/>
+                    }
                 </div>
                 {
                     modalState != ModalState.CLOSED &&
