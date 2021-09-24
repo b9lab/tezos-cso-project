@@ -1,4 +1,4 @@
-import { SITE_NAME } from '../src/constants';
+-import { SITE_NAME } from '../src/constants';
 import CtaCard from "../src/components/CtaCard";
 
 export default function Home() {
@@ -53,54 +53,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">
-                    Steps in a continuous agreement for future equity
-                </h2>
-                <div>
-                    <ol>
-                        <li>During <span className="font-semibold">initialisation</span> a company deploys a smart contract, sets a minimal funding goal, values the company, and creates the reserve with a set percentage of revenue being allocated to it.</li>
-                        <li>While the <span className="font-semibold">offering runs</span>, tokens are issued/minted proportionally to the amount held in the reserve. Token holders (the investors) can buy and sell their tokens for market prices, as well as sell them directly to the reserve, i.e. redeem them.</li>
-                        <li>When the <span className="font-semibold">offering ends</span>, all tokens in circulation are bought back by the company, similar to a traditional buyback.</li>
-                    </ol>
-                </div>
-            </div>
-
-            <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">
-                    New fundraising method - How is a PEQ offering different from an ICO?
-                </h2>
-                <div className="indent">
-                    With blockchain technology many <span className="font-semibold">new funding mechanisms</span> were explored. A colorful parade of acronyms followed - ICOs, IEOs, STOs, SAFTs, ... <br/>
-                    <span className="font-semibold">Initial Coin Offerings</span> (ICOs) became a very popular method for blockchain projects to raise high amounts of capital. This led to a boom of such offerings. With the boom came disillusionment and disenchantment: With an increased number of ICOs came the realisation that many ICO tokens did not represent much worth. Thus, leading to no value in open markets, i.e. secondary markets.
-                </div>
-                <div className="mt-4">
-                    ICOs were not without <span className="font-semibold">benefits</span>: This egalitarian and accessible offering frees companies from courting venture capitalists and the constraining process with strong regulatory requirements and high costs of an IPO. <br/>
-                    Investors, that are not venture capitalists or institutional investors, gain greater access to attractive opportunities at early stages. <br/>
-                    Companies gain access to new liquidity and can maintain better control over their company’s ownership.
-                </div>
-                <div className="mt-4">
-                    In an effort to keep the beneficial characteristics of ICOs but tackle the downsides, debates on possible programmable equity offerings continued.
-                </div>
-                <div className="mt-4">
-                    Programmable equity offering tokens have similarities to ICOs: <br/>
-                </div>
-                <div>
-                    <ul>
-                    <li><span className="font-semibold">Accessibility:</span> Similar to ICOs, the offering is accessible to everyone.</li>
-                    <li><span className="font-semibold">Automation and self-management:</span> Token issuance and management relies on a smart contract, making it a mostly-automated process.</li>
-                    <li><span className="font-semibold">New markets:</span> Token offerings open up new markets and with it new funding opportunities.</li>
-                    <li><span className="font-semibold">Low cost:</span> Compared to traditional financing mechanisms, the cost of running a blockchain-based offering and issuing tokens is estimated to be much lower than for example the cost of conducting an IPO.</li>
-                    </ul>
-                </div>
-                <div className="mt-4">
-                    A revenue-focused approach based on a company’s future shares aligns stakeholder interests, allows for greater investor accessibility and protects investors more due to the algorithmically tie between the token and company’s 
-                    revenues and the reserve-backing, while also maintaining founders’ ownership and opening up new liquidity. In addition, PEQ offerings have a stronger regulatory stance as they are no equity investment.
-                </div>  
-                <div className="mt-4">                  
-                    <span className="font-semibold">The biggest benefit of PEQ offerings is the value proposition of tokens: As tokens represent a claim on the reserve, and indirectly future revenue, the token has an intrinsic value tied to the reserve.</span>
-                </div>
-            </div>
+    HERE: ELABORATE MORE ON THE PROJECT AND GIVE DEVS A USER JOURNEY OVERVIEW (PEQ->CAFE AS A PARTICULAR CASE)
 
         </div>
     );
