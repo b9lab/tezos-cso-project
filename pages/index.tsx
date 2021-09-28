@@ -1,10 +1,10 @@
--import { SITE_NAME } from '../src/constants';
+import { SITE_NAME } from '../src/constants';
 import CtaCard from "../src/components/CtaCard";
 
 export default function Home() {
     return (
         <div className="pb-8 home">
-          <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
+            <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
                 <h1 className="mb-8">{SITE_NAME}</h1>
                 <div className="body-text-large italic">
                     Illustration of a programmable equity implementation on Tezos
@@ -53,7 +53,7 @@ export default function Home() {
                 </div>
             </div>
 
-    HERE: ELABORATE MORE ON THE PROJECT AND GIVE DEVS A USER JOURNEY OVERVIEW (PEQ->CAFE AS A PARTICULAR CASE)
+            HERE: ELABORATE MORE ON THE PROJECT AND GIVE DEVS A USER JOURNEY OVERVIEW (PEQ-&gt;CAFE AS A PARTICULAR CASE)
 
         </div>
     );
