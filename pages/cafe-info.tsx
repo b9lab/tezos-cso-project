@@ -6,7 +6,7 @@ export default function CafeInfo() {
         <div className="pb-8">
 
             <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
-                <h1 className="mb-8">Continuous Agreement for Future Equity</h1>
+                <h1 className="mb-8">Continuous Agreement for Future Equity (CAFE)</h1>
                 <div className="body-text-large italic">
                     A Programmable Equity (PEQ) mechanism as a continuous offering
                 </div>
@@ -14,7 +14,7 @@ export default function CafeInfo() {
 
             <div className="mt-6 px-8">
                 <div>
-                    A <span className="font-semibold">Continuous agreement for future equity</span> is a <span className="font-semibold">Programmable Equity (PEQ) funding mechanism</span> envisioned to bring:
+                    A <span className="font-semibold">continuous agreement for future equity (CAFE)</span> is a <span className="font-semibold">Programmable Equity (PEQ) funding mechanism</span> envisioned to bring:
                 </div>
                 <div>
                     <ul>
@@ -33,6 +33,19 @@ export default function CafeInfo() {
                 <div className="mt-4">
                     Continuous agreements for future equity offer the opportunity to conduct <span className="font-semibold">scalable high-resolution fundraising</span>, while also offering different prices to different investors depending on when the investment is done. <br/>
                     This frees the funding mechanism of market psychological group dynamics usually present in investor-driven funding: Investors tend to “wait and see” how others engage in an investment opportunity before investing, but in a CAFE, companies can better incentivise stakeholders that take the risk of investing early on.
+                </div>
+            </div>
+
+            <div className="pt-12 px-8">
+                <h2 className="mb-8 highlight">
+                    Steps in a continuous agreement for future equity
+                </h2>
+                <div>
+                    <ol>
+                        <li>During <span className="font-semibold">initialisation</span> a company deploys a smart contract, sets a minimal funding goal, values the company, and creates the reserve with a set percentage of revenue being allocated to it.</li>
+                        <li>While the <span className="font-semibold">offering runs</span>, tokens are issued/minted proportionally to the amount held in the reserve. Token holders (the investors) can buy and sell their tokens for market prices, as well as sell them directly to the reserve, i.e. redeem them.</li>
+                        <li>When the <span className="font-semibold">offering ends</span>, all tokens in circulation are bought back by the company, similar to a traditional buyback.</li>
+                    </ol>
                 </div>
             </div>
 
@@ -62,7 +75,7 @@ export default function CafeInfo() {
                     A fixed equity allocation helps founders maintain long-term control, as the claim bound to the token does not grant any governance rights, i.e. the token represents a non-voting share of future equity.
                 </div>
                 <div className="mt-4"> 
-                    Independently how much equity a company raises in its financing rounds all investor claims remain the same collectively. For individual investors there is a certain degree of dilution as each token issued contributes to dilution, but it is predictable. This protects stakeholders from unknown and uncalculated equity dilutions.
+                    Independently how much equity a company raises in its financing rounds, all investor claims remain the same collectively. For individual investors there is a certain degree of dilution as each token issued contributes to dilution, but it is predictable. This protects stakeholders from unknown and uncalculated equity dilutions.
                 </div>
             </div>
 
