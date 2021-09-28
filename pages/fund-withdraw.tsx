@@ -151,19 +151,16 @@ function FundPage(props: FundPageProp) {
         <div>
             <h1>Buy TZM</h1>
             <div className="flex flex-wrap justify-between">
-                <div className="flex flex-col mt-4 mr-2">
+                <div className="flex flex-col mt-4 sm:mr-2">
                     <p>Current price</p>
                     <h1><TezAmount amount={data?.tokenBuyPrice}/></h1>
                 </div>
-                <div className="flex flex-col mt-4 ml-2">
+                <div className="flex flex-col mt-4 sm:ml-2">
                     <p>Amount of tez in your account</p>
                     <h1><TezAmount amount={data?.tezCount}/></h1>
                 </div>
             </div>
-            <h2 className="mt-12 highlight">Purchase tokens</h2>
-            <div className="my-2 italic">
-                Add the amount of tokens you want to buy in the field beneath.
-            </div>
+            <h2 className="mt-12 mb-2 highlight">Purchase tokens</h2>
             <form onSubmit={handlers.fund}>
                 <Input value={amount} handler={handlers.amount} label="Amount of TZM tokens to purchase" pattern="[0-9]+\.?[0-9]*|\.[0-9]+"/>
                 <div className="flex flex-col sm:flex-row justify-between mt-2">
@@ -217,11 +214,11 @@ function WithdrawPage(props: WithdrawPageProp) {
         <div>
             <h1>Sell TZM</h1>
             <div className="flex flex-wrap justify-between">
-                <div className="flex flex-col mt-4 mr-2">
+                <div className="flex flex-col mt-4 sm:mr-2">
                     <p>Current price</p>
                     <h1><TezAmount amount={data?.tokenSellPrice}/></h1>
                 </div>
-                <div className="flex flex-col mt-4 ml-2">
+                <div className="flex flex-col mt-4 sm:ml-2">
                     <p>Amount of TZM in your account</p>
                     <h1><TokenAmount amount={data?.tokensOwned}/></h1>
                 </div>
@@ -232,10 +229,7 @@ function WithdrawPage(props: WithdrawPageProp) {
                     You can not sell the tokens before the unlocking date, {format_date(data?.lockPeriod)}
                 </div>) :
                 (<>
-                    <h2 className="mt-12 highlight">Sell tokens</h2>
-                    <div className="my-2 italic">
-                        Add the amount of tokens you want to sell in the field beneath.
-                    </div>
+                    <h2 className="mt-12 mb-2 highlight">Sell tokens</h2>
                     <form onSubmit={handlers.withdraw}>
                         <Input value={amount} handler={handlers.amount} label="Amount of TZM tokens to sell" pattern="[0-9]*"/>
                         <div className="flex flex-col sm:flex-row justify-between mt-2 ">

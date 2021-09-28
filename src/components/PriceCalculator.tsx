@@ -35,11 +35,7 @@ function PriceCalculator(props: PriceCalculatorProp) {
 
     return (
         <div className="flex">
-            {
-                price != 0 ?
-                <label className="m-auto">{props.type == TransactionType.Funding ? "Cost" : "Income"}: <TezAmount amount={price} nostyle={true}/></label> :
-                null
-            }
+            <h1 className="mt-auto"><TezAmount amount={price}/></h1>
         </div>
     );
 }
