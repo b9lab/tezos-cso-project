@@ -24,6 +24,7 @@ function ConfirmAddressModal(props: ConfirmAddressModalProp) {
         });
     };
 
+    // forces wallet address modal confirmation
     const fetchAndSaveAddress = () => contract.updatePermission().then((address: string) => {
         setModalOpened(false);
         updateUser({ address: address });

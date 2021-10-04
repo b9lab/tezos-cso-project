@@ -1,0 +1,6 @@
+{
+    "entryPoints": ["./src", "./pages"],
+    "out": "generated-docs",
+    "exclude": "node_modules",
+    "entryPointStrategy": "expand"
+}

@@ -9,6 +9,7 @@ type CafeDetailsProps = {
 };
 
 export default function CafeDetails(props: CafeDetailsProps) {
+    // The following data is fetched at build time and shown as placeholder on the initial render while on client-side it will be fetched again and updated
     const { data, error } = useSWR(CAFE_PARAMETERS_API_ENDPOINT, { initialData: props.initialData });
 
     if (!data || error) return <>{error}</>

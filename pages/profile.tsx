@@ -39,6 +39,7 @@ export default function Profile() {
         },
         delete: () => fetch(PROFILE_API_ENDPOINT, { method: 'DELETE'}).then(() => mutate(SESSION_API_ENDPOINT)).catch(console.error),
         fetchAndSaveAddress: () => contract.updatePermission().then((address: string) => {
+            // forces wallet address modal confirmation
             updateUser({ address: address });
             setInputAddress(address);
         }).catch(console.error)
