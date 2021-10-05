@@ -1,7 +1,10 @@
 import DefaultHead from "next/head";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_IMAGE } from "../constants"
 
-function Head() {
+/**
+ * Main head
+ */
+export default function Head() {
     return (
         <DefaultHead>
             <title>{SITE_NAME}</title>
@@ -11,5 +14,3 @@ function Head() {
         </DefaultHead>
     );
 }
-
-export default Head;

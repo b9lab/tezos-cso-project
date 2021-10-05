@@ -337,6 +337,9 @@ function TransactionModal(props: TransactionModalProp) {
     );
 }
 
+/**
+ * Buy and Sell page
+ */
 export default function FundWithdraw() {
     const [modalState, setModalState] = useState<ModalState>(ModalState.CLOSED);
     const dataHandler = new DataHandler();

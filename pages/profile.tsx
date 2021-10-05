@@ -7,6 +7,9 @@ import Input from '../src/components/Input';
 import { PROFILE_API_ENDPOINT, SESSION_API_ENDPOINT } from '../src/constants';
 import { contract } from '../tezos-app-project';
 
+/**
+ * Profile page
+ */
 export default function Profile() {
     const { data, error } = useSWR(PROFILE_API_ENDPOINT);
     const [inputName, setInputName] = useState<string>();

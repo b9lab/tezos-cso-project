@@ -4,6 +4,9 @@ import tutorial2Image from "../public/tutorial-2.png";
 import tutorial3Image from "../public/tutorial-3.png";
 import ImageWrapper from "../src/components/ImageWrapper";
 
+/**
+ * Get started page
+ */
 export default function GetStarted() {
     return (
         <div className="pb-8">

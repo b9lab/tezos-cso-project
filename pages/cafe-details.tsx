@@ -4,10 +4,13 @@ import TezAmount from "../src/components/TezAmount";
 import { format_percentage } from "../src/helpers";
 import { CAFE_PARAMETERS_API_ENDPOINT } from "../src/constants";
 
-type CafeDetailsProps = {
+export type CafeDetailsProps = {
     initialData: any
 };
 
+/**
+ * Parameters of the Continuous Agreement page
+ */
 export default function CafeDetails(props: CafeDetailsProps) {
     // The following data is fetched at build time and shown as placeholder on the initial render while on client-side it will be fetched again and updated
     const { data, error } = useSWR(CAFE_PARAMETERS_API_ENDPOINT, { initialData: props.initialData });

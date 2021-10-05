@@ -1,13 +1,16 @@
 import { useRef } from "react";
 import { useClickOutside } from "../utils/hooks";
 
-type ModalProps = {
+export type ModalProps = {
     children: any,
     closeHandler: () => void,
     classes?: string
 }
 
-function Modal(props: ModalProps) {
+/**
+ * Base modal container
+ */
+export default function Modal(props: ModalProps) {
     const modalRef = useRef(null);
     useClickOutside(modalRef, props.closeHandler);
 
@@ -19,5 +22,3 @@ function Modal(props: ModalProps) {
         </div>
     );
 }
-
-export default Modal;

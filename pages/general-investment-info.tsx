@@ -68,6 +68,9 @@ function PricesChart(props: PricesChartProp) {
     );
 }
 
+/**
+ * Overview page
+ */
 export default function GeneralInvestmentInfo() {
     const { data } = useSWR(INVESTMENT_NUMBERS_API_ENDPOINT);
 

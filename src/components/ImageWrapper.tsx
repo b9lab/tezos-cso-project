@@ -1,12 +1,15 @@
 import Image from "next/image";
 import { useState } from "react";
 
-type ImageWrapperProps = {
+export type ImageWrapperProps = {
     src: any,
     alt: string
 }
 
-function ImageWrapper(props: ImageWrapperProps) {
+/**
+ * Base image wrapper with fullscreen logic
+ */
+export default function ImageWrapper(props: ImageWrapperProps) {
     const [fullScreen, setFullScreen] = useState<boolean>(false);
 
     return (
@@ -15,5 +18,3 @@ function ImageWrapper(props: ImageWrapperProps) {
         </div>
     );
 }
-
-export default ImageWrapper;

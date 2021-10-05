@@ -5,12 +5,15 @@ import { PROFILE_API_ENDPOINT, SESSION_API_ENDPOINT } from "../constants";
 import Button from "./Button";
 import Modal from "./Modal";
 
-type ConfirmAddressModalProp = {
+export type ConfirmAddressModalProp = {
     successHandler?: (address: string) => void,
     address: string | null
 }
 
-function ConfirmAddressModal(props: ConfirmAddressModalProp) {
+/**
+ * Modal that asks to confirm the wallet address
+ */
+export default function ConfirmAddressModal(props: ConfirmAddressModalProp) {
     const [modalOpened, setModalOpened] = useState<boolean>(!props.address);
 
     useEffect(() => {
@@ -49,5 +52,3 @@ function ConfirmAddressModal(props: ConfirmAddressModalProp) {
         </>
     );
 }
-
-export default ConfirmAddressModal;

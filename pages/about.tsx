@@ -2,6 +2,9 @@ import ImageWrapper from "../src/components/ImageWrapper";
 import pricesCurveImage from '../public/buy-sell-function.png';
 import organigramImage from '../public/organigram.png';
 
+/**
+ * Programmable Equity page
+ */
 export default function About() {
     return (
         <div className="pb-8">

@@ -10,6 +10,9 @@ import CtaCard from "../src/components/CtaCard";
 import PriceBadge from "../src/components/PriceBadge";
 import ConfirmAddressModal from "../src/components/ConfirmAddressModal";
 
+/**
+ * My investment page
+ */
 export default function PersonalInvestmentInfo() {
     const context: AuthContextData = useContext(AuthContext);
     const [address, setAddress] = useState<string>(context.address);

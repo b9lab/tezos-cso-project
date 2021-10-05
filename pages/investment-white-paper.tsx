@@ -1,4 +1,7 @@
-export default function PersonalInvestmentInfo() {
+/**
+ * Investment White Paper page
+ */
+export default function InvestmentWhitePaper() {
     return (
         <div className="pb-8">
 

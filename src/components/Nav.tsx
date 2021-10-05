@@ -9,11 +9,14 @@ import closeIcon from '../../public/close-icon.svg';
 import menuIcon from '../../public/menu-icon.svg';
 import { useClickOutside } from "../utils/hooks";
 
-type NavProps = {
+export type NavProps = {
     items: Array<NavItem>
 }
 
-function Nav(props: NavProps) {
+/**
+ * Navigation bar
+ */
+export default function Nav(props: NavProps) {
     const [ session ] = useSession();
     const router = useRouter();
 
@@ -118,5 +121,3 @@ function Nav(props: NavProps) {
         </nav>
     );
 }
-
-export default Nav;

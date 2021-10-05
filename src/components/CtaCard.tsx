@@ -1,15 +1,18 @@
 import Link from "next/link";
 import React from "react";
 
-type CtaCardProps = {
+export type CtaCardProps = {
     title: string,
     text: string,
     href?: string,
     action?: any,
     classes?: string
-};
+}
 
-function CtaCard(props: CtaCardProps) {
+/**
+ * Card wrapper clickable
+ */
+export default function CtaCard(props: CtaCardProps) {
 
     const content = (
         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4 border border-accent-1 cursor-pointer ">
@@ -38,5 +41,3 @@ function CtaCard(props: CtaCardProps) {
         return (<></>);
     }
 }
-
-export default CtaCard;

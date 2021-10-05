@@ -1,6 +1,6 @@
 {
     "entryPoints": ["./src", "./pages"],
     "out": "generated-docs",
-    "exclude": "node_modules",
+    "exclude": ["node_modules", "./pages/feature-test.tsx", "./pages/api/auth/*.ts"],
     "entryPointStrategy": "expand"
 }

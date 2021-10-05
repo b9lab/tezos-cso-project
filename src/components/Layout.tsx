@@ -3,11 +3,14 @@ import Footer from "./Footer";
 import Head from "./Head";
 import Header from "./Header";
 
-type LayoutProps = {
+export type LayoutProps = {
     children: any
-};
+}
 
-function Layout(props: LayoutProps) {
+/**
+ * Main layout
+ */
+export default function Layout(props: LayoutProps) {
     return (
         <div className="text-dark-gray">
             <Head/>
@@ -21,5 +24,3 @@ function Layout(props: LayoutProps) {
         </div>
     );
 }
-
-export default Layout;
