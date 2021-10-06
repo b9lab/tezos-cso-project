@@ -14,14 +14,21 @@ export default function Home() {
             <div className="pt-8 px-8">
                 <div className="indent">
                     This platform is an example project, which is part of the educational course on the 
-                    <a className="font-family-body" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer"> Tezos Developer Platform</a>. 
+                    <a className="font-family-body" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer">Tezos Developer Platform</a>. 
                     There is <span className="text-highlight">no real investment or company</span> involved. Instead, all transactions displayed are performed on a testnet, 
-                    <span className="font-bold"> the Florence testnet</span>.
+                    <span className="font-bold"> the Granada testnet</span>.
+                </div>
+            </div>
+
+            <div className="pt-12 px-8">
+                <h2 className="mb-8 highlight">
+                    Why a continous security offering on Tezos?
+                </h2>
+                <div className="indent">
+                    The purpose of this project is to showcase an implementation of a full platform which interacts with the Tezos blockchain. TZMINT is an educational project for developers who want to <span className="font-bold">learn how to develop Tezos applications</span> leveraging the ecosystem stack. This platform is an example implementation; you can find more information on how the project was developed and implemented on the <a className="font-family-body" href="http://tezos.b9lab.com/cso-project" target="_blank" rel="noreferrer"> Tezos Developer Platform</a>.
                 </div>
                 <div className="mt-4">
-                    The purpose of this project is to showcase an implementation of a full platform which interacts with the Tezos blockchain. 
-                    Additionally, it illustrates how challenges, which arise when moving from a simple local proof-of-concept implementation to a public online platform, can be addressed.
-                </div>
+                    You can test the example application without having to know much about the inner workings of Tezos. For an introduction to Tezos and developing with the Tezos stack, please see <a className="font-family-body" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer">B9lab's Tezos Developer Platform</a>. This illustration of a programmable equity implementation on Tezos gives blockchain developers an example of such an application on Tezos.
                 <div className="mt-4">
                     Due to the educational aim of this platform, some steps that go beyond the scope of a blockchain and would add complexity have been omitted 
                     (e.g. a full KYC process and CDD checks), while some features have been added to specifically demonstrate their implementation.
@@ -33,6 +40,7 @@ export default function Home() {
                 </div>
                 */}
                 <div className="w-full flex flex-wrap justify-between">
+--> Include 1 CTA: "Ready to dive into the specifics of developing a programmable equity implementation on Tezos with the ecosystem stack? Take a look at this <a className="font-family-body" href="http://tezos.b9lab.com/cso-project" target="_blank" rel="noreferrer">section</a> on B9lab's Tezos Developer Platform."
                     <CtaCard href="/cafe-info" text="How it works &#8594;" title="Concepts, formulas and code" classes="sm:pr-2"/>
                     <CtaCard href="/get-started" text="Try it Out TZMINT &#8594;" title="Invest now - 3 minutes quickstart" classes="sm:pl-2"/>
                 </div>
@@ -43,17 +51,139 @@ export default function Home() {
                     What is TZMINT?
                 </h2>
                 <div className="indent">
-                    TZMINT is a sample application demonstrating a continuous agreement for future equity for Programmable Equity (PEQ) funding on Tezos. The token investors can buy and sell on this sample application is called <span className="font-semibold">TZM</span>.
+                    TZMINT is a sample application demonstrating a continuous agreement for future equity (CAFE) for programmable equity (PEQ) funding on Tezos. The token investors can buy and sell on this sample application is called <span className="font-bold">TZM</span>.
                 </div>
                 <div className="mt-4">
                     The programmable equity offering is issued as a <span className="font-semibold">continuous agreement for future equity</span>, i.e. a continuous token offering of a programmable equity. <br/>
-                    Companies set a minimal funding goal, deploy a smart contract that issues the tokens and handles funds, buy and sell transactions, and manages the reserve holding a certain percentage of the funding for buybacks. <br/>
-                    Investors can buy and sell tokens at any point in time - as long as the offering is active. The price of the token is automated, initially set at a constant level and later adjusted by a buy and sell slope based on the 
-                    number of tokens issued (i.e. acquired). The token is backed by the amount initially allocated to the reserve and the company’s future revenue.
+                    Companies set a minimum funding goal and deploy a smart contract, which issues the tokens, handles funds as well as transactions, and manages the reserve holding a certain percentage of the funding to buy back the issued tokens once the offering is terminated. <br/>
+                    Investors can buy and sell tokens at any point in time - as long as the offering is active. The price of the token is automated, initially set at a constant level and later adjusted by a buy-sell slope based on the 
+                    number of tokens issued. The token is backed by the amount initially allocated to the reserve and the company’s future revenue.
+                </div>
+                <div className="mt-4">
+                    To better understand the new financing instrument and its mechanisms implemented in this project, let's first explore what programmable equity is.
                 </div>
             </div>
 
-            HERE: ELABORATE MORE ON THE PROJECT AND GIVE DEVS A USER JOURNEY OVERVIEW (PEQ-&gt;CAFE AS A PARTICULAR CASE)
+--> Include 1 CTA: "Already know all about programmable equity offerings? Feel free to skip this part and take a look at the specific implementation of a PEQ offering, a <a className="font-family-body" href="https://tzmint.b9lab.com/cafe-info" target="_blank" rel="noreferrer">continuous agreement for future equity (CAFE)</a>."
+            
+            <div className="pt-12 px-8">
+                <h2 className="mb-8 highlight">
+                    What is a programmable equity offering?
+                </h2>
+                <div className="indent">
+                    In a programmable equity offering, security tokens are issued, which can for example represent a proportional share of a company&apos;s future revenue. 
+                    Thus, it would not be equity-centered but revenue-focused and bear the potential of aligning stakeholder interests with the financial success of a company.
+                </div>
+                <div className="mt-4">
+                    Whereby, the company setting up the programmable equity is often called a <span className="font-semibold">continuous organization</span> 
+                    as the security tokens are offered continuously and not just during one instance. It funnels a part of its revenue, a fixed percentage, 
+                    into a <span className="font-semibold">Decentralized Autonomous Trust (DAT)</span> during a pre-defined time period. 
+                    A DAT is a <span className="font-semibold">smart contract</span> that automatically issues the tokenised security, and handles sales and buy backs.
+                </div>
+            </div>
+
+            <div className="pt-12 px-8 flex justify-between flex-col sm:flex-row">
+                <div className="sm:w-1/2 flex content-center">
+                    <ImageWrapper src={organigramImage} alt=""/>
+                </div>
+                <div className="mt-8 sm:ml-8 sm:mt-0 sm:w-1/2">
+                    <h2 className="mb-8 highlight">How does a programmable equity offering work?</h2>
+                    <div className="indent">
+                        The continous organization sets a <span className="font-semibold">Minimum Funding Goal (MFG)</span>, a set amount of investment. 
+                        DAT tokens, which represent a claim on the DAT-managed cash reserve, i.e. a function of revenues, are issued to reach the MFG.
+                    </div>
+                    <div className="mt-4">
+                        The MFG increases protection for investors and the issuing organization: It assures investors that as long as the MFG is not met, for example, if it does not attract many investors, they can withdraw their investment and get 100% of it back. 
+                        Moreover, early investors get a fixed price for tokens, which creates a threshold under which the price for a token will not fall. The MFG also protects the issuing organization by providing great flexibility; as long as the MFG is not met, the organization can cancel the offering.
+                    <div className="mt-4">                         
+                        Additionally, the continuous organization determines the terms of the programmable equity offering by setting the percentage of the annual 
+                        revenue committed to going into the reserve. The higher the allocated percentage the less risky it is for investors, as the reserve ensures that the company issuing the offering has the financial means to buy back tokens from investors while the offering is active and when the time for termination comes.
+                    </div>
+                    <div className="mt-4">                        
+                        Once the terms are set, tokens are issued proportionally to the amount of money invested.
+                    </div>
+                </div>
+            </div>
+
+            <div className="pt-12 px-8">
+                <h2 className="mb-8 highlight">
+                    What can be done while the MFG is not met?
+                </h2>
+                <div className="indent">
+                    As long as the MFG is not met, investors can receive the token at a fixed price and can sell them again to receive their investment back. 
+                    During this period, the funds of every investment are escrowed by the DAT.
+                </div>
+                <div className="mt-4">
+                    The programmable equity offering can run indefinitely or have a set minimum period running time, which is defined in the DAT. 
+                    The minimum period of time can be increased by the continuous organization.
+                </div>
+                <div className="mt-4">
+                    The continuous organization can cancel the programmable equity offering while the MFG is not met. In case of cancellation, all investors can withdraw their complete investment. 
+                    Once the minimum period of time is reached, the programmable equity offering can be closed by the continuous organization.
+                </div>
+            </div>
+
+            <div className="pt-12 px-8 flex justify-between flex-col-reverse sm:flex-row">
+                <div className="mt-8 sm:mr-8 sm:mt-0 w-full sm:w-1/2">
+                    <h2 className="mb-8 highlight">MFG achieved: What happens now?</h2>
+                    <div className="indent">
+                        Once the MFG is met, a so-called bonding curve starts with which a portion of the MFG is moved into a reserve 
+                        and another portion is transferred to the continuous organization, the beneficiary of the programmable equity offering.
+                    </div>
+                    <div className="mt-4">
+                        Why do we need a reserve? The reserve can be understood as the counterparty of an investor transaction to buy or sell the offering's tokens. It has to hold enough to buy tokens back anytime, especially when the offering is terminated and all tokens are bought back from the investors. For this reason, the tokens do not represent a claim on the organization's ownership, but instead is a representation of a financial claim against the reserve and the organization's future revenues. 
+                    <div className="mt-4">     
+                        The bonding curve consists of two functions, one to determine the buy curve and one for the sell curve. The bonding curve acts as an automated market maker to allow for the instantaneously buy and sell of tokens.
+                        Now, investors can no longer withdraw their funds, but sell their tokens at a calculated price. While the MFG is not met, all funds are escrowed. Thus, investors can withdraw their investment and receive all of it back. As soon as the bonding curve begins, investors can only sell their tokens for the current price.
+                    </div>
+                    <div className="mt-4">
+                        Once the MFG is met the offering can no longer be cancelled and remains active as long as was defined previously.
+                    </div>
+                    <div className="mt-4">
+                        When the programmable equity offering ends, all outstanding tokens are bought back by the continuous organization through an exit fee transfer to the reserve.
+                    </div>
+                </div>
+                <div className="sm:w-1/2 flex content-center">
+                    <ImageWrapper src={pricesCurveImage} alt=""/>
+                </div>
+            </div>
+
+            <div className="pt-12 px-8">
+                <h2 className="mb-8 highlight">
+                    New fundraising method - How is a PEQ offering different from an ICO?
+                </h2>
+                <div className="indent">
+                    With blockchain technology many <span className="font-semibold">new funding mechanisms</span> were explored. A colorful parade of acronyms followed - ICOs, IEOs, STOs, SAFTs, ... <br/>
+                    <span className="font-semibold">Initial Coin Offerings</span> (ICOs) became a very popular method for blockchain projects to raise high amounts of capital. This led to a boom of such offerings. With the boom came disillusionment and disenchantment: With an increased number of ICOs came the realisation that many ICO tokens did not represent much worth. Thus, leading to no value in open markets, i.e. secondary markets.
+                </div>
+                <div className="mt-4">
+                    ICOs were not without <span className="font-semibold">benefits</span>: This egalitarian and accessible offering frees companies from courting venture capitalists and the constraining process with strong regulatory requirements and high costs of an IPO. <br/>
+                    Investors, that are not venture capitalists or institutional investors, gain greater access to attractive opportunities at early stages. <br/>
+                    Companies gain access to new liquidity and can maintain better control over their company’s ownership.
+                </div>
+                <div className="mt-4">
+                    In an effort to keep the beneficial characteristics of ICOs but tackle the downsides, debates on possible programmable equity offerings continued.
+                </div>
+                <div className="mt-4">
+                    Programmable equity offering tokens have similarities to ICOs: <br/>
+                </div>
+                <div>
+                    <ul>
+                    <li><span className="font-semibold">Accessibility:</span> Similar to ICOs, the offering is accessible to everyone.</li>
+                    <li><span className="font-semibold">Automation and self-management:</span> Token issuance and management relies on a smart contract, making it a mostly-automated process.</li>
+                    <li><span className="font-semibold">New markets:</span> Token offerings open up new markets and with it new funding opportunities.</li>
+                    <li><span className="font-semibold">Low cost:</span> Compared to traditional financing mechanisms, the cost of running a blockchain-based offering and issuing tokens is estimated to be much lower than for example the cost of conducting an IPO.</li>
+                    </ul>
+                </div>
+                <div className="mt-4">
+                    A revenue-focused approach based on a company’s future shares aligns stakeholder interests, allows for greater investor accessibility and protects investors more due to the algorithmically tie between the token and company’s 
+                    revenues and the reserve-backing, while also maintaining founders’ ownership and opening up new liquidity. In addition, PEQ offerings have a stronger regulatory stance as they are no equity investment.
+                </div>  
+                <div className="mt-4">                  
+                    <span className="font-semibold">The biggest benefit of PEQ offerings is the value proposition of tokens: As tokens represent a claim on the reserve, and indirectly future revenue, the token has an intrinsic value tied to the reserve.</span>
+                </div>
+            </div>
+--> Include 1 CTA: "Ready to dive right in? <a className="font-family-body" href="https://tzmint.b9lab.com/cafe-info" target="_blank" rel="noreferrer">Next page</a>"
 
         </div>
     );

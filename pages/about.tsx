@@ -1,3 +1,5 @@
+--> DO NOT DISPLAY!!!
+
 import ImageWrapper from "../src/components/ImageWrapper";
 import pricesCurveImage from '../public/buy-sell-function.png';
 import organigramImage from '../public/organigram.png';
@@ -22,7 +24,7 @@ export default function About() {
                     Thus, it would not be equity-centered but revenue-focused, and bear the potential of aligning stakeholder interests with the financial success of a company.
                 </div>
                 <div className="mt-4">
-                    Whereby, the company setting up the programmable equity is often called a <span className="font-semibold">continuous organisation</span> 
+                    Whereby, the company setting up the programmable equity is often called a <span className="font-semibold">continuous organization</span> 
                     as the security tokens are offered continuously and not just during one instance. It funnels a part of its revenue, a fixed percentage, 
                     into a <span className="font-semibold">Decentralized Autonomous Trust (DAT)</span> during a pre-defined time period. 
                     A DAT is a <span className="font-semibold">smart contract</span> that automatically issues the tokenised security, and handles sales and buy backs.
@@ -36,12 +38,15 @@ export default function About() {
                 <div className="mt-8 sm:ml-8 sm:mt-0 sm:w-1/2">
                     <h2 className="mb-8 highlight">How does a programmable equity offering work?</h2>
                     <div className="indent">
-                        The continous organisation sets a <span className="font-semibold">Minimal Funding Goal (MFG)</span>, a set amount of investment. 
+                        The continous organization sets a <span className="font-semibold">Minimum Funding Goal (MFG)</span>, a set amount of investment. 
                         DAT tokens, which represent a claim on the DAT-managed cash reserve, i.e. a function of revenues, are issued to reach the MFG.
                     </div>
+                    <div className="mt-4">
+                        The MFG increases protection for investors and the issuing organization: It assures investors that as long as the MFG is not met, for example if it does not attract many investors, they can withdraw their investment and get 100% of it back. 
+                        Moreover, early investors get a fixed price for tokens, which creates a treshold under which the price for a token will not fall. The MFG also protects the issuing organization by providing great flexibility; as long as the MFG is not met, the organization can cancel the offering.
                     <div className="mt-4">                         
-                        Additionally, the continuous organisation determines the terms of the programmable equity offering by setting the percentage of the annual 
-                        revenue committed to go into the reserve. The higher the allocated percentage, the less riskier it is for investors.
+                        Additionally, the continuous organization determines the terms of the programmable equity offering by setting the percentage of the annual 
+                        revenue committed to go into the reserve. The higher the allocated percentage the less riskier it is for investors, as the reserve ensures that the company issuing the offering has the financial means to buy back tokens from investors while the offering is active and when the time for termination comes.
                     </div>
                     <div className="mt-4">                        
                         Once the terms are set, tokens are issued proportionally to the amount of money invested.
@@ -54,16 +59,16 @@ export default function About() {
                     What can be done while the MFG is not met?
                 </h2>
                 <div className="indent">
-                    As long as the MFG is not met, investors can receive the token at a fixed average price, and can sell them again to receive their investment back. 
+                    As long as the MFG is not met, investors can receive the token at a fixed price, and can sell them again to receive their investment back. 
                     During this period, the funds of every investment are escrowed by the DAT.
                 </div>
                 <div className="mt-4">
                     The programmable equity offering can run indefinitely or have a set minimum period running time, which is defined in the DAT. 
-                    The minimum period of time can be increased by the continuous organisation.
+                    The minimum period of time can be increased by the continuous organization.
                 </div>
                 <div className="mt-4">
-                    The continous organisation can cancel the programmable equity offering while the MFG is not met. In case of cancellation, all investors can withdraw their complete investment. 
-                    Once the minimum period of time is reached, the programmable equity offering can be closed by the continuous organisation.
+                    The continous organization can cancel the programmable equity offering while the MFG is not met. In case of cancellation, all investors can withdraw their complete investment. 
+                    Once the minimum period of time is reached, the programmable equity offering can be closed by the continuous organization.
                 </div>
             </div>
 
@@ -72,14 +77,19 @@ export default function About() {
                     <h2 className="mb-8 highlight">MFG achieved: What happens now?</h2>
                     <div className="indent">
                         Once the MFG is met, a so-called bonding curve starts with which a portion of the MFG is moved into a reserve 
-                        and another portion is transferred to the continuous organisation, the beneficiary of the programmable equity offering.
-                    </div>
-                    <div className="mt-4">     
-                        The bonding curve consists of two functions, one to determine the buy curve and one for the sell curve.
-                        Now, investors can no longer withdraw their funds, but sell their tokens at a calculated price.
+                        and another portion is transferred to the continuous organization, the beneficiary of the programmable equity offering.
                     </div>
                     <div className="mt-4">
-                        When the programmable equity offering ends, all outstanding tokens are bought back by the continuous organisation through an exit fee transfer to the reserve.
+                        Why do we need a reserve? The reserce can be understood as the counterparty of an investor transaction to buy or sell the offering's tokens. It has to hold enough to buy tokens back anytime, especially when the offering is terminated and all tokens are bought back from the investors. For this reason, the tokens do not represent a claim on the organization's ownership, but instead is a representation of a financial claim against the reserve and the organization's future revenues. 
+                    <div className="mt-4">     
+                        The bonding curve consists of two functions, one to determine the buy curve and one for the sell curve. The bonding curve acts as an automated market maker to allow for the instantaneously buy and sell of tokens.
+                        Now, investors can no longer withdraw their funds, but sell their tokens at a calculated price. While the MFG is not met, all funds are escrowed. Thus, investors can withdraw their investment and receive all of it back. As soon as the bonding curve begins, investors can only sell their tokens for the current price.
+                    </div>
+                    <div className="mt-4">
+                        Once the MFG is met the offering can no longer be cancelled and remains active as long as was defined previously.
+                    </div>
+                    <div className="mt-4">
+                        When the programmable equity offering ends, all outstanding tokens are bought back by the continuous organization through an exit fee transfer to the reserve.
                     </div>
                 </div>
                 <div className="sm:w-1/2 flex content-center">
