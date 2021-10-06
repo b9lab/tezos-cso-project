@@ -18,7 +18,6 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     env: 
-      MOUNT_POINT: ${{GITHUB_WORKSPACE}}
       EMAIL_FROM: ${{secrets.EMAIL_FROM}}
       EMAIL_SERVER_PORT: ${{secrets.EMAIL_SERVER_PORT}}
       EMAIL_SERVER_HOST: ${{secrets.EMAIL_SERVER_HOST}}
@@ -33,10 +32,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
       - name: Verify mount directory
-        run: echo "$MOUNT_POINT"
+        run: echo "$GITHUB_WORKSPACE"
 
-      # Runs a set of commands using the runners shell
       - name: Run stack
         run: cd docker && sh ./run-stack.sh
+        env:
+          MOUNT_POINT: ${{GITHUB_WORKSPACE}}
