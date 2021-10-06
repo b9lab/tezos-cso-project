@@ -32,10 +32,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Verify mount directory
-        run: echo "$GITHUB_WORKSPACE"
+      - name: Set mount directory env
+        run: echo "MOUNT_POINT=$(echo $GITHUB_WORKSPACE)" >> $GITHUB_ENV
 
       - name: Run stack
         run: cd docker && sh ./run-stack.sh
-        env:
-          MOUNT_POINT: ${{env.GITHUB_WORKSPACE}}
