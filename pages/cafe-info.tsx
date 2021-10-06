@@ -22,7 +22,7 @@ export default function CafeInfo() {
                     This frees the funding mechanism of market psychological group dynamics usually present in investor-driven funding: Investors tend to “wait and see” how others engage in an investment opportunity before investing, but in a CAFE, companies can better incentivise stakeholders that take the risk of investing early on.
                 </div>
                 <div className="mt-4">
-                    A <span className="font-semibold">(CAFE)</span> is a <span className="font-bold">particular use case of a Programmable Equity (PEQ) funding mechanism</span> envisioned to bring:
+                    A <span className="font-semibold">(CAFE)</span> is a <span className="font-bold">particular use case of a programmable equity (PEQ) funding mechanism</span> envisioned to bring:
                 </div>
                 <div>
                     <ul>
