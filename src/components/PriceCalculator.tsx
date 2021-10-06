@@ -4,13 +4,16 @@ import { TransactionType } from "../utils/dtos";
 import { useDebounce } from "../utils/hooks";
 import TezAmount from "./TezAmount";
 
-type PriceCalculatorProp = {
+export type PriceCalculatorProp = {
     dataHandler: DataHandler,
     amount: string,
     type: TransactionType
 }
 
-function PriceCalculator(props: PriceCalculatorProp) {
+/**
+ * Calculate and shows the price for the requested tokens (on both fund and withdraw)
+ */
+export default function PriceCalculator(props: PriceCalculatorProp) {
     const [price, setPrice] = useState<number>(0);
 
     const debouncedAmount: string = useDebounce<string>(props.amount == '' ? '0' : props.amount, 500);
@@ -39,5 +42,3 @@ function PriceCalculator(props: PriceCalculatorProp) {
         </div>
     );
 }
-
-export default PriceCalculator;

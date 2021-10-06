@@ -18,17 +18,17 @@ import ConfirmAddressModal from "../src/components/ConfirmAddressModal";
 import PriceCalculator from "../src/components/PriceCalculator";
 
 enum ModalState {
-    FUND,
-    WITHDRAW,
-    CLOSED
+    FUND, // fund modal page opened
+    WITHDRAW, // withdraw modal page opened
+    CLOSED // modal closed
 }
 
 enum TransactionState {
-    DRAFT,
-    SUCCESS,
-    ERROR,
-    TIMEOUT,
-    PENDING
+    DRAFT, // initial state, indicates a work in progress transaction
+    SUCCESS, // transaction performed and confirmed
+    ERROR, // an error occurred
+    TIMEOUT, // the transaction isn't confirmed yet
+    PENDING // transaction performed but not confirmed yet
 }
 
 function ProcessingButton() {
@@ -133,7 +133,7 @@ function FundPage(props: FundPageProp) {
 
             const tezAmount = await props.dataHandler.getPrice(parseFloat(amount), TransactionType.Funding);
 
-            const fundAmount = tezAmount / TEZ_DISPLAY_MULTIPLIER;
+            const fundAmount = tezAmount / TEZ_DISPLAY_MULTIPLIER * FUND_MULTIPLIER;
             
             const fundDto: FundDto = {
                 amount: fundAmount,
@@ -337,6 +337,9 @@ function TransactionModal(props: TransactionModalProp) {
     );
 }
 
+/**
+ * Buy and Sell page
+ */
 export default function FundWithdraw() {
     const [modalState, setModalState] = useState<ModalState>(ModalState.CLOSED);
     const dataHandler = new DataHandler();

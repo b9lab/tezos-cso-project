@@ -1,6 +1,9 @@
 import { SITE_NAME } from '../src/constants';
 import CtaCard from "../src/components/CtaCard";
 
+/**
+ * Home page
+ */
 export default function Home() {
     return (
         <div className="pb-8 home">

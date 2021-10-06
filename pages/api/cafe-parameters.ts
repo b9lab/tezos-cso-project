@@ -2,6 +2,9 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import DataHandler from '../../src/services/DataHandler';
 import { CafeInfoDto } from '../../src/utils/dtos';
 
+/**
+ * Get CAFE parameters API
+ */
 export default async function cafeParametersHandler(
   req: NextApiRequest,
   res: NextApiResponse<CafeInfoDto>

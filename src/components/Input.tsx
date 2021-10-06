@@ -1,13 +1,16 @@
-type InputProps = {
+export type InputProps = {
     value: string,
     placeholder?: string,
     readOnly?: boolean,
     handler?: any,
     label?: string,
     pattern?: string
-};
+}
 
-function Input(props: InputProps) {
+/**
+ * Base input wrapper
+ */
+export default function Input(props: InputProps) {
     var classes: string = "p-2 my-2 w-full border border-dark-gray rounded ";
     if (props.readOnly) classes += "text-gray-500 cursor-not-allowed focus:outline-none";
 
@@ -27,5 +30,3 @@ function Input(props: InputProps) {
         </div>
     );
 }
-
-export default Input;

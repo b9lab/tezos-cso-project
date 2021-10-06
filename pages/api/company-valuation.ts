@@ -2,6 +2,9 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import DataHandler from '../../src/services/DataHandler';
 import { CompanyValuationDto } from '../../src/utils/dtos';
 
+/**
+ * Get company valuation API
+ */
 export default async function companyValuationHandler(
   req: NextApiRequest,
   res: NextApiResponse<CompanyValuationDto>

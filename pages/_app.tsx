@@ -6,7 +6,10 @@ import Auth from '../src/components/Auth';
 
 const fetcher = (input: RequestInfo, init: RequestInit) => fetch(input, init).then(res => res.json()).catch(console.error);
 
-function App(props: AppProps) {
+/**
+ * Main application
+ */
+export default function App(props: AppProps) {
   const Component: any = props.Component;
   const pageProps = props.pageProps;
 
@@ -22,5 +25,3 @@ function App(props: AppProps) {
     </SWRConfig>
   );
 }
-
-export default App;

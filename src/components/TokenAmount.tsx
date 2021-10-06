@@ -1,10 +1,13 @@
-type TokenAmountProps = {
+export type TokenAmountProps = {
     amount: number,
     size?: string,
     nostyle?: boolean
-};
+}
 
-function TokenAmount(props: TokenAmountProps) {
+/**
+ * Formats a given token amount
+ */
+export default function TokenAmount(props: TokenAmountProps) {
     return (
         <span className="token-amount">
             <span className="amount">{ props.amount ?? 0 }</span>
@@ -12,5 +15,3 @@ function TokenAmount(props: TokenAmountProps) {
         </span>
     );
 }
-
-export default TokenAmount;

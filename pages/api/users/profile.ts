@@ -4,7 +4,7 @@ import authMiddleware from '../../../src/middlewares/auth';
 import User from '../../../src/models/User';
 import UserHandler from '../../../src/services/UserHandler';
 
-interface ProfileDto {
+export interface ProfileDto {
     id: number,
     email: string,
     name: string | null,
@@ -12,12 +12,15 @@ interface ProfileDto {
     address: string | null
 }
 
-interface UpdateProfileDto {
+export interface UpdateProfileDto {
     name: string | null,
     country: string | null,
     address: string | null
 }
 
+/**
+ * GET/PUT/DELETE user API
+ */
 export default async function profileHandler(
   req: NextApiRequest,
   res: NextApiResponse<ProfileDto>

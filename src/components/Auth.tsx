@@ -3,11 +3,14 @@ import React from "react";
 import useSWR from 'swr';
 import { SESSION_API_ENDPOINT } from '../constants';
 
-type AuthProps = {
+export type AuthProps = {
     children: any,
     callbackUrl: string | undefined
-};
+}
 
+/**
+ * If not logged in redirects to the signin page
+ */
 export default function Auth(props: AuthProps) {
     const { data, error } = useSWR(SESSION_API_ENDPOINT);
       
@@ -38,6 +41,9 @@ export type AuthContextData = {
     country: string
 }
 
+/**
+ * Common context to easily access to the username, address and country of the user
+ */
 export const AuthContext = React.createContext<AuthContextData>({
     username: "",
     address: "",

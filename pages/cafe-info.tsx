@@ -1,6 +1,9 @@
 import ImageWrapper from "../src/components/ImageWrapper";
 import priceImage from "../public/price-change.png";
 
+/**
+ * Continuous Agreement for Future Equity page
+ */
 export default function CafeInfo() {
     return (
         <div className="pb-8">
