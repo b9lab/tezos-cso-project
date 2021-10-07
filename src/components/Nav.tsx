@@ -32,7 +32,7 @@ export default function Nav(props: NavProps) {
     const desktopNavItemMap = (item: NavItem, index: number) => {
         let classes = "inline-block relative cursor-pointer p-6 pl-8 pr-8 ";
         if (!item.custom) classes += "hover-trigger ";
-        if (item.position && item.position == NAV_ITEM_POSITION.RIGHT) classes += "float-right m-auto ";
+        if (item.position && item.position == NAV_ITEM_POSITION.RIGHT) classes += "lg:float-right m-auto ";
         classes += (item.url == router.pathname) ? "text-accent-1 " : "text-dark-gray ";
 
         return (

@@ -86,6 +86,11 @@ export const NAV_ITEMS: Array<NavItem> = [
         ]
     },
     {
+        name: "Run your own",
+        url: "/run-your-own",
+        visibility: NAV_ITEM_VISIBILITY.PUBLIC
+    },
+    {
         name: "Sign in",
         url: "/api/auth/signin",
         visibility: NAV_ITEM_VISIBILITY.ANONYMOUS,
