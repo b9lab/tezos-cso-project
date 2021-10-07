@@ -1,5 +1,8 @@
 import { SITE_NAME } from '../src/constants';
+import ImageWrapper from "../src/components/ImageWrapper";
 import CtaCard from "../src/components/CtaCard";
+import organigramImage from '../public/organigram.png';
+import pricesCurveImage from '../public/organigram.png';
 
 export default function Home() {
     return (
@@ -28,7 +31,8 @@ export default function Home() {
                     The purpose of this project is to showcase an implementation of a full platform which interacts with the Tezos blockchain. TZMINT is an educational project for developers who want to <span className="font-bold">learn how to develop Tezos applications</span> leveraging the ecosystem stack. This platform is an example implementation; you can find more information on how the project was developed and implemented on the <a className="font-family-body" href="http://tezos.b9lab.com/cso-project" target="_blank" rel="noreferrer"> Tezos Developer Platform</a>.
                 </div>
                 <div className="mt-4">
-                    You can test the example application without having to know much about the inner workings of Tezos. For an introduction to Tezos and developing with the Tezos stack, please see <a className="font-family-body" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer">B9lab's Tezos Developer Platform</a>. This illustration of a programmable equity implementation on Tezos gives blockchain developers an example of such an application on Tezos.
+                    You can test the example application without having to know much about the inner workings of Tezos. For an introduction to Tezos and developing with the Tezos stack, please see <a className="font-family-body" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer">B9lab&apos;s Tezos Developer Platform</a>. This illustration of a programmable equity implementation on Tezos gives blockchain developers an example of such an application on Tezos.
+                </div>
                 <div className="mt-4">
                     Due to the educational aim of this platform, some steps that go beyond the scope of a blockchain and would add complexity have been omitted 
                     (e.g. a full KYC process and CDD checks), while some features have been added to specifically demonstrate their implementation.
@@ -40,7 +44,7 @@ export default function Home() {
                 </div>
                 */}
                 <div className="w-full flex flex-wrap justify-between">
---> Include 1 CTA: "Ready to dive into the specifics of developing a programmable equity implementation on Tezos with the ecosystem stack? Take a look at this <a className="font-family-body" href="http://tezos.b9lab.com/cso-project" target="_blank" rel="noreferrer">section</a> on B9lab's Tezos Developer Platform."
+{/* Include 1 CTA: "Ready to dive into the specifics of developing a programmable equity implementation on Tezos with the ecosystem stack? Take a look at this <a className="font-family-body" href="http://tezos.b9lab.com/cso-project" target="_blank" rel="noreferrer">section</a> on B9lab's Tezos Developer Platform. */}
                     <CtaCard href="/cafe-info" text="How it works &#8594;" title="Concepts, formulas and code" classes="sm:pr-2"/>
                     <CtaCard href="/get-started" text="Try it Out TZMINT &#8594;" title="Invest now - 3 minutes quickstart" classes="sm:pl-2"/>
                 </div>
@@ -60,11 +64,11 @@ export default function Home() {
                     number of tokens issued. The token is backed by the amount initially allocated to the reserve and the company’s future revenue.
                 </div>
                 <div className="mt-4">
-                    To better understand the new financing instrument and its mechanisms implemented in this project, let's first explore what programmable equity is.
+                    To better understand the new financing instrument and its mechanisms implemented in this project, let&apos;s first explore what programmable equity is.
                 </div>
             </div>
 
---> Include 1 CTA: "Already know all about programmable equity offerings? Feel free to skip this part and take a look at the specific implementation of a PEQ offering, a <a className="font-family-body" href="https://tzmint.b9lab.com/cafe-info" target="_blank" rel="noreferrer">continuous agreement for future equity (CAFE)</a>."
+{/* Include 1 CTA: "Already know all about programmable equity offerings? Feel free to skip this part and take a look at the specific implementation of a PEQ offering, a <a className="font-family-body" href="https://tzmint.b9lab.com/cafe-info" target="_blank" rel="noreferrer">continuous agreement for future equity (CAFE)</a>. */}
             
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">
@@ -95,6 +99,7 @@ export default function Home() {
                     <div className="mt-4">
                         The MFG increases protection for investors and the issuing organization: It assures investors that as long as the MFG is not met, for example, if it does not attract many investors, they can withdraw their investment and get 100% of it back. 
                         Moreover, early investors get a fixed price for tokens, which creates a threshold under which the price for a token will not fall. The MFG also protects the issuing organization by providing great flexibility; as long as the MFG is not met, the organization can cancel the offering.
+                    </div>
                     <div className="mt-4">                         
                         Additionally, the continuous organization determines the terms of the programmable equity offering by setting the percentage of the annual 
                         revenue committed to going into the reserve. The higher the allocated percentage the less risky it is for investors, as the reserve ensures that the company issuing the offering has the financial means to buy back tokens from investors while the offering is active and when the time for termination comes.
@@ -131,7 +136,8 @@ export default function Home() {
                         and another portion is transferred to the continuous organization, the beneficiary of the programmable equity offering.
                     </div>
                     <div className="mt-4">
-                        Why do we need a reserve? The reserve can be understood as the counterparty of an investor transaction to buy or sell the offering's tokens. It has to hold enough to buy tokens back anytime, especially when the offering is terminated and all tokens are bought back from the investors. For this reason, the tokens do not represent a claim on the organization's ownership, but instead is a representation of a financial claim against the reserve and the organization's future revenues. 
+                        Why do we need a reserve? The reserve can be understood as the counterparty of an investor transaction to buy or sell the offering&apos;s tokens. It has to hold enough to buy tokens back anytime, especially when the offering is terminated and all tokens are bought back from the investors. For this reason, the tokens do not represent a claim on the organization&apos;s ownership, but instead is a representation of a financial claim against the reserve and the organization&apos;s future revenues. 
+                    </div>
                     <div className="mt-4">     
                         The bonding curve consists of two functions, one to determine the buy curve and one for the sell curve. The bonding curve acts as an automated market maker to allow for the instantaneously buy and sell of tokens.
                         Now, investors can no longer withdraw their funds, but sell their tokens at a calculated price. While the MFG is not met, all funds are escrowed. Thus, investors can withdraw their investment and receive all of it back. As soon as the bonding curve begins, investors can only sell their tokens for the current price.
@@ -183,7 +189,7 @@ export default function Home() {
                     <span className="font-semibold">The biggest benefit of PEQ offerings is the value proposition of tokens: As tokens represent a claim on the reserve, and indirectly future revenue, the token has an intrinsic value tied to the reserve.</span>
                 </div>
             </div>
---> Include 1 CTA: "Ready to dive right in? <a className="font-family-body" href="https://tzmint.b9lab.com/cafe-info" target="_blank" rel="noreferrer">Next page</a>"
+{/* Include 1 CTA: "Ready to dive right in? <a className="font-family-body" href="https://tzmint.b9lab.com/cafe-info" target="_blank" rel="noreferrer">Next page</a>" */}
 
         </div>
     );

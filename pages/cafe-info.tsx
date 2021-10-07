@@ -59,7 +59,7 @@ export default function CafeInfo() {
                 </h2>
                 <div className="mt-4">
                     Once the MFG is met the bonding curve begins its work. The smart contract issues tokens, which represent a financial right (claim) on the cash reserve. 
-                    This reserve is managed by the smart contract and reflects the organization's revenues. 
+                    This reserve is managed by the smart contract and reflects the organization&apos;s revenues. 
                     So to say, the token represents a claim on the revenue of the organization.
                 </div>
                 <div className="mt-4">
@@ -67,6 +67,7 @@ export default function CafeInfo() {
                     In addition, the revenue begins to drive the price of the token.
                     This mechanism creates a clear incentive for investors to hold tokens until the organization begins generating revenues and the price begins to rise.
                 </div>
+            </div>
 
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">Determining the price for the CAFE token</h2>
@@ -89,8 +90,8 @@ export default function CafeInfo() {
                 <h2 className="mb-8 highlight">A fixed target equity percentage allocation and fixed dilution</h2>
                 <div className="indent">
                     CAFEs have a <span className="font-semibold">fixed target equity percentage allocation</span>, because of to the percentage dedicated to the reserve, ensuring fixed dilution. 
-                    Unlike when a company issues additional stock shares, the issuance of tokens and their value is fixed by the parameters of the CAFE's smart contract and the value investors hold is not reduced by the issuance of additional "shares" (tokens) as long as they hold their tokens up to the termination of the offering.
-                    In a CAFE, investors' risk is reduced as dilution is fixed and pre-determined. The organization can seek further equity without additional share issuance negatively affecting the value current investors hold. There is no dilution from equity financing.
+                    Unlike when a company issues additional stock shares, the issuance of tokens and their value is fixed by the parameters of the CAFE&apos;s smart contract and the value investors hold is not reduced by the issuance of additional &quot;shares&quot; (tokens) as long as they hold their tokens up to the termination of the offering.
+                    In a CAFE, investors&apos; risk is reduced as dilution is fixed and pre-determined. The organization can seek further equity without additional share issuance negatively affecting the value current investors hold. There is no dilution from equity financing.
                 </div>
                 <div className="mt-4">
                     A fixed equity allocation helps founders maintain long-term control, as the claim bound to the token does not grant any governance rights, i.e. the token represents a non-voting share of future equity.
