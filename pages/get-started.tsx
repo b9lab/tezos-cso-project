@@ -20,12 +20,16 @@ export default function GetStarted() {
             
             <div className="pt-8 px-8">
                 <div className="indent">
-                    Invest in TZMINT now! Three quick steps to get your Tokens:
+                    Invest in TZMINT now! Three quick steps to get your TZM tokens:
                     <ul className="list-disc ml-8">
                         <li>Sign in with your e-mail.</li>
                         <li>Setup and connect your wallet with tez.</li>
                         <li>Invest in TZMINT.</li>
                     </ul>
+                </div>
+                <div className="mt-4">
+                The following step-by-step get started instructions help you set up everything you need to buy and sell TZM tokens on this platform.  
+                <span className="font-bold">These tokens do not represent claims to a real investment but are only issued as part of an educational project. They do not hold any value.</span>
                 </div>
             </div>
 
@@ -63,7 +67,7 @@ export default function GetStarted() {
                     Connecting my wallet
                 </h2>
                 <div>
-                    As soon as you are logged in, the platform will ask you to connect your wallet. While you have not connected a wallet, everytime you navigate to the <span className="font-semibold italic">Profile</span> section a pop-up will appear asking you to select your preferred wallet.
+                    As soon as you are logged in, the platform will ask you to connect your wallet. While you have not connected a wallet, every time you navigate to the <span className="font-semibold italic">Profile</span> section a pop-up will appear asking you to select your preferred wallet.
                 </div>
                 <div className="mt-4">
                     You have to decide whether you want to pair your wallet on the same device or another device.
