@@ -22,10 +22,10 @@ export default function CafeInfo() {
                 </div>
                 <div className="mt-4">
                     Continuous agreements for future equity offer the opportunity to conduct <span className="font-semibold">scalable high-resolution fundraising</span>, while also offering different prices to different investors depending on when the investment is done. <br/>
-                    This frees the funding mechanism of market psychological group dynamics usually present in investor-driven funding: Investors tend to “wait and see” how others engage in an investment opportunity before investing, but in a CAFE, companies can better incentivise stakeholders that take the risk of investing early on.
+                    This frees the financing mechanism of market psychological group dynamics usually present in investor-driven funding: Investors tend to “wait and see” how others engage in an investment opportunity before investing, but in a CAFE, companies can better incentivise stakeholders that take the risk of investing early on.
                 </div>
                 <div className="mt-4">
-                    A <span className="font-semibold">CAFE</span> is a <span className="font-bold">particular use case of a programmable equity (PEQ) funding mechanism</span> envisioned to bring:
+                    A <span className="font-semibold">CAFE</span> is a <span className="font-bold">particular use case of a programmable equity (PEQ) financing mechanism</span> envisioned to bring:
                 </div>
                 <div>
                     <ul>
@@ -66,7 +66,7 @@ export default function CafeInfo() {
                     So to say, the token represents a claim on the revenue of the organization.
                 </div>
                 <div className="mt-4">
-                    When the organization begins to generate revenues, part of the revenues goes into the buyback reserve. 
+                    When the organization begins to generate revenue, part of the revenue goes into the buyback reserve. 
                     In addition, the revenue begins to drive the price of the token.
                     This mechanism creates a clear incentive for investors to hold tokens until the organization begins generating revenues and the price begins to rise.
                 </div>

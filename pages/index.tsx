@@ -163,7 +163,7 @@ export default function Home() {
                     New fundraising method - How is a PEQ offering different from an ICO?
                 </h2>
                 <div className="indent">
-                    With blockchain technology many <span className="font-semibold">new funding mechanisms</span> were explored. A colorful parade of acronyms followed - ICOs, IEOs, STOs, SAFTs, ... <br/>
+                    With blockchain technology many <span className="font-semibold">new financing mechanisms</span> were explored. A colorful parade of acronyms followed - ICOs, IEOs, STOs, SAFTs, ... <br/>
                     <span className="font-semibold">Initial Coin Offerings</span> (ICOs) became a very popular method for blockchain projects to raise high amounts of capital. This led to a boom of such offerings. With the boom came disillusionment and disenchantment: With an increased number of ICOs came the realisation that many ICO tokens did not represent much worth. Thus, leading to no value in open markets, i.e. secondary markets.
                 </div>
                 <div className="mt-4">
