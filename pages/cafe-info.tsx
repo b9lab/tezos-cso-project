@@ -17,7 +17,7 @@ export default function CafeInfo() {
 
             <div className="mt-6 px-8">
                 <div>
-                    A continuous agreement for future equity (CAFE) is an alternative to convertible notes and fixed-size equity rounds. Traditional fixed-size equity rounds take time especially start-ups often do not have as they need fast cash flows to continue growing and developing projects. 
+                    A continuous agreement for future equity (CAFE) is an alternative to convertible notes and fixed-size equity rounds. Traditional fixed-size equity rounds take time especially start-ups often do not have, as they need fast cash flows to continue growing and developing projects. 
                     At the same time, a CAFE makes a company’s equity programmable through a digitally automatable and scalable mechanism.
                 </div>
                 <div className="mt-4">
@@ -25,7 +25,7 @@ export default function CafeInfo() {
                     This frees the funding mechanism of market psychological group dynamics usually present in investor-driven funding: Investors tend to “wait and see” how others engage in an investment opportunity before investing, but in a CAFE, companies can better incentivise stakeholders that take the risk of investing early on.
                 </div>
                 <div className="mt-4">
-                    A <span className="font-semibold">(CAFE)</span> is a <span className="font-bold">particular use case of a programmable equity (PEQ) funding mechanism</span> envisioned to bring:
+                    A <span className="font-semibold">CAFE</span> is a <span className="font-bold">particular use case of a programmable equity (PEQ) funding mechanism</span> envisioned to bring:
                 </div>
                 <div>
                     <ul>
@@ -35,7 +35,7 @@ export default function CafeInfo() {
                     </ul>
                 </div>
                 <div>
-                    Through it, a company can financially align stakeholder interests with the success of a company.
+                    Through a CAFE, a company can financially align stakeholder interests with the success of a company.
                 </div>
             </div>
 
@@ -45,13 +45,13 @@ export default function CafeInfo() {
                 </h2>
                 <div>
                     <ol>
-                        <li>During <span className="font-semibold">initialisation</span> a company deploys a smart contract, sets a minimum funding goal, values the company, and creates the reserve with a set percentage of revenue being allocated to it.</li>
+                        <li>During <span className="font-semibold">initialisation</span> a company deploys a smart contract, sets a minimum funding goal (MFG), values the company, and creates the reserve with a set percentage of revenue being allocated to it.</li>
                         <li>While the <span className="font-semibold">offering runs</span>, tokens are issued/minted proportionally to the amount held in the reserve. Token holders (the investors) can buy and sell their tokens for market prices, as well as sell them directly to the reserve, i.e. redeem them by letting the reserve buy them back while the offering is active (not terminated).</li>
                         <li>When the <span className="font-semibold">offering ends</span>, all tokens in circulation are bought back by the company, similar to a traditional buyback.</li>
                     </ol>
                 </div>
                 <div className="indent">
-                    A CAFE is initialised after the organization sets a minimum funding goal (MFG), after which the price function is determined by a bonding curve. While the MFG is not met, all investors can buy tokens at the same price, the funds are escrowed, and investors can withdraw their investment. 
+                    A CAFE is initialised after the organization sets a MFG, after which the price function is determined by a bonding curve. While the MFG is not met, all investors can buy tokens at the same price, the funds are escrowed, and investors can withdraw their investment. 
                     As soon as the MFG is met and the bonding curve takes over, the funds are split, some sent to the cash reserve and the rest going to the organization.
                 </div>
             </div>

@@ -19,8 +19,7 @@ export default function Home() {
 
             <div className="pt-8 px-8">
                 <div className="indent">
-                    This platform is an example project, which is part of the educational course on the 
-                    <a className="font-family-body" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer">Tezos Developer Platform</a>. 
+                    This platform is an example project, which is part of the educational course on the <a className="font-family-body" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer">Tezos Developer Platform</a>. 
                     There is <span className="text-highlight">no real investment or company</span> involved. Instead, all transactions displayed are performed on a testnet, 
                     <span className="font-bold"> the Granada testnet</span>.
                 </div>
@@ -105,7 +104,7 @@ export default function Home() {
                     </div>
                     <div className="mt-4">                         
                         Additionally, the continuous organization determines the terms of the programmable equity offering by setting the percentage of the annual 
-                        revenue committed to going into the reserve. The higher the allocated percentage the less risky it is for investors, as the reserve ensures that the company issuing the offering has the financial means to buy back tokens from investors while the offering is active and when the time for termination comes.
+                        revenue committed to the reserve. The higher the allocated percentage the less risky it is for investors, as the reserve ensures that the company issuing the offering has the financial means to buy back tokens from investors while the offering is active and when the time for termination comes.
                     </div>
                     <div className="mt-4">                        
                         Once the terms are set, tokens are issued proportionally to the amount of money invested.
@@ -122,8 +121,8 @@ export default function Home() {
                     During this period, the funds of every investment are escrowed by the DAT.
                 </div>
                 <div className="mt-4">
-                    The programmable equity offering can run indefinitely or have a set minimum period running time, which is defined in the DAT. 
-                    The minimum period of time can be increased by the continuous organization.
+                    The programmable equity offering can run indefinitely or have a set minimum running time, which is defined in the DAT. 
+                    The running time can be increased by the continuous organization.
                 </div>
                 <div className="mt-4">
                     The continuous organization can cancel the programmable equity offering while the MFG is not met. In case of cancellation, all investors can withdraw their complete investment. 
@@ -142,11 +141,13 @@ export default function Home() {
                         Why do we need a reserve? The reserve can be understood as the counterparty of an investor transaction to buy or sell the offering&apos;s tokens. It has to hold enough to buy tokens back anytime, especially when the offering is terminated and all tokens are bought back from the investors. For this reason, the tokens do not represent a claim on the organization&apos;s ownership, but instead is a representation of a financial claim against the reserve and the organization&apos;s future revenues. 
                     </div>
                     <div className="mt-4">     
-                        The bonding curve consists of two functions, one to determine the buy curve and one for the sell curve. The bonding curve acts as an automated market maker to allow for the instantaneously buy and sell of tokens.
-                        Now, investors can no longer withdraw their funds, but sell their tokens at a calculated price. While the MFG is not met, all funds are escrowed. Thus, investors can withdraw their investment and receive all of it back. As soon as the bonding curve begins, investors can only sell their tokens for the current price.
+                        The bonding curve consists of two functions, one to determine the buy curve and one for the sell curve. The bonding curve acts as an automated market maker to allow for an instant buy and sell of tokens.
                     </div>
                     <div className="mt-4">
-                        Once the MFG is met the offering can no longer be cancelled and remains active as long as was defined previously.
+                        Now, investors can no longer withdraw their funds, but instead sell their tokens at a calculated price. While the MFG is not met, all funds are escrowed. Thus, investors can withdraw their investment and receive all of it back. As soon as the bonding curve begins, investors can only sell their tokens for the current price.
+                    </div>
+                    <div className="mt-4">
+                        Once the MFG is met, the offering can no longer be cancelled and remains active as defined by the minimum running time of the offering.
                     </div>
                     <div className="mt-4">
                         When the programmable equity offering ends, all outstanding tokens are bought back by the continuous organization through an exit fee transfer to the reserve.
@@ -185,9 +186,9 @@ export default function Home() {
                     </ul>
                 </div>
                 <div className="mt-4">
-                    A revenue-focused approach based on a company’s future shares aligns stakeholder interests, allows for greater investor accessibility and protects investors more due to the algorithmically tie between the token and company’s 
-                    revenues and the reserve-backing, while also maintaining founders’ ownership and opening up new liquidity. In addition, PEQ offerings have a stronger regulatory stance as they are no equity investment.
-                </div>  
+                    A revenue-focused approach based on a company’s future shares aligns stakeholder interests, allows for greater investor accessibility and protects investors more because of the algorithmical ties between the token and company’s 
+                    revenues and the reserve-backing, while also maintaining founders’ ownership and opening up new liquidity. In addition, PEQ offerings have a stronger regulatory stance as they are no equity investments.
+                </div>
                 <div className="mt-4">                  
                     <span className="font-semibold">The biggest benefit of PEQ offerings is the value proposition of tokens: As tokens represent a claim on the reserve, and indirectly future revenue, the token has an intrinsic value tied to the reserve.</span>
                 </div>
