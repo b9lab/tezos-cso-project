@@ -1,4 +1,5 @@
 import { MutableRefObject, useEffect, useRef, useState } from "react";
+import $ from 'jquery';
 
 /**
  * Helps to fetch data on client-side
@@ -83,4 +84,24 @@ export function useDebounce<T>(value: T, delay: number): T {
     }, [value, delay]);
 
     return debouncedValue;
+}
+
+export function useGlossarizer(dep: any) {
+    useEffect(() => {
+        // @ts-ignore
+        window.jQuery = $;
+        // @ts-ignore
+        window.Glossarizer = require('glossarizer/jquery.glossarize.js');
+        // @ts-ignore
+        window.Tooltip = require('../../public/tooltip/tooltip.js');
+        // @ts-ignore
+        $('.content').glossarizer({
+            sourceURL: '../../glossary.json',
+            callback: function() {
+                // Callback fired after glossarizer finishes its job
+                // @ts-ignore
+                new tooltip()
+            }
+        })
+    }, [dep]);
 }

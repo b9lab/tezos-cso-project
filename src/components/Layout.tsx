@@ -16,7 +16,7 @@ export default function Layout(props: LayoutProps) {
             <Head/>
             <Header/>
             <main className="bg-white">
-                <div className="max-w-screen-lg m-auto">
+                <div className="max-w-screen-lg m-auto content">
                     {props.children}
                 </div>
             </main>
