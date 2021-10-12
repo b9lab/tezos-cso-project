@@ -27,9 +27,9 @@ export default function PersonalInvestmentInfo() {
             <div className="p-8">
                 <PriceBadge value={data?.tokenBuyPrice}/>
                 <h1>My Investment</h1>
-                <div className="mt-2">
+                <p className="mt-2">
                     Here you can find an overview of your investment in the continuous agreement for future equity.
-                </div>
+                </p>
                 <h2 className="mt-8 highlight">Portfolio overview</h2>
                 <div className="flex flex-wrap justify-between">
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">

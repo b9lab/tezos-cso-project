@@ -22,9 +22,9 @@ export default function CafeDetails(props: CafeDetailsProps) {
 
             <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
                 <h1 className="mb-8">Parameters of the Continuous Agreement</h1>
-                <div className="body-text-large italic">
+                <p className="body-text-large italic">
                     Here you can find an overview of the continuous agreement&apos;s parameters
-                </div>
+                </p>
             </div>
 
             <div className="mt-6 w-full m-auto sm:w-2/3 flex flex-col bg-white shadow-2xl rounded px-4 py-6">

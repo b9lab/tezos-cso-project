@@ -97,6 +97,7 @@ export function useGlossarizer(dep: any) {
         // @ts-ignore
         $('.content').glossarizer({
             sourceURL: '../../glossary.json',
+            lookupTagName: 'p, ul, ol',
             callback: function() {
                 // Callback fired after glossarizer finishes its job
                 // @ts-ignore

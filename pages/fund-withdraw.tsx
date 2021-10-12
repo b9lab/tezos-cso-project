@@ -351,9 +351,9 @@ export default function FundWithdraw() {
         <>
             <div className="p-8">
                 <h1>Buy and Sell TZM</h1>
-                <div className="mt-2">
+                <p className="mt-2">
                     Here you can buy or sell CAFE tokens for tez.
-                </div>
+                </p>
                 <h2 className="mt-8 highlight">Token information</h2>
                 <div className="flex flex-wrap justify-between">
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
