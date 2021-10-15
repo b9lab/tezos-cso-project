@@ -43,6 +43,9 @@ export default function CafeInfo() {
                 <h2 className="mb-8 highlight">
                     Steps in a CAFE
                 </h2>
+                <div className="mt-4">
+                    A CAFE can be divided into three steps: the initialisation and start until the MFG is reached, the "post-MFG" phase in which the token price is determined by bonding curve, and the termination of the CAFE.
+                </div>    
                 <div>
                     <ol>
                         <li>During <span className="font-semibold">initialisation</span> a company deploys a smart contract, sets a minimum funding goal (MFG), values the company, and creates the reserve with a set percentage of revenue being allocated to it.</li>
@@ -52,56 +55,7 @@ export default function CafeInfo() {
                 </div>
                 <div className="indent">
                     A CAFE is initialised after the organization sets a MFG, after which the price function is determined by a bonding curve. While the MFG is not met, all investors can buy tokens at the same price, the funds are escrowed, and investors can withdraw their investment. 
-                    As soon as the MFG is met and the bonding curve takes over, the funds are split, some sent to the cash reserve and the rest going to the organization.
-                </div>
-            </div>
-
-            <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">
-                    What is the reserve?
-                </h2>
-                <div className="mt-4">
-                    Once the MFG is met the bonding curve begins its work. The smart contract issues tokens, which represent a financial right (claim) on the cash reserve. 
-                    This reserve is managed by the smart contract and reflects the organization&apos;s revenues. 
-                    So to say, the token represents a claim on the revenue of the organization.
-                </div>
-                <div className="mt-4">
-                    When the organization begins to generate revenue, part of the revenue goes into the buyback reserve. 
-                    In addition, the revenue begins to drive the price of the token.
-                    This mechanism creates a clear incentive for investors to hold tokens until the organization begins generating revenues and the price begins to rise.
-                </div>
-            </div>
-
-            <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">Determining the price for the CAFE token</h2>
-                <div className="indent">
-                    Once the offering is launched, qualified investors can engage at any point of time. The <span className="font-semibold">price</span> is automated and non-negotiable.
-                </div>
-                <div className="w-full mt-8">
-                    <ImageWrapper src={priceImage} alt=""/>
-                </div>
-                <div className="mt-4">                
-                    The initial price is based on the valuation of the company. After an initial period (i.e. when the minimum funding goal is met), it is based on a function of the number of issued tokens and the number of tokens bought (i.e. the invested amount). <br/>                   
-                    The more tokens are issued, the higher the price is. The earlier you invest, the more tokens you receive; the price per token rises with increasing token amount.
-                </div>
-                <div className="mt-4">                
-                    Whereby, the <span className="font-semibold">amount of capital</span> is per se unlimited. The equity allocation of the continuous PEQ offering can be increased but never decreased.
-                </div>
-            </div>
-
-            <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">A fixed target equity percentage allocation and fixed dilution</h2>
-                <div className="indent">
-                    CAFEs have a <span className="font-semibold">fixed target equity percentage allocation</span>, because of to the percentage dedicated to the reserve, ensuring fixed dilution. 
-                    Unlike when a company issues additional stock shares, the issuance of tokens and their value is fixed by the parameters of the CAFE&apos;s smart contract and the value investors hold is not reduced by the issuance of additional &quot;shares&quot; (tokens) as long as they hold their tokens up to the termination of the offering.
-                    In a CAFE, investors&apos; risk is reduced as dilution is fixed and pre-determined. The organization can seek further equity without additional share issuance negatively affecting the value current investors hold. There is no dilution from equity financing.
-                </div>
-                <div className="mt-4">
-                    A fixed equity allocation helps founders maintain long-term control, as the claim bound to the token does not grant any governance rights, i.e. the token represents a non-voting share of future equity.
-                </div>
-                <div className="mt-4"> 
-                    Independently of how much equity a company raises in financing rounds, all investor claims remain collectively the same. For individual investors there is a certain degree of dilution as each token issued contributes to dilution, but it is predictable. 
-                    This protects stakeholders from unknown and uncalculated equity dilutions.
+                    As soon as the MFG is met and the bonding curve takes over, the funds are split, some sent to the cash reserve and the rest going to the organization issuing the CAFE.
                 </div>
             </div>
 
