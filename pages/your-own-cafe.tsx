@@ -12,7 +12,7 @@ export default function YourOwnCAFE() {
            <div className="pt-8 px-8">
                 <div className="indent">
                     There are several reasons why an organization would opt to issue a CAFE. 
-                    To better understand them, let's dive into our project's example organization.
+                    To better understand them, let&apos;s dive into our project&apos;s example organization.
                 </div>
                 <div className="mt-4">
                     TZM Inc. is a company currently valued at USD 1,000,000. It has conducted previous financing rounds with some venture capitalists that received company shares in return for their investment. 
@@ -21,6 +21,7 @@ export default function YourOwnCAFE() {
                 <div className="mt-4">
                     What expectations does the financial mechanism have to fulfil? 
                     TZM Inc. wants to:
+                </div>
                 <div>
                     <ul>
                     <li>Maintain decision-making and ownership control, i.e. does not want to link governing rights to the funding,</li>
@@ -56,6 +57,6 @@ export default function YourOwnCAFE() {
                     The percentage of funds and revenues allocated to the reserve is set at 80% to reduce the pressure of having large enough cash flows to cover the buy of tokens from investors during the offering and the buyback at termination. This percentage can of course also be lower, but this increases the risk of running out of means to finance the offering’s running and closing. The higher the percentage is the less-risk investors will associate with it, making it more attractive for risk-averse investors.
                 </div>
             </div>
-        </div
+        </div>
     );
 }

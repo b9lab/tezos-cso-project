@@ -44,7 +44,7 @@ export default function CafeInfo() {
                     Steps in a CAFE
                 </h2>
                 <div className="mt-4">
-                    A CAFE can be divided into three steps: the initialisation and start until the MFG is reached, the "post-MFG" phase in which the token price is determined by bonding curve, and the termination of the CAFE.
+                    A CAFE can be divided into three steps: the initialisation and start until the MFG is reached, the &quot;post-MFG&quot; phase in which the token price is determined by bonding curve, and the termination of the CAFE.
                 </div>    
                 <div>
                     <ol>

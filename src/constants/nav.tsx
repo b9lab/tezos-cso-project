@@ -89,7 +89,7 @@ export const NAV_ITEMS: Array<NavItem> = [
     },
     {
         name: "Run your own",
-        url: "/run-your-own",
+        url: "/your-own-cafe",
         visibility: NAV_ITEM_VISIBILITY.PUBLIC
     },
     {
