@@ -24,11 +24,13 @@ export const NAV_ITEMS: Array<NavItem> = [
         url: "/about",
         visibility: NAV_ITEM_VISIBILITY.PUBLIC,
         children: [
+        /*
             {
                 name: "Programmable Equity",
                 url: "/about",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
+        */
             {
                 name: "Continuous Agreement for Future Equity",
                 url: "/cafe-info",
