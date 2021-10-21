@@ -25,6 +25,12 @@ export default function InvestmentWhitePaper() {
                     </ul>
                 </div>
             </div>
+
+            <div className="w-full flex flex-wrap justify-between">
+                <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a CAFE with Tezos?" classes="sm:pr-2"/>
+                <CtaCard href="/get-started" text="Next page &#8594;" title="Ready to get started?" classes="sm:pl-2"/>
+            </div>
+
         </div>
     );
 }

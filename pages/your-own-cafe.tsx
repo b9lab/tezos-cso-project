@@ -56,6 +56,12 @@ export default function YourOwnCAFE() {
                     The percentage of funds and revenues allocated to the reserve is set at 80% to reduce the pressure of having large enough cash flows to cover the buy of tokens from investors during the offering and the buyback at termination. This percentage can of course also be lower, but this increases the risk of running out of means to finance the offering’s running and closing. The higher the percentage is the less-risk investors will associate with it, making it more attractive for risk-averse investors.
                 </div>
             </div>
+
+            <div className="w-full flex flex-wrap justify-between">
+                    <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a CAFE with Tezos?" classes="sm:pr-2"/>
+                    <CtaCard href="/further-resources" text="Next page &#8594;" title="Ready to continue?" classes="sm:pl-2"/>
+            </div>
+
         </div
     );
 }
