@@ -1,4 +1,6 @@
 import useSWR from "swr";
+import ImageWrapper from "../src/components/ImageWrapper";
+import priceImage from "../public/price-change.png";
 import DataHandler from "../src/services/DataHandler";
 import TezAmount from "../src/components/TezAmount";
 import { format_percentage } from "../src/helpers";
@@ -126,7 +128,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
                 </table>
             </div>
 
-             <div className="pt-12 px-8">
+            <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">Determining the price for the CAFE token</h2>
                 <div className="indent">
                     Once the offering is launched, qualified investors can engage at any point of time. The <span className="font-semibold">price</span> is automated and non-negotiable.
@@ -144,6 +146,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
                 <div className="mt-4">
                     The <span className="font-bold">buy price</span> is determined by the amount of tokens, as the buy function implements a linear relationship between the buy price and the amount of tokens. 
                     The <span className="font-bold">sell price</span> is influenced by the reserve. To control the sell price, the issuing organization can use the pay and burn functions to influence the reserve and with it control the sell price.
+                </div>
             </div>
 
             <div className="pt-12 px-8">
