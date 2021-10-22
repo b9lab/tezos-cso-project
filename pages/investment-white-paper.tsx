@@ -18,7 +18,7 @@ export default function InvestmentWhitePaper() {
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">Further Resources</h2>
                 <div className="mt-4">
-                    <ul class="list-disc list-inside">
+                    <ul className="list-disc list-inside">
                         <li>Continuous Organizations <a className="font-family-body font-semibold" href="https://github.com/C-ORG/whitepaper#annex" target="_blank" rel="noreferrer">calculation details (annex)</a></li>
                         <li>Fairmint&apos;s <a className="font-family-body font-semibold" href="https://fairmint.co/cafe-continuous-agreement-for-future-equity" target="_blank" rel="noreferrer">Continous Agreement for Future Equity</a> implementation</li>
                     </ul>
