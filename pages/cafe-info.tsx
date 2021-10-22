@@ -1,5 +1,6 @@
 import ImageWrapper from "../src/components/ImageWrapper";
 import priceImage from "../public/price-change.png";
+import CtaCard from "../src/components/CtaCard";
 
 /**
  * Continuous Agreement for Future Equity page

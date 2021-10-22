@@ -1,3 +1,5 @@
+import CtaCard from "../src/components/CtaCard";
+
 export default function YourOwnCAFE() {
     return (
         <div className="pb-8">
