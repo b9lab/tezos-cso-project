@@ -1,4 +1,6 @@
 import React from "react";
+import CtaCard from "../src/components/CtaCard";
+
 import tutorial1Image from "../public/tutorial-1.png";
 import tutorial2Image from "../public/tutorial-2.png";
 import tutorial3Image from "../public/tutorial-3.png";

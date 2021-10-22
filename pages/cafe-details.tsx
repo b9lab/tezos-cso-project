@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import ImageWrapper from "../src/components/ImageWrapper";
+import CtaCard from "../src/components/CtaCard";
 import priceImage from "../public/price-change.png";
 import DataHandler from "../src/services/DataHandler";
 import TezAmount from "../src/components/TezAmount";

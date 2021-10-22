@@ -1,6 +1,5 @@
-/**
- * Investment White Paper page
- */
+import CtaCard from "../src/components/CtaCard";
+
 export default function InvestmentWhitePaper() {
     return (
         <div className="pb-8">
