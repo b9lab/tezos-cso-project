@@ -173,7 +173,7 @@ export default function Home() {
                     Programmable equity offering tokens have similarities to ICOs: <br/>
                 </p>
                 <div>
-                    <ul>
+                    <ul class="list-disc list-inside">
                     <li><span className="font-semibold">Accessibility:</span> Similar to ICOs, the offering is accessible to everyone.</li>
                     <li><span className="font-semibold">Automation and self-management:</span> Token issuance and management relies on a smart contract, making it a mostly-automated process.</li>
                     <li><span className="font-semibold">New markets:</span> Token offerings open up new markets and with it new funding opportunities.</li>

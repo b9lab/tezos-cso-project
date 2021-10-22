@@ -25,7 +25,7 @@ export default function YourOwnCAFE() {
                     TZM Inc. wants to:
                 </div>
                 <div>
-                    <ul>
+                    <ul class="list-disc list-inside">
                     <li>Maintain decision-making and ownership control, i.e. does not want to link governing rights to the funding,</li>
                     <li>Get the funding as soon as possible because development will come to a halt soon without further investment,</li>
                     <li>Automate as much as possible the funding process,</li>
@@ -43,7 +43,7 @@ export default function YourOwnCAFE() {
                     To issue a CAFE, some questions have to be answered first:
                 </div>
                 <div>
-                    <ul>
+                    <ul class="list-disc list-inside">
                     <li>How high should the total equity allocation be? How much of it should be reserved as stakeholder allocation for existing shareholders?</li>
                     <li>How long should the CAFE run?</li>
                     <li>How high should the MFG be?</li>

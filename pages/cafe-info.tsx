@@ -29,7 +29,7 @@ export default function CafeInfo() {
                     A <span className="font-semibold">CAFE</span> is a <span className="font-bold">particular use case of a programmable equity (PEQ) financing mechanism</span> envisioned to bring:
                 </div>
                 <div>
-                    <ul>
+                    <ul class="list-disc list-inside">
                     <li>increased long-term founder control,</li>
                     <li>higher liquidity for investors and access to new markets, and</li>
                     <li>improved access to stakeholders to benefit from the financial success of a company.</li>
@@ -48,7 +48,7 @@ export default function CafeInfo() {
                     A CAFE can be divided into three steps: the initialisation and start until the MFG is reached, the &quot;post-MFG&quot; phase in which the token price is determined by bonding curve, and the termination of the CAFE.
                 </div>    
                 <div>
-                    <ol>
+                    <ol class="list-decimal list-inside">
                         <li>During <span className="font-semibold">initialisation</span> a company deploys a smart contract, sets a minimum funding goal (MFG), values the company, and creates the reserve with a set percentage of revenue being allocated to it.</li>
                         <li>While the <span className="font-semibold">offering runs</span>, tokens are issued/minted proportionally to the amount held in the reserve. Token holders (the investors) can buy and sell their tokens for market prices, as well as sell them directly to the reserve, i.e. redeem them by letting the reserve buy them back while the offering is active (not terminated).</li>
                         <li>When the <span className="font-semibold">offering ends</span>, all tokens in circulation are bought back by the company, similar to a traditional buyback.</li>
@@ -86,7 +86,7 @@ export default function CafeInfo() {
                     This is a list of helpful resources to have a peek at.
                 </p>
                 <div>
-                    <ul>
+                    <ul class="list-disc list-inside">
                     <li><a className="font-family-body font-semibold" href="https://fairmint-documents.s3.amazonaws.com/CAFE/CAFE+Template.docx" target="_blank" rel="noreferrer">Fairmint Inc.: Template for a Continuous Agreement for Future Equity</a></li>
                     <li><a className="font-family-body font-semibold" href="https://fairmint.co/cafe-continuous-agreement-for-future-equity/#what-differences-cafe-safe" target="_blank" rel="noreferrer">Fairmint Inc.: The CAFE FAQ </a></li>
                     <li><a className="font-family-body font-semibold" href="https://github.com/C-ORG/whitepaper" target="_blank" rel="noreferrer">Thibauld Favre: Continuous Organizations White Paper </a></li>
