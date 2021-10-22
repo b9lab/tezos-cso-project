@@ -39,16 +39,9 @@ export default function Home() {
                     Due to the educational aim of this platform, some steps that go beyond the scope of a blockchain and would add complexity have been omitted 
                     (e.g. a full KYC process and CDD checks), while some features have been added to specifically demonstrate their implementation.
                 </p>
-                {/*
-                <div className="mt-4">
-                    You can read more about the architecture, implementation, and feature details <a className="font-family-body font-semibold" href="https://www.google.com/" target="_blank" rel="noreferrer">here</a>, 
-                    or check out the full source code on <a className="font-family-body font-semibold" href="https://www.google.com/" target="_blank" rel="noreferrer">GitHub</a>.
-                </div>
-                */}
+
                 <div className="w-full flex flex-wrap justify-between">
-{/* Include 1 CTA: "Ready to dive into the specifics of developing a programmable equity implementation on Tezos with the ecosystem stack? Take a look at this <a className="font-family-body" href="http://tezos.b9lab.com/cso-project" target="_blank" rel="noreferrer">section</a> on B9lab's Tezos Developer Platform. */}
-                    <CtaCard href="/cafe-info" text="How it works &#8594;" title="Concepts, formulas and code" classes="sm:pr-2"/>
-                    <CtaCard href="/get-started" text="Try it Out TZMINT &#8594;" title="Invest now - 3 minutes quickstart" classes="sm:pl-2"/>
+                    <CtaCard href="https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a programmable equity implementation on Tezos with the ecosystem stack?" classes="sm:pr-2"/>
                 </div>
             </div>
 
@@ -70,7 +63,9 @@ export default function Home() {
                 </p>
             </div>
 
-{/* Include 1 CTA: "Already know all about programmable equity offerings? Feel free to skip this part and take a look at the specific implementation of a PEQ offering, a <a className="font-family-body" href="https://tzmint.b9lab.com/cafe-info" target="_blank" rel="noreferrer">continuous agreement for future equity (CAFE)</a>. */}
+            <div className="w-full flex flex-wrap justify-between">
+                <CtaCard href="/cafe-info" text="Feel free to skip this part and take a look at the specific implementation of a PEQ offering, a continuous agreement for future equity (CAFE). &#8594;" title="Already know all about programmable equity offerings?" classes="sm:pr-2"/>
+            </div>
             
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">
@@ -193,7 +188,10 @@ export default function Home() {
                     <span className="font-semibold">The biggest benefit of PEQ offerings is the value proposition of tokens: As tokens represent a claim on the reserve, and indirectly future revenue, the token has an intrinsic value tied to the reserve.</span>
                 </div>
             </div>
-{/* Include 1 CTA: "Ready to dive right in? <a className="font-family-body" href="https://tzmint.b9lab.com/cafe-info" target="_blank" rel="noreferrer">Next page</a>" */}
+
+            <div className="w-full flex flex-wrap justify-between">
+                <CtaCard href="/cafe-info" text="Next page &#8594;" title="Ready to dive right in?" classes="sm:pr-2"/>
+            </div>
 
         </div>
     );

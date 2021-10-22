@@ -94,7 +94,7 @@ export default function GetStarted() {
                 <div className="ml-8">
                     <ol className="list-decimal">
                         <li>Install the <span className="font-semibold">Spire extension</span> for your browser. If your using Google Chrome, just go to <a className="font-family-body font-semibold" href="https://chrome.google.com/webstore/detail/spire/gpfndedineagiepkpinficbcbbgjoenn?hl=en" target="_blank" rel="noreferrer">Spire</a> and add the extension. You will receive a popup message once it is added.</li>
-                        <li>Now you have to pair your wallet, but first make sure you <span className="font-semibold">select the correct network</span>. Go to your Spire extension to the menu on the left upper corner and select <span className="font-semibold italic">Settings</span>. Under the network select <span className="font-semibold italic">Florencenet</span>.</li>
+                        <li>Now you have to pair your wallet, but first make sure you <span className="font-semibold">select the correct network</span>. Go to your Spire extension to the menu on the left upper corner and select <span className="font-semibold italic">Settings</span>. Under the network select <span className="font-semibold italic">Granadanet</span>.</li>
                         <li>To <span className="font-semibold">pair your wallet</span>, go to the <span className="font-semibold italic">Overview</span> in your Spire extension and click on <span className="font-semibold italic">Pair wallet</span>. Activate <span className="font-semibold italic">Enable Developer Mode</span> and <span className="font-semibold italic">Setup local secret</span>.</li>
                         <li>
                             In Spire, a permission request should pop up. It looks like this:
@@ -112,20 +112,20 @@ export default function GetStarted() {
                     <ImageWrapper src={tutorial2Image} alt=""/>
                 </div>
                 <p className="mt-4">
-                    As you can see, you do not have any tez (XTZ) to spend, so let’s get some Florence testnet tez!
+                    As you can see, you do not have any tez (XTZ) to spend, so let’s get some Granada testnet tez!
                 </p>
             </div>
 
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">
-                    Getting my first Florence testnet tez
+                    Getting my first Granada testnet tez
                 </h2>
                 <p>
-                    Now that you have signed in and connected your wallet, it’s time to get some Florence testnet tez!
+                    Now that you have signed in and connected your wallet, it’s time to get some Granada testnet tez!
                 </p>
                 <p className="mt-4">
                     The easiest way to get some tez is to go via the Telegram <span className="font-semibold">Faucet Bot</span>. <br/>
-                    You will need a Telegram account to use it. Also make sure you selected Florencenet and not the Mainnet. <br/>
+                    You will need a Telegram account to use it. Also make sure you selected Granadanet and not the Mainnet. <br/>
                     To use the bot, go to <a className="font-family-body font-semibold" href="https://t.me/tezos_faucet_bot" target="_blank" rel="noreferrer">Faucet Bot</a> the chat should open up. <br/>
                     Now, click on <span className="font-semibold italic">Get coins</span>. The bot will now ask you for your address. <br/>
                     Send your address and then the Faucet Bot will let you know how much tez you claimed for which testnet.
@@ -147,6 +147,12 @@ export default function GetStarted() {
                     </div>
                 </div>
             </div>
+
+            <div className="w-full flex flex-wrap justify-between">
+                <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a CAFE with Tezos?" classes="sm:pr-2"/>
+                <CtaCard href="/general-investment-info" text="Next page &#8594;" title="Want to get an overview of the CAFE offering?" classes="sm:pl-2"/>
+            </div>
+
         </div>
     );
 }

@@ -182,6 +182,12 @@ export default function CafeDetails(props: CafeDetailsProps) {
                     The reserve allows for the bonding curve to act as an automated market maker, as tokens can be bought or sold at any point in time because the reserve holds enough funds to buy tokens back.
                 </div>
             </div>
+        
+            <div className="w-full flex flex-wrap justify-between">
+                <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a CAFE with Tezos?" classes="sm:pr-2"/>
+                <CtaCard href="/your-own-cafe" text="Next page &#8594;" title="Ready to continue?" classes="sm:pl-2"/>
+            </div>
+
         </div>
     );
 }
