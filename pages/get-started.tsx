@@ -25,13 +25,14 @@ export default function GetStarted() {
                     Invest in TZMINT now! Three quick steps to get your TZM tokens:
                     <ul className="list-disc ml-8">
                         <li>Sign in with your e-mail.</li>
-                        <li>Setup and connect your wallet with tez.</li>
+                        <li>Setup and connect your wallet.</li>
+                        <li>Get your testnet tez.</li>
                         <li>Invest in TZMINT.</li>
                     </ul>
                 </p>
                 <p className="mt-4">
                     The following step-by-step get started instructions help you set up everything you need to buy and sell TZM tokens on this platform.  
-                    <span className="font-bold"> These tokens do not represent claims to a real investment but are only issued as part of an educational project. They do not hold any value.</span>
+                    <span className="font-bold"> These tokens do not represent claims to a real investment but are only issued as part of an educational project - They do not hold any value.</span>
                 </p>
             </div>
 
@@ -87,34 +88,80 @@ export default function GetStarted() {
                     <ul className="list-disc">
                         <li><a className="font-family-body font-semibold" href="https://chrome.google.com/webstore/detail/spire/gpfndedineagiepkpinficbcbbgjoenn?hl=en" target="_blank" rel="noreferrer">Spire</a> and <a className="font-family-body font-semibold" href="https://templewallet.com/" target="_blank" rel="noreferrer">Temple Wallet</a> - if you want to connect through a browser extension,</li>
                         <li><a className="font-family-body font-semibold" href="https://cryptonomic.tech/galleon.html" target="_blank" rel="noreferrer">Galleon</a>, <a className="font-family-body font-semibold" href="https://wallet.kukai.app/" target="_blank" rel="noreferrer">Kukai Wallet</a>, or <a className="font-family-body font-semibold" href="https://umamiwallet.com/" target="_blank" rel="noreferrer">Umami</a> - if you want to connect a desktop of web wallet, and</li>
-                        <li>The <a className="font-family-body font-semibold" href="https://airgap.it/" target="_blank" rel="noreferrer">AirGap Wallet</a> - if you want to connect through a mobile wallet.</li>
+                        <li><a className="font-family-body font-semibold" href="https://airgap.it/" target="_blank" rel="noreferrer">AirGap Wallet</a> - if you want to connect through a mobile wallet.</li>
                     </ul>
                 </div>
                 <p className="mt-4">
-                    In case you want to use <span className="font-semibold">Spire</span>, this is your road to success:
+                    In case you want to use the <span className="font-semibold">Temple Wallet</span>, this is your road to success:
                 </p>
                 <div className="ml-8">
                     <ol className="list-decimal">
-                        <li>Install the <span className="font-semibold">Spire extension</span> for your browser. If your using Google Chrome, just go to <a className="font-family-body font-semibold" href="https://chrome.google.com/webstore/detail/spire/gpfndedineagiepkpinficbcbbgjoenn?hl=en" target="_blank" rel="noreferrer">Spire</a> and add the extension. You will receive a popup message once it is added.</li>
-                        <li>Now you have to pair your wallet, but first make sure you <span className="font-semibold">select the correct network</span>. Go to your Spire extension to the menu on the left upper corner and select <span className="font-semibold italic">Settings</span>. Under the network select <span className="font-semibold italic">Granadanet</span>.</li>
-                        <li>To <span className="font-semibold">pair your wallet</span>, go to the <span className="font-semibold italic">Overview</span> in your Spire extension and click on <span className="font-semibold italic">Pair wallet</span>. Activate <span className="font-semibold italic">Enable Developer Mode</span> and <span className="font-semibold italic">Setup local secret</span>.</li>
-                        <li>
-                            In Spire, a permission request should pop up. It looks like this:
+                        <li>Install the <span className="font-semibold">Temple Wallet extension</span> for your browser. If your using Google Chrome, just go to the <a className="font-family-body font-semibold" href="https://chrome.google.com/webstore/detail/temple-tezos-wallet-ex-th/ookjlbkiijinhpmnjffcofjonbfbgaoc?hl=en" target="_blank" rel="noreferrer">Chrome Web Store</a> and add the extension for Temple.</li>
+                        <li>Once the extension is added, Temple will ask you whether you want to create a new a wallet - in case you do not have a wallet yet - or import your existing wallet.</li>
                             <div className="w-full mt-4">
-                                <ImageWrapper src={tutorial1Image} alt=""/>
+                                <ImageWrapper src={temple1Image} alt=""/>
+                            </div>
+                        <p className="mt-4">
+                            In case you need to create a new wallet, just click on the right-side button.
+                        </p>
+                        <p className="mt-4">
+                            It will then ask you to provide the password you would like to use, repeat it for confirmation, and accept the terms.
+                        </p>
+                            <div className="w-full mt-4">
+                                <ImageWrapper src={temple2Image} alt=""/>
+                            </div>
+                        <p className="mt-4">
+                            After clicking <span className="font-semibold italic">Create</span>, you will be directed to the backup of your seed phrase.
+                        </p>
+                            <div className="w-full mt-4">
+                                <ImageWrapper src={temple3Image} alt=""/>
+                            </div>
+                        <p className="mt-4">
+                            Save your seed phrase somewhere safe - for example, on a piece of paper. Then confirm you made a backup by ticking the box and click <span className="font-semibold italic">Continue</span>.
+                        </p>
+                        <p className="mt-4">
+                            Now, verify your seed phrase, and click <span className="font-semibold italic">Finish</span>.
+                        </p>
+                            <div className="w-full mt-4">
+                                <ImageWrapper src={temple4Image} alt=""/>
+                            </div>
+                        <p className="mt-4">
+                            You can now see an overview of your account: your account name, address, the assets you hold, etc.
+                        </p>
+                            <div className="w-full mt-4">
+                                <ImageWrapper src={temple5Image} alt=""/>
+                            </div>
+                        <li>Now you have to pair your wallet, but first make sure you <span className="font-semibold">select the correct network</span>. Go to your Temple extension. It should be set by default to the Mainnet, but you want the Granada Testnet for the purposes of this platform. Just navigate to the upper right-hand corner and click on <span className="font-semibold italic">Tezos Mainnet<span>. This opens a drop-down menu with all available networks to select from. Select <span className="font-semibold italic">Granada Testnet</span>.</li>
+                        <li>
+                            <div className="w-full mt-4">
+                                <ImageWrapper src={temple6Image} alt=""/>
                             </div>
                         </li>
-                        <li>You should now see that the <span className="font-semibold italic">Address</span> field is filled out.</li>
+                        <li>As you will need your address to pair your wallet and receive testnet token, click on <span className="font-semibold italic">Receive</span>. Your address will be displayed, and you can copy it to the clipboard to have it ready.</li>
+                        <li>
+                            <div className="w-full mt-4">
+                                <ImageWrapper src={temple7Image} alt=""/>
+                            </div>
+                        </li>
+                        <li>To <span className="font-semibold">pair your wallet</span>, go to your <span className="font-semibold italic">Profile</span>, paste in your address from your Temple Wallet, and click <span className="font-semibold italic">Fetch</span>. A pop-up will open asking you to choose your preferred wallet. Click on <span className="font-semibold italic">Temple - Tezos Wallet (ex. Thanos)</span>.</li>
+                            <div className="w-full mt-4">
+                                <ImageWrapper src={temple8Image} alt=""/>
+                            </div>
+                        <li>The Temple Wallet wants you to then confirm the connection; the wallet asks you for a permission request through a pop-up. Just click on <span className="font-semibold italic">Connect</span>.</li>
+                            <div className="w-full mt-4">
+                                <ImageWrapper src={temple9Image} alt=""/>
+                            </div>
+                        <li>You should now see that the <span className="font-semibold italic">Address</span> field in your Profile is filled out.</li>
                     </ol>
                 </div>
                 <p className="mt-4">
-                    Your Spire extension should now look like this.
+                    Your Temple Wallet extension should now look similar to this:
                 </p>
                 <div className="w-full mt-4 sm:w-1/2 sm:m-auto">
-                    <ImageWrapper src={tutorial2Image} alt=""/>
+                    <ImageWrapper src={temple10Image} alt=""/>
                 </div>
                 <p className="mt-4">
-                    As you can see, you do not have any tez (XTZ) to spend, so let’s get some Granada testnet tez!
+                    As you can see, there is one minor difference: You do not have any tez (XTZ) to spend yet, so let’s get some Granada testnet tez!
                 </p>
             </div>
 
@@ -128,17 +175,19 @@ export default function GetStarted() {
                 <p className="mt-4">
                     The easiest way to get some tez is to go via the Telegram <span className="font-semibold">Faucet Bot</span>. <br/>
                     You will need a Telegram account to use it. Also make sure you selected Granadanet and not the Mainnet. <br/>
-                    To use the bot, go to <a className="font-family-body font-semibold" href="https://t.me/tezos_faucet_bot" target="_blank" rel="noreferrer">Faucet Bot</a> the chat should open up. <br/>
+                    To use the bot, go to the <a className="font-family-body font-semibold" href="https://t.me/tezos_faucet_bot" target="_blank" rel="noreferrer">Faucet Bot</a> the chat should open up.<br/>
+                </p>
+                <p className="mt-4">
                     Now, click on <span className="font-semibold italic">Get coins</span>. The bot will now ask you for your address. <br/>
                     Send your address and then the Faucet Bot will let you know how much tez you claimed for which testnet.
                 </p>
                 <div className="pt-4 flex justify-between content-center flex-col sm:flex-row">
                     <div className="sm:w-1/2 flex content-center">
-                        <ImageWrapper src={tutorial3Image} alt=""/>
+                        <ImageWrapper src={temple11Image} alt=""/>
                     </div>
                     <div className="mt-8 sm:ml-8 sm:mt-0 sm:w-1/2 flex flex-col justify-center">
                         <p>
-                            Once you claim coins, they should also appear in your wallet - if you used Spire, it appears in your extension.
+                            Once you claim coins, they should also appear in your wallet - if you used Temple, it appears in your extension.
                         </p>
                         <p className="mt-4">
                             As you can see, we claimed 100 tez (XTZ).
