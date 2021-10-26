@@ -21,7 +21,7 @@ export const NAV_ITEMS: Array<NavItem> = [
     },
     {
         name: "Discover",
-        url: "/about",
+        url: "/cafe-info",
         visibility: NAV_ITEM_VISIBILITY.PUBLIC,
         children: [
         /*
