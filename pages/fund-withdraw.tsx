@@ -378,13 +378,11 @@ export default function FundWithdraw() {
                     modalState != ModalState.CLOSED &&
                     <TransactionModal closeHandler={() => setModalState(ModalState.CLOSED)} dataHandler={dataHandler} address={context.address} type={modalState} />
                 }
+                <div className="w-full flex flex-wrap justify-between">
+                    <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a CAFE with Tezos?" classes="sm:pr-2"/>
+                </div>
             </div>
             <ConfirmAddressModal address={context.address} successHandler={(address) => setAddress(address)}/>
-        
-            <div className="w-full flex flex-wrap justify-between">
-                <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a CAFE with Tezos?" classes="sm:pr-2"/>
-            </div>
-
         </>
     );
 }

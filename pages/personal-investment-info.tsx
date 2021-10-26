@@ -94,13 +94,12 @@ export default function PersonalInvestmentInfo() {
                         </div>
                     </div>
                 </div>
+                <div className="w-full flex flex-wrap justify-between my-8">
+                    <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a CAFE with Tezos?" classes="sm:pr-2"/>
+                    <CtaCard href="/fund-withdraw" text="Next page &#8594;" title="Want to buy and sell TZM?" classes="sm:pl-2"/>
+                </div>
             </div>
             <ConfirmAddressModal address={context.address} successHandler={(address) => setAddress(address)}/>
-
-            <div className="w-full flex flex-wrap justify-between">
-                <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a CAFE with Tezos?" classes="sm:pr-2"/>
-                <CtaCard href="/fund-withdraw" text="Next page &#8594;" title="Want to buy and sell TZM?" classes="sm:pl-2"/>
-            </div>
 
         </>
     );
