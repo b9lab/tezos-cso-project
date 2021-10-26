@@ -42,6 +42,11 @@ export const NAV_ITEMS: Array<NavItem> = [
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             {
+                name: "Run your own",
+                url: "/your-own-cafe",
+                visibility: NAV_ITEM_VISIBILITY.PUBLIC
+            },
+            {
                 name: "Investment White Paper",
                 url: "/investment-white-paper",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
@@ -86,11 +91,6 @@ export const NAV_ITEMS: Array<NavItem> = [
                 visibility: NAV_ITEM_VISIBILITY.PRIVATE
             }
         ]
-    },
-    {
-        name: "Run your own",
-        url: "/your-own-cafe",
-        visibility: NAV_ITEM_VISIBILITY.PUBLIC
     },
     {
         name: "Sign in",
