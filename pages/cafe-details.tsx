@@ -82,7 +82,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
                                 <p className="font-bold">Initial valuation</p>
                                 <p className="body-text-small">Initial company valuation in USD</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{data.initialValuation}</td>
+                            <td className="border border-dark-gray px-4 py-2">{data.initialValuation.toLocaleString()}</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
@@ -116,14 +116,14 @@ export default function CafeDetails(props: CafeDetailsProps) {
                                 <p className="font-bold">Buy slope</p>
                                 <p className="body-text-small">The slope of the buy function determining the buy price</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{data.buySlope}</td>
+                            <td className="border border-dark-gray px-4 py-2">{data.buySlope.toLocaleString()}</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Sell slope</p>
                                 <p className="body-text-small">The slope of the sell function determining the sell price</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{data.sellSlope}</td>
+                            <td className="border border-dark-gray px-4 py-2">{data.sellSlope.toLocaleString()}</td>
                         </tr>
                     </tbody>
                 </table>

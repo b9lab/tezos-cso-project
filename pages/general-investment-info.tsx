@@ -107,7 +107,7 @@ export default function GeneralInvestmentInfo() {
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                             <p>Number of investors</p>
-                            <h1>{data?.investorsCount}</h1>
+                            <h1>{data?.investorsCount.toLocaleString()}</h1>
                         </div>
                     </div>
                     <CtaCard href="/fund-withdraw" text="Buy now &#8594;" title="Invest in TZMINT" classes="sm:pl-2"/>
