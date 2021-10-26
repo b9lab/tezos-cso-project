@@ -11,20 +11,20 @@ export default function CafeInfo() {
 
             <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
                 <h1 className="mb-8">Continuous Agreement for Future Equity (CAFE)</h1>
-                <p className="body-text-large italic">
+                <div className="body-text-large italic">
                     A programmable equity (PEQ) mechanism as a continuous offering
-                </p>
+                </div>
             </div>
 
             <div className="mt-6 px-8">
-                <p>
+                <div>
                     A continuous agreement for future equity (CAFE) is an alternative to convertible notes and fixed-size equity rounds. Traditional fixed-size equity rounds take time especially start-ups often do not have, as they need fast cash flows to continue growing and developing projects. 
                     At the same time, a CAFE makes a company’s equity programmable through a digitally automatable and scalable mechanism.
-                </p>
-                <p className="mt-4">
+                </div>
+                <div className="mt-4">
                     Continuous agreements for future equity offer the opportunity to conduct <span className="font-semibold">scalable high-resolution fundraising</span>, while also offering different prices to different investors depending on when the investment is done. <br/>
                     This frees the financing mechanism of market psychological group dynamics usually present in investor-driven funding: Investors tend to “wait and see” how others engage in an investment opportunity before investing, but in a CAFE, companies can better incentivise stakeholders that take the risk of investing early on.
-                </p>
+                </div>
                 <div className="mt-4">
                     A <span className="font-semibold">CAFE</span> is a <span className="font-bold">particular use case of a programmable equity (PEQ) financing mechanism</span> envisioned to bring:
                 </div>
@@ -62,29 +62,29 @@ export default function CafeInfo() {
 
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">Converting tokens to equity – Termination</h2>
-                <p className="indent">
+                <div className="indent">
                     Even though investors can buy and sell tokens as long as the offering is active, the question remains: When is a CAFE terminated?
-                </p>
-                <p className="mt-4">
+                </div>
+                <div className="mt-4">
                     A conversion to equity prior to the termination is possible in case of a <span className="font-semibold">liquidity event</span> or a <span className="font-semibold">dissolution event</span>, i.e. a <span className="font-semibold">triggering event</span> like an IPO, the company being sold, or bankruptcy. In both cases, investors are entitled to receive a payable amount in respect to their investment, i.e. amount of token. 
-                </p>
-                <p className="mt-4">
+                </div>
+                <div className="mt-4">
                     The offering can run indefinitely, as long as the issuing organization does not <span className="font-bold">close</span> it. 
                     Termination is possible after a minimum period of time to which the organization committed. The minimum period of time can be increased anytime.
                     As the minimum period of time has to be set, transparency towards investors is maintained.
-                </p>
-                <p className="mt-4">
+                </div>
+                <div className="mt-4">
                     When the organization wants to close the offering, it has to pay an <span className="font-bold">exit fee</span>. 
                     This fee is calculated by multiplying the current issuance price of tokens with the number of outstanding tokens, i.e. tokens held by investors. 
                     The organization pays the exit fee and closes the offering. Then all investors can sell their tokens at the same price. 
-                </p>
+                </div>
             </div>
 
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">Want to know more about continuous agreements for future equity?</h2>
-                <p>
+                <div>
                     This is a list of helpful resources to have a peek at.
-                </p>
+                </div>
                 <div>
                     <ul className="list-disc list-inside">
                     <li><a className="font-family-body font-semibold" href="https://fairmint-documents.s3.amazonaws.com/CAFE/CAFE+Template.docx" target="_blank" rel="noreferrer">Fairmint Inc.: Template for a Continuous Agreement for Future Equity</a></li>
