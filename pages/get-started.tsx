@@ -21,15 +21,15 @@ export default function GetStarted() {
             </div>
             
             <div className="pt-8 px-8">
-                <p className="indent">
+                <div className="indent">
                     Invest in TZMINT now! Three quick steps to get your TZM tokens:
-                    <ul className="list-disc ml-8">
+                    <ul className="list-disc list-inside">
                         <li>Sign in with your e-mail.</li>
                         <li>Setup and connect your wallet.</li>
                         <li>Get your testnet tez.</li>
                         <li>Invest in TZMINT.</li>
                     </ul>
-                </p>
+                </div>
                 <p className="mt-4">
                     The following step-by-step get started instructions help you set up everything you need to buy and sell TZM tokens on this platform.  
                     <span className="font-bold"> These tokens do not represent claims to a real investment but are only issued as part of an educational project - They do not hold any value.</span>
@@ -46,8 +46,8 @@ export default function GetStarted() {
                 <p className="mt-4">
                     You can now choose between <span className="font-semibold italic">two ways to sign</span>:
                 </p>
-                <div className="ml-8">
-                    <ul className="list-disc">
+                <div>
+                    <ul className="list-disc list-inside">
                         <li>with your email, or</li>
                         <li>with Google.</li>
                     </ul>
@@ -84,8 +84,8 @@ export default function GetStarted() {
                 <p className="mt-4">
                     You can choose between:
                 </p>
-                <div className="ml-8">
-                    <ul className="list-disc">
+                <div>
+                    <ul className="list-disc list-inside">
                         <li><a className="font-family-body font-semibold" href="https://chrome.google.com/webstore/detail/spire/gpfndedineagiepkpinficbcbbgjoenn?hl=en" target="_blank" rel="noreferrer">Spire</a> and <a className="font-family-body font-semibold" href="https://templewallet.com/" target="_blank" rel="noreferrer">Temple Wallet</a> - if you want to connect through a browser extension,</li>
                         <li><a className="font-family-body font-semibold" href="https://cryptonomic.tech/galleon.html" target="_blank" rel="noreferrer">Galleon</a>, <a className="font-family-body font-semibold" href="https://wallet.kukai.app/" target="_blank" rel="noreferrer">Kukai Wallet</a>, or <a className="font-family-body font-semibold" href="https://umamiwallet.com/" target="_blank" rel="noreferrer">Umami</a> - if you want to connect a desktop of web wallet, and</li>
                         <li><a className="font-family-body font-semibold" href="https://airgap.it/" target="_blank" rel="noreferrer">AirGap Wallet</a> - if you want to connect through a mobile wallet.</li>
@@ -95,7 +95,7 @@ export default function GetStarted() {
                     In case you want to use the <span className="font-semibold">Temple Wallet</span>, this is your road to success:
                 </p>
                 <div className="ml-8">
-                    <ol className="list-decimal">
+                    <ol className="list-decimal list-inside">
                         <li>Install the <span className="font-semibold">Temple Wallet extension</span> for your browser. If your using Google Chrome, just go to the <a className="font-family-body font-semibold" href="https://chrome.google.com/webstore/detail/temple-tezos-wallet-ex-th/ookjlbkiijinhpmnjffcofjonbfbgaoc?hl=en" target="_blank" rel="noreferrer">Chrome Web Store</a> and add the extension for Temple.</li>
                         <li>Once the extension is added, Temple will ask you whether you want to create a new a wallet - in case you do not have a wallet yet - or import your existing wallet.</li>
                             <div className="w-full mt-4">

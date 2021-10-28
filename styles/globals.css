@@ -129,3 +129,7 @@ nav li.submenu-item {
   @apply font-bold;
   @apply text-black;
 }
+
+ol, ul {
+  padding: revert;
+}
