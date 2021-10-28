@@ -63,7 +63,7 @@ export default function Home() {
                 </p>
             </div>
 
-            <div className="w-full flex flex-wrap justify-between">
+            <div className="w-full flex flex-wrap justify-between pt-12 px-8">
                 <CtaCard href="/cafe-info" text="Feel free to skip this part and take a look at the specific implementation of a PEQ offering, a continuous agreement for future equity (CAFE). &#8594;" title="Already know all about programmable equity offerings?" classes="sm:pr-2"/>
             </div>
             
@@ -189,7 +189,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="w-full flex flex-wrap justify-between">
+            <div className="w-full flex flex-wrap justify-between py-12 px-8">
                 <CtaCard href="/cafe-info" text="Next page &#8594;" title="Ready to dive right in?" classes="sm:pr-2"/>
             </div>
 

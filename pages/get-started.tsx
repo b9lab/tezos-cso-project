@@ -1,9 +1,18 @@
 import React from "react";
 import CtaCard from "../src/components/CtaCard";
 
-import tutorial1Image from "../public/tutorial-1.png";
-import tutorial2Image from "../public/tutorial-2.png";
-import tutorial3Image from "../public/tutorial-3.png";
+import temple1Image from "../public/temple-1.png";
+import temple2Image from "../public/temple-2.png";
+import temple3Image from "../public/temple-3.png";
+import temple4Image from "../public/temple-4.png";
+import temple5Image from "../public/temple-5.png";
+import temple6Image from "../public/temple-6.png";
+import temple7Image from "../public/temple-7.png";
+import temple8Image from "../public/temple-8.png";
+import temple9Image from "../public/temple-9.png";
+import temple10Image from "../public/temple-10.png";
+import temple11Image from "../public/temple-11.png";
+
 import ImageWrapper from "../src/components/ImageWrapper";
 
 /**
@@ -131,7 +140,7 @@ export default function GetStarted() {
                             <div className="w-full mt-4">
                                 <ImageWrapper src={temple5Image} alt=""/>
                             </div>
-                        <li>Now you have to pair your wallet, but first make sure you <span className="font-semibold">select the correct network</span>. Go to your Temple extension. It should be set by default to the Mainnet, but you want the Granada Testnet for the purposes of this platform. Just navigate to the upper right-hand corner and click on <span className="font-semibold italic">Tezos Mainnet<span>. This opens a drop-down menu with all available networks to select from. Select <span className="font-semibold italic">Granada Testnet</span>.</li>
+                        <li>Now you have to pair your wallet, but first make sure you <span className="font-semibold">select the correct network</span>. Go to your Temple extension. It should be set by default to the Mainnet, but you want the Granada Testnet for the purposes of this platform. Just navigate to the upper right-hand corner and click on <span className="font-semibold italic">Tezos Mainnet</span>. This opens a drop-down menu with all available networks to select from. Select <span className="font-semibold italic">Granada Testnet</span>.</li>
                         <li>
                             <div className="w-full mt-4">
                                 <ImageWrapper src={temple6Image} alt=""/>
@@ -199,7 +208,7 @@ export default function GetStarted() {
                 </div>
             </div>
 
-            <div className="w-full flex flex-wrap justify-between">
+            <div className="w-full flex flex-wrap justify-between py-12 px-8">
                 <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a CAFE with Tezos?" classes="sm:pr-2"/>
                 <CtaCard href="/general-investment-info" text="Next page &#8594;" title="Want to get an overview of the CAFE offering?" classes="sm:pl-2"/>
             </div>

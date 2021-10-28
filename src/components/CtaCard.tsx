@@ -15,7 +15,7 @@ export type CtaCardProps = {
 export default function CtaCard(props: CtaCardProps) {
 
     const content = (
-        <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4 border border-accent-1 cursor-pointer ">
+        <div className="bg-white rounded shadow-2xl flex flex-col p-4 border border-accent-1 cursor-pointer h-full justify-between ">
             <p>{props.title}</p>
             <h2 className="text-accent-1 my-2">{props.text}</h2>
         </div>
@@ -23,7 +23,7 @@ export default function CtaCard(props: CtaCardProps) {
 
     if (props.href) {
         return (
-            <div className={"w-full flex-grow sm:max-w-1/2 " + (props.classes ?? "")}>
+            <div className={"w-full flex-grow sm:max-w-1/2 mt-4 " + (props.classes ?? "")}>
                 <Link href={props.href}>
                     {content}
                 </Link>
@@ -31,7 +31,7 @@ export default function CtaCard(props: CtaCardProps) {
         );
     } else if (props.action) {
         return (
-            <div className={"w-full flex-grow sm:max-w-1/2 " + (props.classes ?? "")}>
+            <div className={"w-full flex-grow sm:max-w-1/2 mt-4 " + (props.classes ?? "")}>
                 <div onClick={props.action}>
                     {content}
                 </div>
