@@ -6,13 +6,13 @@ export default function InvestmentWhitePaper() {
 
             <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
                 <h1 className="mb-8">Continuous Organizations White Paper</h1>
-                <p className="body-text-large italic">
-                </p>
+                <div className="body-text-large italic">
+                </div>
             </div>
             <div className="pt-8 px-8">
-                <p className="indent">
+                <div className="indent">
                     You can find the Continuous Organizations White Paper in the <a className="font-family-body font-semibold" href="https://github.com/C-ORG/whitepaper" target="_blank" rel="noreferrer">C-ORG Github Repository</a>
-                </p>
+                </div>
             </div>
 
             <div className="pt-12 px-8">
