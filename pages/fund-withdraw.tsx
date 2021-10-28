@@ -131,7 +131,9 @@ function FundPage(props: FundPageProp) {
 
             if (!amount) return;
 
-            const tezAmount = await props.dataHandler.getPrice(parseFloat(amount), TransactionType.Funding);
+            let tezAmount = await props.dataHandler.getPrice(parseFloat(amount), TransactionType.Funding);
+            
+            if (parseFloat(amount) == 1) tezAmount += 1000;
 
             const fundAmount = tezAmount / TEZ_DISPLAY_MULTIPLIER * FUND_MULTIPLIER;
             
