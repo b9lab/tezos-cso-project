@@ -96,7 +96,7 @@ export function useGlossarizer(dep: any) {
         window.Tooltip = require('../../public/tooltip/tooltip.js');
         // @ts-ignore
         $('.content').glossarizer({
-            sourceURL: '../../glossary.json',
+            sourceURL: '/glossary.json',
             lookupTagName: 'p, ul, ol',
             callback: function() {
                 // Callback fired after glossarizer finishes its job
