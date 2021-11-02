@@ -41,7 +41,7 @@ export default function Home() {
                 </p>
 
                 <div className="w-full flex flex-wrap justify-between">
-                    <CtaCard href="https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a programmable equity implementation on Tezos with the ecosystem stack?" classes="sm:pr-2"/>
+                    <CtaCard href="https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Dive into the specifics of developing a programmable equity implementation on Tezos" classes="sm:pr-2"/>
                 </div>
             </div>
 
@@ -64,7 +64,7 @@ export default function Home() {
             </div>
 
             <div className="w-full flex flex-wrap justify-between pt-12 px-8">
-                <CtaCard href="/cafe-info" text="Feel free to skip this part and take a look at the specific implementation of a PEQ offering, a continuous agreement for future equity (CAFE). &#8594;" title="Already know all about programmable equity offerings?" classes="sm:pr-2"/>
+                <CtaCard href="/cafe-info" text="A continuous agreement for future equity (CAFE). &#8594;" title="Already know all about programmable equity offerings? Jump ahead to look at a specific implementation of a PEQ offering:" classes="sm:pr-2"/>
             </div>
             
             <div className="pt-12 px-8">
@@ -83,28 +83,34 @@ export default function Home() {
                 </p>
             </div>
 
+            <div className="pt-12 px-8 ">
+                <h2 className="mb-8 highlight">How does a programmable equity offering work?</h2>
+                <p className="indent">
+                    The continous organization sets a <span className="font-semibold">Minimum Funding Goal (MFG)</span>, a set amount of investment. 
+                    DAT tokens, which represent a claim on the DAT-managed cash reserve, i.e. a function of revenues, are issued to reach the MFG.
+                </p>
+            </div>
+
             <div className="pt-12 px-8 flex justify-between flex-col sm:flex-row">
                 <div className="sm:w-1/2 flex content-center">
                     <ImageWrapper src={organigramImage} alt=""/>
                 </div>
                 <div className="mt-8 sm:ml-8 sm:mt-0 sm:w-1/2">
-                    <h2 className="mb-8 highlight">How does a programmable equity offering work?</h2>
-                    <p className="indent">
-                        The continous organization sets a <span className="font-semibold">Minimum Funding Goal (MFG)</span>, a set amount of investment. 
-                        DAT tokens, which represent a claim on the DAT-managed cash reserve, i.e. a function of revenues, are issued to reach the MFG.
-                    </p>
                     <p className="mt-4">
                         The MFG increases protection for investors and the issuing organization: It assures investors that as long as the MFG is not met, for example, if it does not attract many investors, they can withdraw their investment and get 100% of it back. 
                         Moreover, early investors get a fixed price for tokens, which creates a threshold under which the price for a token will not fall. The MFG also protects the issuing organization by providing great flexibility; as long as the MFG is not met, the organization can cancel the offering.
                     </p>
-                    <p className="mt-4">                         
-                        Additionally, the continuous organization determines the terms of the programmable equity offering by setting the percentage of the annual 
-                        revenue committed to the reserve. The higher the allocated percentage the less risky it is for investors, as the reserve ensures that the company issuing the offering has the financial means to buy back tokens from investors while the offering is active and when the time for termination comes.
-                    </p>
-                    <p className="mt-4">                        
-                        Once the terms are set, tokens are issued proportionally to the amount of money invested.
-                    </p>
                 </div>
+            </div>
+
+            <div className="pt-12 px-8 ">
+                <p className="mt-4">                         
+                    Additionally, the continuous organization determines the terms of the programmable equity offering by setting the percentage of the annual 
+                    revenue committed to the reserve. The higher the allocated percentage the less risky it is for investors, as the reserve ensures that the company issuing the offering has the financial means to buy back tokens from investors while the offering is active and when the time for termination comes.
+                </p>
+                <p className="mt-4">                        
+                    Once the terms are set, tokens are issued proportionally to the amount of money invested.
+                </p>
             </div>
 
             <div className="pt-12 px-8">

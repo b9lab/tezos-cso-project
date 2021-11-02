@@ -133,3 +133,7 @@ nav li.submenu-item {
 ol, ul {
   padding: revert;
 }
+
+nav ol, nav ul {
+  padding-left: 0;
+}

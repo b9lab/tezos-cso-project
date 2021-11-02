@@ -15,9 +15,9 @@ export type CtaCardProps = {
 export default function CtaCard(props: CtaCardProps) {
 
     const content = (
-        <div className="bg-white rounded shadow-2xl flex flex-col p-4 border border-accent-1 cursor-pointer h-full justify-between ">
+        <div className="bg-white rounded shadow-2xl flex flex-col p-4 border border-accent-1 cursor-pointer h-full justify-between leading-7 ">
             <p>{props.title}</p>
-            <h2 className="text-accent-1 my-2">{props.text}</h2>
+            <h2 className="text-accent-1 my-2 leading-8">{props.text}</h2>
         </div>
     );
 
