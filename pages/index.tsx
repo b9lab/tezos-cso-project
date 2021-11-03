@@ -2,7 +2,7 @@ import { SITE_NAME } from '../src/constants';
 import ImageWrapper from "../src/components/ImageWrapper";
 import CtaCard from "../src/components/CtaCard";
 import organigramImage from '../public/organigram.png';
-import pricesCurveImage from '../public/organigram.png';
+import pricesCurveImage from '../public/buy-sell-function.png';
 
 /**
  * Home page
