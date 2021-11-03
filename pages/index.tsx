@@ -131,9 +131,8 @@ export default function Home() {
                 </p>
             </div>
 
-            <div className="pt-12 px-8 flex justify-between flex-col-reverse sm:flex-row">
-                <div className="mt-8 sm:mr-8 sm:mt-0 w-full sm:w-1/2">
-                    <h2 className="mb-8 highlight">MFG achieved: What happens now?</h2>
+            <div className="pt-12 px-8">
+                <h2 className="mb-8 highlight">MFG achieved: What happens now?</h2>
                     <p className="indent">
                         Once the MFG is met, a so-called bonding curve starts with which a portion of the MFG is moved into a reserve 
                         and another portion is transferred to the continuous organization, the beneficiary of the programmable equity offering.
@@ -141,22 +140,31 @@ export default function Home() {
                     <p className="mt-4">
                         Why do we need a reserve? The reserve can be understood as the counterparty of an investor transaction to buy or sell the offering&apos;s tokens. It has to hold enough to buy tokens back anytime, especially when the offering is terminated and all tokens are bought back from the investors. For this reason, the tokens do not represent a claim on the organization&apos;s ownership, but instead is a representation of a financial claim against the reserve and the organization&apos;s future revenues. 
                     </p>
+            </div>
+            <div className="pt-12 px-8 flex justify-between flex-col-reverse sm:flex-row">
+                <div className="mt-8 sm:mr-8 sm:mt-0 w-full sm:w-1/2">
                     <p className="mt-4">     
                         The bonding curve consists of two functions, one to determine the buy curve and one for the sell curve. The bonding curve acts as an automated market maker to allow for an instant buy and sell of tokens.
                     </p>
                     <p className="mt-4">
                         Now, investors can no longer withdraw their funds, but instead sell their tokens at a calculated price. While the MFG is not met, all funds are escrowed. Thus, investors can withdraw their investment and receive all of it back. As soon as the bonding curve begins, investors can only sell their tokens for the current price.
                     </p>
-                    <p className="mt-4">
-                        Once the MFG is met, the offering can no longer be cancelled and remains active as defined by the minimum running time of the offering.
-                    </p>
-                    <p className="mt-4">
-                        When the programmable equity offering ends, all outstanding tokens are bought back by the continuous organization through an exit fee transfer to the reserve.
-                    </p>
                 </div>
                 <div className="sm:w-1/2 flex content-center">
                     <ImageWrapper src={pricesCurveImage} alt=""/>
                 </div>
+            </div>
+
+            <div className="pt-12 px-8">
+                
+                
+                
+                <p className="mt-4">
+                    Once the MFG is met, the offering can no longer be cancelled and remains active as defined by the minimum running time of the offering.
+                </p>
+                <p className="mt-4">
+                    When the programmable equity offering ends, all outstanding tokens are bought back by the continuous organization through an exit fee transfer to the reserve.
+                </p>
             </div>
 
             <div className="pt-12 px-8">

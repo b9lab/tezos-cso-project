@@ -17,7 +17,7 @@ export default function CafeInfo() {
             </div>
 
             <div className="mt-6 px-8">
-                <p>
+                <p className="indent">
                     A continuous agreement for future equity (CAFE) is an alternative to convertible notes and fixed-size equity rounds. Traditional fixed-size equity rounds take time especially start-ups often do not have, as they need fast cash flows to continue growing and developing projects. 
                     At the same time, a CAFE makes a company’s equity programmable through a digitally automatable and scalable mechanism.
                 </p>
@@ -44,7 +44,7 @@ export default function CafeInfo() {
                 <h2 className="mb-8 highlight">
                     Steps in a CAFE
                 </h2>
-                <p className="mt-4">
+                <p className="mt-4 indent">
                     A CAFE can be divided into three steps: the initialisation and start until the MFG is reached, the &quot;post-MFG&quot; phase in which the token price is determined by bonding curve, and the termination of the CAFE.
                 </p>    
                 <div>
@@ -54,7 +54,8 @@ export default function CafeInfo() {
                         <li>When the <span className="font-semibold">offering ends</span>, all tokens in circulation are bought back by the company, similar to a traditional buyback.</li>
                     </ol>
                 </div>
-                <p className="indent">
+                <p>&nbsp;</p>
+                <p>
                     A CAFE is initialised after the organization sets a MFG, after which the price function is determined by a bonding curve. While the MFG is not met, all investors can buy tokens at the same price, the funds are escrowed, and investors can withdraw their investment. 
                     As soon as the MFG is met and the bonding curve takes over, the funds are split, some sent to the cash reserve and the rest going to the organization issuing the CAFE.
                 </p>
@@ -95,7 +96,7 @@ export default function CafeInfo() {
             </div>
 
             <div className="w-full flex flex-wrap justify-between py-12 px-8">
-                <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a CAFE with Tezos?" classes="sm:pr-2"/>
+                <CtaCard href="https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a CAFE with Tezos?" classes="sm:pr-2"/>
                 <CtaCard href="/cafe-details" text="Next page &#8594;" title="Ready to continue?" classes="sm:pl-2"/>
             </div>
 
