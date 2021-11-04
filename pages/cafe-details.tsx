@@ -26,7 +26,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
             <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
                 <h1 className="mb-8">Parameters of the Continuous Agreement</h1>
                 <p className="body-text-large italic">
-                    Here you can find an overview of the CAFE&apos;s parameters and further explanations on how price and reserve function
+                    Here you can find an overview of the Rolling SAFE&apos;s parameters and further explanations on how price and reserve function
                 </p>
             </div>
 
@@ -43,7 +43,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Total equity allocation</p>
-                                <p className="body-text-small">Total Amount of equity allocated for the CAFE offering</p>
+                                <p className="body-text-small">Total Amount of equity allocated for the Rolling SAFE offering</p>
                             </td>
                             <td className="border border-dark-gray px-4 py-2">{format_percentage(data.totalAllocation)}</td>
                         </tr>
@@ -51,7 +51,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Stakeholder equity allocation</p>
                                 <p className="body-text-small">
-                                    Part of the total equity allocation reserved to compensate stakeholders in case the value stakeholder collect is affected by the proceedings of the CAFE
+                                    Part of the total equity allocation reserved to compensate stakeholders in case the value stakeholder collect is affected by the proceedings of the Rolling SAFE
                                 </p>
                             </td>
                             <td className="border border-dark-gray px-4 py-2">{format_percentage(data.stakeAllocation)}</td>
@@ -59,7 +59,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Termination events</p>
-                                <p className="body-text-small">Events that terminate the CAFE</p>
+                                <p className="body-text-small">Events that terminate the Rolling SAFE</p>
                             </td>
                             <td className="border border-dark-gray px-4 py-2">{data.terminationEvents.toString()}</td>
                         </tr>
@@ -130,7 +130,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">Determining the price for the CAFE token</h2>
+                <h2 className="mb-8 highlight">Determining the price for the Rolling SAFE token</h2>
                 <p className="indent">
                     Once the offering is launched, qualified investors can engage at any point of time. The <span className="font-semibold">price</span> is automated and non-negotiable.
                 </p>
@@ -142,7 +142,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
                     The more tokens are issued, the higher the price is. The earlier you invest, the more tokens you receive; the price per token rises with increasing token amount.
                 </p>
                 <p className="mt-4">                
-                    Whereby, the <span className="font-semibold">amount of capital</span> is per se unlimited. The equity allocation of the continuous PEQ (CAFE) offering can be increased but never decreased.
+                    Whereby, the <span className="font-semibold">amount of capital</span> is per se unlimited. The equity allocation of the continuous PEQ (Rolling SAFE) offering can be increased but never decreased.
                 </p>
                 <p className="mt-4">
                     The <span className="font-bold">buy price</span> is determined by the amount of tokens, as the buy function implements a linear relationship between the buy price and the amount of tokens. 
@@ -153,9 +153,9 @@ export default function CafeDetails(props: CafeDetailsProps) {
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">A fixed target equity percentage allocation and fixed dilution</h2>
                 <p className="indent">
-                    CAFEs have a <span className="font-semibold">fixed target equity percentage allocation</span>, because of to the percentage dedicated to the reserve, ensuring fixed dilution. 
-                    Unlike when a company issues additional stock shares, the issuance of tokens and their value is fixed by the parameters of the CAFE&apos;s smart contract and the value investors hold is not reduced by the issuance of additional &quot;shares&quot; (tokens) as long as they hold their tokens up to the termination of the offering.
-                    In a CAFE, investors&apos; risk is reduced as dilution is fixed and pre-determined. The organization can seek further equity without additional share issuance negatively affecting the value current investors hold. There is no dilution from equity financing.
+                    Rolling SAFEs have a <span className="font-semibold">fixed target equity percentage allocation</span>, because of to the percentage dedicated to the reserve, ensuring fixed dilution. 
+                    Unlike when a company issues additional stock shares, the issuance of tokens and their value is fixed by the parameters of the Rolling SAFE&apos;s smart contract and the value investors hold is not reduced by the issuance of additional &quot;shares&quot; (tokens) as long as they hold their tokens up to the termination of the offering.
+                    In a Rolling SAFE, investors&apos; risk is reduced as dilution is fixed and pre-determined. The organization can seek further equity without additional share issuance negatively affecting the value current investors hold. There is no dilution from equity financing.
                 </p>
                 <p className="mt-4">
                     A fixed equity allocation helps founders maintain long-term control, as the claim bound to the token does not grant any governance rights, i.e. the token represents a non-voting share of future equity.
@@ -185,7 +185,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
             </div>
         
             <div className="w-full flex flex-wrap justify-between py-12 px-8">
-                <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a CAFE with Tezos?" classes="sm:pr-2"/>
+                <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a Rolling SAFE with Tezos?" classes="sm:pr-2"/>
                 <CtaCard href="/your-own-cafe" text="Next page &#8594;" title="Ready to continue?" classes="sm:pl-2"/>
             </div>
 
