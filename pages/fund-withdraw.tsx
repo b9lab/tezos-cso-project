@@ -354,7 +354,7 @@ export default function FundWithdraw() {
             <div className="p-8">
                 <h1>Buy and Sell TZM</h1>
                 <p className="mt-2">
-                    Here you can buy or sell Rolling SAFE (TZMINT) tokens for TEZOS tokens (TEZ/XTZ).
+                    Here you can buy or sell Rolling SAFE (TZM) tokens for TEZOS tokens (TEZ).
                 </p>
                 <h2 className="mt-8 highlight">Token information</h2>
                 <div className="flex flex-wrap justify-between">
