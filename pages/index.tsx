@@ -50,33 +50,33 @@ export default function Home() {
                     What is TZMINT?
                 </h2>
                 <p className="indent">
-                    TZMINT is a sample application demonstrating a continuous agreement for future equity (CAFE) for programmable equity (PEQ) funding on Tezos. The token investors can buy and sell on this sample application is called <span className="font-bold">TZM</span>.
+                    TZMINT is a sample application demonstrating a Rolling Simple Agreement for Future Equity (Rolling SAFE) a new programmable equity funding method on Tezos. The tokens investors can buy and sell on this sample application are called <span className="font-bold">TZM</span>.
                 </p>
                 <p className="mt-4">
-                    The programmable equity offering is issued as a <span className="font-semibold">continuous agreement for future equity</span>, i.e. a continuous token offering of a programmable equity. <br/>
+                    The Rolling SAFE offering is issued as a <span className="font-semibold">Rolling Simple Agreement for Future Equity</span>, i.e. a a rolling agreement for future equity, an upgrade on the classic SAFE. <br/>
                     Companies set a minimum funding goal and deploy a smart contract, which issues the tokens, handles funds as well as transactions, and manages the reserve holding a certain percentage of the funding to buy back the issued tokens once the offering is terminated. <br/>
                     Investors can buy and sell tokens at any point in time - as long as the offering is active. The price of the token is automated, initially set at a constant level and later adjusted by a buy-sell slope based on the 
                     number of tokens issued. The token is backed by the amount initially allocated to the reserve and the company’s future revenue.
                 </p>
                 <p className="mt-4">
-                    To better understand the new financing instrument and its mechanisms implemented in this project, let&apos;s first explore what programmable equity is.
+                    To better understand the new financing instrument and its mechanisms implemented in this project, let&apos;s first explore what a Rolling SAFE offering is.
                 </p>
             </div>
 
             <div className="w-full flex flex-wrap justify-between pt-12 px-8">
-                <CtaCard href="/cafe-info" text="A continuous agreement for future equity (CAFE). &#8594;" title="Already know all about programmable equity offerings? Jump ahead to look at a specific implementation of a PEQ offering:" classes="sm:pr-2"/>
+                <CtaCard href="/cafe-info" text="A Rolling Simple Agreement for Future Equity (Rolling SAFE). &#8594;" title="Already know all about Rolling SAFE offerings? Jump ahead to look at a specific implementation of a PEQ offering:" classes="sm:pr-2"/>
             </div>
             
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">
-                    What is a programmable equity offering?
+                    What is a Rolling SAFE offering?
                 </h2>
                 <p className="indent">
-                    In a programmable equity offering, security tokens are issued, which can for example represent a proportional share of a company&apos;s future revenue. 
+                    In a Rolling SAFE offering, security tokens are issued, which can for example represent a proportional share of a company&apos;s future revenue. 
                     Thus, it would not be equity-centered but revenue-focused and bear the potential of aligning stakeholder interests with the financial success of a company.
                 </p>
                 <p className="mt-4">
-                    Whereby, the company setting up the programmable equity is often called a <span className="font-semibold">continuous organization</span> 
+                    Whereby, the company setting up the Rolling SAFE is often called a <span className="font-semibold">the Issuer</span> 
                     as the security tokens are offered continuously and not just during one instance. It funnels a part of its revenue, a fixed percentage, 
                     into a <span className="font-semibold">Decentralized Autonomous Trust (DAT)</span> during a pre-defined time period. 
                     A DAT is a <span className="font-semibold">smart contract</span> that automatically issues the tokenised security, and handles sales and buy backs.
@@ -84,7 +84,7 @@ export default function Home() {
             </div>
 
             <div className="pt-12 px-8 ">
-                <h2 className="mb-8 highlight">How does a programmable equity offering work?</h2>
+                <h2 className="mb-8 highlight">How does a Rolling SAFE offering work?</h2>
                 <p className="indent">
                     The continous organization sets a <span className="font-semibold">Minimum Funding Goal (MFG)</span>, a set amount of investment. 
                     DAT tokens, which represent a claim on the DAT-managed cash reserve, i.e. a function of revenues, are issued to reach the MFG.
@@ -105,7 +105,7 @@ export default function Home() {
 
             <div className="pt-12 px-8 ">
                 <p className="mt-4">                         
-                    Additionally, the continuous organization determines the terms of the programmable equity offering by setting the percentage of the annual 
+                    Additionally, the the Issuer determines the terms of the Rolling SAFE offering by setting the percentage of the annual 
                     revenue committed to the reserve. The higher the allocated percentage the less risky it is for investors, as the reserve ensures that the company issuing the offering has the financial means to buy back tokens from investors while the offering is active and when the time for termination comes.
                 </p>
                 <p className="mt-4">                        
@@ -122,12 +122,12 @@ export default function Home() {
                     During this period, the funds of every investment are escrowed by the DAT.
                 </p>
                 <p className="mt-4">
-                    The programmable equity offering can run indefinitely or have a set minimum running time, which is defined in the DAT. 
-                    The running time can be increased by the continuous organization.
+                    The Rolling SAFE offering can run indefinitely or have a set minimum running time, which is defined in the DAT. 
+                    The running time can be increased by the Issuer.
                 </p>
                 <p className="mt-4">
-                    The continuous organization can cancel the programmable equity offering while the MFG is not met. In case of cancellation, all investors can withdraw their complete investment. 
-                    Once the minimum period of time is reached, the programmable equity offering can be closed by the continuous organization.
+                    The Issuer can cancel the Rolling SAFE offering while the MFG is not met. In case of cancellation, all investors can withdraw their complete investment. 
+                    Once the minimum period of time is reached, the Rolling SAFE offering can be closed by the Issuer.
                 </p>
             </div>
 
@@ -135,7 +135,7 @@ export default function Home() {
                 <h2 className="mb-8 highlight">MFG achieved: What happens now?</h2>
                     <p className="indent">
                         Once the MFG is met, a so-called bonding curve starts with which a portion of the MFG is moved into a reserve 
-                        and another portion is transferred to the continuous organization, the beneficiary of the programmable equity offering.
+                        and another portion is transferred to the Issuer, the beneficiary of the Rolling SAFE offering.
                     </p>
                     <p className="mt-4">
                         Why do we need a reserve? The reserve can be understood as the counterparty of an investor transaction to buy or sell the offering&apos;s tokens. It has to hold enough to buy tokens back anytime, especially when the offering is terminated and all tokens are bought back from the investors. For this reason, the tokens do not represent a claim on the organization&apos;s ownership, but instead is a representation of a financial claim against the reserve and the organization&apos;s future revenues. 
@@ -163,7 +163,7 @@ export default function Home() {
                     Once the MFG is met, the offering can no longer be cancelled and remains active as defined by the minimum running time of the offering.
                 </p>
                 <p className="mt-4">
-                    When the programmable equity offering ends, all outstanding tokens are bought back by the continuous organization through an exit fee transfer to the reserve.
+                    When the Rolling SAFE offering ends, all outstanding tokens are bought back by the Issuer through an exit fee transfer to the reserve.
                 </p>
             </div>
 
