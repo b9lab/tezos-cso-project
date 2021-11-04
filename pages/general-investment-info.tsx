@@ -152,7 +152,7 @@ export default function GeneralInvestmentInfo() {
                 </div>
 
                 <div className="w-full flex flex-wrap justify-between pb-12">
-                    <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a CAFE with Tezos?" classes="sm:pr-2"/>
+                    <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a Rolling SAFE with Tezos?" classes="sm:pr-2"/>
                     <CtaCard href="/personal-investment-info" text="Next page &#8594;" title="Want to have a closer look at your own investment?" classes="sm:pl-2"/>
                 </div>
 
