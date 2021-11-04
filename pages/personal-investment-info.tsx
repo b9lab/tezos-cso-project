@@ -50,7 +50,7 @@ export default function PersonalInvestmentInfo() {
                             <h1><TezAmount amount={data?.tezInvested}/></h1>
                         </div>
                     </div>
-                    <CtaCard href="/fund-withdraw" text="Buy TZM &#8594;" title="Invest in TZMINT" classes="sm:pl-2"/>
+                    <CtaCard href="/fund-withdraw" text="Buy TZM &#8594;" title="Invest in TZMINT Inc." classes="sm:pl-2"/>
                 </div>
                 {
                     (transactionList?.length > 0 && context.address)  &&
