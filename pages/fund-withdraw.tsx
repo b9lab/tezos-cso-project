@@ -354,7 +354,7 @@ export default function FundWithdraw() {
             <div className="p-8">
                 <h1>Buy and Sell TZM</h1>
                 <p className="mt-2">
-                    Here you can buy or sell CAFE tokens for tez.
+                    Here you can buy or sell Rolling SAFE tokens for tez.
                 </p>
                 <h2 className="mt-8 highlight">Token information</h2>
                 <div className="flex flex-wrap justify-between">
@@ -381,7 +381,7 @@ export default function FundWithdraw() {
                     <TransactionModal closeHandler={() => setModalState(ModalState.CLOSED)} dataHandler={dataHandler} address={context.address} type={modalState} />
                 }
                 <div className="w-full flex flex-wrap justify-between">
-                    <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a CAFE with Tezos?" classes="sm:pr-2"/>
+                    <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a Rolling SAFE with Tezos?" classes="sm:pr-2"/>
                 </div>
             </div>
             <ConfirmAddressModal address={context.address} successHandler={(address) => setAddress(address)}/>
