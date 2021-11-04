@@ -3,14 +3,14 @@ import priceImage from "../public/price-change.png";
 import CtaCard from "../src/components/CtaCard";
 
 /**
- * Continuous Agreement for Future Equity page
+ * Rolling SAFE page
  */
 export default function CafeInfo() {
     return (
         <div className="pb-8">
 
             <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
-                <h1 className="mb-8">Continuous Agreement for Future Equity (CAFE)</h1>
+                <h1 className="mb-8">Rolling SAFE</h1>
                 <p className="body-text-large italic">
                     A programmable equity (PEQ) mechanism as a continuous offering
                 </p>
@@ -18,15 +18,15 @@ export default function CafeInfo() {
 
             <div className="mt-6 px-8">
                 <p className="indent">
-                    A continuous agreement for future equity (CAFE) is an alternative to convertible notes and fixed-size equity rounds. Traditional fixed-size equity rounds take time especially start-ups often do not have, as they need fast cash flows to continue growing and developing projects. 
-                    At the same time, a CAFE makes a company’s equity programmable through a digitally automatable and scalable mechanism.
+                    A Rolling SAFE is an alternative to convertible notes and fixed-size equity rounds. Traditional fixed-size equity rounds take time especially start-ups often do not have, as they need fast cash flows to continue growing and developing projects. 
+                    At the same time, a Rolling SAFE makes a company’s equity programmable through a digitally automatable and scalable mechanism.
                 </p>
                 <p className="mt-4">
                     Continuous agreements for future equity offer the opportunity to conduct <span className="font-semibold">scalable high-resolution fundraising</span>, while also offering different prices to different investors depending on when the investment is done. <br/>
-                    This frees the financing mechanism of market psychological group dynamics usually present in investor-driven funding: Investors tend to “wait and see” how others engage in an investment opportunity before investing, but in a CAFE, companies can better incentivise stakeholders that take the risk of investing early on.
+                    This frees the financing mechanism of market psychological group dynamics usually present in investor-driven funding: Investors tend to “wait and see” how others engage in an investment opportunity before investing, but in a Rolling SAFE, companies can better incentivise stakeholders that take the risk of investing early on.
                 </p>
                 <p className="mt-4">
-                    A <span className="font-semibold">CAFE</span> is a <span className="font-bold">particular use case of a programmable equity (PEQ) financing mechanism</span> envisioned to bring:
+                    A <span className="font-semibold">Rolling SAFE</span> is a <span className="font-bold">particular use case of a programmable equity (PEQ) financing mechanism</span> envisioned to bring:
                 </p>
                 <div>
                     <ul className="list-disc list-inside">
@@ -36,16 +36,16 @@ export default function CafeInfo() {
                     </ul>
                 </div>
                 <p>
-                    Through a CAFE, a company can financially align stakeholder interests with the success of a company.
+                    Through a Rolling SAFE, a company can financially align stakeholder interests with the success of a company.
                 </p>
             </div>
 
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">
-                    Steps in a CAFE
+                    Steps in a Rolling SAFE
                 </h2>
                 <p className="mt-4 indent">
-                    A CAFE can be divided into three steps: the initialisation and start until the MFG is reached, the &quot;post-MFG&quot; phase in which the token price is determined by bonding curve, and the termination of the CAFE.
+                    A Rolling SAFE can be divided into three steps: the initialisation and start until the MFG is reached, the &quot;post-MFG&quot; phase in which the token price is determined by bonding curve, and the termination of the Rolling SAFE.
                 </p>    
                 <div>
                     <ol className="list-decimal list-inside">
@@ -56,15 +56,15 @@ export default function CafeInfo() {
                 </div>
                 <p>&nbsp;</p>
                 <p>
-                    A CAFE is initialised after the organization sets a MFG, after which the price function is determined by a bonding curve. While the MFG is not met, all investors can buy tokens at the same price, the funds are escrowed, and investors can withdraw their investment. 
-                    As soon as the MFG is met and the bonding curve takes over, the funds are split, some sent to the cash reserve and the rest going to the organization issuing the CAFE.
+                    A Rolling SAFE is initialised after the organization sets a MFG, after which the price function is determined by a bonding curve. While the MFG is not met, all investors can buy tokens at the same price, the funds are escrowed, and investors can withdraw their investment. 
+                    As soon as the MFG is met and the bonding curve takes over, the funds are split, some sent to the cash reserve and the rest going to the organization issuing the Rolling SAFE.
                 </p>
             </div>
 
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">Converting tokens to equity – Termination</h2>
                 <p className="indent">
-                    Even though investors can buy and sell tokens as long as the offering is active, the question remains: When is a CAFE terminated?
+                    Even though investors can buy and sell tokens as long as the offering is active, the question remains: When is a Rolling SAFE terminated?
                 </p>
                 <p className="mt-4">
                     A conversion to equity prior to the termination is possible in case of a <span className="font-semibold">liquidity event</span> or a <span className="font-semibold">dissolution event</span>, i.e. a <span className="font-semibold">triggering event</span> like an IPO, the company being sold, or bankruptcy. In both cases, investors are entitled to receive a payable amount in respect to their investment, i.e. amount of token. 
@@ -89,14 +89,14 @@ export default function CafeInfo() {
                 <div>
                     <ul className="list-disc list-inside">
                     <li><a className="font-family-body font-semibold" href="https://fairmint-documents.s3.amazonaws.com/CAFE/CAFE+Template.docx" target="_blank" rel="noreferrer">Fairmint Inc.: Template for a Continuous Agreement for Future Equity</a></li>
-                    <li><a className="font-family-body font-semibold" href="https://fairmint.co/cafe-continuous-agreement-for-future-equity/#what-differences-cafe-safe" target="_blank" rel="noreferrer">Fairmint Inc.: The CAFE FAQ </a></li>
+                    <li><a className="font-family-body font-semibold" href="https://fairmint.co/cafe-continuous-agreement-for-future-equity/#what-differences-cafe-safe" target="_blank" rel="noreferrer">Fairmint Inc.: The Rolling SAFE FAQ </a></li>
                     <li><a className="font-family-body font-semibold" href="https://github.com/C-ORG/whitepaper" target="_blank" rel="noreferrer">Thibauld Favre: Continuous Organizations White Paper </a></li>
                     </ul>
                 </div>
             </div>
 
             <div className="w-full flex flex-wrap justify-between py-12 px-8">
-                <CtaCard href="https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a CAFE with Tezos?" classes="sm:pr-2"/>
+                <CtaCard href="https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a Rolling SAFE with Tezos?" classes="sm:pr-2"/>
                 <CtaCard href="/cafe-details" text="Next page &#8594;" title="Ready to continue?" classes="sm:pl-2"/>
             </div>
 
