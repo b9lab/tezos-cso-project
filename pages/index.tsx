@@ -53,7 +53,7 @@ export default function Home() {
                     TZMINT is a sample application demonstrating a Rolling SAFE for programmable equity (PEQ) funding on Tezos. The token investors can buy and sell on this sample application is called <span className="font-bold">TZM</span>.
                 </p>
                 <p className="mt-4">
-                    The programmable equity offering is issued as a <span className="font-semibold">continuous agreement for future equity</span>, i.e. a continuous token offering of a programmable equity. <br/>
+                    The programmable equity offering is issued as a <span className="font-semibold">Rolling SAFE</span>, i.e. a continuous token offering of a programmable equity. <br/>
                     Companies set a minimum funding goal and deploy a smart contract, which issues the tokens, handles funds as well as transactions, and manages the reserve holding a certain percentage of the funding to buy back the issued tokens once the offering is terminated. <br/>
                     Investors can buy and sell tokens at any point in time - as long as the offering is active. The price of the token is automated, initially set at a constant level and later adjusted by a buy-sell slope based on the 
                     number of tokens issued. The token is backed by the amount initially allocated to the reserve and the company’s future revenue.
