@@ -50,7 +50,7 @@ export default function Home() {
                     What is TZMINT?
                 </h2>
                 <p className="indent">
-                    TZMINT is a sample application demonstrating a continuous agreement for future equity (CAFE) for programmable equity (PEQ) funding on Tezos. The token investors can buy and sell on this sample application is called <span className="font-bold">TZM</span>.
+                    TZMINT is a sample application demonstrating a Rolling SAFE for programmable equity (PEQ) funding on Tezos. The token investors can buy and sell on this sample application is called <span className="font-bold">TZM</span>.
                 </p>
                 <p className="mt-4">
                     The programmable equity offering is issued as a <span className="font-semibold">continuous agreement for future equity</span>, i.e. a continuous token offering of a programmable equity. <br/>
@@ -64,7 +64,7 @@ export default function Home() {
             </div>
 
             <div className="w-full flex flex-wrap justify-between pt-12 px-8">
-                <CtaCard href="/cafe-info" text="A continuous agreement for future equity (CAFE). &#8594;" title="Already know all about programmable equity offerings? Jump ahead to look at a specific implementation of a PEQ offering:" classes="sm:pr-2"/>
+                <CtaCard href="/cafe-info" text="Rolling SAFE. &#8594;" title="Already know all about programmable equity offerings? Jump ahead to look at a specific implementation of a PEQ offering:" classes="sm:pr-2"/>
             </div>
             
             <div className="pt-12 px-8">
