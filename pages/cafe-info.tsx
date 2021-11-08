@@ -22,7 +22,7 @@ export default function CafeInfo() {
                     The Rolling SAFE allows investors to invest in a company at any time, with an implied valuation that grows automatically as more funds are raised, benefitting investors who move quickly.
                 </p>
                 <p className="mt-4">
-                    The Rolling SAFE is intented to streamline fundraising, freeing up time for Founders so that they can focus on what's important: doing business. 
+                    The Rolling SAFE is intented to streamline fundraising, freeing up time for Founders so that they can focus on what&#39;s important: doing business. 
                     Thus turning a company’s business momentum into fundraising momentum, providing it with more and more funds as things grow.
                 </p>
                 <p className="mt-4">

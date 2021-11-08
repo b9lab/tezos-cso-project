@@ -44,7 +44,7 @@ export default function YourOwnCAFE() {
                 </p>
                 <div>
                     <ul className="list-disc list-inside">
-                    <li>What company's ticker symbol (for example, $TZM for TZMINT, Inc.)?</li>
+                    <li>What company&#39;s ticker symbol (for example, $TZM for TZMINT, Inc.)?</li>
                     <li>What initial valuation and allocation of equity? How much of it should be reserved as stakeholder allocation for existing shareholders/community?</li>
                     <li>How long should the Rolling SAFE run?</li>
                     <li>How high should the Minimum Founding Goal (MFG) be?</li>
