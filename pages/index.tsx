@@ -50,7 +50,7 @@ export default function Home() {
                     What is TZMINT?
                 </h2>
                 <p className="indent">
-                    TZMINT is a sample application demonstrating a Rolling Simple Agreement for Future Equity (Rolling SAFE) a new programmable equity funding method on Tezos. The tokens investors can buy and sell on this sample application are called <span className="font-bold">TZM</span>.
+                    TZMINT is a sample application running on Tezos and demonstrating a Rolling Simple Agreement for Future Equity (Rolling SAFE) a new programmable equity funding method. The tokens investors can buy and sell on this sample application are called <span className="font-bold">TZM</span>.
                 </p>
                 <p className="mt-4">
                     The Rolling SAFE offering is issued as a <span className="font-semibold">Rolling Simple Agreement for Future Equity</span>, i.e. a a rolling agreement for future equity, an upgrade on the classic SAFE. <br/>
