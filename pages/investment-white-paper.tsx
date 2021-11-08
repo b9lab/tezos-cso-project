@@ -20,13 +20,13 @@ export default function InvestmentWhitePaper() {
                 <div className="mt-4">
                     <ul className="list-disc list-inside">
                         <li>Continuous Organizations <a className="font-family-body font-semibold" href="https://github.com/C-ORG/whitepaper#annex" target="_blank" rel="noreferrer">calculation details (annex)</a></li>
-                        <li>Fairmint&apos;s <a className="font-family-body font-semibold" href="https://fairmint.co/cafe-continuous-agreement-for-future-equity" target="_blank" rel="noreferrer">Continous Agreement for Future Equity</a> implementation</li>
+                        <li>Fairmint&apos;s <a className="font-family-body font-semibold" href="https://fairmint.co/cafe-continuous-agreement-for-future-equity" target="_blank" rel="noreferrer">Rolling SAFE</a> implementation</li>
                     </ul>
                 </div>
             </div>
 
             <div className="w-full flex flex-wrap justify-between py-12 px-8">
-                <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a CAFE with Tezos?" classes="sm:pr-2"/>
+                <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a Rolling SAFE with Tezos?" classes="sm:pr-2"/>
                 <CtaCard href="/get-started" text="Next page &#8594;" title="Ready to get started?" classes="sm:pl-2"/>
             </div>
 
