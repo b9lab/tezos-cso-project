@@ -53,7 +53,7 @@ export default function Home() {
                     TZMINT is a sample application running on Tezos and demonstrating a Rolling Simple Agreement for Future Equity (Rolling SAFE) a new programmable equity funding method. The tokens investors can buy and sell on this sample application are called <span className="font-bold">TZM</span>.
                 </p>
                 <p className="mt-4">
-                    The Rolling SAFE offering is issued as a <span className="font-semibold">Rolling Simple Agreement for Future Equity</span>, i.e. a a rolling agreement for future equity, an upgrade on the classic SAFE. <br/>
+                    The Rolling SAFE offering is issued as a <span className="font-semibold">Rolling Simple Agreement for Future Equity</span>, i.e. an agreement to emit/receive future equity, an upgrade on the classic SAFE. <br/>
                     Companies set a minimum funding goal and deploy a smart contract, which issues the tokens, handles funds as well as transactions, and manages the reserve holding a certain percentage of the funding to buy back the issued tokens once the offering is terminated. <br/>
                     Investors can buy and sell tokens at any point in time - as long as the offering is active. The price of the token is automated, initially set at a constant level and later adjusted by a buy-sell slope based on the 
                     number of tokens issued. The token is backed by the amount initially allocated to the reserve and the company’s future revenue.
