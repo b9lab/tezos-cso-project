@@ -97,16 +97,16 @@ export default function Home() {
                 </div>
                 <div className="mt-8 sm:ml-8 sm:mt-0 sm:w-1/2">
                     <p className="mt-4">
-                        The MFG increases protection for investors and the issuing organization: It assures investors that as long as the MFG is not met, for example, if it does not attract many investors, they can withdraw their investment and get 100% of it back. 
-                        Moreover, early investors get a fixed price for tokens, which creates a threshold under which the price for a token will not fall. The MFG also protects the issuing organization by providing great flexibility; as long as the MFG is not met, the organization can cancel the offering.
+                        The MFG increases protection for investors and the issuing organization: It assures investors that as long as the MFG is not met, for example if it does not attract many investors, they can withdraw their investment and get 100% of it back. 
+                        Moreover, early investors get a fixed price for tokens, which creates a threshold under which the price for a token will not fall. The MFG also protects the issuing organization by providing great flexibility; as long as the MFG is not met, the issuer can cancel the offering.
                     </p>
                 </div>
             </div>
 
             <div className="pt-12 px-8 ">
                 <p className="mt-4">                         
-                    Additionally, the issuer determines the terms of the Rolling SAFE offering by setting the percentage of the annual 
-                    revenue committed to the reserve. The higher the allocated percentage the less risky it is for investors, as the reserve ensures that the company issuing the offering has the financial means to buy back tokens from investors while the offering is active and when the time for termination comes.
+                    Additionally, the issuer determines the terms of the programmable equity offering by setting the percentage of the annual 
+                    revenue committed to the reserve. The higher the allocated percentage is, the less risky it is for investors, as the reserve ensures that the company issuing the offering has the financial means to buy back tokens from investors while the offering is active and when the time for termination comes.
                 </p>
                 <p className="mt-4">                        
                     Once the terms are set, tokens are issued proportionally to the amount of money invested.
@@ -118,24 +118,24 @@ export default function Home() {
                     What can be done while the MFG is not met?
                 </h2>
                 <p className="indent">
-                    As long as the MFG is not met, investors can receive the token at a fixed price and can sell them again to receive their investment back. 
+                    As long as the MFG is not met, investors can receive the token at a fixed and constant price, and can sell them again to receive their investment back. 
                     During this period, the funds of every investment are escrowed by the DAT.
                 </p>
                 <p className="mt-4">
-                    The Rolling SAFE offering can run indefinitely or have a set minimum running time, which is defined in the DAT. 
+                    The programmable equity offering can run indefinitely or have a set minimum running time, which is defined in the DAT. 
                     The running time can be increased by the issuer.
                 </p>
                 <p className="mt-4">
-                    The issuer can cancel the Rolling SAFE offering while the MFG is not met. In case of cancellation, all investors can withdraw their complete investment. 
-                    Once the minimum period of time is reached, the Rolling SAFE offering can be closed by the issuer.
+                    The issuer can cancel the programmable equity offering while the MFG is not met. In case of cancellation, all investors can withdraw their complete investment. 
+                    Once the minimum period of time is reached, the programmable equity offering can be closed by the issuer.
                 </p>
             </div>
 
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">MFG achieved: What happens now?</h2>
                     <p className="indent">
-                        Once the MFG is met, a so-called bonding curve starts with which a portion of the MFG is moved into a reserve 
-                        and another portion is transferred to the issuer, the beneficiary of the Rolling SAFE offering.
+                        Once the MFG is met, a so-called bonding curve starts. A portion of the MFG is moved into a reserve 
+                        and another portion is transferred to the issuer, the beneficiary of the programmable equity offering.
                     </p>
                     <p className="mt-4">
                         Why do we need a reserve? The reserve can be understood as the counterparty of an investor transaction to buy or sell the offering&apos;s tokens. It has to hold enough to buy tokens back anytime, especially when the offering is terminated and all tokens are bought back from the investors. For this reason, the tokens do not represent a claim on the organization&apos;s ownership, but instead is a representation of a financial claim against the reserve and the organization&apos;s future revenues. 
