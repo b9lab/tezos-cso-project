@@ -26,7 +26,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
             <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
                 <h1 className="mb-8">Rolling SAFE Parameters</h1>
                 <p className="body-text-large italic">
-                    Here you can find an overview of the Rolling SAFE&apos;s parameters and further explanations on how price and reserve works
+                    Here you can find an overview of the Rolling SAFE&apos;s parameters and further explanations on how price and reserve work
                 </p>
             </div>
 
@@ -43,7 +43,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Total equity allocation</p>
-                                <p className="body-text-small">Total amount of equity allocated for the Rolling SAFE offering</p>
+                                <p className="body-text-small">Total amount of equity allocated to the Rolling SAFE offering</p>
                             </td>
                             <td className="border border-dark-gray px-4 py-2">{format_percentage(data.totalAllocation)}</td>
                         </tr>
@@ -51,7 +51,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Stakeholder equity allocation</p>
                                 <p className="body-text-small">
-                                    Part of the total equity allocation reserved to compensate stakeholders in case the value stakeholder holding is affected by the proceedings of the Rolling SAFE
+                                    Part of the total equity allocation reserved to compensate stakeholders in case their held value decreases due to the Rolling SAFE
                                 </p>
                             </td>
                             <td className="border border-dark-gray px-4 py-2">{format_percentage(data.stakeAllocation)}</td>
@@ -87,14 +87,14 @@ export default function CafeDetails(props: CafeDetailsProps) {
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Governing rights</p>
-                                <p className="body-text-small">Decision-making authority and voting rights of token holders</p>
+                                <p className="body-text-small">Decision-making authority and voting rights for token holders</p>
                             </td>
                             <td className="border border-dark-gray px-4 py-2">{data.governingRights}</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Reserve percentage</p>
-                                <p className="body-text-small">Percentage of the funds being held in the contract&apos;s reserve</p>
+                                <p className="body-text-small">Percentage of the funds held in the contract&apos;s reserve</p>
                             </td>
                             <td className="border border-dark-gray px-4 py-2">{data.reservePercentage} %</td>
                         </tr>
@@ -108,6 +108,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Minimum funding goal</p>
+                                <p className="body-text-small">Lowest funding goal for the offering</p>
                             </td>
                             <td className="border border-dark-gray px-4 py-2"><TezAmount amount={data.minimumFundingGoal} nostyle={true} hideSign={true}/></td>
                         </tr>
@@ -138,23 +139,23 @@ export default function CafeDetails(props: CafeDetailsProps) {
                     <ImageWrapper src={priceImage} alt=""/>
                 </div>
                 <p className="mt-4">                
-                    The initial price is based on the valuation of the company. After an initial period (i.e. when the minimum funding goal is met), it is based on a function of the number of issued tokens and the number of tokens bought (i.e. the invested amount). <br/>                   
-                    The more tokens are issued, the higher the price is. The earlier you invest, the more tokens you receive; the price per token rises with the increasing token amount.
+                    The initial price is based on the valuation of the company. After an initial period (i.e. when the minimum funding goal is met), it is based on a function of the number of issued tokens and the number of tokens bought (the invested amount). <br/>                   
+                    The more tokens are issued, the higher the price is. The earlier you invest, the more tokens you receive, as the price per token rises with the increasing number of tokens.
                 </p>
                 <p className="mt-4">                
                     Whereby, the <span className="font-semibold">amount of capital</span> is per se unlimited. The equity allocation of the continuous Rolling SAFE offering can be increased but never decreased.
                 </p>
                 <p className="mt-4">
                     The <span className="font-bold">buy price</span> is determined by the number of tokens, as the buy function implements a linear relationship between the buy price and the number of tokens. 
-                    The <span className="font-bold">sell price</span> is influenced by the reserve. To control the sell price, the issuing organization can use the pay and burn functions to influence the reserve and with it control the sell price.
+                    The <span className="font-bold">sell price</span> is influenced by the reserve. To control the sell price, the issuer can use the pay and burn functions to influence the reserve and with it control the sell price.
                 </p>
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">A fixed target equity percentage allocation and fixed dilution</h2>
+                <h2 className="mb-8 highlight">Fixed target equity percentage allocation and fixed dilution</h2>
                 <p className="indent">
                     Rolling SAFEs have a <span className="font-semibold">fixed target equity percentage allocation</span>, because of the percentage dedicated to the reserve, ensuring fixed dilution. 
-                    Unlike when a company issues additional stock shares, the issuance of tokens and their value is fixed by the parameters of the Rolling SAFE&apos;s smart contract and the value investors hold is not reduced by the issuance of additional &quot;shares&quot; (tokens) as long as they hold their tokens up to the termination of the offering.
+                    Unlike when a company issues additional stock shares, the issuance of tokens and their value is fixed by the parameters of the Rolling SAFE&apos;s smart contract. For this reason, the value investors hold is not reduced by the issuance of additional &quot;shares&quot; (tokens) as long as they hold their tokens up to the termination of the offering.
                     In a Rolling SAFE, investors&apos; risk is reduced as dilution is fixed and pre-determined. The organization can seek further equity without additional share issuance negatively affecting the value current investors hold. There is no dilution from equity financing.
                 </p>
                 <p className="mt-4">
@@ -170,17 +171,17 @@ export default function CafeDetails(props: CafeDetailsProps) {
                     What is the reserve?
                 </h2>
                 <p className="mt-4">
-                    Once the MFG is met the bonding curve begins its work. The smart contract issues tokens, which represent a financial right (claim) on the cash reserve. 
+                    Once the MFG is met, the bonding curve begins its work. The smart contract issues tokens, which represent a financial right (claim) on the cash reserve. 
                     This reserve is managed by the smart contract and reflects the organization&apos;s revenues. 
-                    So to say, the token represents a claim on the revenue of the organization.
+                    So to say, the token represents a claim on the equity of the organization.
                 </p>
                 <p className="mt-4">
                     When the organization begins to generate revenue, part of the revenue goes into the buyback reserve. 
                     In addition, the revenue begins to drive the price of the token.
-                    This mechanism creates a clear incentive for investors to hold tokens until the organization begins generating revenues and the price begins to rise.
+                    This mechanism creates a clear incentive for investors to hold on to their tokens until the organization begins to generate revenues and the price begins to rise.
                 </p>
                 <p className="mt-4">
-                    The reserve allows for the bonding curve to act as an automated market maker, as tokens can be bought or sold at any point in time because the reserve holds enough funds to buy tokens back.
+                    The reserve allows for the bonding curve to act as an automated market maker. Because of the bonding curve, tokens can be bought or sold at any point in time, as the reserve holds enough funds to buy the tokens back.
                 </p>
             </div>
         

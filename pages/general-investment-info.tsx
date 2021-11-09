@@ -78,7 +78,7 @@ export default function GeneralInvestmentInfo() {
         <>
             <PriceBadge value={data?.tokenBuyPrice}/>
             <div className="pt-8 px-8">
-                <h1>{data?.companyName} - Investment Offer</h1>
+                <h1>{data?.companyName} - Investment Overview</h1>
                 <p className="my-2">
                     All current information the TZMINT offering
                 </p>

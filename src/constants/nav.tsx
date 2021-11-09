@@ -32,22 +32,22 @@ export const NAV_ITEMS: Array<NavItem> = [
             },
         */
             {
-                name: "Continuous Agreement for Future Equity",
+                name: "Rolling SAFE",
                 url: "/cafe-info",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             {
-                name: "Parameters of Continuous Agreement",
+                name: "Rolling SAFE Parameters",
                 url: "/cafe-details",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             {
-                name: "Run your own",
+                name: "Your Rolling SAFE",
                 url: "/your-own-cafe",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             {
-                name: "Investment White Paper",
+                name: "Further Resources",
                 url: "/investment-white-paper",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
@@ -76,7 +76,7 @@ export const NAV_ITEMS: Array<NavItem> = [
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             {
-                name: "Overview",
+                name: "Investment Overview",
                 url: "/general-investment-info",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
@@ -86,7 +86,7 @@ export const NAV_ITEMS: Array<NavItem> = [
                 visibility: NAV_ITEM_VISIBILITY.PRIVATE
             },
             {
-                name: "Buy & Sell",
+                name: "Buy & Sell TZM",
                 url: "/fund-withdraw",
                 visibility: NAV_ITEM_VISIBILITY.PRIVATE
             }

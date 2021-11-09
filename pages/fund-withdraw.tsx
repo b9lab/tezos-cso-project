@@ -352,7 +352,7 @@ export default function FundWithdraw() {
     return (
         <>
             <div className="p-8">
-                <h1>Buy and Sell TZM</h1>
+                <h1>Buy & Sell TZM</h1>
                 <p className="mt-2">
                     Want to buy or sell the Rolling SAFE tokens (TZM) for Tezos tokens (tez)?
                 </p>

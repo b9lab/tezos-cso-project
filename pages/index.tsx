@@ -138,7 +138,7 @@ export default function Home() {
                         and another portion is transferred to the issuer, the beneficiary of the programmable equity offering.
                     </p>
                     <p className="mt-4">
-                        Why do we need a reserve? The reserve can be understood as the counterparty of an investor transaction to buy or sell the offering&apos;s tokens. It has to hold enough to buy tokens back anytime, especially when the offering is terminated and all tokens are bought back from the investors. For this reason, the tokens do not represent a claim on the organization&apos;s ownership, but instead is a representation of a financial claim against the reserve and the organization&apos;s future revenues. 
+                        Why do we need a reserve? The reserve can be understood as the counterparty of an investor transaction to buy or sell the offering&apos;s tokens. It has to hold enough to buy tokens back anytime, especially when the offering is terminated and all tokens are bought back from the investors. For this reason, the tokens do not represent a claim on the organization&apos;s ownership, but instead are a representation of a financial claim against the reserve and the organization&apos;s future equity. 
                     </p>
             </div>
             <div className="pt-12 px-8 flex justify-between flex-col-reverse sm:flex-row">
@@ -147,7 +147,7 @@ export default function Home() {
                         The bonding curve consists of two functions, one to determine the buy curve and one for the sell curve. The bonding curve acts as an automated market maker to allow for an instant buy and sell of tokens.
                     </p>
                     <p className="mt-4">
-                        Now, investors can no longer withdraw their funds, but instead, sell their tokens at a calculated price. While the MFG is not met, all funds are escrowed. Thus, investors can withdraw their investment and receive all of it back. As soon as the bonding curve begins, investors can only sell their tokens for the current price.
+                        Now, investors can no longer withdraw their funds, but instead, sell their tokens at a calculated price. While the MFG is not met, all funds are escrowed. Thus, investors can withdraw their investment and receive all of it back. As soon as the bonding curve begins, investors can only sell their tokens at the current price.
                     </p>
                 </div>
                 <div className="sm:w-1/2 flex content-center">
@@ -163,7 +163,7 @@ export default function Home() {
                     Once the MFG is met, the offering can no longer be cancelled and remains active as defined by the minimum running time of the offering.
                 </p>
                 <p className="mt-4">
-                    When the Rolling SAFE offering ends, all outstanding tokens are bought back by the issuer through an exit fee transfer to the reserve.
+                    When the programmable equity offering ends, all outstanding tokens are bought back by the issuer through an exit fee transfer to the reserve.
                 </p>
             </div>
 
@@ -173,7 +173,7 @@ export default function Home() {
                 </h2>
                 <p className="indent">
                     With blockchain technology, many <span className="font-semibold">new financing mechanisms</span> were explored. A colorful parade of acronyms followed - ICOs, IEOs, STOs, SAFTs, ... <br/>
-                    <span className="font-semibold">Initial Coin Offerings</span> (ICOs) became a very popular method for blockchain projects to raise high amounts of capital. This led to a boom of such offerings. With the boom came disillusionment and disenchantment: With an increased number of ICOs came the realisation that many ICO tokens did not represent much worth. Thus, leading to no value in open markets, i.e. secondary markets.
+                    <span className="font-semibold">Initial Coin Offerings</span> (ICOs) became a very popular method for blockchain projects to raise high amounts of capital. This led to a rise in the number of such offerings. After the boom came disillusionment and disenchantment: With an increased number of ICOs came the realization that many ICO tokens did not hold much worth, having not much value in open markets (secondary markets).
                 </p>
                 <p className="mt-4">
                     ICOs were not without <span className="font-semibold">benefits</span>: This egalitarian and accessible offering frees companies from courting venture capitalists and the constraining process with strong regulatory requirements and high costs of an IPO. <br/>
@@ -195,11 +195,11 @@ export default function Home() {
                     </ul>
                 </div>
                 <p className="mt-4">
-                    A revenue-focused approach based on a company’s future shares aligns stakeholder interests, allows for greater investor accessibility and protects investors more because of the algorithmic ties between the token and company’s 
-                    revenues and the reserve-backing, while also maintaining founders’ ownership and opening up new liquidity. In addition, programmable equity offerings have a stronger regulatory stance as they are no equity investments.
+                    A revenue-focused approach based on a company’s future shares aligns stakeholder interests, allows for greater investor accessibility, and protects investors more because of the algorithmic ties between the token and the company’s 
+                    revenues, and the reserve-backing, while also maintaining founders’ ownership and opening up new liquidity. In addition, programmable equity offerings have a stronger regulatory stance as they are no equity investments.
                 </p>
                 <p className="mt-4">                  
-                    <span className="font-semibold">The biggest benefit of programmable equity offerings is the value proposition of tokens: As tokens represent a claim on the reserve, and indirectly future revenue, the token has an intrinsic value tied to the reserve.</span>
+                    <span className="font-semibold">The biggest benefit of programmable equity offerings is the value proposition of tokens: As tokens represent a claim on the reserve, and indirectly future equity, the token has an intrinsic value tied to the reserve.</span>
                 </p>
             </div>
 
