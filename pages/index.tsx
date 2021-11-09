@@ -55,7 +55,7 @@ export default function Home() {
                 <p className="mt-4">
                     The programmable equity offering is issued as a <span className="font-semibold">Rolling SAFE</span>, i.e. a rolling/continuous agreement for future equity. Rolling SAFEs can be understood as an upgrade to a classic SAFE.<br/>
                     Companies set a minimum funding goal and deploy a smart contract, which issues the tokens, handles funds as well as transactions, and manages the reserve holding a certain percentage of the funding to buy back the issued tokens once the offering is terminated.<br/>
-                    Investors can buy and sell tokens at any point in time - as long as the offering is active. The price of the token is automated, initially set at a constant level and later adjusted by a buy-sell slope based on the 
+                    Investors can buy and sell tokens at any point in time - as long as the offering is active and investors can sell when the MGF and the lock period are reached. The price of the token is automated, initially set at a constant level and later adjusted by a buy-sell slope based on the 
                     number of tokens issued. The token is backed by the amount initially allocated to the reserve and the amount of a company’s future revenue.
                 </p>
                 <p className="mt-4">
