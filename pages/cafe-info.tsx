@@ -22,11 +22,11 @@ export default function CafeInfo() {
                     The Rolling SAFE allows investors to invest in a company at any time, with an implied valuation that grows automatically as more funds are raised, benefitting investors who move quickly.
                 </p>
                 <p className="mt-4">
-                    The Rolling SAFE is intented to streamline fundraising, freeing up time for Founders so that they can focus on what&#39;s important: doing business. 
+                    The Rolling SAFE is intended to streamline fundraising, freeing up time for Founders so that they can focus on what&#39;s important: doing business. 
                     Thus turning a company’s business momentum into fundraising momentum, providing it with more and more funds as things grow.
                 </p>
                 <p className="mt-4">
-                    A <span className="font-semibold">Rolling SAFE</span> is a <span className="font-bold">specific implementation of a programmable equity (PEQ) financing mechanism</span> designed to raise from professional investors (VCs, angels, value-add operators) and aiming to be accessible to community as well.
+                    A <span className="font-semibold">Rolling SAFE</span> is a <span className="font-bold">specific implementation of a programmable equity (PEQ) financing mechanism</span> designed to raise from professional investors (VCs, angels, value-add operators) and aiming to be accessible to the community as well.
                     It envisioned to bring:
                 </p>
                 <div>
@@ -46,19 +46,19 @@ export default function CafeInfo() {
                     Steps in a Rolling SAFE
                 </h2>
                 <p className="mt-4 indent">
-                    A Rolling SAFE can be divided into three steps: the initialisation and start until the MFG is reached, the &quot;post-MFG&quot; phase in which the token price is determined by bonding curve, and the termination of the Rolling SAFE.
+                    A Rolling SAFE can be divided into three steps: the initialization and start until the MFG is reached, the &quot;post-MFG&quot; phase in which the token price is determined by bonding curve, and the termination of the Rolling SAFE.
                 </p>    
                 <div>
                     <ol className="list-decimal list-inside">
-                        <li>During <span className="font-semibold">initialisation</span> a company deploys a smart contract, sets a minimum funding goal (MFG), values the company, and creates the reserve with a set percentage of revenue being allocated to it.</li>
+                        <li>During <span className="font-semibold">initialization</span>, a company deploys a smart contract, sets a minimum funding goal (MFG), values the company, and creates the reserve with a set percentage of revenue being allocated to it.</li>
                         <li>While the <span className="font-semibold">offering runs</span>, tokens are issued/minted proportionally to the amount held in the reserve. Token holders (the investors) can buy and sell their tokens for market prices, as well as sell them directly to the reserve, i.e. redeem them by letting the reserve buy them back while the offering is active (not terminated).</li>
                         <li>When the <span className="font-semibold">offering ends</span>, all tokens in circulation are bought back by the company, similar to a traditional buyback.</li>
                     </ol>
                 </div>
                 <p>&nbsp;</p>
                 <p>
-                    A Rolling SAFE is initialised after the organization sets a MFG, after which the price function is determined by a bonding curve. While the MFG is not met, all investors can buy tokens at the same price, the funds are escrowed, and investors can withdraw their investment. 
-                    As soon as the MFG is met and the bonding curve takes over, the funds are split, some sent to the cash reserve and the rest going to the organization issuing the Rolling SAFE.
+                    A Rolling SAFE is initialized after the organization sets an MFG, after which the price function is determined by a bonding curve. While the MFG is not met, all investors can buy tokens at the same price, the funds are escrowed, and investors can withdraw their investment. 
+                    As soon as the MFG is met and the bonding curve takes over, the funds are split, some sent to the cash reserve, and the rest going to the organization issuing the Rolling SAFE.
                 </p>
             </div>
 
@@ -68,7 +68,7 @@ export default function CafeInfo() {
                     Even though investors can buy and sell tokens as long as the offering is active, the question remains: When is a Rolling SAFE terminated?
                 </p>
                 <p className="mt-4">
-                    A conversion to equity prior to the termination is possible in case of a <span className="font-semibold">liquidity event</span> or a <span className="font-semibold">dissolution event</span>, i.e. a <span className="font-semibold">triggering event</span> like an IPO, the company being sold, or bankruptcy. In both cases, investors are entitled to receive a payable amount in respect to their investment, i.e. amount of token. 
+                    A conversion to equity prior to termination is possible in case of a <span className="font-semibold">liquidity event</span> or a <span className="font-semibold">dissolution event</span>, i.e. a <span className="font-semibold">triggering event</span> like an IPO, the company being sold, or bankruptcy. In both cases, investors are entitled to receive a payable amount in respect to their investment, i.e. amount of token. 
                 </p>
                 <p className="mt-4">
                     The offering can run indefinitely, as long as the issuing organization does not <span className="font-bold">close</span> it. 
