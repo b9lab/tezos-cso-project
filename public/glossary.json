@@ -9,19 +9,19 @@
     },
     {
       "term" : "Programmable equity",
-      "description" : "Technology-enabled financing mechanism based on equity claim issuance. A CAFE is a programmable equity offering."
+      "description" : "Technology-enabled financing mechanism based on equity claim issuance. A Rolling SAFE is a programmable equity offering."
     },
     {
       "term" : "PEQ",
-      "description" : "Technology-enabled financing mechanism based on equity claim issuance. A CAFE is a programmable equity offering."
+      "description" : "Technology-enabled financing mechanism based on equity claim issuance. A Rolling SAFE is a programmable equity offering."
     },
     {
-      "term" : "Continuous agreement for future equity",
-      "description" : "Blockchain technology-enabled continuous token offering, in which tokens represent a claim on future revenues of the issuing organization."
+      "term" : "Rolling Simple Agreement for Future Equity",
+      "description" : "Blockchain technology-enabled continuous token offering, in which tokens represent a claim on future equity of the issuing organization."
     },
     {
-      "term" : "CAFE",
-      "description" : "Blockchain technology-enabled continuous token offering, in which tokens represent a claim on future revenues of the issuing organization."
+      "term" : "Rolling SAFE",
+      "description" : "Blockchain technology-enabled continuous token offering, in which tokens represent a claim on future equity of the issuing organization."
     },
     {
       "term" : "Buyback",
@@ -56,16 +56,12 @@
       "description" : "Financial mechanisms based on investor funding."
     },
     {
-      "term" : "(Equity) dilution",
+      "term" : "dilution",
       "description" : "A value reduction of existing shares after additional shares of stock (equity) are issued and investor's ownership of a company."
     },
     {
       "term" : "TZM",
       "description" : "The token of the TZMINT educational sample application."
-    },
-    {
-      "term" : "Continuous token offering",
-      "description" : "Tokens are continuously offered in a period of time, while "
     },
     {
       "term" : "Minimum funding goal",
@@ -108,7 +104,7 @@
       "description" : "Entities that pool money, like a commercial bank or hedge funds."
     },
     {
-      "term" : "Redeem (tokens)",
+      "term" : "Redeem",
       "description" : "When a token holder wants to \"sell\" his tokens back to the smart contract, which are then burned (destroyed) and no longer available in an open market."
     }
   ]
