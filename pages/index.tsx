@@ -19,21 +19,21 @@ export default function Home() {
 
             <div className="pt-8 px-8">
                 <p className="indent">
-                    This platform is an example project, which is part of the educational course on the <a className="font-family-body" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer">Tezos Developer Platform</a>. 
+                    This platform is an example project and part of the educational course on the <a className="font-family-body" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer">Tezos Developer Platform</a>. 
                     There is <span className="text-highlight">no real investment or company</span> involved. Instead, all transactions displayed are performed on a testnet, 
-                    <span className="font-bold"> the Granada testnet</span>.
+                    <span className="font-bold"> the Granada Testnet</span>.
                 </p>
             </div>
 
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">
-                    Why a programmable equity on Tezos?
+                    Why a programmable equity offering on Tezos?
                 </h2>
                 <p className="indent">
-                    The purpose of this project is to showcase implementation of a full platform that interacts with the Tezos blockchain. TZMINT is an educational project for developers who want to <span className="font-bold">learn how to develop Tezos applications</span> leveraging the ecosystem stack. This platform is an example implementation; you can find more information on how the project was developed and implemented on the <a className="font-family-body" href="http://tezos.b9lab.com/cso-project" target="_blank" rel="noreferrer"> Tezos Developer Platform</a>.
+                    The purpose of this project is to showcase implementation of a full platform that interacts with the Tezos blockchain. TZMINT is an educational project for developers who want to <span className="font-bold">learn how to develop Tezos applications</span> leveraging the ecosystem stack. This platform is an example implementation.
                 </p>
                 <p className="mt-4">
-                    You can test the example application without having to know much about the inner workings of Tezos. For an introduction to Tezos and developing with the Tezos stack, please see <a className="font-family-body" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer">B9lab&apos;s Tezos Developer Platform</a>. This illustration of a programmable equity implementation on Tezos gives blockchain developers an example of such an application on Tezos.
+                    You can test the example application without having to know much about the inner workings of Tezos. For an introduction to Tezos and developing with the Tezos stack, please see <a className="font-family-body" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer">B9lab&apos;s Tezos Developer Platform</a>.
                 </p>
                 <p className="mt-4">
                     Due to the educational aim of this platform, some steps that go beyond the scope of a blockchain and would add complexity have been omitted 
@@ -41,7 +41,7 @@ export default function Home() {
                 </p>
 
                 <div className="w-full flex flex-wrap justify-between">
-                    <CtaCard href="https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Dive into the specifics of developing a programmable equity implementation on Tezos" classes="sm:pr-2"/>
+                    <CtaCard href="https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Want to dive into the specifics of developing a programmable equity offering with Tezos?" classes="sm:pr-2"/>
                 </div>
             </div>
 
