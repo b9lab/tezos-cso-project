@@ -43,7 +43,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Total equity allocation</p>
-                                <p className="body-text-small">Total Amount of equity allocated for the Rolling SAFE offering</p>
+                                <p className="body-text-small">Total amount of equity allocated for the Rolling SAFE offering</p>
                             </td>
                             <td className="border border-dark-gray px-4 py-2">{format_percentage(data.totalAllocation)}</td>
                         </tr>

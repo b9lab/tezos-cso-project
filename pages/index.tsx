@@ -50,16 +50,16 @@ export default function Home() {
                     What is TZMINT?
                 </h2>
                 <p className="indent">
-                    TZMINT is a sample application demonstrating a Rolling Simple Agreement for Future Equity (Rolling SAFE) a new programmable equity funding method on Tezos. The tokens investors can buy and sell on this sample application are called <span className="font-bold">TZM</span>.
+                    TZMINT is a sample application demonstrating a Rolling Simple Agreement for Future Equity (Rolling SAFE), a new programmable equity funding method on Tezos. The tokens investors can buy and sell on this sample application are called <span className="font-bold">TZM</span>.
                 </p>
                 <p className="mt-4">
-                    The Rolling SAFE offering is issued as a <span className="font-semibold">Rolling Simple Agreement for Future Equity</span>, i.e. a rolling/continuous agreement for future equity, an upgrade on the classic SAFE. <br/>
-                    Companies set a minimum funding goal and deploy a smart contract, which issues the tokens, handles funds as well as transactions, and manages the reserve holding a certain percentage of the funding to buy back the issued tokens once the offering is terminated. <br/>
+                    The programmable equity offering is issued as a <span className="font-semibold">Rolling SAFE</span>, i.e. a rolling/continuous agreement for future equity. Rolling SAFEs can be understood as an upgrade to a classic SAFE.<br/>
+                    Companies set a minimum funding goal and deploy a smart contract, which issues the tokens, handles funds as well as transactions, and manages the reserve holding a certain percentage of the funding to buy back the issued tokens once the offering is terminated.<br/>
                     Investors can buy and sell tokens at any point in time - as long as the offering is active. The price of the token is automated, initially set at a constant level and later adjusted by a buy-sell slope based on the 
-                    number of tokens issued. The token is backed by the amount initially allocated to the reserve and the company’s future revenue.
+                    number of tokens issued. The token is backed by the amount initially allocated to the reserve and the amount of a company’s future revenue.
                 </p>
                 <p className="mt-4">
-                    To better understand the new financing instrument and its mechanisms implemented in this project, let&apos;s first explore what a Rolling SAFE offering is.
+                    To better understand the new financing instrument and its mechanisms implemented, let&apos;s first explore what a programmable equity offering is.
                 </p>
             </div>
 
@@ -72,22 +72,22 @@ export default function Home() {
                     What is a programmable equity offering?
                 </h2>
                 <p className="indent">
-                    In a Rolling SAFE offering, security tokens are issued, which can for example represent a proportional share of a company&apos;s future revenue. 
-                    Thus, it would not be equity-centered but revenue-focused and bear the potential of aligning stakeholder interests with the financial success of a company.
+                    In a programmable equity offering, security tokens are issued, which can for example represent a proportional share of a company&apos;s future revenue. 
+                    Thus, it is not equity-centered but revenue-focused, and bears the potential of aligning stakeholder interests with the financial success of a company.
                 </p>
                 <p className="mt-4">
-                    Whereby, the company setting up the Rolling SAFE is often called the <span className="font-semibold">issuer</span> 
+                    Whereby, the company setting up the programmable equity, <span className="font-semibold">the issuer</span>, is often called <span className="font-semibold">continuous organization</span>, 
                     as the security tokens are offered continuously and not just during one instance. It funnels a part of its revenue, a fixed percentage, 
                     into a <span className="font-semibold">Decentralized Autonomous Trust (DAT)</span> during a pre-defined time period. 
-                    A DAT is a <span className="font-semibold">smart contract</span> that automatically issues the tokenised security, and handles sales and buybacks.
+                    A DAT is a <span className="font-semibold">smart contract</span> that automatically issues the tokenized security, and handles sales and buybacks.
                 </p>
             </div>
 
             <div className="pt-12 px-8 ">
                 <h2 className="mb-8 highlight">How does a programmable equity offering work?</h2>
                 <p className="indent">
-                    The continuous organization sets a <span className="font-semibold">Minimum Funding Goal (MFG)</span>, a set amount of investment. 
-                    DAT tokens, which represent a claim on the DAT-managed cash reserve, i.e. a function of revenues, are issued to reach the MFG.
+                    The continuous organization sets a <span className="font-semibold">minimum funding goal (MFG)</span>, the offering's target amount. 
+                    DAT tokens, which represent a claim on the DAT-managed cash reserve, are issued to reach the MFG.
                 </p>
             </div>
 
