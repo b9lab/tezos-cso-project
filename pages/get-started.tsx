@@ -176,10 +176,10 @@ export default function GetStarted() {
 
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">
-                    Getting my first Granada testnet tez
+                    Getting my first Granada Testnet tez
                 </h2>
                 <p>
-                    Now that you have signed in and connected your wallet, it’s time to get some Granada testnet tez!
+                    Now that you have signed in and connected your wallet, it’s time to get some Granada Testnet tez!
                 </p>
                 <p className="mt-4">
                     The easiest way to get some tez is to go via the Telegram <span className="font-semibold">Faucet Bot</span>. <br/>

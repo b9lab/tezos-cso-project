@@ -64,12 +64,12 @@ export default function Home() {
             </div>
 
             <div className="w-full flex flex-wrap justify-between pt-12 px-8">
-                <CtaCard href="/cafe-info" text="A Rolling Simple Agreement for Future Equity (Rolling SAFE). &#8594;" title="Already know all about Rolling SAFE offerings? Jump ahead to look at a specific implementation of a PEQ offering:" classes="sm:pr-2"/>
+                <CtaCard href="/cafe-info" text="A Rolling Simple Agreement for Future Equity (Rolling SAFE). &#8594;" title="Already know all about Rolling SAFE offerings? Jump ahead to look at a specific implementation of a programmable equity offering:" classes="sm:pr-2"/>
             </div>
             
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">
-                    What is a Rolling SAFE offering?
+                    What is a programmable equity offering?
                 </h2>
                 <p className="indent">
                     In a Rolling SAFE offering, security tokens are issued, which can for example represent a proportional share of a company&apos;s future revenue. 
@@ -84,7 +84,7 @@ export default function Home() {
             </div>
 
             <div className="pt-12 px-8 ">
-                <h2 className="mb-8 highlight">How does a Rolling SAFE offering work?</h2>
+                <h2 className="mb-8 highlight">How does a programmable equity offering work?</h2>
                 <p className="indent">
                     The continuous organization sets a <span className="font-semibold">Minimum Funding Goal (MFG)</span>, a set amount of investment. 
                     DAT tokens, which represent a claim on the DAT-managed cash reserve, i.e. a function of revenues, are issued to reach the MFG.
@@ -169,7 +169,7 @@ export default function Home() {
 
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">
-                    New fundraising method - How is a PEQ offering different from an ICO?
+                    New fundraising method - How is a programmable equity offering different from an ICO?
                 </h2>
                 <p className="indent">
                     With blockchain technology, many <span className="font-semibold">new financing mechanisms</span> were explored. A colorful parade of acronyms followed - ICOs, IEOs, STOs, SAFTs, ... <br/>
@@ -196,10 +196,10 @@ export default function Home() {
                 </div>
                 <p className="mt-4">
                     A revenue-focused approach based on a company’s future shares aligns stakeholder interests, allows for greater investor accessibility and protects investors more because of the algorithmic ties between the token and company’s 
-                    revenues and the reserve-backing, while also maintaining founders’ ownership and opening up new liquidity. In addition, PEQ offerings have a stronger regulatory stance as they are no equity investments.
+                    revenues and the reserve-backing, while also maintaining founders’ ownership and opening up new liquidity. In addition, programmable equity offerings have a stronger regulatory stance as they are no equity investments.
                 </p>
                 <p className="mt-4">                  
-                    <span className="font-semibold">The biggest benefit of PEQ offerings is the value proposition of tokens: As tokens represent a claim on the reserve, and indirectly future revenue, the token has an intrinsic value tied to the reserve.</span>
+                    <span className="font-semibold">The biggest benefit of programmable equity offerings is the value proposition of tokens: As tokens represent a claim on the reserve, and indirectly future revenue, the token has an intrinsic value tied to the reserve.</span>
                 </p>
             </div>
 
