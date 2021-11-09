@@ -27,7 +27,7 @@ export default function Home() {
 
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">
-                    Why programmable equity on Tezos?
+                    Why a programmable equity on Tezos?
                 </h2>
                 <p className="indent">
                     The purpose of this project is to showcase implementation of a full platform that interacts with the Tezos blockchain. TZMINT is an educational project for developers who want to <span className="font-bold">learn how to develop Tezos applications</span> leveraging the ecosystem stack. This platform is an example implementation; you can find more information on how the project was developed and implemented on the <a className="font-family-body" href="http://tezos.b9lab.com/cso-project" target="_blank" rel="noreferrer"> Tezos Developer Platform</a>.

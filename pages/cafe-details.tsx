@@ -24,7 +24,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
         <div className="pb-8">
 
             <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
-                <h1 className="mb-8">Rolling SAFE parameters</h1>
+                <h1 className="mb-8">Rolling SAFE Parameters</h1>
                 <p className="body-text-large italic">
                     Here you can find an overview of the Rolling SAFE&apos;s parameters and further explanations on how price and reserve works
                 </p>
@@ -66,7 +66,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Minimum investment</p>
-                                <p className="body-text-small">Minimum amount required for a new investment</p>
+                                <p className="body-text-small">The minimum amount required for a new investment</p>
                             </td>
                             <td className="border border-dark-gray px-4 py-2"><TezAmount amount={data.minimumInvestment} nostyle={true} hideSign={true}/> </td>
                         </tr>
@@ -132,20 +132,20 @@ export default function CafeDetails(props: CafeDetailsProps) {
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">Determining the price for the Rolling SAFE token</h2>
                 <p className="indent">
-                    Once the offering is launched, qualified investors can engage at any point of time. The <span className="font-semibold">price</span> is automated and non-negotiable.
+                    Once the offering is launched, qualified investors can engage at any point in time. The <span className="font-semibold">price</span> is automated and non-negotiable.
                 </p>
                 <div className="w-full mt-8">
                     <ImageWrapper src={priceImage} alt=""/>
                 </div>
                 <p className="mt-4">                
                     The initial price is based on the valuation of the company. After an initial period (i.e. when the minimum funding goal is met), it is based on a function of the number of issued tokens and the number of tokens bought (i.e. the invested amount). <br/>                   
-                    The more tokens are issued, the higher the price is. The earlier you invest, the more tokens you receive; the price per token rises with increasing token amount.
+                    The more tokens are issued, the higher the price is. The earlier you invest, the more tokens you receive; the price per token rises with the increasing token amount.
                 </p>
                 <p className="mt-4">                
                     Whereby, the <span className="font-semibold">amount of capital</span> is per se unlimited. The equity allocation of the continuous Rolling SAFE offering can be increased but never decreased.
                 </p>
                 <p className="mt-4">
-                    The <span className="font-bold">buy price</span> is determined by the amount of tokens, as the buy function implements a linear relationship between the buy price and the amount of tokens. 
+                    The <span className="font-bold">buy price</span> is determined by the number of tokens, as the buy function implements a linear relationship between the buy price and the number of tokens. 
                     The <span className="font-bold">sell price</span> is influenced by the reserve. To control the sell price, the issuing organization can use the pay and burn functions to influence the reserve and with it control the sell price.
                 </p>
             </div>
@@ -153,7 +153,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">A fixed target equity percentage allocation and fixed dilution</h2>
                 <p className="indent">
-                    Rolling SAFEs have a <span className="font-semibold">fixed target equity percentage allocation</span>, because of to the percentage dedicated to the reserve, ensuring fixed dilution. 
+                    Rolling SAFEs have a <span className="font-semibold">fixed target equity percentage allocation</span>, because of the percentage dedicated to the reserve, ensuring fixed dilution. 
                     Unlike when a company issues additional stock shares, the issuance of tokens and their value is fixed by the parameters of the Rolling SAFE&apos;s smart contract and the value investors hold is not reduced by the issuance of additional &quot;shares&quot; (tokens) as long as they hold their tokens up to the termination of the offering.
                     In a Rolling SAFE, investors&apos; risk is reduced as dilution is fixed and pre-determined. The organization can seek further equity without additional share issuance negatively affecting the value current investors hold. There is no dilution from equity financing.
                 </p>

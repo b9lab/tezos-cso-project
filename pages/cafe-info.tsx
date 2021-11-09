@@ -12,7 +12,7 @@ export default function CafeInfo() {
             <div className="pt-32 pb-8 px-8 bg-gradient-to-b from-light-gray to-gray-300">
                 <h1 className="mb-8">Rolling Simple Agreement for Future Equity (Rolling SAFE)</h1>
                 <p className="body-text-large italic">
-                    Rolling SAFE, a continuous Equity offering
+                    Rolling SAFE, a continuous equity offering
                 </p>
             </div>
 

@@ -47,13 +47,13 @@ export default function GetStarted() {
 
             <div className="pt-12 px-8">
                 <h2 className="mb-8 highlight">
-                    Signing in
+                    Signing-in
                 </h2>
                 <p>
                     To sign in, please click on the <span className="font-semibold italic">Sign in</span> button in the top right corner.
                 </p>
                 <p className="mt-4">
-                    You can now choose between <span className="font-semibold italic">two ways to sign</span>:
+                    You can now choose between <span className="font-semibold italic">two ways to sign in</span>:
                 </p>
                 <div className="ml-8">
                     <ul className="list-disc list-inside">
@@ -62,7 +62,7 @@ export default function GetStarted() {
                     </ul>
                 </div>
                 <p className="mt-4">
-                    To sign in with your <span className="font-semibold">email</span>, type in your email address into the field and click on <span className="font-semibold italic">Sign in with Email</span>. You will receive a sign in link to your email address. <br/>
+                    To sign in with your <span className="font-semibold">email</span>, type in your email address into the field and click on <span className="font-semibold italic">Sign in with Email</span>. You will receive a sign-in link to your email address. <br/>
                     Just click on the <span className="font-semibold italic">Sign in</span> button in the email and you will be redirected to the platform.
                 </p>
                 <p className="mt-4">
@@ -96,7 +96,7 @@ export default function GetStarted() {
                 <div className="ml-8">
                     <ul className="list-disc list-inside">
                         <li><a className="font-family-body font-semibold" href="https://chrome.google.com/webstore/detail/spire/gpfndedineagiepkpinficbcbbgjoenn?hl=en" target="_blank" rel="noreferrer">Spire</a> and <a className="font-family-body font-semibold" href="https://templewallet.com/" target="_blank" rel="noreferrer">Temple Wallet</a> - if you want to connect through a browser extension,</li>
-                        <li><a className="font-family-body font-semibold" href="https://cryptonomic.tech/galleon.html" target="_blank" rel="noreferrer">Galleon</a>, <a className="font-family-body font-semibold" href="https://wallet.kukai.app/" target="_blank" rel="noreferrer">Kukai Wallet</a>, or <a className="font-family-body font-semibold" href="https://umamiwallet.com/" target="_blank" rel="noreferrer">Umami</a> - if you want to connect a desktop of web wallet, and</li>
+                        <li><a className="font-family-body font-semibold" href="https://cryptonomic.tech/galleon.html" target="_blank" rel="noreferrer">Galleon</a>, <a className="font-family-body font-semibold" href="https://wallet.kukai.app/" target="_blank" rel="noreferrer">Kukai Wallet</a>, or <a className="font-family-body font-semibold" href="https://umamiwallet.com/" target="_blank" rel="noreferrer">Umami</a> - if you want to connect a desktop or web wallet, and</li>
                         <li><a className="font-family-body font-semibold" href="https://airgap.it/" target="_blank" rel="noreferrer">AirGap Wallet</a> - if you want to connect through a mobile wallet.</li>
                     </ul>
                 </div>
@@ -106,7 +106,7 @@ export default function GetStarted() {
                 <div>
                     <ol className="list-decimal list-inside">
                         <li>Install the <span className="font-semibold">Temple Wallet extension</span> for your browser. If your using Google Chrome, just go to the <a className="font-family-body font-semibold" href="https://chrome.google.com/webstore/detail/temple-tezos-wallet-ex-th/ookjlbkiijinhpmnjffcofjonbfbgaoc?hl=en" target="_blank" rel="noreferrer">Chrome Web Store</a> and add the extension for Temple.</li>
-                        <li>Once the extension is added, Temple will ask you whether you want to create a new a wallet - in case you do not have a wallet yet - or import your existing wallet.</li>
+                        <li>Once the extension is added, Temple will ask you whether you want to create a new wallet - in case you do not have a wallet yet - or import your existing wallet.</li>
                         <div className="w-full mt-4">
                             <ImageWrapper src={temple1Image} alt=""/>
                         </div>
@@ -126,7 +126,7 @@ export default function GetStarted() {
                             <ImageWrapper src={temple3Image} alt=""/>
                         </div>
                         <p className="mt-4">
-                            Save your seed phrase somewhere safe - for example, on a piece of paper. Then confirm you made a backup by ticking the box and click <span className="font-semibold italic">Continue</span>.
+                            Save your seed phrase somewhere safe - for example, on a piece of paper. Then confirm you made a backup by ticking the box and clicking <span className="font-semibold italic">Continue</span>.
                         </p>
                         <p className="mt-4">
                             Now, verify your seed phrase, and click <span className="font-semibold italic">Finish</span>.
@@ -140,18 +140,18 @@ export default function GetStarted() {
                         <div className="w-full mt-4">
                             <ImageWrapper src={temple5Image} alt=""/>
                         </div>
-                        <li>Now you have to pair your wallet, but first make sure you <span className="font-semibold">select the correct network</span>. Go to your Temple extension. It should be set by default to the Mainnet, but you want the Granada Testnet for the purposes of this platform. Just navigate to the upper right-hand corner and click on <span className="font-semibold italic">Tezos Mainnet</span>. This opens a drop-down menu with all available networks to select from. Select <span className="font-semibold italic">Granada Testnet</span>.</li>
-                        <li>
+                        <li>Now you have to pair your wallet, but first, make sure you <span className="font-semibold">select the correct network</span>. Go to your Temple extension. It should be set by default to the Mainnet, but you want the Granada Testnet for this platform. Just navigate to the upper right-hand corner and click on <span className="font-semibold italic">Tezos Mainnet</span>. This opens a drop-down menu with all available networks to select from. Select <span className="font-semibold italic">Granada Testnet</span>.</li>
+                        <p className="mt-4">
                             <div className="w-full mt-4">
                                 <ImageWrapper src={temple6Image} alt=""/>
                             </div>
-                        </li>
-                        <li>As you will need your address to pair your wallet and receive testnet token, click on <span className="font-semibold italic">Receive</span>. Your address will be displayed, and you can copy it to the clipboard to have it ready.</li>
-                        <li>
+                        </p>
+                        <li>As you will need your address to pair your wallet and receive testnet tokens, click on <span className="font-semibold italic">Receive</span>. Your address will be displayed, and you can copy it to the clipboard to have it ready.</li>
+                        <p className="mt-4">
                             <div className="w-full mt-4">
                                 <ImageWrapper src={temple7Image} alt=""/>
                             </div>
-                        </li>
+                        </p>
                         <li>To <span className="font-semibold">pair your wallet</span>, go to your <span className="font-semibold italic">Profile</span>, paste in your address from your Temple Wallet, and click <span className="font-semibold italic">Fetch</span>. A pop-up will open asking you to choose your preferred wallet. Click on <span className="font-semibold italic">Temple - Tezos Wallet (ex. Thanos)</span>.</li>
                             <div className="w-full mt-4">
                                 <ImageWrapper src={temple8Image} alt=""/>
@@ -163,7 +163,7 @@ export default function GetStarted() {
                         <li>You should now see that the <span className="font-semibold italic">Address</span> field in your Profile is filled out.</li>
                     </ol>
                 </div>
-                <p className="mt-4">
+                <p className="indent">
                     Your Temple Wallet extension should now look similar to this:
                 </p>
                 <div className="w-full mt-4 sm:w-1/2 sm:m-auto">
@@ -183,7 +183,7 @@ export default function GetStarted() {
                 </p>
                 <p className="mt-4">
                     The easiest way to get some tez is to go via the Telegram <span className="font-semibold">Faucet Bot</span>. <br/>
-                    You will need a Telegram account to use it. Also make sure you selected Granadanet and not the Mainnet. <br/>
+                    You will need a Telegram account to use it. Also, make sure you selected Granadanet and not the Mainnet. <br/>
                     To use the bot, go to the <a className="font-family-body font-semibold" href="https://t.me/tezos_faucet_bot" target="_blank" rel="noreferrer">Faucet Bot</a> the chat should open up.<br/>
                 </p>
                 <p className="mt-4">

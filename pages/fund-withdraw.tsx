@@ -154,7 +154,7 @@ function FundPage(props: FundPageProp) {
             <h1>Buy TZM</h1>
             <div className="flex flex-wrap justify-between">
                 <div className="flex flex-col mt-4 sm:mr-2">
-                    <p>Current price</p>
+                    <p>Current token price</p>
                     <h1><TezAmount amount={data?.tokenBuyPrice}/></h1>
                 </div>
                 <div className="flex flex-col mt-4 sm:ml-2">
@@ -164,7 +164,7 @@ function FundPage(props: FundPageProp) {
             </div>
             <h2 className="mt-12 mb-2 highlight">Purchase tokens</h2>
             <form onSubmit={handlers.fund}>
-                <Input value={amount} handler={handlers.amount} label="Amount of TZM tokens to purchase" pattern="[0-9]+\.?[0-9]*|\.[0-9]+"/>
+                <Input value={amount} handler={handlers.amount} label="Number of TZM tokens you want to purchase" pattern="[0-9]+\.?[0-9]*|\.[0-9]+"/>
                 <div className="flex flex-col sm:flex-row justify-between mt-2">
                     {
                         waiting ? 
@@ -366,7 +366,7 @@ export default function FundWithdraw() {
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pl-2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                            <p>Amount of tokens owned</p>
+                            <p>Number of tokens owned</p>
                             <h1><TokenAmount amount={data?.tokensOwned}/></h1>
                         </div>
                     </div>
