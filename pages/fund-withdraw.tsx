@@ -217,11 +217,11 @@ function WithdrawPage(props: WithdrawPageProp) {
             <h1>Sell TZM</h1>
             <div className="flex flex-wrap justify-between">
                 <div className="flex flex-col mt-4 sm:mr-2">
-                    <p>Current price</p>
+                    <p>Current token price</p>
                     <h1><TezAmount amount={data?.tokenSellPrice}/></h1>
                 </div>
                 <div className="flex flex-col mt-4 sm:ml-2">
-                    <p>Amount of TZM in your account</p>
+                    <p>Number of TZM tokens in your account</p>
                     <h1><TokenAmount amount={data?.tokensOwned}/></h1>
                 </div>
             </div>
@@ -233,7 +233,7 @@ function WithdrawPage(props: WithdrawPageProp) {
                 (<>
                     <h2 className="mt-12 mb-2 highlight">Sell tokens</h2>
                     <form onSubmit={handlers.withdraw}>
-                        <Input value={amount} handler={handlers.amount} label="Amount of TZM tokens to sell" pattern="[0-9]*"/>
+                        <Input value={amount} handler={handlers.amount} label="Number of TZM tokens you want to sell" pattern="[0-9]*"/>
                         <div className="flex flex-col sm:flex-row justify-between mt-2 ">
                             {
                                 waiting ? 
@@ -354,13 +354,13 @@ export default function FundWithdraw() {
             <div className="p-8">
                 <h1>Buy and Sell TZM</h1>
                 <p className="mt-2">
-                    Here you can buy or sell Rolling SAFE (TZM) tokens for TEZOS tokens (TEZ).
+                    Want to buy or sell the Rolling SAFE tokens (TZM) for Tezos tokens (tez)?
                 </p>
                 <h2 className="mt-8 highlight">Token information</h2>
                 <div className="flex flex-wrap justify-between">
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                            <p>Current price</p>
+                            <p>Current token price</p>
                             <h1><TezAmount amount={data?.tokenBuyPrice}/></h1>
                         </div>
                     </div>
