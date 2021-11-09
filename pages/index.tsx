@@ -53,7 +53,7 @@ export default function Home() {
                     TZMINT is a sample application demonstrating a Rolling Simple Agreement for Future Equity (Rolling SAFE) a new programmable equity funding method on Tezos. The tokens investors can buy and sell on this sample application are called <span className="font-bold">TZM</span>.
                 </p>
                 <p className="mt-4">
-                    The Rolling SAFE offering is issued as a <span className="font-semibold">Rolling Simple Agreement for Future Equity</span>, i.e. a rolling/continous agreement for future equity, an upgrade on the classic SAFE. <br/>
+                    The Rolling SAFE offering is issued as a <span className="font-semibold">Rolling Simple Agreement for Future Equity</span>, i.e. a rolling/continuous agreement for future equity, an upgrade on the classic SAFE. <br/>
                     Companies set a minimum funding goal and deploy a smart contract, which issues the tokens, handles funds as well as transactions, and manages the reserve holding a certain percentage of the funding to buy back the issued tokens once the offering is terminated. <br/>
                     Investors can buy and sell tokens at any point in time - as long as the offering is active. The price of the token is automated, initially set at a constant level and later adjusted by a buy-sell slope based on the 
                     number of tokens issued. The token is backed by the amount initially allocated to the reserve and the company’s future revenue.
@@ -86,7 +86,7 @@ export default function Home() {
             <div className="pt-12 px-8 ">
                 <h2 className="mb-8 highlight">How does a Rolling SAFE offering work?</h2>
                 <p className="indent">
-                    The continous organization sets a <span className="font-semibold">Minimum Funding Goal (MFG)</span>, a set amount of investment. 
+                    The continuous organization sets a <span className="font-semibold">Minimum Funding Goal (MFG)</span>, a set amount of investment. 
                     DAT tokens, which represent a claim on the DAT-managed cash reserve, i.e. a function of revenues, are issued to reach the MFG.
                 </p>
             </div>
