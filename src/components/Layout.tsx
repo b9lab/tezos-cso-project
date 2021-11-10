@@ -3,17 +3,20 @@ import Footer from "./Footer";
 import Head from "./Head";
 import Header from "./Header";
 
-type LayoutProps = {
+export type LayoutProps = {
     children: any
-};
+}
 
-function Layout(props: LayoutProps) {
+/**
+ * Main layout
+ */
+export default function Layout(props: LayoutProps) {
     return (
         <div className="text-dark-gray">
             <Head/>
             <Header/>
             <main className="bg-white">
-                <div className="max-w-screen-lg m-auto">
+                <div className="max-w-screen-lg m-auto content">
                     {props.children}
                 </div>
             </main>
@@ -21,5 +24,3 @@ function Layout(props: LayoutProps) {
         </div>
     );
 }
-
-export default Layout;

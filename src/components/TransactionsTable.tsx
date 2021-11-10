@@ -4,11 +4,14 @@ import { TransactionType, UserTransactionDto } from "../utils/dtos";
 import TezAmount from "./TezAmount";
 import TokenAmount from "./TokenAmount";
 
-type TransactionsTableProps = {
+export type TransactionsTableProps = {
     items: Array<UserTransactionDto>
 }
 
-function TransactionsTable(props: TransactionsTableProps) {
+/**
+ * Displays a table with a list of transactions
+ */
+ export default function TransactionsTable(props: TransactionsTableProps) {
     const transactionMap = (item: UserTransactionDto) => {
         return (
             <div id={item.hash} className="w-full flex justify-between body-text-small bg-light-gray odd:bg-white py-2 px-4 last:rounded-b transaction-item " key={item.hash}>
@@ -36,5 +39,3 @@ function TransactionsTable(props: TransactionsTableProps) {
         </div>
     );
 }
-
-export default TransactionsTable;

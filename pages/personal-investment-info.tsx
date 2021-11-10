@@ -10,6 +10,9 @@ import CtaCard from "../src/components/CtaCard";
 import PriceBadge from "../src/components/PriceBadge";
 import ConfirmAddressModal from "../src/components/ConfirmAddressModal";
 
+/**
+ * My investment page
+ */
 export default function PersonalInvestmentInfo() {
     const context: AuthContextData = useContext(AuthContext);
     const [address, setAddress] = useState<string>(context.address);
@@ -24,20 +27,20 @@ export default function PersonalInvestmentInfo() {
             <div className="p-8">
                 <PriceBadge value={data?.tokenBuyPrice}/>
                 <h1>My Investment</h1>
-                <div className="mt-2">
-                    Here you can find an overview of your investment in the continuous agreement for future equity.
-                </div>
+                <p className="mt-2">
+                    Here you can find an overview of your investment in the Rolling SAFE
+                </p>
                 <h2 className="mt-8 highlight">Portfolio overview</h2>
                 <div className="flex flex-wrap justify-between">
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                            <p>Tokens owned</p>
+                            <p>Number of tokens owned</p>
                             <h1><TokenAmount amount={data?.tokensOwned}/></h1>
                         </div>
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pl-2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                            <p>Current Token Valuation</p>
+                            <p>Current token valuation</p>
                             <h1><TezAmount amount={data?.tokensOwned * data?.tokenSellPrice}/></h1>
                         </div>
                     </div>
@@ -47,7 +50,7 @@ export default function PersonalInvestmentInfo() {
                             <h1><TezAmount amount={data?.tezInvested}/></h1>
                         </div>
                     </div>
-                    <CtaCard href="/fund-withdraw" text="Buy TZM &#8594;" title="Invest in TZMINT" classes="sm:pl-2"/>
+                    <CtaCard href="/fund-withdraw" text="Buy TZM &#8594;" title="Invest in TZMINT Inc." classes="sm:pl-2"/>
                 </div>
                 {
                     (transactionList?.length > 0 && context.address)  &&
@@ -91,8 +94,13 @@ export default function PersonalInvestmentInfo() {
                         </div>
                     </div>
                 </div>
+                <div className="w-full flex flex-wrap justify-between my-8">
+                    <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to develop a Rolling SAFE?" classes="sm:pr-2"/>
+                    <CtaCard href="/fund-withdraw" text="Next page &#8594;" title="Want to buy and sell TZM?" classes="sm:pl-2"/>
+                </div>
             </div>
             <ConfirmAddressModal address={context.address} successHandler={(address) => setAddress(address)}/>
+
         </>
     );
 }

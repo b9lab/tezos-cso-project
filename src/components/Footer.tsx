@@ -1,7 +1,10 @@
 import Link from "next/link";
 import React from "react";
 
-function Footer() {
+/**
+ * Main footer
+ */
+export default function Footer() {
 
     return (
         <div className="flex max-w-screen-lg m-auto justify-around py-12 px-8 footer">
@@ -14,5 +17,3 @@ function Footer() {
         </div>
     )
 }
-
-export default Footer;

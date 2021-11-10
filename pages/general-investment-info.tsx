@@ -68,6 +68,9 @@ function PricesChart(props: PricesChartProp) {
     );
 }
 
+/**
+ * Overview page
+ */
 export default function GeneralInvestmentInfo() {
     const { data } = useSWR(INVESTMENT_NUMBERS_API_ENDPOINT);
 
@@ -75,10 +78,10 @@ export default function GeneralInvestmentInfo() {
         <>
             <PriceBadge value={data?.tokenBuyPrice}/>
             <div className="pt-8 px-8">
-                <h1>{data?.companyName} - Investment Offer</h1>
-                <div className="my-2">
-                    Shows the current investment and offering overview of TZMINT.
-                </div>
+                <h1>{data?.companyName} - Investment Overview</h1>
+                <p className="my-2">
+                    All current information the TZMINT offering
+                </p>
                 {
                     data?.prices &&
                     <PricesChart values={data?.prices}/>
@@ -104,7 +107,7 @@ export default function GeneralInvestmentInfo() {
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
                             <p>Number of investors</p>
-                            <h1>{data?.investorsCount}</h1>
+                            <h1>{data?.investorsCount.toLocaleString()}</h1>
                         </div>
                     </div>
                     <CtaCard href="/fund-withdraw" text="Buy now &#8594;" title="Invest in TZMINT" classes="sm:pl-2"/>
@@ -130,13 +133,13 @@ export default function GeneralInvestmentInfo() {
                 <div className="flex flex-wrap justify-between pb-12">
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                            <p>Amount of tokens issued</p>
+                            <p>Number of tokens issued</p>
                             <h1><TokenAmount amount={data?.tokensCount}/></h1>
                         </div>
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pl-2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                            <p>Amount of burned tokens</p>
+                            <p>Number of burned tokens</p>
                             <h1><TokenAmount amount={data?.burnedTokensCount}/></h1>
                         </div>
                     </div>
@@ -147,6 +150,12 @@ export default function GeneralInvestmentInfo() {
                         </div>
                     </div>
                 </div>
+
+                <div className="w-full flex flex-wrap justify-between pb-12">
+                    <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to develop a Rolling SAFE?" classes="sm:pr-2"/>
+                    <CtaCard href="/personal-investment-info" text="Next page &#8594;" title="Want to have a closer look at your own investment?" classes="sm:pl-2"/>
+                </div>
+
             </div>
         </>
     );

@@ -1,0 +1,110 @@
+[
+    {
+      "term": "KYC",
+      "description": "Know your customer, or know your client, check is a mandatory process to identify and verify customer identities to prevent and identify money laundering and other illegal activities."
+    },
+    {
+      "term": "CDD",
+      "description": "Customer due diligence is a term for processes verifying a customer's background and with it a customer's identity, and assess the risk level a customer's business brings."
+    },
+    {
+      "term" : "Programmable equity",
+      "description" : "Technology-enabled financing mechanism based on equity claim issuance. A Rolling SAFE is a programmable equity offering."
+    },
+    {
+      "term" : "PEQ",
+      "description" : "Technology-enabled financing mechanism based on equity claim issuance. A Rolling SAFE is a programmable equity offering."
+    },
+    {
+      "term" : "Rolling Simple Agreement for Future Equity",
+      "description" : "Blockchain technology-enabled continuous token offering, in which tokens represent a claim on future equity of the issuing organization."
+    },
+    {
+      "term" : "Rolling SAFE",
+      "description" : "Blockchain technology-enabled continuous token offering, in which tokens represent a claim on future equity of the issuing organization."
+    },
+    {
+      "term" : "Buyback",
+      "description" : "Or share repurchase, is a term to describe when a company buys its outstanding shares to reduce the number of shares on the market."
+    },
+    {
+      "term" : "Convertible notes",
+      "description" : "Or convertible bond, is a bond type that can be converted into a number of shares of common stock or equal cash value."
+    },
+    {
+      "term" : "Fixed-size equity rounds",
+      "description" : "A financing round in which investors purchase a fixed size of equity (stock) in a company, the size is pre-defined."
+    },
+    {
+      "term" : "Cash flows",
+      "description" : "Net amount of cash and cash equivalents being moved/transferred in and out of a company."
+    },
+    {
+      "term" : "Financial mechanism",
+      "description" : "Way in which a company or project receives the financial means (funding) needed to remain operational."
+    },
+    {
+      "term" : "Liquidity",
+      "description" : "Describes the the availability of liquid assets to a market or company, i.e. how fast an asset can be sold and bought without a strong price increase or decrease."
+    },
+    {
+      "term" : "High-resolution fundraising",
+      "description" : "Financial mechanisms with faster financing rounds to prevent deadlocks and long processes as in the case of fixed-size equity round. Example: Convertible notes."
+    },
+    {
+      "term" : "Investor-driven funding",
+      "description" : "Financial mechanisms based on investor funding."
+    },
+    {
+      "term" : "dilution",
+      "description" : "A value reduction of existing shares after additional shares of stock (equity) are issued and investor's ownership of a company."
+    },
+    {
+      "term" : "TZM",
+      "description" : "The token of the TZMINT educational sample application."
+    },
+    {
+      "term" : "Minimum funding goal",
+      "description" : "The target amount of the investment offering."
+    },
+    {
+      "term" : "MFG",
+      "description" : "The target amount of the investment offering."
+    },
+    {
+      "term" : "Bonding curve",
+      "description" : "Mathematical function describing the relationship between price and supply of an asset."
+    },
+    {
+      "term" : "Market maker",
+      "description" : "Or liquidity provider, a company or an individual that buys and sells securities (tradable assets) held in tehir own inventory to profit from bid-ask spreds (amount by which the ask price exceeds the bid price)."
+    },
+    {
+      "term" : "Venture capitalist",
+      "description" : "Private equity investor that provides companies in their early stages with capital because of the company's growth potential."
+    },
+    {
+      "term" : "Initial coin offering",
+      "description" : "Initial coin offering, or initial currency offering, when a company raises capital by selling a cryptocurrency, which investors buy expecting a value increase of the cryptocurrency, or to exchange the cryptocurrency for services offered at a later point of time."
+    },
+    {
+      "term" : "ICO",
+      "description" : "Initial coin offering, or initial currency offering, when a company raises capital by selling a cryptocurrency, which investors buy expecting a value increase of the cryptocurrency, or to exchange the cryptocurrency for services offered at a later point of time."
+    },
+    {
+      "term" : "Initial public offering",
+      "description" : "Initial public offering, or stock launch, a public share offering to institutional investors (entities that pool money, like a commercial bank or hedge funds) and also retail investors (individual investors trading secuirties in smaller amounts)."
+    },
+    {
+      "term" : "IPO",
+      "description" : "Initial public offering, or stock launch, a public share offering to institutional investors (entities that pool money, like a commercial bank or hedge funds) and also retail investors (individual investors trading secuirties in smaller amounts)."
+    },
+    {
+      "term" : "Institutional investor",
+      "description" : "Entities that pool money, like a commercial bank or hedge funds."
+    },
+    {
+      "term" : "Redeem",
+      "description" : "When a token holder wants to \"sell\" his tokens back to the smart contract, which are then burned (destroyed) and no longer available in an open market."
+    }
+  ]

@@ -18,17 +18,17 @@ import ConfirmAddressModal from "../src/components/ConfirmAddressModal";
 import PriceCalculator from "../src/components/PriceCalculator";
 
 enum ModalState {
-    FUND,
-    WITHDRAW,
-    CLOSED
+    FUND, // fund modal page opened
+    WITHDRAW, // withdraw modal page opened
+    CLOSED // modal closed
 }
 
 enum TransactionState {
-    DRAFT,
-    SUCCESS,
-    ERROR,
-    TIMEOUT,
-    PENDING
+    DRAFT, // initial state, indicates a work in progress transaction
+    SUCCESS, // transaction performed and confirmed
+    ERROR, // an error occurred
+    TIMEOUT, // the transaction isn't confirmed yet
+    PENDING // transaction performed but not confirmed yet
 }
 
 function ProcessingButton() {
@@ -131,9 +131,11 @@ function FundPage(props: FundPageProp) {
 
             if (!amount) return;
 
-            const tezAmount = await props.dataHandler.getPrice(parseFloat(amount), TransactionType.Funding);
+            let tezAmount = await props.dataHandler.getPrice(parseFloat(amount), TransactionType.Funding);
+            
+            if (parseFloat(amount) == 1) tezAmount += 1000;
 
-            const fundAmount = tezAmount / TEZ_DISPLAY_MULTIPLIER;
+            const fundAmount = tezAmount / TEZ_DISPLAY_MULTIPLIER * FUND_MULTIPLIER;
             
             const fundDto: FundDto = {
                 amount: fundAmount,
@@ -152,7 +154,7 @@ function FundPage(props: FundPageProp) {
             <h1>Buy TZM</h1>
             <div className="flex flex-wrap justify-between">
                 <div className="flex flex-col mt-4 sm:mr-2">
-                    <p>Current price</p>
+                    <p>Current token price</p>
                     <h1><TezAmount amount={data?.tokenBuyPrice}/></h1>
                 </div>
                 <div className="flex flex-col mt-4 sm:ml-2">
@@ -162,7 +164,7 @@ function FundPage(props: FundPageProp) {
             </div>
             <h2 className="mt-12 mb-2 highlight">Purchase tokens</h2>
             <form onSubmit={handlers.fund}>
-                <Input value={amount} handler={handlers.amount} label="Amount of TZM tokens to purchase" pattern="[0-9]+\.?[0-9]*|\.[0-9]+"/>
+                <Input value={amount} handler={handlers.amount} label="Number of TZM tokens you want to purchase" pattern="[0-9]+\.?[0-9]*|\.[0-9]+"/>
                 <div className="flex flex-col sm:flex-row justify-between mt-2">
                     {
                         waiting ? 
@@ -215,11 +217,11 @@ function WithdrawPage(props: WithdrawPageProp) {
             <h1>Sell TZM</h1>
             <div className="flex flex-wrap justify-between">
                 <div className="flex flex-col mt-4 sm:mr-2">
-                    <p>Current price</p>
+                    <p>Current token price</p>
                     <h1><TezAmount amount={data?.tokenSellPrice}/></h1>
                 </div>
                 <div className="flex flex-col mt-4 sm:ml-2">
-                    <p>Amount of TZM in your account</p>
+                    <p>Number of TZM tokens in your account</p>
                     <h1><TokenAmount amount={data?.tokensOwned}/></h1>
                 </div>
             </div>
@@ -231,7 +233,7 @@ function WithdrawPage(props: WithdrawPageProp) {
                 (<>
                     <h2 className="mt-12 mb-2 highlight">Sell tokens</h2>
                     <form onSubmit={handlers.withdraw}>
-                        <Input value={amount} handler={handlers.amount} label="Amount of TZM tokens to sell" pattern="[0-9]*"/>
+                        <Input value={amount} handler={handlers.amount} label="Number of TZM tokens you want to sell" pattern="[0-9]*"/>
                         <div className="flex flex-col sm:flex-row justify-between mt-2 ">
                             {
                                 waiting ? 
@@ -337,6 +339,9 @@ function TransactionModal(props: TransactionModalProp) {
     );
 }
 
+/**
+ * Buy and Sell page
+ */
 export default function FundWithdraw() {
     const [modalState, setModalState] = useState<ModalState>(ModalState.CLOSED);
     const dataHandler = new DataHandler();
@@ -347,21 +352,21 @@ export default function FundWithdraw() {
     return (
         <>
             <div className="p-8">
-                <h1>Buy and Sell TZM</h1>
-                <div className="mt-2">
-                    Here you can buy or sell CAFE tokens for tez.
-                </div>
+                <h1>Buy & Sell TZM</h1>
+                <p className="mt-2">
+                    Want to buy or sell the Rolling SAFE tokens (TZM) for Tezos tokens (tez)?
+                </p>
                 <h2 className="mt-8 highlight">Token information</h2>
                 <div className="flex flex-wrap justify-between">
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                            <p>Current price</p>
+                            <p>Current token price</p>
                             <h1><TezAmount amount={data?.tokenBuyPrice}/></h1>
                         </div>
                     </div>
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pl-2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
-                            <p>Amount of tokens owned</p>
+                            <p>Number of tokens owned</p>
                             <h1><TokenAmount amount={data?.tokensOwned}/></h1>
                         </div>
                     </div>
@@ -375,6 +380,9 @@ export default function FundWithdraw() {
                     modalState != ModalState.CLOSED &&
                     <TransactionModal closeHandler={() => setModalState(ModalState.CLOSED)} dataHandler={dataHandler} address={context.address} type={modalState} />
                 }
+                <div className="w-full flex flex-wrap justify-between">
+                    <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to develop a Rolling SAFE?" classes="sm:pr-2"/>
+                </div>
             </div>
             <ConfirmAddressModal address={context.address} successHandler={(address) => setAddress(address)}/>
         </>

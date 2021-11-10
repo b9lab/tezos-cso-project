@@ -2,6 +2,9 @@ import { Knex } from "knex";
 import db from "../../database";
 import User from "../models/User";
 
+/**
+ * Handles the user logic by interacting with the db
+ */
 export default class UserHandler {
     userDao: Knex.QueryBuilder;
     sessionDao: Knex.QueryBuilder;
@@ -13,11 +16,17 @@ export default class UserHandler {
         this.accountDao = db('accounts');
     }
     
+    /**
+     * Gets user's data
+     */
     getUser(id: number): Promise<User> {
         console.log('[UserHandler] get user ' + id);
         return this.userDao.where('id', id).first();
     }
 
+    /**
+     * Updates user's data
+     */
     async updateUser(id: number, name: string | null, country: string | null, address: string | null): Promise<User> {
         console.log('[UserHandler] update user ' + id);
         var user: User;
@@ -31,6 +40,9 @@ export default class UserHandler {
         return user;
     }
 
+    /**
+     * Deletes a user
+     */
     deleteUser(id: number) {
         console.log('[UserHandler] delete user ' + id);
         return db.transaction(async trx => {

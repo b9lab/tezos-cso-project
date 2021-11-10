@@ -1,5 +1,9 @@
 import { MutableRefObject, useEffect, useRef, useState } from "react";
+import $ from 'jquery';
 
+/**
+ * Helps to fetch data on client-side
+ */
 export function useData(action: any, address: string): any {
     const [data, setData] = useState<any | null>();
     const [oldAddress, setOldAddress] = useState<string>(address);
@@ -20,6 +24,9 @@ export function useData(action: any, address: string): any {
     return data;
 }
 
+/**
+ * Retry strategy implementing exponential backoff algorithm
+ */
 export function useInterval(callback: any, timeoutCallback: any, initialDelay: number, maxDelay: number, maxRetryCount: number) {
     const savedCallback = useRef<any>();
     const [retryCount, setRetryCount] = useState<number>(0);
@@ -44,6 +51,9 @@ export function useInterval(callback: any, timeoutCallback: any, initialDelay: n
     }, [callback, initialDelay, maxDelay, retryCount]);
 }
 
+/**
+ * Detects a click outside of a given reference
+ */
 export function useClickOutside(ref: MutableRefObject<any>, onClickOutside: (value: boolean) => void) {
     useEffect(() => {
         const handleClickOutside = (event: any) => {
@@ -57,6 +67,9 @@ export function useClickOutside(ref: MutableRefObject<any>, onClickOutside: (val
     }, [ref, onClickOutside]);
 }
 
+/**
+ * Sets a value with a given delay
+ */
 export function useDebounce<T>(value: T, delay: number): T {
     const [debouncedValue, setDebouncedValue] = useState<T>(value);
 
@@ -71,4 +84,25 @@ export function useDebounce<T>(value: T, delay: number): T {
     }, [value, delay]);
 
     return debouncedValue;
+}
+
+export function useGlossarizer(dep: any) {
+    useEffect(() => {
+        // @ts-ignore
+        window.jQuery = $;
+        // @ts-ignore
+        window.Glossarizer = require('glossarizer/jquery.glossarize.js');
+        // @ts-ignore
+        window.Tooltip = require('../../public/tooltip/tooltip.js');
+        // @ts-ignore
+        $('.content').glossarizer({
+            sourceURL: '/glossary.json',
+            lookupTagName: 'p, ul, ol',
+            callback: function() {
+                // Callback fired after glossarizer finishes its job
+                // @ts-ignore
+                new tooltip()
+            }
+        })
+    }, [dep]);
 }
