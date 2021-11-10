@@ -24,7 +24,7 @@ export default function InvestmentWhitePaper() {
             </div>
 
             <div className="w-full flex flex-wrap justify-between py-12 px-8">
-                <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a Rolling SAFE with Tezos?" classes="sm:pr-2"/>
+                <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to develop a Rolling SAFE?" classes="sm:pr-2"/>
                 <CtaCard href="/get-started" text="Next page &#8594;" title="Ready to get started?" classes="sm:pl-2"/>
             </div>
 

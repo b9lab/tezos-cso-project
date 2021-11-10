@@ -70,7 +70,7 @@ export default function YourOwnCAFE() {
             </div>
 
             <div className="w-full flex flex-wrap justify-between py-8 px-8">
-                <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to dive into the specifics of developing a Rolling SAFE with Tezos?" classes="sm:pr-2"/>
+                <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to develop a Rolling SAFE?" classes="sm:pr-2"/>
                 <CtaCard href="/investment-white-paper" text="Next page &#8594;" title="Ready to continue?" classes="sm:pl-2"/>
             </div>
 
