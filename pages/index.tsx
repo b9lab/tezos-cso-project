@@ -86,7 +86,7 @@ export default function Home() {
             <div className="pt-12 px-8 ">
                 <h2 className="mb-8 highlight">How does a programmable equity offering work?</h2>
                 <p className="indent">
-                    The continuous organization sets a <span className="font-semibold">minimum funding goal (MFG)</span>, the offering's target amount. 
+                    The continuous organization sets a <span className="font-semibold">minimum funding goal (MFG)</span>, the offering&#39;s target amount. 
                     DAT tokens, which represent a claim on the DAT-managed cash reserve, are issued to reach the MFG.
                 </p>
             </div>

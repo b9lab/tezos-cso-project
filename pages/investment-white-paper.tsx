@@ -16,7 +16,7 @@ export default function InvestmentWhitePaper() {
                 </p>
                 <div className="mt-4">
                     <ul className="list-disc list-inside">
-                        <li>Thibauld Favre (2019): <a className="font-family-body font-semibold" href="https://github.com/C-ORG/whitepaper" target="_blank" rel="noreferrer">Continuous Organizations White Paper</li>
+                        <li>Thibauld Favre (2019): <a className="font-family-body font-semibold" href="https://github.com/C-ORG/whitepaper" target="_blank" rel="noreferrer">Continuous Organizations White Paper</a></li>
                         <li>Thibauld Favre (2019): <a className="font-family-body font-semibold" href="https://github.com/C-ORG/whitepaper#annex" target="_blank" rel="noreferrer">Continuous Organizations White - Calculation Details (Annex)</a></li>
                         <li>Fairmint: <a className="font-family-body font-semibold" href="https://fairmint.co/cafe-continuous-agreement-for-future-equity" target="_blank" rel="noreferrer">Rolling SAFE</a></li>
                     </ul>
