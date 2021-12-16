@@ -46,9 +46,7 @@ export default function GetStarted() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">
-                    Signing-in
-                </h2>
+                <h2 className="mb-8"><span className="highlight">Signing-in</span></h2>
                 <p>
                     To sign in, please click on the <span className="font-semibold italic">Sign in</span> button in the top right corner.
                 </p>
@@ -75,9 +73,7 @@ export default function GetStarted() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">
-                    Connecting my wallet
-                </h2>
+                <h2 className="mb-8"><span className="highlight">Connecting my wallet</span></h2>
                 <p>
                     As soon as you are logged in, the platform will ask you to connect your wallet. While you have not connected a wallet, every time you navigate to the <span className="font-semibold italic">Profile</span> section a pop-up will appear asking you to select your preferred wallet.
                 </p>
@@ -175,9 +171,7 @@ export default function GetStarted() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">
-                    Getting my first Granada Testnet tez
-                </h2>
+                <h2 className="mb-8"><span className="highlight">Getting my first Granada Testnet tez</span></h2>
                 <p>
                     Now that you have signed in and connected your wallet, it’s time to get some Granada Testnet tez!
                 </p>

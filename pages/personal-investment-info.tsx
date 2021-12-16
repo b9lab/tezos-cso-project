@@ -30,7 +30,7 @@ export default function PersonalInvestmentInfo() {
                 <p className="mt-2">
                     Here you can find an overview of your investment in the Rolling SAFE
                 </p>
-                <h2 className="mt-8 highlight">Portfolio overview</h2>
+                <h2 className="mt-8"><span className="highlight">Portfolio overview</span></h2>
                 <div className="flex flex-wrap justify-between">
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
@@ -55,7 +55,7 @@ export default function PersonalInvestmentInfo() {
                 {
                     (transactionList?.length > 0 && context.address)  &&
                     <>
-                        <h2 className="mt-8 highlight">Transactions</h2>
+                        <h2 className="mt-8"><span className="highlight">Transactions</span></h2>
                         <div className="body-text-small flex space-x-2 mb-4 pt-6 font-family-headline">
                             <div>Filter: </div>
                             <div 
@@ -79,7 +79,7 @@ export default function PersonalInvestmentInfo() {
                         <TransactionsTable items={transactionList.filter(transactionFilter)}/>
                     </>
                 }
-                <h2 className="mt-8 highlight">Counters</h2>
+                <h2 className="mt-8"><span className="highlight">Counters</span></h2>
                 <div className="flex flex-wrap justify-between">
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">
