@@ -162,7 +162,7 @@ function FundPage(props: FundPageProp) {
                     <h1><TezAmount amount={data?.tezCount}/></h1>
                 </div>
             </div>
-            <h2 className="mt-12 mb-2 highlight">Purchase tokens</h2>
+            <h2 className="mt-12 mb-2"><span className="highlight">Purchase tokens</span></h2>
             <form onSubmit={handlers.fund}>
                 <Input value={amount} handler={handlers.amount} label="Number of TZM tokens you want to purchase" pattern="[0-9]+\.?[0-9]*|\.[0-9]+"/>
                 <div className="flex flex-col sm:flex-row justify-between mt-2">
@@ -231,7 +231,7 @@ function WithdrawPage(props: WithdrawPageProp) {
                     You can not sell the tokens before the unlocking date, {format_date(data?.lockPeriod)}
                 </div>) :
                 (<>
-                    <h2 className="mt-12 mb-2 highlight">Sell tokens</h2>
+                    <h2 className="mt-12 mb-2"><span className="highlight">Sell tokens</span></h2>
                     <form onSubmit={handlers.withdraw}>
                         <Input value={amount} handler={handlers.amount} label="Number of TZM tokens you want to sell" pattern="[0-9]*"/>
                         <div className="flex flex-col sm:flex-row justify-between mt-2 ">
@@ -356,7 +356,7 @@ export default function FundWithdraw() {
                 <p className="mt-2">
                     Want to buy or sell the Rolling SAFE tokens (TZM) for Tezos tokens (tez)?
                 </p>
-                <h2 className="mt-8 highlight">Token information</h2>
+                <h2 className="mt-8"><span className="highlight">Token information</span></h2>
                 <div className="flex flex-wrap justify-between">
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">

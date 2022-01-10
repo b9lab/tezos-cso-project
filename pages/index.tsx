@@ -26,9 +26,7 @@ export default function Home() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">
-                    Why a programmable equity offering on Tezos?
-                </h2>
+                <h2 className="mb-8"><span className="highlight">Why a programmable equity offering on Tezos?</span></h2>
                 <p className="indent">
                     The purpose of this project is to showcase implementation of a full platform that interacts with the Tezos blockchain. TZMINT is an educational project for developers who want to <span className="font-bold">learn how to develop Tezos applications</span> leveraging the ecosystem stack. This platform is an example implementation.
                 </p>
@@ -46,9 +44,7 @@ export default function Home() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">
-                    What is TZMINT?
-                </h2>
+                <h2 className="mb-8"><span className="highlight">What is TZMINT?</span></h2>
                 <p className="indent">
                     TZMINT is a sample application demonstrating a Rolling Simple Agreement for Future Equity (Rolling SAFE), a new programmable equity funding method on Tezos. The tokens investors can buy and sell on this sample application are called <span className="font-bold">TZM</span>.
                 </p>
@@ -68,9 +64,7 @@ export default function Home() {
             </div>
             
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">
-                    What is a programmable equity offering?
-                </h2>
+                <h2 className="mb-8"><span className="highlight">What is a programmable equity offering?</span></h2>
                 <p className="indent">
                     In a programmable equity offering, security tokens are issued, which can for example represent a proportional share of a company&apos;s future revenue. 
                     Thus, it is not equity-centered but revenue-focused, and bears the potential of aligning stakeholder interests with the financial success of a company.
@@ -84,7 +78,7 @@ export default function Home() {
             </div>
 
             <div className="pt-12 px-8 ">
-                <h2 className="mb-8 highlight">How does a programmable equity offering work?</h2>
+                <h2 className="mb-8"><span className="highlight">How does a programmable equity offering work?</span></h2>
                 <p className="indent">
                     The continuous organization sets a <span className="font-semibold">minimum funding goal (MFG)</span>, the offering&#39;s target amount. 
                     DAT tokens, which represent a claim on the DAT-managed cash reserve, are issued to reach the MFG.
@@ -114,9 +108,7 @@ export default function Home() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">
-                    What can be done while the MFG is not met?
-                </h2>
+                <h2 className="mb-8"><span className="highlight">What can be done while the MFG is not met?</span></h2>
                 <p className="indent">
                     As long as the MFG is not met, investors can receive the token at a fixed and constant price, and can sell them again to receive their investment back. 
                     During this period, the funds of every investment are escrowed by the DAT.
@@ -132,7 +124,7 @@ export default function Home() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">MFG achieved: What happens now?</h2>
+                <h2 className="mb-8"><span className="highlight">MFG achieved: What happens now?</span></h2>
                     <p className="indent">
                         Once the MFG is met, a so-called bonding curve starts. A portion of the MFG is moved into a reserve 
                         and another portion is transferred to the issuer, the beneficiary of the programmable equity offering.
@@ -168,9 +160,7 @@ export default function Home() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">
-                    New fundraising method - How is a programmable equity offering different from an ICO?
-                </h2>
+                <h2 className="mb-8"><span className="highlight">New fundraising method - How is a programmable equity offering different from an ICO?</span></h2>
                 <p className="indent">
                     With blockchain technology, many <span className="font-semibold">new financing mechanisms</span> were explored. A colorful parade of acronyms followed - ICOs, IEOs, STOs, SAFTs, ... <br/>
                     <span className="font-semibold">Initial Coin Offerings</span> (ICOs) became a very popular method for blockchain projects to raise high amounts of capital. This led to a rise in the number of such offerings. After the boom came disillusionment and disenchantment: With an increased number of ICOs came the realization that many ICO tokens did not hold much worth, having not much value in open markets (secondary markets).

@@ -86,7 +86,7 @@ export default function GeneralInvestmentInfo() {
                     data?.prices &&
                     <PricesChart values={data?.prices}/>
                 }
-                <h2 className="mt-8 highlight">General information</h2>
+                <h2 className="mt-8"><span className="highlight">General information</span></h2>
                 <div className="flex flex-wrap justify-between">
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4 border border-accent-1">
@@ -112,7 +112,7 @@ export default function GeneralInvestmentInfo() {
                     </div>
                     <CtaCard href="/fund-withdraw" text="Buy now &#8594;" title="Invest in TZMINT" classes="sm:pl-2"/>
                 </div>
-                <h2 className="mt-12 highlight">Investment overview</h2>
+                <h2 className="mt-12"><span className="highlight">Investment overview</span></h2>
                 <div className="flex flex-wrap justify-between">
                     <CompanyValuation/>
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pl-2">
@@ -129,7 +129,7 @@ export default function GeneralInvestmentInfo() {
                     </div>
                     <CtaCard href="/cafe-details" text="See all parameters &#8594;" title="TZMINT offering configuration" classes="sm:pl-2"/>
                 </div>
-                <h2 className="mt-12 highlight">Token balance</h2>
+                <h2 className="mt-12"><span className="highlight">Token balance</span></h2>
                 <div className="flex flex-wrap justify-between pb-12">
                     <div className="w-full flex-grow sm:max-w-1/2 sm:pr-2">
                         <div className="bg-white rounded shadow-2xl flex flex-col p-4 mt-4">

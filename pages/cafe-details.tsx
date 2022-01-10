@@ -131,7 +131,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">Determining the price for the Rolling SAFE token</h2>
+                <h2 className="mb-8"><span className="highlight">Determining the price for the Rolling SAFE token</span></h2>
                 <p className="indent">
                     Once the offering is launched, qualified investors can engage at any point in time. The <span className="font-semibold">price</span> is automated and non-negotiable.
                 </p>
@@ -152,7 +152,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">Fixed target equity percentage allocation and fixed dilution</h2>
+                <h2 className="mb-8"><span className="highlight">Fixed target equity percentage allocation and fixed dilution</span></h2>
                 <p className="indent">
                     Rolling SAFEs have a <span className="font-semibold">fixed target equity percentage allocation</span>, because of the percentage dedicated to the reserve, ensuring fixed dilution. 
                     Unlike when a company issues additional stock shares, the issuance of tokens and their value is fixed by the parameters of the Rolling SAFE&apos;s smart contract. For this reason, the value investors hold is not reduced by the issuance of additional &quot;shares&quot; (tokens) as long as they hold their tokens up to the termination of the offering.
@@ -167,9 +167,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
                 </p>
             </div>
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">
-                    What is the reserve?
-                </h2>
+                <h2 className="mb-8"><span className="highlight">What is the reserve?</span></h2>
                 <p className="mt-4">
                     Once the MFG is met, the bonding curve begins its work. The smart contract issues tokens, which represent a financial right (claim) on the cash reserve. 
                     This reserve is managed by the smart contract and reflects the organization&apos;s revenues. 

@@ -43,7 +43,7 @@ export default function Page() {
 
                 <div className="pt-20 flex justify-between flex-col sm:flex-row">
                     <div className="my-8 sm:mr-8 sm:my-0">
-                        <h2 className="mb-8 highlight">This is yet a second headline, highlighted</h2>
+                        <h2 className="mb-8"><span className="highlight">This is yet a second headline, highlighted</span></h2>
                         <div>
                             Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
                         </div>

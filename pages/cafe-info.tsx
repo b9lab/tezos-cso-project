@@ -42,9 +42,7 @@ export default function CafeInfo() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">
-                    Steps in a Rolling SAFE
-                </h2>
+                <h2 className="mb-8"><span className="highlight">Steps in a Rolling SAFE</span></h2>
                 <p className="mt-4 indent">
                     A Rolling SAFE can be divided into four steps: the initialization and early phase of the Running SAFE until the MFG is reached, the &quot;post-MFG&quot; phase in which the token price is determined by the bonding curve, and the termination of the Rolling SAFE.
                 </p>    
@@ -63,7 +61,7 @@ export default function CafeInfo() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">Converting tokens to equity – Termination</h2>
+                <h2 className="mb-8"><span className="highlight">Converting tokens to equity – Termination</span></h2>
                 <p className="indent">
                     Even though investors can buy and sell tokens as long as the offering is active, the question remains: When is a Rolling SAFE terminated?
                 </p>
@@ -83,7 +81,7 @@ export default function CafeInfo() {
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8 highlight">Want to know more about Rolling SAFEs?</h2>
+                <h2 className="mb-8"><span className="highlight">Want to know more about Rolling SAFEs?</span></h2>
                 <p>
                     This is a list of helpful resources you can have a peek at.
                 </p>
