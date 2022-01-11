@@ -130,12 +130,6 @@ export default function GetStarted() {
                         <div className="w-full mt-4">
                             <ImageWrapper src={temple4Image} alt=""/>
                         </div>
-                        <p className="mt-4">
-                            You can now see an overview of your account: your account name, address, the assets you hold, etc.
-                        </p>
-                        <div className="w-full mt-4">
-                            <ImageWrapper src={temple5Image} alt=""/>
-                        </div>
                         <li>Now you have to pair your wallet, but first, make sure you <span className="font-semibold">select the correct network</span>. Go to your Temple extension. It should be set by default to the Mainnet, but you want the Granada Testnet for this platform. Just navigate to the upper right-hand corner and click on <span className="font-semibold italic">Tezos Mainnet</span>. This opens a drop-down menu with all available networks to select from. Select <span className="font-semibold italic">Granada Testnet</span>.</li>
                         <p className="mt-4">
                             <div className="w-full mt-4">
