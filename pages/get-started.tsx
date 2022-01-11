@@ -153,25 +153,19 @@ export default function GetStarted() {
                         <li>You should now see that the <span className="font-semibold italic">Address</span> field in your Profile is filled out.</li>
                     </ol>
                 </div>
-                <p className="indent">
-                    Your Temple Wallet extension should now look similar to this:
-                </p>
-                <div className="w-full mt-4 sm:w-1/2 sm:m-auto">
-                    <ImageWrapper src={temple10Image} alt=""/>
-                </div>
                 <p className="mt-4">
-                    As you can see, there is one minor difference: You do not have any tez (XTZ) to spend yet, so let’s get some Granada testnet tez!
+                    You do not have any tez (XTZ) to spend yet, so let’s get some Hangzhou testnet tez!
                 </p>
             </div>
 
             <div className="pt-12 px-8">
-                <h2 className="mb-8"><span className="highlight">Getting my first Granada Testnet tez</span></h2>
+                <h2 className="mb-8"><span className="highlight">Getting my first Hangzhou Testnet tez</span></h2>
                 <p>
-                    Now that you have signed in and connected your wallet, it’s time to get some Granada Testnet tez!
+                    Now that you have signed in and connected your wallet, it’s time to get some Hangzhou Testnet tez!
                 </p>
                 <p className="mt-4">
                     The easiest way to get some tez is to go via the Telegram <span className="font-semibold">Faucet Bot</span>. <br/>
-                    You will need a Telegram account to use it. Also, make sure you selected Granadanet and not the Mainnet. <br/>
+                    You will need a Telegram account to use it. Also, make sure you selected Hangzhouanet and not the Mainnet. <br/>
                     To use the bot, go to the <a className="font-family-body font-semibold" href="https://t.me/tezos_faucet_bot" target="_blank" rel="noreferrer">Faucet Bot</a> the chat should open up.<br/>
                 </p>
                 <p className="mt-4">
