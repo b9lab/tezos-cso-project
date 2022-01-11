@@ -21,7 +21,7 @@ export default function Home() {
                 <p className="indent">
                     This platform is an example project and part of the educational course on the <a className="font-family-body" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer">Tezos Developer Platform</a>. 
                     There is <span className="text-highlight">no real investment or company</span> involved. Instead, all transactions displayed are performed on a testnet, 
-                    <span className="font-bold"> the Granada Testnet</span>.
+                    <span className="font-bold"> the Hangzhou Testnet</span>.
                 </p>
             </div>
 
