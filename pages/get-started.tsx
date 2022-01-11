@@ -130,7 +130,7 @@ export default function GetStarted() {
                         <div className="w-full mt-4">
                             <ImageWrapper src={temple4Image} alt=""/>
                         </div>
-                        <li>Now you have to pair your wallet, but first, make sure you <span className="font-semibold">select the correct network</span>. Go to your Temple extension. It should be set by default to the Mainnet, but you want the Granada Testnet for this platform. Just navigate to the upper right-hand corner and click on <span className="font-semibold italic">Tezos Mainnet</span>. This opens a drop-down menu with all available networks to select from. Select <span className="font-semibold italic">Granada Testnet</span>.</li>
+                        <li>Now you have to pair your wallet, but first, make sure you <span className="font-semibold">select the correct network</span>. Go to your Temple extension. It should be set by default to the Mainnet, but you want the Hangzhou Testnet for this platform. Just navigate to the upper right-hand corner and click on <span className="font-semibold italic">Tezos Mainnet</span>. This opens a drop-down menu with all available networks to select from. Select <span className="font-semibold italic">Hangzhou Testnet</span>.</li>
                         <p className="mt-4">
                             <div className="w-full mt-4">
                                 <ImageWrapper src={temple6Image} alt=""/>
@@ -165,7 +165,7 @@ export default function GetStarted() {
                 </p>
                 <p className="mt-4">
                     The easiest way to get some tez is to go via the Telegram <span className="font-semibold">Faucet Bot</span>. <br/>
-                    You will need a Telegram account to use it. Also, make sure you selected Hangzhouanet and not the Mainnet. <br/>
+                    You will need a Telegram account to use it. Also, make sure you selected Hangzhounet and not the Mainnet. <br/>
                     To use the bot, go to the <a className="font-family-body font-semibold" href="https://t.me/tezos_faucet_bot" target="_blank" rel="noreferrer">Faucet Bot</a> the chat should open up.<br/>
                 </p>
                 <p className="mt-4">
