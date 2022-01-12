@@ -1,6 +1,6 @@
 version: '2'
 services:
-  toa_postgres:
+  tzmint_postgres:
     image: postgres
     container_name: tezos_cso_postgres
     ports:
