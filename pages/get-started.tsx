@@ -191,7 +191,7 @@ export default function GetStarted() {
             </div>
 
             <div className="w-full flex flex-wrap justify-between py-12 px-8">
-                <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to develop a Rolling SAFE?" classes="sm:pr-2"/>
+                <CtaCard href="https://tezos.b9lab.com/rolling-safe-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to develop a Rolling SAFE?" classes="sm:pr-2"/>
                 <CtaCard href="/general-investment-info" text="Next page &#8594;" title="Want to get an overview of the Rolling SAFE offering?" classes="sm:pl-2"/>
             </div>
 
