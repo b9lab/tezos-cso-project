@@ -184,7 +184,7 @@ export default function CafeDetails(props: CafeDetailsProps) {
             </div>
         
             <div className="w-full flex flex-wrap justify-between py-12 px-8">
-                <CtaCard href="/https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to develop a Rolling SAFE?" classes="sm:pr-2"/>
+                <CtaCard href="https://tezos.b9lab.com/rolling-safe-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Ready to develop a Rolling SAFE?" classes="sm:pr-2"/>
                 <CtaCard href="/your-own-cafe" text="Next page &#8594;" title="Ready to continue?" classes="sm:pl-2"/>
             </div>
 

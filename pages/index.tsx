@@ -39,7 +39,7 @@ export default function Home() {
                 </p>
 
                 <div className="w-full flex flex-wrap justify-between">
-                    <CtaCard href="https://tezos.b9lab.com/cso-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Want to dive into the specifics of developing a programmable equity offering with Tezos?" classes="sm:pr-2"/>
+                    <CtaCard href="https://tezos.b9lab.com/rolling-safe-project" text="Take a look at the B9lab Tezos Developer Platform. &#8594;" title="Want to dive into the specifics of developing a programmable equity offering with Tezos?" classes="sm:pr-2"/>
                 </div>
             </div>
 
