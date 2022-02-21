@@ -32,23 +32,8 @@ export const NAV_ITEMS: Array<NavItem> = [
             },
         */
             {
-                name: "Rolling SAFE",
-                url: "/cafe-info",
-                visibility: NAV_ITEM_VISIBILITY.PUBLIC
-            },
-            {
                 name: "Rolling SAFE Parameters",
                 url: "/cafe-details",
-                visibility: NAV_ITEM_VISIBILITY.PUBLIC
-            },
-            {
-                name: "Your Rolling SAFE",
-                url: "/your-own-cafe",
-                visibility: NAV_ITEM_VISIBILITY.PUBLIC
-            },
-            {
-                name: "Further Resources",
-                url: "/investment-white-paper",
                 visibility: NAV_ITEM_VISIBILITY.PUBLIC
             },
             /*
