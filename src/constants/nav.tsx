@@ -20,46 +20,10 @@ export const NAV_ITEMS: Array<NavItem> = [
         visibility: NAV_ITEM_VISIBILITY.PUBLIC
     },
     {
-        name: "Discover",
-        url: "/cafe-info",
-        visibility: NAV_ITEM_VISIBILITY.PUBLIC,
-        children: [
-        /*
-            {
-                name: "Programmable Equity",
-                url: "/about",
-                visibility: NAV_ITEM_VISIBILITY.PUBLIC
-            },
-        */
-            {
-                name: "Rolling SAFE Parameters",
-                url: "/cafe-details",
-                visibility: NAV_ITEM_VISIBILITY.PUBLIC
-            },
-            /*
-            {
-                name: "Source Code (gh)",
-                url: "/",
-                visibility: NAV_ITEM_VISIBILITY.PUBLIC
-            },
-            {
-                name: "(Dev Portal)",
-                url: "/",
-                visibility: NAV_ITEM_VISIBILITY.PUBLIC
-            },
-            */
-        ]
-    },
-    {
         name: "Try it out",
         url: "/get-started",
         visibility: NAV_ITEM_VISIBILITY.PUBLIC,
         children: [
-            {
-                name: "Get Started",
-                url: "/get-started",
-                visibility: NAV_ITEM_VISIBILITY.PUBLIC
-            },
             {
                 name: "Investment Overview",
                 url: "/general-investment-info",
