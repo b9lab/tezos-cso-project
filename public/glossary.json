@@ -9,19 +9,20 @@
     },
     {
       "term" : "Programmable equity",
-      "description" : "Technology-enabled financing mechanism based on equity claim issuance. A Rolling SAFE is a programmable equity offering."
+      "description" : "A term for using smart contract(s) to tokenize and control part, or the entirety, of a company’s equity. A Rolling SAFE is a programmable equity offering."
+
     },
     {
       "term" : "PEQ",
-      "description" : "Technology-enabled financing mechanism based on equity claim issuance. A Rolling SAFE is a programmable equity offering."
+      "description" : "A term for using smart contract(s) to tokenize and control part, or the entirety, of a company’s equity. A Rolling SAFE is a programmable equity offering."
     },
     {
       "term" : "Rolling Simple Agreement for Future Equity",
-      "description" : "Blockchain technology-enabled continuous token offering, in which tokens represent a claim on future equity of the issuing organization."
+      "description" : "Blockchain technology-enabled continuous token offering, in which tokens represent a claim on the future equity of the issuing organization."
     },
     {
       "term" : "Rolling SAFE",
-      "description" : "Blockchain technology-enabled continuous token offering, in which tokens represent a claim on future equity of the issuing organization."
+      "description" : "Blockchain technology-enabled continuous token offering, in which tokens represent a claim on the future equity of the issuing organization."
     },
     {
       "term" : "Buyback",
@@ -29,14 +30,14 @@
     },
     {
       "term" : "Convertible notes",
-      "description" : "Or convertible bond, is a bond type that can be converted into a number of shares of common stock or equal cash value."
+      "description" : "A convertible note is a short-term debt that can be converted into equity."
     },
     {
       "term" : "Fixed-size equity rounds",
-      "description" : "A financing round in which investors purchase a fixed size of equity (stock) in a company, the size is pre-defined."
+      "description" : "A financing round in which investors purchase a fixed size of equity (stock) in a company, the size is pre-defined and usually, it is preferred stock."
     },
     {
-      "term" : "Cash flows",
+      "term" : "Cash flow",
       "description" : "Net amount of cash and cash equivalents being moved/transferred in and out of a company."
     },
     {
@@ -45,19 +46,19 @@
     },
     {
       "term" : "Liquidity",
-      "description" : "Describes the the availability of liquid assets to a market or company, i.e. how fast an asset can be sold and bought without a strong price increase or decrease."
+      "description" : "Describes the availability of liquid assets to a market or company, i.e. how fast an asset can be sold and bought without a strong price increase or decrease."
     },
     {
       "term" : "High-resolution fundraising",
-      "description" : "Financial mechanisms with faster financing rounds to prevent deadlocks and long processes as in the case of fixed-size equity round. Example: Convertible notes."
+      "description" : "Financial mechanisms with faster financing rounds to prevent deadlocks and long processes as in the case of fixed-size equity round."
     },
     {
       "term" : "Investor-driven funding",
       "description" : "Financial mechanisms based on investor funding."
     },
     {
-      "term" : "dilution",
-      "description" : "A value reduction of existing shares after additional shares of stock (equity) are issued and investor's ownership of a company."
+      "term" : "Dilution",
+      "description" : "A value reduction of existing shares, i.e. decrease in existing shareholders' ownership percentage of a company, as a result of the company issuing new equity."
     },
     {
       "term" : "TZM",
@@ -65,11 +66,11 @@
     },
     {
       "term" : "Minimum funding goal",
-      "description" : "The target amount of the investment offering."
+      "description" : "The minimum target amount of the investment offering."
     },
     {
       "term" : "MFG",
-      "description" : "The target amount of the investment offering."
+      "description" : "The minimum target amount of the investment offering."
     },
     {
       "term" : "Bonding curve",
@@ -77,34 +78,69 @@
     },
     {
       "term" : "Market maker",
-      "description" : "Or liquidity provider, a company or an individual that buys and sells securities (tradable assets) held in tehir own inventory to profit from bid-ask spreds (amount by which the ask price exceeds the bid price)."
+      "description" : "A company or individual who actively quotes two-sided markets in a particular security, providing bids and offers known as asks along with the market size of each. Market makers provide liquidity and depth to markets and profit from the difference in the bid-ask spread."
     },
     {
       "term" : "Venture capitalist",
-      "description" : "Private equity investor that provides companies in their early stages with capital because of the company's growth potential."
+      "description" : "Private equity investor that provides companies with capital in their early stages."
     },
     {
       "term" : "Initial coin offering",
-      "description" : "Initial coin offering, or initial currency offering, when a company raises capital by selling a cryptocurrency, which investors buy expecting a value increase of the cryptocurrency, or to exchange the cryptocurrency for services offered at a later point of time."
+      "description" : "When a company raises capital by selling a cryptocurrency, which investors buy expecting a value increase or to exchange the cryptocurrency for services."
     },
     {
       "term" : "ICO",
-      "description" : "Initial coin offering, or initial currency offering, when a company raises capital by selling a cryptocurrency, which investors buy expecting a value increase of the cryptocurrency, or to exchange the cryptocurrency for services offered at a later point of time."
+      "description" : "When a company raises capital by selling a cryptocurrency, which investors buy expecting a value increase or to exchange the cryptocurrency for services."
     },
     {
       "term" : "Initial public offering",
-      "description" : "Initial public offering, or stock launch, a public share offering to institutional investors (entities that pool money, like a commercial bank or hedge funds) and also retail investors (individual investors trading secuirties in smaller amounts)."
+      "description" : "The process of offering shares of a private corporation to the public in a new stock issuance. It allows a company to raise capital from public investors."
     },
     {
       "term" : "IPO",
-      "description" : "Initial public offering, or stock launch, a public share offering to institutional investors (entities that pool money, like a commercial bank or hedge funds) and also retail investors (individual investors trading secuirties in smaller amounts)."
+      "description" : "The process of offering shares of a private corporation to the public in a new stock issuance. It allows a company to raise capital from public investors."
     },
     {
       "term" : "Institutional investor",
-      "description" : "Entities that pool money, like a commercial bank or hedge funds."
+      "description" : "Company or organization that invests money on behalf of other people, for example, mutual funds, pensions, and insurance companies."
     },
     {
       "term" : "Redeem",
       "description" : "When a token holder wants to \"sell\" his tokens back to the smart contract, which are then burned (destroyed) and no longer available in an open market."
+    },
+    {
+      "term" : "Seed round",
+      "description" : "Very early stage of financing for a company typically conducted not long after the company has formed."
+    },
+    {
+      "term" : "Private equity",
+      "description" : "Form of private financing, away from public markets."
+    },
+    {
+      "term" : "Angel investors",
+      "description" : "Defined by the stage at which they invest in a company, i.e. someone who invests in a seed round."
+    },
+    {
+      "term" : "Capital structure",
+      "description" : "Combination of debt and equity used by a company to finance its operations and growth."
+    },
+    {
+      "term" : "Dividend",
+      "description" : "Distribution of some of a company's earnings to a class of its shareholders, as determined by the company's board of directors."
+    },
+    {
+      "term" : "Dividend yield",
+      "description" : "Amount of money a company pays shareholders for owning a share of its stock divided by its current stock price."
+    },
+    {
+      "term" : "Escrow",
+      "description" : "Place in custody or trust until a specified condition has been fulfilled."
+    },
+    {
+      "term" : "Decentralized Autonomous Trust",
+      "description" : "Smart contract that issues a tokenized security, handles sales and buybacks, and assists managing part, or the entirety, of a company's equity."
+    }    {
+      "term" : "DAT",
+      "description" : "Smart contract that issues a tokenized security, handles sales and buybacks, and assists managing part, or the entirety, of a company's equity."
     }
   ]
