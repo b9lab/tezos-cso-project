@@ -194,6 +194,6 @@ export default function CafeDetails(props: CafeDetailsProps) {
 
 export async function getStaticProps() {
     const dataHandler = new DataHandler();
-    const initialData = await dataHandler.getCafeParameters().catch(console.error);
+    const initialData = await dataHandler.getRollingSafeParameter().catch(console.error);
     return { props: { initialData } };
 }

@@ -98,7 +98,7 @@ class DataHandler {
     /**
      * Gets the CAFE parameters
      */
-    async getCafeParameters(): Promise<CafeInfoDto> {
+    async getRollingSafeParameter(): Promise<CafeInfoDto> {
         const storage = await chain.storage();
         const [
             govRights, 

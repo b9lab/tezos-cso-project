@@ -28,7 +28,7 @@ export default async function cafeParametersHandler(
 
         switch (method) {
             case 'GET':
-                dataHandler.getCafeParameters().then(handleSuccess).catch(handleError);
+                dataHandler.getRollingSafeParameter().then(handleSuccess).catch(handleError);
                 break;
             default:
                 res.setHeader('Allow', ['GET']);

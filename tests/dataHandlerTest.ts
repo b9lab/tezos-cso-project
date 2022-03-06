@@ -51,7 +51,7 @@ describe('Data handler tests', () => {
         });
 
         it('should get the CAFE parameters', async () => {
-            await expect(dataHandler.getCafeParameters()).to.be.fulfilled.then(data => {
+            await expect(dataHandler.getRollingSafeParameter()).to.be.fulfilled.then(data => {
                 expect(data).to.be.an("object");
                 expect(data).to.have.property("baseCurrency").that.is.a('string');
                 expect(data).to.have.property("totalAllocation").that.is.a('number');
