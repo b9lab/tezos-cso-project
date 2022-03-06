@@ -14,4 +14,4 @@ export const SESSION_API_ENDPOINT: string = '/api/auth/session';
 export const SIGNIN_API_ENDPOINT: string = '/api/auth/signin';
 export const INVESTMENT_NUMBERS_API_ENDPOINT: string = 'api/investment-numbers';
 export const COMPANY_VALUATION_API_ENDPOINT: string = 'api/company-valuation';
-export const CAFE_PARAMETERS_API_ENDPOINT: string = 'api/cafe-parameters';
+export const ROLLING_SAFE_PARAMETERS_API_ENDPOINT: string = 'api/cafe-parameters';
