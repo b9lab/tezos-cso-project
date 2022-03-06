@@ -133,7 +133,7 @@ export default function GeneralInvestmentInfo(props: CafeDetailsProps) {
                             <h1>{format_date(data?.unlockingDate)}</h1>
                         </div>
                     </div>
-                    <CtaCard href="/cafe-details" text="See all parameters &#8594;" title="TZMINT offering configuration" classes="sm:pl-2"/>
+                    {/* <CtaCard href="/cafe-details" text="See all parameters &#8594;" title="TZMINT offering configuration" classes="sm:pl-2"/>*/}
                 </div>
                 <h2 className="mt-12"><span className="highlight">Token balance</span></h2>
                 <div className="flex flex-wrap justify-between pb-12">
@@ -174,14 +174,14 @@ export default function GeneralInvestmentInfo(props: CafeDetailsProps) {
                                 <p className="font-bold">Base currency</p>
                                 <p className="body-text-small">Currency against which the exchange rate is quoted</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{detailData.baseCurrency}</td>
+                            <td className="border border-dark-gray px-4 py-2">{detailData?.baseCurrency}</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Total equity allocation</p>
                                 <p className="body-text-small">Total amount of equity allocated to the Rolling SAFE offering</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{format_percentage(detailData.totalAllocation)}</td>
+                            <td className="border border-dark-gray px-4 py-2">{format_percentage(detailData?.totalAllocation)}</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
@@ -190,77 +190,77 @@ export default function GeneralInvestmentInfo(props: CafeDetailsProps) {
                                     Part of the total equity allocation reserved to compensate stakeholders in case their held value decreases due to the Rolling SAFE
                                 </p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{format_percentage(detailData.stakeAllocation)}</td>
+                            <td className="border border-dark-gray px-4 py-2">{format_percentage(detailData?.stakeAllocation)}</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Termination events</p>
                                 <p className="body-text-small">Events that terminate the Rolling SAFE</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{detailData.terminationEvents.toString()}</td>
+                            <td className="border border-dark-gray px-4 py-2">{detailData?.terminationEvents.toString()}</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Minimum investment</p>
                                 <p className="body-text-small">The minimum amount required for a new investment</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2"><TezAmount amount={detailData.minimumInvestment} nostyle={true} hideSign={true}/> </td>
+                            <td className="border border-dark-gray px-4 py-2"><TezAmount amount={detailData?.minimumInvestment} nostyle={true} hideSign={true}/> </td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Initial reserve</p>
                                 <p className="body-text-small">Initially reserved amount</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2"><TezAmount amount={detailData.initialReserve} nostyle={true} hideSign={true}/></td>
+                            <td className="border border-dark-gray px-4 py-2"><TezAmount amount={detailData?.initialReserve} nostyle={true} hideSign={true}/></td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Initial valuation</p>
                                 <p className="body-text-small">Initial company valuation in USD</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{detailData.initialValuation.toLocaleString()}</td>
+                            <td className="border border-dark-gray px-4 py-2">{detailData?.initialValuation.toLocaleString()}</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Governing rights</p>
                                 <p className="body-text-small">Decision-making authority and voting rights for token holders</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{detailData.governingRights}</td>
+                            <td className="border border-dark-gray px-4 py-2">{detailData?.governingRights}</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Reserve percentage</p>
                                 <p className="body-text-small">Percentage of the funds held in the contract&apos;s reserve</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{detailData.reservePercentage} %</td>
+                            <td className="border border-dark-gray px-4 py-2">{detailData?.reservePercentage} %</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Retained revenue percentage</p>
                                 <p className="body-text-small">Percentage of the revenues funneled to the reserve</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{detailData.retainedRevenuePercentage} %</td>
+                            <td className="border border-dark-gray px-4 py-2">{detailData?.retainedRevenuePercentage} %</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Minimum funding goal</p>
                                 <p className="body-text-small">Lowest funding goal for the offering</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2"><TezAmount amount={detailData.minimumFundingGoal} nostyle={true} hideSign={true}/></td>
+                            <td className="border border-dark-gray px-4 py-2"><TezAmount amount={detailData?.minimumFundingGoal} nostyle={true} hideSign={true}/></td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Buy slope</p>
                                 <p className="body-text-small">The slope of the buy function determining the buy price</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{detailData.buySlope.toLocaleString()}</td>
+                            <td className="border border-dark-gray px-4 py-2">{detailData?.buySlope?.toLocaleString()}</td>
                         </tr>
                         <tr>
                             <td className="border border-dark-gray px-4 py-2">
                                 <p className="font-bold">Sell slope</p>
                                 <p className="body-text-small">The slope of the sell function determining the sell price</p>
                             </td>
-                            <td className="border border-dark-gray px-4 py-2">{detailData.sellSlope.toLocaleString()}</td>
+                            <td className="border border-dark-gray px-4 py-2">{detailData?.sellSlope?.toLocaleString()}</td>
                         </tr>
                     </tbody>
                 </table>

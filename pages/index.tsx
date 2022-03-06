@@ -54,9 +54,6 @@ export default function Home() {
 
             <div className="w-full flex flex-wrap justify-between pt-12 px-8">
                 <CtaCard href="https://tezos.b9lab.com/rolling-safe-project" text="Discover B9lab&apos;s Tezos Developer Platform. &#8594;" title="Want to dive into developing a Rolling SAFE with Tezos?" classes="sm:pr-2"/>
-            </div>
-            
-            <div className="w-full flex flex-wrap justify-between py-12 px-8">
                 <CtaCard href="/general-investment-info" text="Next page &#8594;" title="Want to have an investment overview of the Rolling SAFE?" classes="sm:pr-2"/>
             </div>
 
