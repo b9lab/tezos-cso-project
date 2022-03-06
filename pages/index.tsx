@@ -19,7 +19,7 @@ export default function Home() {
 
             <div className="pt-8 px-8">
                 <p className="indent">
-                    <span className="font-semibold italic">This platform is an example project and part of the educational course on <a className="font-family-body" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer">B9lab's Tezos Developer Platform</a>. 
+                    <span className="font-semibold italic">This platform is an example project and part of the educational course on <a className="font-family-body" href="http://tezos.b9lab.com" target="_blank" rel="noreferrer">B9lab&apos;s Tezos Developer Platform</a>. 
                     There is <span className="text-highlight">no real investment or company</span> involved. Instead, all transactions displayed are performed on a testnet, 
                     <span className="font-bold"> the Hangzhou Testnet</span>.</span>
                 </p>
@@ -53,7 +53,7 @@ export default function Home() {
             </div>
 
             <div className="w-full flex flex-wrap justify-between pt-12 px-8">
-                <CtaCard href="https://tezos.b9lab.com/rolling-safe-project" text="Discover B9lab'S Tezos Developer Platform. &#8594;" title="Want to dive into developing a Rolling SAFE with Tezos?" classes="sm:pr-2"/>
+                <CtaCard href="https://tezos.b9lab.com/rolling-safe-project" text="Discover B9lab&apos;s Tezos Developer Platform. &#8594;" title="Want to dive into developing a Rolling SAFE with Tezos?" classes="sm:pr-2"/>
             </div>
             
             <div className="w-full flex flex-wrap justify-between py-12 px-8">
