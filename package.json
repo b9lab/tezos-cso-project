@@ -1,7 +1,10 @@
 {
   "name": "tezos-cso-app",
-  "version": "0.4.5",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Tezos Rolling SAFE sample application - Web Application",
+  "license": "MIT",
+  "author": "B9lab Ltd",
+  "homepage": "https://tzmint.b9lab.com",
   "engines": {
     "node": ">=14"
   },
